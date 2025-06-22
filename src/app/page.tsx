@@ -34,23 +34,25 @@ export default function VCardPage(): React.JSX.Element {
           justifyContent: "center",
           backdropFilter: "blur(10px)",
           border: "2px solid rgba(255,255,255,0.2)",
-          marginBottom: "1rem"
+          marginBottom: "1rem",
+          overflow: "hidden"
         }}>
           <Image
             src="/logo.png"
             alt="STC Supreme Trading Corp Logo"
-            width={150}
-            height={150}
+            width={200}
+            height={200}
             style={{
-              objectFit: "contain",
-              borderRadius: "10px"
+              objectFit: "cover",
+              width: "100%",
+              height: "100%"
             }}
             onError={(e) => {
               // Fallback if image doesn't exist
               (e.target as HTMLImageElement).style.display = "none";
               (e.target as HTMLImageElement).parentElement!.innerHTML = `
-                <div style="font-size: 3rem; font-weight: 700; color: white; text-align: center;">
-                  <span style="color: #fbbf24">STC</span><br/>Supreme
+                <div style="font-size: 3rem; font-weight: 700; color: white; text-align: center; display: flex; align-items: center; justify-content: center; height: 100%;">
+                  <div><span style="color: #fbbf24">STC</span><br/>Supreme</div>
                 </div>
               `;
             }}
@@ -83,12 +85,30 @@ export default function VCardPage(): React.JSX.Element {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: "3rem",
-          fontWeight: "bold",
           margin: "0 auto 1.5rem",
-          border: "3px solid rgba(255,255,255,0.3)"
+          border: "3px solid rgba(255,255,255,0.3)",
+          overflow: "hidden"
         }}>
-          AS
+          <Image
+            src="/profile.jpg"
+            alt="Aamir Sogiawala"
+            width={120}
+            height={120}
+            style={{
+              objectFit: "cover",
+              width: "100%",
+              height: "100%"
+            }}
+            onError={(e) => {
+              // Fallback if image doesn't exist
+              (e.target as HTMLImageElement).style.display = "none";
+              (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                <div style="font-size: 3rem; font-weight: bold; color: white; display: flex; align-items: center; justify-content: center; height: 100%;">
+                  AS
+                </div>
+              `;
+            }}
+          />
         </div>
         
         <h2 style={{ 
@@ -330,9 +350,9 @@ export default function VCardPage(): React.JSX.Element {
         <div style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
           <p style={{ margin: "0 0 1rem" }}>
             <strong>Mumbai Office:</strong><br/>
-            Shop No 4 , Bharmal House <br></br>
-            Behind Dargah , Bhandari Street <br></br>  
-            Masjid Bander (W) , Mumbai - 400003        </p>
+            51/A, Essaji Street, Opp. Shah Roadways<br/>
+            Vadgadi, Mumbai-400 003
+          </p>
           <p style={{ margin: "0" }}>
             <strong>Branch Office:</strong><br/>
             Siyaganj, Indore (M.P.)
