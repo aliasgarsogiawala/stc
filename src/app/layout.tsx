@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: 'Supreme Trading Corp',
     images: [
       {
-        url: '/dad.jpeg', // or '/logo.svg' or '/og-image.jpg'
+        url: '/dad.jpg', // or '/logo.svg' or '/og-image.jpg'
         width: 1200,
         height: 630,
         alt: 'Aamir Sogiawala - STC Supreme Trading Corp',
