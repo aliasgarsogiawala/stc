@@ -84,7 +84,7 @@ export default function VCardPage(): React.JSX.Element {
           overflow: "hidden"
         }}>
           <Image
-            src="/dad.jpeg"
+            src="/dad.jpg"
             alt="Aamir Sogiawala"
             width={100}
             height={100}
