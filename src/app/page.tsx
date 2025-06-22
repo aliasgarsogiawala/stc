@@ -11,21 +11,22 @@ export default function VCardPage(): React.JSX.Element {
     <div style={{ 
       minHeight: "100vh", 
       background: `linear-gradient(135deg, ${primaryBlue} 0%, ${lightBlue} 100%)`,
-      padding: "2rem",
+      padding: "1rem",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
       fontFamily: "system-ui, -apple-system, sans-serif",
       color: "white",
-      textAlign: "center"
+      textAlign: "center",
+      gap: "1.5rem"
     }}>
       
       {/* Company Logo */}
-      <div style={{ marginBottom: "3rem" }}>
+      <div style={{ marginBottom: "1rem" }}>
         <div style={{
-          width: "200px",
-          height: "200px",
+          width: "150px",
+          height: "150px",
           margin: "0 auto",
           backgroundColor: "rgba(255,255,255,0.1)",
           borderRadius: "20px",
@@ -34,16 +35,16 @@ export default function VCardPage(): React.JSX.Element {
           justifyContent: "center",
           backdropFilter: "blur(10px)",
           border: "2px solid rgba(255,255,255,0.2)",
-          marginBottom: "1rem",
+          marginBottom: "0.5rem",
           overflow: "hidden"
         }}>
           <Image
             src="/logo.png"
             alt="STC Supreme Trading Corp Logo"
-            width={200}
-            height={200}
+            width={150}
+            height={150}
             style={{
-              objectFit: "cover",
+              objectFit: "contain",
               width: "100%",
               height: "100%"
             }}
@@ -51,49 +52,42 @@ export default function VCardPage(): React.JSX.Element {
               // Fallback if image doesn't exist
               (e.target as HTMLImageElement).style.display = "none";
               (e.target as HTMLImageElement).parentElement!.innerHTML = `
-                <div style="font-size: 3rem; font-weight: 700; color: white; text-align: center; display: flex; align-items: center; justify-content: center; height: 100%;">
+                <div style="font-size: 2.5rem; font-weight: 700; color: white; text-align: center; display: flex; align-items: center; justify-content: center; height: 100%;">
                   <div><span style="color: #fbbf24">STC</span><br/>Supreme</div>
                 </div>
               `;
             }}
           />
         </div>
-        <p style={{
-          fontSize: "1.2rem",
-          margin: "0",
-          letterSpacing: "4px",
-          opacity: "0.9"
-        }}>
-          TRADING CORP
-        </p>
+       
       </div>
 
       {/* Profile Section */}
       <div style={{ 
         backgroundColor: "rgba(255,255,255,0.1)",
-        padding: "2rem",
+        padding: "1.5rem",
         borderRadius: "20px",
-        marginBottom: "3rem",
+        marginBottom: "1.5rem",
         backdropFilter: "blur(10px)",
         border: "1px solid rgba(255,255,255,0.2)"
       }}>
         <div style={{
-          width: "120px",
-          height: "120px",
+          width: "100px",
+          height: "100px",
           borderRadius: "50%",
           backgroundColor: "rgba(255,255,255,0.2)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          margin: "0 auto 1.5rem",
+          margin: "0 auto 1rem",
           border: "3px solid rgba(255,255,255,0.3)",
           overflow: "hidden"
         }}>
           <Image
-            src="/profile.jpg"
+            src="/dad.jpeg"
             alt="Aamir Sogiawala"
-            width={120}
-            height={120}
+            width={100}
+            height={100}
             style={{
               objectFit: "cover",
               width: "100%",
@@ -103,7 +97,7 @@ export default function VCardPage(): React.JSX.Element {
               // Fallback if image doesn't exist
               (e.target as HTMLImageElement).style.display = "none";
               (e.target as HTMLImageElement).parentElement!.innerHTML = `
-                <div style="font-size: 3rem; font-weight: bold; color: white; display: flex; align-items: center; justify-content: center; height: 100%;">
+                <div style="font-size: 2.5rem; font-weight: bold; color: white; display: flex; align-items: center; justify-content: center; height: 100%;">
                   AS
                 </div>
               `;
@@ -112,7 +106,7 @@ export default function VCardPage(): React.JSX.Element {
         </div>
         
         <h2 style={{ 
-          fontSize: "2.5rem", 
+          fontSize: "2rem", 
           margin: "0 0 0.5rem",
           fontWeight: "600"
         }}>
@@ -131,50 +125,50 @@ export default function VCardPage(): React.JSX.Element {
       {/* Contact Grid */}
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-        gap: "2rem",
-        maxWidth: "800px",
+        gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+        gap: "1rem",
+        maxWidth: "700px",
         width: "100%",
-        marginBottom: "3rem"
+        marginBottom: "1.5rem"
       }}>
         
         {/* Phone */}
         <div style={{
           backgroundColor: "rgba(255,255,255,0.1)",
-          padding: "1.5rem",
+          padding: "1rem",
           borderRadius: "15px",
           backdropFilter: "blur(10px)",
           border: "1px solid rgba(255,255,255,0.2)"
         }}>
-          <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>📱</div>
-          <h3 style={{ margin: "0 0 0.5rem", fontSize: "1.1rem" }}>Mobile</h3>
-          <p style={{ margin: "0", fontSize: "1.2rem", fontWeight: "500" }}>+91 99207 55226</p>
+          <div style={{ fontSize: "1.5rem", marginBottom: "0.3rem" }}>📱</div>
+          <h3 style={{ margin: "0 0 0.3rem", fontSize: "1rem" }}>Mobile</h3>
+          <p style={{ margin: "0", fontSize: "1.1rem", fontWeight: "500" }}>+91 99207 55226</p>
         </div>
 
         {/* Office Phone */}
         <div style={{
           backgroundColor: "rgba(255,255,255,0.1)",
-          padding: "1.5rem",
+          padding: "1rem",
           borderRadius: "15px",
           backdropFilter: "blur(10px)",
           border: "1px solid rgba(255,255,255,0.2)"
         }}>
-          <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>📞</div>
-          <h3 style={{ margin: "0 0 0.5rem", fontSize: "1.1rem" }}>Office</h3>
-          <p style={{ margin: "0", fontSize: "1.2rem", fontWeight: "500" }}>+91 22-23455226</p>
+          <div style={{ fontSize: "1.5rem", marginBottom: "0.3rem" }}>📞</div>
+          <h3 style={{ margin: "0 0 0.3rem", fontSize: "1rem" }}>Office</h3>
+          <p style={{ margin: "0", fontSize: "1.1rem", fontWeight: "500" }}>+91 22-23455226</p>
         </div>
 
         {/* Email */}
         <div style={{
           backgroundColor: "rgba(255,255,255,0.1)",
-          padding: "1.5rem",
+          padding: "1rem",
           borderRadius: "15px",
           backdropFilter: "blur(10px)",
           border: "1px solid rgba(255,255,255,0.2)"
         }}>
-          <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>📧</div>
-          <h3 style={{ margin: "0 0 0.5rem", fontSize: "1.1rem" }}>Email</h3>
-          <p style={{ margin: "0", fontSize: "1rem", fontWeight: "500" }}>info@supremetrading.in</p>
+          <div style={{ fontSize: "1.5rem", marginBottom: "0.3rem" }}>📧</div>
+          <h3 style={{ margin: "0 0 0.3rem", fontSize: "1rem" }}>Email</h3>
+          <p style={{ margin: "0", fontSize: "0.9rem", fontWeight: "500" }}>info@supremetrading.in</p>
         </div>
 
         {/* Website */}
@@ -184,7 +178,7 @@ export default function VCardPage(): React.JSX.Element {
           rel="noopener noreferrer"
           style={{
             backgroundColor: "rgba(255,255,255,0.1)",
-            padding: "1.5rem",
+            padding: "1rem",
             borderRadius: "15px",
             backdropFilter: "blur(10px)",
             border: "1px solid rgba(255,255,255,0.2)",
@@ -203,33 +197,33 @@ export default function VCardPage(): React.JSX.Element {
             (e.target as HTMLElement).style.backgroundColor = "rgba(255,255,255,0.1)";
           }}
         >
-          <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>🌐</div>
-          <h3 style={{ margin: "0 0 0.5rem", fontSize: "1.1rem" }}>Website</h3>
-          <p style={{ margin: "0", fontSize: "1rem", fontWeight: "500" }}>www.supremetrading.in</p>
+          <div style={{ fontSize: "1.5rem", marginBottom: "0.3rem" }}>🌐</div>
+          <h3 style={{ margin: "0 0 0.3rem", fontSize: "1rem" }}>Website</h3>
+          <p style={{ margin: "0", fontSize: "0.9rem", fontWeight: "500" }}>www.supremetrading.in</p>
         </a>
       </div>
 
       {/* Action Buttons */}
       <div style={{
         display: "flex",
-        gap: "1rem",
+        gap: "0.8rem",
         flexWrap: "wrap",
         justifyContent: "center",
-        marginBottom: "3rem"
+        marginBottom: "1.5rem"
       }}>
         <a
           href="tel:+919920755226"
           style={{
             backgroundColor: "#10b981",
             color: "white",
-            padding: "1rem 2rem",
+            padding: "0.8rem 1.5rem",
             borderRadius: "50px",
             textDecoration: "none",
-            fontSize: "1.1rem",
+            fontSize: "1rem",
             fontWeight: "600",
             display: "flex",
             alignItems: "center",
-            gap: "0.5rem",
+            gap: "0.4rem",
             transition: "transform 0.2s",
             border: "none",
             cursor: "pointer"
@@ -241,7 +235,7 @@ export default function VCardPage(): React.JSX.Element {
             (e.target as HTMLElement).style.transform = "scale(1)";
           }}
         >
-          📞 Call Now
+          📞 Call
         </a>
 
         <a
@@ -249,14 +243,14 @@ export default function VCardPage(): React.JSX.Element {
           style={{
             backgroundColor: "#059669",
             color: "white",
-            padding: "1rem 2rem",
+            padding: "0.8rem 1.5rem",
             borderRadius: "50px",
             textDecoration: "none",
-            fontSize: "1.1rem",
+            fontSize: "1rem",
             fontWeight: "600",
             display: "flex",
             alignItems: "center",
-            gap: "0.5rem",
+            gap: "0.4rem",
             transition: "transform 0.2s",
             border: "none",
             cursor: "pointer"
@@ -276,14 +270,14 @@ export default function VCardPage(): React.JSX.Element {
           style={{
             backgroundColor: "#6366f1",
             color: "white",
-            padding: "1rem 2rem",
+            padding: "0.8rem 1.5rem",
             borderRadius: "50px",
             textDecoration: "none",
-            fontSize: "1.1rem",
+            fontSize: "1rem",
             fontWeight: "600",
             display: "flex",
             alignItems: "center",
-            gap: "0.5rem",
+            gap: "0.4rem",
             transition: "transform 0.2s",
             border: "none",
             cursor: "pointer"
@@ -305,14 +299,14 @@ export default function VCardPage(): React.JSX.Element {
           style={{
             backgroundColor: "#8b5cf6",
             color: "white",
-            padding: "1rem 2rem",
+            padding: "0.8rem 1.5rem",
             borderRadius: "50px",
             textDecoration: "none",
-            fontSize: "1.1rem",
+            fontSize: "1rem",
             fontWeight: "600",
             display: "flex",
             alignItems: "center",
-            gap: "0.5rem",
+            gap: "0.4rem",
             transition: "transform 0.2s",
             border: "none",
             cursor: "pointer"
@@ -324,22 +318,22 @@ export default function VCardPage(): React.JSX.Element {
             (e.target as HTMLElement).style.transform = "scale(1)";
           }}
         >
-          🌐 Visit Website
+          🌐 Website
         </a>
       </div>
 
       {/* Address */}
       <div style={{
         backgroundColor: "rgba(255,255,255,0.1)",
-        padding: "2rem",
+        padding: "1.5rem",
         borderRadius: "20px",
         backdropFilter: "blur(10px)",
         border: "1px solid rgba(255,255,255,0.2)",
-        maxWidth: "600px"
+        maxWidth: "500px"
       }}>
         <h3 style={{ 
-          fontSize: "1.5rem", 
-          margin: "0 0 1rem",
+          fontSize: "1.3rem", 
+          margin: "0 0 0.8rem",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -347,11 +341,12 @@ export default function VCardPage(): React.JSX.Element {
         }}>
           📍 Our Locations
         </h3>
-        <div style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
-          <p style={{ margin: "0 0 1rem" }}>
+        <div style={{ fontSize: "1rem", lineHeight: "1.5" }}>
+          <p style={{ margin: "0 0 0.8rem" }}>
             <strong>Mumbai Office:</strong><br/>
-            51/A, Essaji Street, Opp. Shah Roadways<br/>
-            Vadgadi, Mumbai-400 003
+            Shop No 4 , Bharmal House <br/>
+            Behind Dargah , Bhandari Street <br/>  
+            Masjid Bander (W) , Mumbai - 400003        
           </p>
           <p style={{ margin: "0" }}>
             <strong>Branch Office:</strong><br/>
@@ -362,11 +357,11 @@ export default function VCardPage(): React.JSX.Element {
 
       {/* Footer */}
       <div style={{
-        marginTop: "3rem",
-        fontSize: "0.9rem",
+        marginTop: "1.5rem",
+        fontSize: "0.8rem",
         opacity: "0.7"
       }}>
-        Designed using vcard.supremetrading.in
+        Designed by Techtics
       </div>
     </div>
   );
