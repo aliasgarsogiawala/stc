@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Aamir Sogiawala - STC Supreme Trading Corp',
-  description: 'Practicing Medical Cosmetologist, Trichologist & Skin Aesthetician. Contact: +91 99207 55226 | info@supremetrading.in',
+  title: 'Aamir Sogiawala',
+  description: "Supreme Trading Corp",
   openGraph: {
     title: 'aamirsogiawal - Overview',
     description: 'Practicing Medical Cosmetologist, Trichologist & Skin Aesthetician. aamirsogiawal has premium business services available. Contact for consultations.',
