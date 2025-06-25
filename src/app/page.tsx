@@ -202,73 +202,114 @@ export default function VCardPage(): React.JSX.Element {
           </div>
         </div>
 
-        {/* Action Buttons */}
+        {/* Action Icons */}
         <div style={{
           backgroundColor: "#fff",
           padding: "30px",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "15px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "40px",
           borderBottom: "1px solid #e0e0e0"
         }}>
           <a href="tel:+919920755226" style={{
-            backgroundColor: "#1e3a8a",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "60px",
+            height: "60px",
+            borderRadius: "50%",
+            backgroundColor: "#3b82f6",
             color: "white",
-            padding: "15px",
-            borderRadius: "5px",
             textDecoration: "none",
-            fontSize: "16px",
-            fontWeight: "bold",
-            textAlign: "center",
-            transition: "background-color 0.2s",
-            display: "block"
+            fontSize: "24px",
+            transition: "transform 0.2s, box-shadow 0.2s",
+            boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)"
+          }}
+          onMouseEnter={(e) => {
+            (e.target as HTMLElement).style.transform = "scale(1.1)";
+            (e.target as HTMLElement).style.boxShadow = "0 6px 16px rgba(59, 130, 246, 0.4)";
+          }}
+          onMouseLeave={(e) => {
+            (e.target as HTMLElement).style.transform = "scale(1)";
+            (e.target as HTMLElement).style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.3)";
           }}>
-            📞 CALL NOW
+            📞
           </a>
           
           <a href="https://wa.me/919920755226" style={{
-            backgroundColor: "#25D366",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "60px",
+            height: "60px",
+            borderRadius: "50%",
+            backgroundColor: "#3b82f6",
             color: "white",
-            padding: "15px",
-            borderRadius: "5px",
             textDecoration: "none",
-            fontSize: "16px",
-            fontWeight: "bold",
-            textAlign: "center",
-            transition: "background-color 0.2s",
-            display: "block"
+            fontSize: "24px",
+            transition: "transform 0.2s, box-shadow 0.2s",
+            boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)"
+          }}
+          onMouseEnter={(e) => {
+            (e.target as HTMLElement).style.transform = "scale(1.1)";
+            (e.target as HTMLElement).style.boxShadow = "0 6px 16px rgba(59, 130, 246, 0.4)";
+          }}
+          onMouseLeave={(e) => {
+            (e.target as HTMLElement).style.transform = "scale(1)";
+            (e.target as HTMLElement).style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.3)";
           }}>
-            💬 WHATSAPP
+            💬
           </a>
           
           <a href="mailto:info@supremetrading.in" style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "60px",
+            height: "60px",
+            borderRadius: "50%",
             backgroundColor: "#3b82f6",
             color: "white",
-            padding: "15px",
-            borderRadius: "5px",
             textDecoration: "none",
-            fontSize: "16px",
-            fontWeight: "bold",
-            textAlign: "center",
-            transition: "background-color 0.2s",
-            display: "block"
+            fontSize: "24px",
+            transition: "transform 0.2s, box-shadow 0.2s",
+            boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)"
+          }}
+          onMouseEnter={(e) => {
+            (e.target as HTMLElement).style.transform = "scale(1.1)";
+            (e.target as HTMLElement).style.boxShadow = "0 6px 16px rgba(59, 130, 246, 0.4)";
+          }}
+          onMouseLeave={(e) => {
+            (e.target as HTMLElement).style.transform = "scale(1)";
+            (e.target as HTMLElement).style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.3)";
           }}>
-            📧 EMAIL
+            📧
           </a>
           
           <a href="https://www.supremetrading.in" target="_blank" rel="noopener noreferrer" style={{
-            backgroundColor: "#8b5cf6",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "60px",
+            height: "60px",
+            borderRadius: "50%",
+            backgroundColor: "#3b82f6",
             color: "white",
-            padding: "15px",
-            borderRadius: "5px",
             textDecoration: "none",
-            fontSize: "16px",
-            fontWeight: "bold",
-            textAlign: "center",
-            transition: "background-color 0.2s",
-            display: "block"
+            fontSize: "24px",
+            transition: "transform 0.2s, box-shadow 0.2s",
+            boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)"
+          }}
+          onMouseEnter={(e) => {
+            (e.target as HTMLElement).style.transform = "scale(1.1)";
+            (e.target as HTMLElement).style.boxShadow = "0 6px 16px rgba(59, 130, 246, 0.4)";
+          }}
+          onMouseLeave={(e) => {
+            (e.target as HTMLElement).style.transform = "scale(1)";
+            (e.target as HTMLElement).style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.3)";
           }}>
-            🌐 WEBSITE
+            🌐
           </a>
         </div>
 
