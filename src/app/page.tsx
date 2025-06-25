@@ -105,99 +105,89 @@ export default function VCardPage(): React.JSX.Element {
         <div style={{
           backgroundColor: "#fff",
           padding: "30px",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "20px",
           borderBottom: "1px solid #e0e0e0"
         }}>
-          <div style={{ textAlign: "center" }}>
-            <div style={{
-              fontSize: "16px",
-              color: "#1e3a8a",
-              fontWeight: "bold",
-              marginBottom: "8px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "5px"
-            }}>
-              📱 Mobile
-            </div>
-            <div style={{
-              fontSize: "16px",
-              color: "#333",
-              fontWeight: "bold"
-            }}>
-              +91 99207 55226
-            </div>
-          </div>
-          
-          <div style={{ textAlign: "center" }}>
-            <div style={{
-              fontSize: "16px",
-              color: "#1e3a8a",
-              fontWeight: "bold",
-              marginBottom: "8px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "5px"
-            }}>
-              📞 Office
-            </div>
-            <div style={{
-              fontSize: "16px",
-              color: "#333",
-              fontWeight: "bold"
-            }}>
-              +91 22-23455226
-            </div>
-          </div>
-          
-          <div style={{ textAlign: "center" }}>
-            <div style={{
-              fontSize: "16px",
-              color: "#1e3a8a",
-              fontWeight: "bold",
-              marginBottom: "8px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "5px"
-            }}>
-              📧 Email
-            </div>
-            <div style={{
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "15px",
+            marginBottom: "20px"
+          }}>
+            <a href="tel:+912223455226" style={{
+              backgroundColor: "rgba(59, 130, 246, 0.05)",
+              color: "#3b82f6",
+              padding: "15px",
+              borderRadius: "8px",
+              textDecoration: "none",
               fontSize: "14px",
-              color: "#333",
-              fontWeight: "bold"
+              fontWeight: "bold",
+              textAlign: "center",
+              transition: "all 0.2s ease",
+              display: "block",
+              border: "1px solid rgba(59, 130, 246, 0.2)"
+            }}
+            onMouseEnter={(e) => {
+              (e.target as HTMLElement).style.backgroundColor = "rgba(59, 130, 246, 0.1)";
+              (e.target as HTMLElement).style.borderColor = "rgba(59, 130, 246, 0.4)";
+              (e.target as HTMLElement).style.transform = "translateY(-1px)";
+              (e.target as HTMLElement).style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.15)";
+            }}
+            onMouseLeave={(e) => {
+              (e.target as HTMLElement).style.backgroundColor = "rgba(59, 130, 246, 0.05)";
+              (e.target as HTMLElement).style.borderColor = "rgba(59, 130, 246, 0.2)";
+              (e.target as HTMLElement).style.transform = "translateY(0)";
+              (e.target as HTMLElement).style.boxShadow = "none";
             }}>
-              info@supremetrading.in
-            </div>
+              📞 OFFICE<br/>
+              <span style={{ fontSize: "12px", fontWeight: "normal" }}>+91 22-23455226</span>
+            </a>
+            
+            <a href="mailto:info@supremetrading.in" style={{
+              backgroundColor: "rgba(59, 130, 246, 0.05)",
+              color: "#3b82f6",
+              padding: "15px",
+              borderRadius: "8px",
+              textDecoration: "none",
+              fontSize: "14px",
+              fontWeight: "bold",
+              textAlign: "center",
+              transition: "all 0.2s ease",
+              display: "block",
+              border: "1px solid rgba(59, 130, 246, 0.2)"
+            }}
+            onMouseEnter={(e) => {
+              (e.target as HTMLElement).style.backgroundColor = "rgba(59, 130, 246, 0.1)";
+              (e.target as HTMLElement).style.borderColor = "rgba(59, 130, 246, 0.4)";
+              (e.target as HTMLElement).style.transform = "translateY(-1px)";
+              (e.target as HTMLElement).style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.15)";
+            }}
+            onMouseLeave={(e) => {
+              (e.target as HTMLElement).style.backgroundColor = "rgba(59, 130, 246, 0.05)";
+              (e.target as HTMLElement).style.borderColor = "rgba(59, 130, 246, 0.2)";
+              (e.target as HTMLElement).style.transform = "translateY(0)";
+              (e.target as HTMLElement).style.boxShadow = "none";
+            }}>
+              📧 EMAIL<br/>
+              <span style={{ fontSize: "10px", fontWeight: "normal" }}>info@supremetrading.in</span>
+            </a>
           </div>
           
+          {/* Save Contact Link */}
           <div style={{ textAlign: "center" }}>
-            <a href="https://www.supremetrading.in" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-              <div style={{
-                fontSize: "16px",
-                color: "#1e3a8a",
-                fontWeight: "bold",
-                marginBottom: "8px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "5px"
-              }}>
-                🌐 Website
-              </div>
-              <div style={{
-                fontSize: "14px",
-                color: "#3b82f6",
-                fontWeight: "bold",
-                textDecoration: "underline"
-              }}>
-                supremetrading.in
-              </div>
+            <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AAamir%20Sogiawala%0AORG%3ASTC%20Supreme%20Trading%20Corp%0ATITLE%3AISO%209001%3A2015%20Quality%20Management%20System%0ATEL%3BTYPE%3DCELL%3A%2B919920755226%0ATEL%3BTYPE%3DWORK%3A%2B912223455226%0AEMAIL%3BTYPE%3DWORK%3Ainfo%40supremetrading.in%0AURL%3Ahttps%3A//www.supremetrading.in%0AADR%3BTYPE%3DWORK%3A%3B%3BShop%20No%204%2C%20Bharmal%20House%2C%20Behind%20Dargah%2C%20Bhandari%20Street%3BMasjid%20Bander%20%28W%29%3BMumbai%3B400003%3BIndia%0AEND%3AVCARD" download="Aamir_Sogiawala_STC.vcf" style={{
+              color: "#3b82f6",
+              textDecoration: "underline",
+              fontSize: "14px",
+              fontWeight: "500",
+              transition: "color 0.2s"
+            }}
+            onMouseEnter={(e) => {
+              (e.target as HTMLElement).style.color = "#1d4ed8";
+            }}
+            onMouseLeave={(e) => {
+              (e.target as HTMLElement).style.color = "#3b82f6";
+            }}>
+              💾 Save Contact to Phone
             </a>
           </div>
         </div>
@@ -346,6 +336,7 @@ export default function VCardPage(): React.JSX.Element {
         </div>
 
       </div>
+      
     </div>
   );
 }
