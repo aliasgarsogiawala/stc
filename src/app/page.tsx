@@ -62,7 +62,7 @@ export default function VCardPage(): React.JSX.Element {
           borderBottom: "1px solid #e0e0e0"
         }}>
           <Image
-            src="/dad.jpeg"
+            src="/dad.jpg"
             alt="Aamir Sogiawala"
             width={100}
             height={100}
