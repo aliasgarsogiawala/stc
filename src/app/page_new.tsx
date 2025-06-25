@@ -4,9 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 export default function VCardPage(): React.JSX.Element {
-  const primaryBlue = "#1e3a8a";
-  const lightBlue = "#3b82f6";
-
+  
   return (
     <div style={{ 
       minHeight: "100vh", 
