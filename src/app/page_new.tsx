@@ -12,40 +12,15 @@ export default function VCardPage(): React.JSX.Element {
       minHeight: "100vh", 
       backgroundColor: "white",
       display: "flex",
-      flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
       padding: "20px",
       fontFamily: "'Arial', sans-serif"
     }}>
       
-      {/* Logo at the top */}
-      <div style={{
-        marginBottom: "30px"
-      }}>
-        <Image
-          src="/logo.png"
-          alt="STC Supreme Trading Corp Logo"
-          width={200}
-          height={200}
-          style={{
-            objectFit: "contain"
-          }}
-          onError={(e) => {
-            // Fallback if logo.png doesn't exist
-            (e.target as HTMLImageElement).style.display = "none";
-            (e.target as HTMLImageElement).parentElement!.innerHTML = `
-              <div style="font-size: 3rem; font-weight: 700; color: #1e3a8a; text-align: center;">
-                <span style="color: #3b82f6">STC</span><br/>Supreme
-              </div>
-            `;
-          }}
-        />
-      </div>
-      
       {/* Main Card Container */}
       <div style={{
-        maxWidth: "600px",
+        maxWidth: "400px",
         width: "100%",
         backgroundColor: "#fff",
         borderRadius: "0px",
@@ -54,29 +29,55 @@ export default function VCardPage(): React.JSX.Element {
         border: "2px solid #1e3a8a"
       }}>
         
+        {/* Header Section */}
+        <div style={{
+          backgroundColor: "#f8f9ff",
+          padding: "20px",
+          textAlign: "center",
+          borderBottom: "3px solid #1e3a8a"
+        }}>
+          <div style={{
+            fontSize: "32px",
+            fontWeight: "bold",
+            color: "#1e3a8a",
+            marginBottom: "5px",
+            letterSpacing: "1px"
+          }}>
+            <span style={{ color: "#3b82f6" }}>STC</span> Supreme
+          </div>
+          <div style={{
+            fontSize: "12px",
+            color: "#1e3a8a",
+            fontWeight: "bold",
+            letterSpacing: "2px"
+          }}>
+            TRADING CORP
+          </div>
+        </div>
+
         {/* Profile Section */}
         <div style={{
           backgroundColor: "#fff",
-          padding: "30px",
+          padding: "20px",
           display: "flex",
           alignItems: "center",
-          gap: "20px",
+          gap: "15px",
           borderBottom: "1px solid #e0e0e0"
         }}>
           <Image
             src="/dad.jpeg"
             alt="Aamir Sogiawala"
-            width={100}
-            height={100}
+            width={70}
+            height={70}
             style={{
               borderRadius: "50%",
               objectFit: "cover",
-              border: "4px solid #1e3a8a"
+              border: "3px solid #1e3a8a"
             }}
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = "none";
               (e.target as HTMLImageElement).parentElement!.innerHTML += `
-                <div style="width: 100px; height: 100px; border-radius: 50%; background-color: #1e3a8a; color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: bold;">
+                <div style="width: 70px; height: 70px; border-radius: 50%; background-color: #1e3a8a; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold;">
                   AS
                 </div>
               `;
@@ -84,15 +85,15 @@ export default function VCardPage(): React.JSX.Element {
           />
           <div style={{ flex: 1 }}>
             <div style={{
-              fontSize: "24px",
+              fontSize: "18px",
               fontWeight: "bold",
               color: "#333",
-              marginBottom: "8px"
+              marginBottom: "5px"
             }}>
               Aamir Sogiawala
             </div>
             <div style={{
-              fontSize: "16px",
+              fontSize: "12px",
               color: "#666",
               lineHeight: "1.4"
             }}>
@@ -104,18 +105,18 @@ export default function VCardPage(): React.JSX.Element {
         {/* Contact Info Grid */}
         <div style={{
           backgroundColor: "#fff",
-          padding: "30px",
+          padding: "20px",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          gap: "20px",
+          gap: "15px",
           borderBottom: "1px solid #e0e0e0"
         }}>
           <div style={{ textAlign: "center" }}>
             <div style={{
-              fontSize: "16px",
+              fontSize: "12px",
               color: "#1e3a8a",
               fontWeight: "bold",
-              marginBottom: "8px",
+              marginBottom: "5px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -124,7 +125,7 @@ export default function VCardPage(): React.JSX.Element {
               📱 Mobile
             </div>
             <div style={{
-              fontSize: "16px",
+              fontSize: "14px",
               color: "#333",
               fontWeight: "bold"
             }}>
@@ -134,10 +135,10 @@ export default function VCardPage(): React.JSX.Element {
           
           <div style={{ textAlign: "center" }}>
             <div style={{
-              fontSize: "16px",
+              fontSize: "12px",
               color: "#1e3a8a",
               fontWeight: "bold",
-              marginBottom: "8px",
+              marginBottom: "5px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -146,7 +147,7 @@ export default function VCardPage(): React.JSX.Element {
               📞 Office
             </div>
             <div style={{
-              fontSize: "16px",
+              fontSize: "14px",
               color: "#333",
               fontWeight: "bold"
             }}>
@@ -156,10 +157,10 @@ export default function VCardPage(): React.JSX.Element {
           
           <div style={{ textAlign: "center" }}>
             <div style={{
-              fontSize: "16px",
+              fontSize: "12px",
               color: "#1e3a8a",
               fontWeight: "bold",
-              marginBottom: "8px",
+              marginBottom: "5px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -168,7 +169,7 @@ export default function VCardPage(): React.JSX.Element {
               📧 Email
             </div>
             <div style={{
-              fontSize: "14px",
+              fontSize: "12px",
               color: "#333",
               fontWeight: "bold"
             }}>
@@ -179,10 +180,10 @@ export default function VCardPage(): React.JSX.Element {
           <div style={{ textAlign: "center" }}>
             <a href="https://www.supremetrading.in" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
               <div style={{
-                fontSize: "16px",
+                fontSize: "12px",
                 color: "#1e3a8a",
                 fontWeight: "bold",
-                marginBottom: "8px",
+                marginBottom: "5px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -191,7 +192,7 @@ export default function VCardPage(): React.JSX.Element {
                 🌐 Website
               </div>
               <div style={{
-                fontSize: "14px",
+                fontSize: "12px",
                 color: "#3b82f6",
                 fontWeight: "bold",
                 textDecoration: "underline"
@@ -205,23 +206,22 @@ export default function VCardPage(): React.JSX.Element {
         {/* Action Buttons */}
         <div style={{
           backgroundColor: "#fff",
-          padding: "30px",
+          padding: "20px",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          gap: "15px",
+          gap: "10px",
           borderBottom: "1px solid #e0e0e0"
         }}>
           <a href="tel:+919920755226" style={{
             backgroundColor: "#1e3a8a",
             color: "white",
-            padding: "15px",
+            padding: "10px",
             borderRadius: "5px",
             textDecoration: "none",
-            fontSize: "16px",
+            fontSize: "12px",
             fontWeight: "bold",
             textAlign: "center",
-            transition: "background-color 0.2s",
-            display: "block"
+            transition: "background-color 0.2s"
           }}>
             📞 CALL NOW
           </a>
@@ -229,14 +229,13 @@ export default function VCardPage(): React.JSX.Element {
           <a href="https://wa.me/919920755226" style={{
             backgroundColor: "#25D366",
             color: "white",
-            padding: "15px",
+            padding: "10px",
             borderRadius: "5px",
             textDecoration: "none",
-            fontSize: "16px",
+            fontSize: "12px",
             fontWeight: "bold",
             textAlign: "center",
-            transition: "background-color 0.2s",
-            display: "block"
+            transition: "background-color 0.2s"
           }}>
             💬 WHATSAPP
           </a>
@@ -244,14 +243,13 @@ export default function VCardPage(): React.JSX.Element {
           <a href="mailto:info@supremetrading.in" style={{
             backgroundColor: "#3b82f6",
             color: "white",
-            padding: "15px",
+            padding: "10px",
             borderRadius: "5px",
             textDecoration: "none",
-            fontSize: "16px",
+            fontSize: "12px",
             fontWeight: "bold",
             textAlign: "center",
-            transition: "background-color 0.2s",
-            display: "block"
+            transition: "background-color 0.2s"
           }}>
             📧 EMAIL
           </a>
@@ -259,14 +257,13 @@ export default function VCardPage(): React.JSX.Element {
           <a href="https://www.supremetrading.in" target="_blank" rel="noopener noreferrer" style={{
             backgroundColor: "#8b5cf6",
             color: "white",
-            padding: "15px",
+            padding: "10px",
             borderRadius: "5px",
             textDecoration: "none",
-            fontSize: "16px",
+            fontSize: "12px",
             fontWeight: "bold",
             textAlign: "center",
-            transition: "background-color 0.2s",
-            display: "block"
+            transition: "background-color 0.2s"
           }}>
             🌐 WEBSITE
           </a>
@@ -275,14 +272,14 @@ export default function VCardPage(): React.JSX.Element {
         {/* Address Section */}
         <div style={{
           backgroundColor: "#f8f9ff",
-          padding: "30px",
+          padding: "20px",
           textAlign: "center"
         }}>
           <div style={{
-            fontSize: "16px",
+            fontSize: "14px",
             color: "#1e3a8a",
             fontWeight: "bold",
-            marginBottom: "15px",
+            marginBottom: "10px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -290,7 +287,7 @@ export default function VCardPage(): React.JSX.Element {
           }}>
             📍 Our Locations
           </div>
-          <div style={{ fontSize: "13px", color: "#666", lineHeight: "1.5" }}>
+          <div style={{ fontSize: "11px", color: "#666", lineHeight: "1.4" }}>
             <div style={{ marginBottom: "8px" }}>
               <strong>Mumbai Office:</strong><br/>
               Shop No 4, Bharmal House<br/>
