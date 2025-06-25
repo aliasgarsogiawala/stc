@@ -17,17 +17,12 @@ export const metadata: Metadata = {
   title: 'Aamir Sogiawala',
   description: "Supreme Trading Corp",
   openGraph: {
-    title: 'aamirsogiawal - Overview',
-    description: 'Practicing Medical Cosmetologist, Trichologist & Skin Aesthetician. aamirsogiawal has premium business services available. Contact for consultations.',
+    title: 'Aamir Sogiawala',
+    description: 'Supreme Trading Corp',
     images: ['/dad.jpeg'], // Just use your existing image
     type: 'profile',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'aamirsogiawal - Overview', 
-    description: 'Practicing Medical Cosmetologist, Trichologist & Skin Aesthetician.',
-    images: ['/dad.jpeg'],
-  },
+  
 };
 
 export default function RootLayout({
