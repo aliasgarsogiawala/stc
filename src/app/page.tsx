@@ -12,14 +12,12 @@ export default function VCardPage(): React.JSX.Element {
       fontFamily: "'Arial', sans-serif"
     }}>
       
-      {/* Decorative line before logo - full width */}
       <div style={{
         width: "100vw",
         height: "8px",
         background: "linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%)"
       }}></div>
 
-      {/* Logo Section */}
       <div style={{
         display: "flex",
         justifyContent: "center",
@@ -38,7 +36,6 @@ export default function VCardPage(): React.JSX.Element {
             height: "auto"
           }}
           onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-            // Fallback if logo.png doesn't exist
             (e.target as HTMLImageElement).style.display = "none";
             if ((e.target as HTMLImageElement).parentElement) {
               (e.target as HTMLImageElement).parentElement!.innerHTML = `
@@ -51,7 +48,6 @@ export default function VCardPage(): React.JSX.Element {
         />
       </div>
 
-      {/* Decorative line after logo - full width */}
       <div style={{
         width: "100vw",
         height: "8px",
@@ -59,7 +55,6 @@ export default function VCardPage(): React.JSX.Element {
         marginBottom: "40px"
       }}></div>
 
-      {/* Content Area */}
       <div style={{
         display: "flex",
         flexDirection: "column",
@@ -67,7 +62,6 @@ export default function VCardPage(): React.JSX.Element {
         padding: "0 20px"
       }}>
 
-        {/* Main Card Container - Dr. Alafiya Style */}
         <div style={{
           maxWidth: "700px",
           width: "100%",
@@ -78,7 +72,6 @@ export default function VCardPage(): React.JSX.Element {
           border: "1px solid #e0e0e0"
         }}>
           
-          {/* Profile Section - Dr. Alafiya Style */}
           <div style={{
             backgroundColor: "#fff",
             padding: "30px 40px",
@@ -88,7 +81,7 @@ export default function VCardPage(): React.JSX.Element {
             borderBottom: "1px solid #e0e0e0"
           }}>
             <Image
-              src="/dad.jpeg"
+              src="/dad.jpg"
               alt="Aamir Sogiawala"
               width={110}
               height={110}
@@ -131,7 +124,6 @@ export default function VCardPage(): React.JSX.Element {
             </div>
           </div>
 
-          {/* Contact Info Section - Dr. Alafiya Style */}
           <div style={{
             backgroundColor: "#fff",
             padding: "30px 40px",
@@ -143,7 +135,6 @@ export default function VCardPage(): React.JSX.Element {
               alignItems: "center",
               gap: "40px"
             }}>
-              {/* Mobile Section */}
               <div style={{
                 textAlign: "center"
               }}>
@@ -172,14 +163,12 @@ export default function VCardPage(): React.JSX.Element {
                 </a>
               </div>
 
-              {/* Vertical Divider */}
               <div style={{
                 width: "1px",
                 height: "60px",
                 backgroundColor: "#e0e0e0"
               }}></div>
 
-              {/* Email Section */}
               <div style={{
                 textAlign: "center"
               }}>
@@ -210,7 +199,6 @@ export default function VCardPage(): React.JSX.Element {
             </div>
           </div>
 
-          {/* Action Icons Section - Exactly like Dr. Alafiya */}
           <div style={{
             backgroundColor: "#fff",
             padding: "25px 40px",
@@ -245,7 +233,6 @@ export default function VCardPage(): React.JSX.Element {
               </svg>
             </a>
             
-            {/* Phone Call */}
             <a href="tel:+919920755226" style={{
               display: "flex",
               alignItems: "center",
@@ -270,7 +257,6 @@ export default function VCardPage(): React.JSX.Element {
               </svg>
             </a>
             
-            {/* SMS/Message */}
             <a href="sms:+919920755226" style={{
               display: "flex",
               alignItems: "center",
@@ -295,7 +281,6 @@ export default function VCardPage(): React.JSX.Element {
               </svg>
             </a>
             
-            {/* Email */}
             <a href="mailto:info@supremetrading.in" style={{
               display: "flex",
               alignItems: "center",
@@ -320,7 +305,6 @@ export default function VCardPage(): React.JSX.Element {
               </svg>
             </a>
             
-            {/* Website */}
             <a href="https://supremetrading.in" target="_blank" rel="noopener noreferrer" style={{
               display: "flex",
               alignItems: "center",
@@ -346,7 +330,6 @@ export default function VCardPage(): React.JSX.Element {
             </a>
           </div>
 
-          {/* Save Contact Section */}
           <div style={{
             backgroundColor: "#364B8C",
             padding: "16px 40px",
