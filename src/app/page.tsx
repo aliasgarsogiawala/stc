@@ -191,15 +191,15 @@ export default function VCardPage(): React.JSX.Element {
                   Email
                 </div>
                 <a href="mailto:aamir@supremetrading.in" style={{
-                  fontSize: "12px",
+                  fontSize: "10px",
                   color: "#333",
                   textDecoration: "none",
                   fontWeight: "500",
-                  wordBreak: "break-word",
-                  overflowWrap: "break-word",
-                  hyphens: "auto",
-                  lineHeight: "1.3",
-                  display: "block"
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  display: "block",
+                  maxWidth: "100%"
                 }}>
                   aamir@supremetrading.in
                 </a>
