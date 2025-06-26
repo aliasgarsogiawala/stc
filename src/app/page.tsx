@@ -111,11 +111,12 @@ export default function VCardPage(): React.JSX.Element {
             />
             <div style={{ flex: 1 }}>
               <div style={{
-                fontSize: "24px",
+                fontSize: "20px",
                 fontWeight: "bold",
                 color: "#333",
                 marginBottom: "8px",
-                lineHeight: "1.2"
+                lineHeight: "1.2",
+                whiteSpace: "nowrap"
               }}>
                 Aamir Sogiawala
               </div>
@@ -125,7 +126,7 @@ export default function VCardPage(): React.JSX.Element {
                 lineHeight: "1.4",
                 fontWeight: "400"
               }}>
-                ISO 9001:2015 Quality Management System
+                Raw Herbs | Food Herbs | Honey | Chemicals
               </div>
             </div>
           </div>
