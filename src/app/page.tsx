@@ -442,6 +442,23 @@ END:VCARD`;
 
         </div>
       </div>
+
+      {/* Footer - Designed by Techtics */}
+      <div style={{
+        backgroundColor: "#364B8C",
+        background: "#364B8C",
+        padding: "20px",
+        textAlign: "center",
+        marginTop: "40px"
+      }}>
+        <div style={{
+          fontSize: "16px",
+          color: "white",
+          fontWeight: "500"
+        }}>
+          Designed by Techtics
+        </div>
+      </div>
     </div>
   );
 }
