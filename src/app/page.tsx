@@ -124,9 +124,9 @@ export default function VCardPage(): React.JSX.Element {
                 fontSize: "14px",
                 color: "#666",
                 lineHeight: "1.4",
-                fontWeight: "400"
+                fontWeight: "800"
               }}>
-                Raw Herbs | Food Herbs | Honey | Chemicals
+                <b>Raw Herbs | Food Herbs | Honey | Chemicals</b>
               </div>
             </div>
           </div>
@@ -198,13 +198,13 @@ export default function VCardPage(): React.JSX.Element {
                   </svg>
                   Email
                 </div>
-                <a href="mailto:info@supremetrading.in" style={{
+                <a href="mailto:aamir@supremetrading.in" style={{
                   fontSize: "12px",
                   color: "#333",
                   textDecoration: "none",
                   fontWeight: "500"
                 }}>
-                  info@supremetrading.in
+                  aamir@supremetrading.in
                 </a>
               </div>
             </div>
@@ -228,7 +228,7 @@ export default function VCardPage(): React.JSX.Element {
               width: "60px",
               height: "60px",
               borderRadius: "50%",
-              backgroundColor: "#3b82f6",
+              backgroundColor: "#364B8C",
               color: "white",
               textDecoration: "none",
               transition: "transform 0.2s",
@@ -253,7 +253,7 @@ export default function VCardPage(): React.JSX.Element {
               width: "60px",
               height: "60px",
               borderRadius: "50%",
-              backgroundColor: "#3b82f6",
+              backgroundColor: "#364B8C",
               color: "white",
               textDecoration: "none",
               transition: "transform 0.2s",
@@ -278,7 +278,7 @@ export default function VCardPage(): React.JSX.Element {
               width: "60px",
               height: "60px",
               borderRadius: "50%",
-              backgroundColor: "#3b82f6",
+              backgroundColor: "#364B8C",
               color: "white",
               textDecoration: "none",
               transition: "transform 0.2s",
@@ -303,7 +303,7 @@ export default function VCardPage(): React.JSX.Element {
               width: "60px",
               height: "60px",
               borderRadius: "50%",
-              backgroundColor: "#3b82f6",
+              backgroundColor: "#364B8C",
               color: "white",
               textDecoration: "none",
               transition: "transform 0.2s",
@@ -320,24 +320,15 @@ export default function VCardPage(): React.JSX.Element {
               </svg>
             </a>
             
-            {/* Share */}
-            <a href="#" onClick={(e) => {
-              e.preventDefault();
-              if (navigator.share) {
-                navigator.share({
-                  title: 'Aamir Sogiawala - STC Supreme Trading Corp',
-                  text: 'Contact details for Aamir Sogiawala',
-                  url: window.location.href
-                });
-              }
-            }} style={{
+            {/* Website */}
+            <a href="https://supremetrading.in" target="_blank" rel="noopener noreferrer" style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               width: "60px",
               height: "60px",
               borderRadius: "50%",
-              backgroundColor: "#3b82f6",
+              backgroundColor: "#364B8C",
               color: "white",
               textDecoration: "none",
               transition: "transform 0.2s",
@@ -350,9 +341,71 @@ export default function VCardPage(): React.JSX.Element {
               (e.target as HTMLElement).style.transform = "scale(1)";
             }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
               </svg>
             </a>
+          </div>
+
+          {/* Save Contact Section */}
+          <div style={{
+            backgroundColor: "#364B8C",
+            padding: "16px 40px",
+            textAlign: "center"
+          }}>
+            <button
+              onClick={() => {
+                // Create vCard data
+                const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Aamir Sogiawala
+ORG:STC Supreme Trading Corp
+TITLE:Raw Herbs | Food Herbs | Honey | Chemicals
+TEL;TYPE=CELL:+919920755226
+EMAIL:info@supremetrading.in
+ADR;TYPE=WORK:;;Shop No 4, Bharmal House, Behind Dargah, Bhandari Street;Mumbai;Maharashtra;400003;India
+URL:https://supremetrading.in
+END:VCARD`;
+
+                // Create blob and download
+                const blob = new Blob([vCardData], { type: 'text/vcard' });
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'Aamir-Sogiawala-STC.vcf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+              }}
+              style={{
+                width: "100%",
+                backgroundColor: "transparent",
+                border: "none",
+                color: "white",
+                padding: "0",
+                borderRadius: "0",
+                fontSize: "16px",
+                fontWeight: "600",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "12px",
+                transition: "all 0.2s ease",
+                textDecoration: "underline"
+              }}
+              onMouseEnter={(e) => {
+                (e.target as HTMLElement).style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+              }}
+              onMouseLeave={(e) => {
+                (e.target as HTMLElement).style.backgroundColor = "transparent";
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+              </svg>
+              Save Contact on my Phone
+            </button>
           </div>
 
           {/* Address Section */}
