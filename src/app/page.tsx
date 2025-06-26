@@ -126,17 +126,18 @@ export default function VCardPage(): React.JSX.Element {
 
           <div style={{
             backgroundColor: "#fff",
-            padding: "30px 40px",
+            padding: "30px 20px",
             borderBottom: "1px solid #e0e0e0"
           }}>
             <div style={{
               display: "grid",
               gridTemplateColumns: "1fr auto 1fr",
               alignItems: "center",
-              gap: "40px"
+              gap: "20px"
             }}>
               <div style={{
-                textAlign: "center"
+                textAlign: "center",
+                minWidth: 0
               }}>
                 <div style={{
                   fontSize: "16px",
@@ -170,7 +171,9 @@ export default function VCardPage(): React.JSX.Element {
               }}></div>
 
               <div style={{
-                textAlign: "center"
+                textAlign: "center",
+                minWidth: 0,
+                overflow: "hidden"
               }}>
                 <div style={{
                   fontSize: "16px",
@@ -191,7 +194,12 @@ export default function VCardPage(): React.JSX.Element {
                   fontSize: "12px",
                   color: "#333",
                   textDecoration: "none",
-                  fontWeight: "500"
+                  fontWeight: "500",
+                  wordBreak: "break-word",
+                  overflowWrap: "break-word",
+                  hyphens: "auto",
+                  lineHeight: "1.3",
+                  display: "block"
                 }}>
                   aamir@supremetrading.in
                 </a>
