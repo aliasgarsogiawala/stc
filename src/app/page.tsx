@@ -417,6 +417,31 @@ END:VCARD`;
             }}>
               📍 Our Locations
             </div>
+            
+            {/* QR Code */}
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: "30px"
+            }}>
+              <Image
+                src="/qr.png"
+                alt="QR Code"
+                width={150}
+                height={150}
+                style={{
+                  objectFit: "contain",
+                  border: "2px solid #e0e0e0",
+                  borderRadius: "8px",
+                  backgroundColor: "white",
+                  padding: "10px"
+                }}
+                onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
+              />
+            </div>
+
             <div style={{ fontSize: "15px", color: "#666", lineHeight: "1.6" }}>
               <div style={{ marginBottom: "15px" }}>
                 <strong>Mumbai Office:</strong><br/>
