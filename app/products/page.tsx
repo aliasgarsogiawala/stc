@@ -6,6 +6,13 @@ import SiteHeader from "../site-header";
 import { getCatalog } from "./catalog-data";
 import ProductCatalog from "./product-catalog";
 
+// Categories with their own tailored landing page.
+const dedicatedPages: Record<string, string> = {
+  honey: "/products/honey",
+  oils: "/products/oils",
+  "herbs-spices": "/products/herbs",
+};
+
 const categoryImages: Record<string, string> = {
   "herbs-spices": "/supreme/source/herbs_and_spices.png",
   oils: "/supreme/source/essential_oil.png",
@@ -65,22 +72,26 @@ export default async function ProductsPage() {
           <h2>Product categories</h2>
         </div>
         <div className="category-cards gs-stagger">
-          {categories.map((category, index) => (
-            <a className="category-card" href={`#catalog`} key={category.id}>
-              <div className="category-card-top">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{category.products.length}+</strong>
-              </div>
-              <Image
-                src={categoryImages[category.id]}
-                alt={`${category.name} category`}
-                width={290}
-                height={239}
-              />
-              <h3>{category.name}</h3>
-              <p>{category.description}</p>
-            </a>
-          ))}
+          {categories.map((category, index) => {
+            const href = dedicatedPages[category.id] ?? "#catalog";
+            const CardTag = dedicatedPages[category.id] ? Link : "a";
+            return (
+              <CardTag className="category-card" href={href} key={category.id}>
+                <div className="category-card-top">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{category.products.length}+</strong>
+                </div>
+                <Image
+                  src={categoryImages[category.id]}
+                  alt={`${category.name} category`}
+                  width={290}
+                  height={239}
+                />
+                <h3>{category.name}</h3>
+                <p>{category.description}</p>
+              </CardTag>
+            );
+          })}
         </div>
       </section>
 

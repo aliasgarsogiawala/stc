@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { CatalogCategory } from "./catalog-data";
+import { ArrowUpRight, ArrowRight, ArrowLeft } from "../icons";
 
 type ProductCatalogProps = {
   categories: CatalogCategory[];
@@ -146,7 +147,7 @@ export default function ProductCatalog({ categories }: ProductCatalogProps) {
                   href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}
                   aria-label={`Enquire about ${product.name}`}
                 >
-                  Enquire <span aria-hidden="true">↗</span>
+                  Enquire <ArrowUpRight />
                 </a>
               </article>
             ))}
@@ -154,12 +155,12 @@ export default function ProductCatalog({ categories }: ProductCatalogProps) {
 
           {pageCount > 1 && (
             <nav className="catalog-pagination" aria-label="Catalogue pages">
-              <button type="button" onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>
-                ← Previous
+              <button className="pager-btn" type="button" onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>
+                <ArrowLeft /> Previous
               </button>
               <p>Page <strong>{currentPage}</strong> of {pageCount}</p>
-              <button type="button" onClick={() => changePage(currentPage + 1)} disabled={currentPage === pageCount}>
-                Next →
+              <button className="pager-btn" type="button" onClick={() => changePage(currentPage + 1)} disabled={currentPage === pageCount}>
+                Next <ArrowRight />
               </button>
             </nav>
           )}

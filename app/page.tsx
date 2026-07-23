@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
+import Splash from "./splash";
+import HeroCarousel from "./hero-carousel";
+import { ArrowUpRight } from "./icons";
 
 const categories = [
   {
@@ -53,50 +56,10 @@ const process = [
 export default function Home() {
   return (
     <main id="top">
+      <Splash />
       <SiteHeader />
 
-      <section className="hero home-hero">
-        <div className="hero-media-shell" data-hero-media>
-          <Image
-            className="hero-image"
-            src="/supreme/neutral-materials-hero.png"
-            alt="Industrial liquids, powders, resins and raw material samples in a neutral sourcing studio"
-            fill
-            priority
-            sizes="100vw"
-          />
-        </div>
-        <div className="hero-shade" />
-        <Image className="hero-static-branch hero-static-branch-left" src="/supreme/source/ban-leafleft.png" alt="" width={249} height={307} />
-        <Image className="hero-static-branch hero-static-branch-right" src="/supreme/source/ban-leafright.png" alt="" width={196} height={306} />
-
-        <div className="hero-copy" data-hero-copy>
-          <p className="eyebrow"><span /> Established in Mumbai in 2002</p>
-          <h1>Industrial Chemicals & Raw Materials</h1>
-          <p className="hero-intro">
-            Industrial chemicals, resins, oils, food ingredients and speciality raw materials
-            sourced for manufacturers, wholesalers and export buyers who need consistency at scale.
-          </p>
-          <div className="hero-actions">
-            <Link className="button" href="/products">View products</Link>
-            <Link className="text-link" href="/contact#enquiry">Send enquiry</Link>
-          </div>
-        </div>
-
-        <div className="hero-proof" aria-label="Company highlights" data-hero-meta>
-          <div><strong>2002</strong><span>Established in Mumbai</span></div>
-          <div><strong>800+</strong><span>Materials sourced</span></div>
-          <div><strong>Bulk</strong><span>India and export supply</span></div>
-        </div>
-
-        <div className="hero-material-index" aria-hidden="true" data-hero-meta>
-          <span>Material index</span>
-          <div><i /> Industrial</div>
-          <div><i /> Resins</div>
-          <div><i /> Oils</div>
-          <div><i /> Food</div>
-        </div>
-      </section>
+      <HeroCarousel />
 
       <section className="ticker" aria-label="Product specialities">
         <div>
@@ -112,7 +75,7 @@ export default function Home() {
       <section className="section range gs-reveal" id="range">
         <div className="section-kicker">What we source</div>
         <div className="section-heading split-heading">
-          <h2>Four material categories</h2>
+          <h2 data-reveal>Four material categories</h2>
           <p>
             Supreme works like a sourcing desk: understand the requirement, shortlist
             practical options, check material fit, then move the consignment cleanly.
@@ -135,8 +98,61 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bento">
+        <Image className="bento-float bento-float-1" data-float src="/supreme/source/bg-leaf1.png" alt="" width={300} height={300} />
+        <Image className="bento-float bento-float-2" data-float src="/supreme/source/bg-leaf2.png" alt="" width={210} height={210} />
+
+        <div className="bento-head">
+          <div className="section-kicker">Why Supreme</div>
+          <h2 data-reveal>A sourcing desk built for scale</h2>
+          <p>Two decades of material knowledge, a wide supplier network and a team that treats every consignment like a specification.</p>
+        </div>
+
+        <div className="bento-grid">
+          <article className="bento-tile bento-hero bento-feature">
+            <span className="bento-tag">Flagship capability</span>
+            <div>
+              <h3>Grade-led sourcing across five material families</h3>
+              <p>From industrial chemicals and coating resins to essential oils, food ingredients and speciality raw materials — matched to your grade, quantity and destination.</p>
+            </div>
+            <Link className="text-link link-arrow" href="/products">Browse the catalogue <ArrowUpRight /></Link>
+          </article>
+
+          <article className="bento-tile bento-stat">
+            <span className="bento-tag">Established</span>
+            <strong>2002</strong>
+            <span>Trading from Mumbai</span>
+          </article>
+
+          <article className="bento-tile bento-stat bento-honey">
+            <span className="bento-tag">Materials</span>
+            <strong data-count="800" data-suffix="+">0</strong>
+            <span>Grades sourced to spec</span>
+          </article>
+
+          <article className="bento-tile bento-wide">
+            <Image className="bento-art" src="/supreme/source/honey_img.png" alt="" width={200} height={200} />
+            <span className="bento-tag">Food & natural</span>
+            <h3>Honey, herbs & food ingredients</h3>
+            <p>Powders, spices, dehydrated ingredients and natural sweeteners for food brands and formulators.</p>
+          </article>
+
+          <article className="bento-tile">
+            <Image className="bento-art" src="/supreme/source/essential_oil.png" alt="" width={160} height={160} />
+            <span className="bento-tag">Oils</span>
+            <h3>Essential & carrier oils</h3>
+          </article>
+
+          <article className="bento-tile bento-stat">
+            <span className="bento-tag">Reach</span>
+            <strong>India + Export</strong>
+            <span>Bulk supply, cleanly handled</span>
+          </article>
+        </div>
+      </section>
+
       <section className="material-study gs-reveal">
-        <div className="study-source-image image-drift">
+        <div className="study-source-image image-drift gs-clip">
           <Image
             src="/supreme/source/nb.png"
             alt="Ingredient and liquid material prepared for supply"
@@ -147,7 +163,7 @@ export default function Home() {
         </div>
         <div className="study-copy">
           <p className="eyebrow"><span /> Built for trade</p>
-          <h2>Sourcing and bulk supply</h2>
+          <h2 data-reveal>Sourcing and bulk supply</h2>
           <p>
             Every enquiry is reviewed by material, grade, origin, handling,
             quantity and delivery timing.
@@ -163,7 +179,7 @@ export default function Home() {
       <section className="section products gs-reveal" id="products">
         <div className="section-kicker">Catalogue</div>
         <div className="section-heading product-heading">
-          <h2>Product categories</h2>
+          <h2 data-reveal>Product categories</h2>
           <Link className="text-link" href="/products">Explore full catalogue</Link>
         </div>
 
@@ -176,7 +192,7 @@ export default function Home() {
               </div>
               <h3>{group.name}</h3>
               <p>{group.note}</p>
-              <Link href="/products" aria-label={`Browse ${group.name}`}>Browse range <b aria-hidden="true">↗</b></Link>
+              <Link className="link-arrow" href="/products" aria-label={`Browse ${group.name}`}>Browse range <ArrowUpRight /></Link>
             </article>
           ))}
         </div>
@@ -185,7 +201,7 @@ export default function Home() {
       <section className="standard gs-reveal" id="standard">
         <div className="standard-copy">
           <p className="eyebrow"><span /> Order handling</p>
-          <h2>Supply process</h2>
+          <h2 data-reveal>Supply process</h2>
           <p>
             Buyers do not need decorative promises. They need responsive sourcing,
             consistent material, sensible packing and a team that understands bulk trade.
@@ -203,10 +219,10 @@ export default function Home() {
 
       <section className="contact gs-reveal" id="contact">
         <p className="eyebrow"><span /> Required details</p>
-        <h2>Product enquiry</h2>
+        <h2 data-reveal>Product enquiry</h2>
         <p>Send the material name, grade, quantity, packing requirement and delivery location.</p>
         <div className="contact-actions">
-          <Link className="button button-light" href="/contact#enquiry">Contact details</Link>
+          <Link className="button button-honey" href="/contact#enquiry">Contact details</Link>
           <a className="phone-link" href="tel:+912223455226">+91 22 2345 5226</a>
         </div>
       </section>

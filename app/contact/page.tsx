@@ -56,8 +56,9 @@ export default function ContactPage() {
         <div className="contact-page-hero-shade" />
         <div className="contact-page-hero-copy" data-hero-copy>
           <div className="catalog-breadcrumb"><Link href="/">Home</Link><span>/</span><span>Contact</span></div>
-          <h1>Contact</h1>
-          <p>Head office in Mumbai with branch offices in Indore and Haridwar.</p>
+          <p className="eyebrow"><span /> Talk to the sourcing desk</p>
+          <h1>Let&apos;s talk material</h1>
+          <p className="contact-page-hero-lead">Head office in Mumbai, with branch offices in Indore and Haridwar. Tell us what you need and we&apos;ll get the specifics back to you quickly.</p>
         </div>
       </section>
 
