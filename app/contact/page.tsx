@@ -4,6 +4,9 @@ import Link from "next/link";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
 import ContactForm from "./contact-form";
+import { WhatsApp } from "../icons";
+
+const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like to make a product enquiry.")}`;
 
 export const metadata: Metadata = {
   title: "Contact | Supreme Trading Corp",
@@ -95,6 +98,14 @@ export default function ContactPage() {
             <div>
               <span>Email</span>
               <a href="mailto:info@supremetrading.in">info@supremetrading.in</a>
+            </div>
+          </article>
+          <article className="contact-wa-card">
+            <span className="contact-wa-icon"><WhatsApp /></span>
+            <div>
+              <span>WhatsApp</span>
+              <a href={WA_HREF} target="_blank" rel="noopener noreferrer">Chat with the sourcing desk</a>
+              <p>+91 99207 55226</p>
             </div>
           </article>
         </div>

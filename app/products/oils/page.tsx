@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
+import { WhatsApp } from "../../icons";
+
+const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like an oils enquiry. Please share the range, grade and packing.")}`;
 
 export const metadata: Metadata = {
   title: "Essential & Medical Oils | Supreme Trading Corp",
@@ -117,7 +120,7 @@ export default function OilsPage() {
           <p className="eyebrow prod-eyebrow"><span /> Bulk oil enquiry</p>
           <h2 data-reveal>Tell us the oil, grade and quantity</h2>
           <p>We&apos;ll confirm availability, packing options and lead time.</p>
-          <Link className="button button-accent" href="/contact#enquiry">Send oil enquiry</Link>
+          <a className="button button-accent button-wa" href={WA_HREF} target="_blank" rel="noopener noreferrer"><WhatsApp /> Enquire on WhatsApp</a>
         </div>
       </section>
 

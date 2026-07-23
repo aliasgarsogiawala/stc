@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, ArrowLeft } from "./icons";
+import { ArrowRight, ArrowLeft } from "./icons";
 
 type Slide = {
   key: string;
@@ -106,7 +106,7 @@ export default function HeroCarousel() {
           <p className="hc-lead">{current.lead}</p>
           <div className="hc-actions">
             <Link className="button button-honey" href={current.cta.href}>{current.cta.label}</Link>
-            <Link className="text-link link-arrow" href="/contact#enquiry">Send enquiry <ArrowUpRight /></Link>
+            <Link className="text-link" href="/contact#enquiry">Send enquiry</Link>
           </div>
         </div>
 

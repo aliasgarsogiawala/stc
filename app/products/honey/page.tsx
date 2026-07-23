@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import HoneyHero from "./honey-hero";
+import { WhatsApp } from "../../icons";
+
+const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like a honey enquiry. Please share variants, grade and packing.")}`;
 
 export const metadata: Metadata = {
   title: "Honey | Supreme Trading Corp",
@@ -115,7 +117,7 @@ export default function HoneyPage() {
           <p className="eyebrow honey-eyebrow"><span /> Bulk honey enquiry</p>
           <h2 data-reveal>Tell us the variant, grade and quantity</h2>
           <p>We&apos;ll confirm availability, packing options and lead time.</p>
-          <Link className="button button-honey" href="/contact#enquiry">Send honey enquiry</Link>
+          <a className="button button-honey button-wa" href={WA_HREF} target="_blank" rel="noopener noreferrer"><WhatsApp /> Enquire on WhatsApp</a>
         </div>
       </section>
 

@@ -4,7 +4,6 @@ import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 import Splash from "./splash";
 import HeroCarousel from "./hero-carousel";
-import { ArrowUpRight } from "./icons";
 
 const categories = [
   {
@@ -115,7 +114,7 @@ export default function Home() {
               <h3>Grade-led sourcing across five material families</h3>
               <p>From industrial chemicals and coating resins to essential oils, food ingredients and speciality raw materials — matched to your grade, quantity and destination.</p>
             </div>
-            <Link className="text-link link-arrow" href="/products">Browse the catalogue <ArrowUpRight /></Link>
+            <Link className="text-link" href="/products">Browse the catalogue</Link>
           </article>
 
           <article className="bento-tile bento-stat">
@@ -192,7 +191,7 @@ export default function Home() {
               </div>
               <h3>{group.name}</h3>
               <p>{group.note}</p>
-              <Link className="link-arrow" href="/products" aria-label={`Browse ${group.name}`}>Browse range <ArrowUpRight /></Link>
+              <Link href="/products" aria-label={`Browse ${group.name}`}>Browse range</Link>
             </article>
           ))}
         </div>

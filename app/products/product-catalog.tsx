@@ -3,7 +3,13 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { CatalogCategory } from "./catalog-data";
-import { ArrowUpRight, ArrowRight, ArrowLeft } from "../icons";
+import { WhatsApp } from "../icons";
+
+const WA_NUMBER = "919920755226";
+function waHref(product: string) {
+  const text = `Hi Supreme Trading, I'd like to enquire about ${product}. Please share grade, packing and availability.`;
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+}
 
 type ProductCatalogProps = {
   categories: CatalogCategory[];
@@ -28,9 +34,18 @@ const productImages: Record<string, string> = {
   "jeera sufaid": "/supreme/source/6.png",
 };
 
-function imageForProduct(name: string, category: string) {
-  return productImages[name.trim().toLocaleLowerCase()] ?? categoryImages[category];
+function imageForProduct(name: string) {
+  return productImages[name.trim().toLocaleLowerCase()];
 }
+
+// Short category codes used on the neutral tiles.
+const categoryCode: Record<string, string> = {
+  "herbs-spices": "HB",
+  oils: "OL",
+  honey: "HY",
+  "food-herbs": "FD",
+  industrial: "IN",
+};
 
 export default function ProductCatalog({ categories }: ProductCatalogProps) {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -124,43 +139,51 @@ export default function ProductCatalog({ categories }: ProductCatalogProps) {
       {visibleProducts.length ? (
         <>
           <div className="catalog-grid gs-stagger">
-            {visibleProducts.map((product, index) => (
-              <article className="catalog-card" key={product.id}>
-                <div className="catalog-card-top">
-                  <span>{String(pageStart + index + 1).padStart(3, "0")}</span>
-                  <span>{product.categoryName}</span>
-                </div>
-                <div className="catalog-card-image">
-                  <Image
-                    src={imageForProduct(product.name, product.category)}
-                    alt={product.name}
-                    width={360}
-                    height={247}
-                  />
-                </div>
-                <div className="catalog-card-copy">
-                  <h2>{product.name}</h2>
-                  {product.detail && <p>{product.detail}</p>}
-                  {product.subgroup && <small>{product.subgroup}</small>}
-                </div>
-                <a
-                  href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}
-                  aria-label={`Enquire about ${product.name}`}
-                >
-                  Enquire <ArrowUpRight />
-                </a>
-              </article>
-            ))}
+            {visibleProducts.map((product, index) => {
+              const image = imageForProduct(product.name);
+              return (
+                <article className="catalog-card" key={product.id}>
+                  <div className="catalog-card-top">
+                    <span>{String(pageStart + index + 1).padStart(3, "0")}</span>
+                    <span>{product.categoryName}</span>
+                  </div>
+                  {image ? (
+                    <div className="catalog-card-image">
+                      <Image src={image} alt={product.name} width={360} height={247} />
+                    </div>
+                  ) : (
+                    <div className="catalog-card-neutral" aria-hidden="true">
+                      <span className="ccn-mono">{product.name.trim().charAt(0)}</span>
+                      <span className="ccn-code">{categoryCode[product.category] ?? "ST"}</span>
+                    </div>
+                  )}
+                  <div className="catalog-card-copy">
+                    <h2>{product.name}</h2>
+                    {product.detail && <p>{product.detail}</p>}
+                    {product.subgroup && <small>{product.subgroup}</small>}
+                  </div>
+                  <a
+                    className="catalog-card-wa"
+                    href={waHref(product.name)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Enquire about ${product.name} on WhatsApp`}
+                  >
+                    <WhatsApp /> Enquire on WhatsApp
+                  </a>
+                </article>
+              );
+            })}
           </div>
 
           {pageCount > 1 && (
             <nav className="catalog-pagination" aria-label="Catalogue pages">
               <button className="pager-btn" type="button" onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>
-                <ArrowLeft /> Previous
+                Previous
               </button>
               <p>Page <strong>{currentPage}</strong> of {pageCount}</p>
               <button className="pager-btn" type="button" onClick={() => changePage(currentPage + 1)} disabled={currentPage === pageCount}>
-                Next <ArrowRight />
+                Next
               </button>
             </nav>
           )}

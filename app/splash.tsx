@@ -9,10 +9,9 @@ export default function Splash() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // Once per browser session, and never for reduced-motion users.
-    const seen = sessionStorage.getItem("stc_splash");
+    // Show on every reload for now (never for reduced-motion users).
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (seen || reduce) return;
+    if (reduce) return;
     setShow(true);
   }, []);
 
@@ -24,16 +23,17 @@ export default function Splash() {
     document.body.style.overflow = "hidden";
     const tl = gsap.timeline({
       onComplete: () => {
-        sessionStorage.setItem("stc_splash", "1");
         document.body.style.overflow = "";
         setShow(false);
       },
     });
 
-    tl.from(".splash-welcome", { y: 26, opacity: 0, duration: 0.8, ease: "power3.out" })
-      .from(".splash-logo", { y: 22, opacity: 0, scale: 0.94, duration: 0.95, ease: "power3.out" }, "-=0.42")
-      .from(".splash-line", { scaleX: 0, duration: 0.85, ease: "power2.out" }, "-=0.5")
-      .to({}, { duration: 0.75 })
+    tl.from(".splash-ring", { opacity: 0, scale: 0.92, duration: 1.1, ease: "power2.out", stagger: 0.12 }, 0)
+      .from(".splash-welcome", { y: 22, opacity: 0, duration: 0.8, ease: "power3.out" }, 0.15)
+      .from(".splash-logo", { y: 20, opacity: 0, scale: 0.96, duration: 0.95, ease: "power3.out" }, "-=0.42")
+      .from(".splash-line", { scaleX: 0, duration: 0.8, ease: "power2.out" }, "-=0.5")
+      .from(".splash-tagline", { y: 12, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.45")
+      .to({}, { duration: 0.8 })
       .to(".splash-inner", { y: -18, opacity: 0, duration: 0.55, ease: "power2.in" })
       .to(el, { yPercent: -100, duration: 0.9, ease: "power4.inOut" }, "-=0.15");
 
@@ -47,17 +47,22 @@ export default function Splash() {
 
   return (
     <div className="splash" ref={ref} aria-hidden="true">
+      <span className="splash-ring splash-ring-1" />
+      <span className="splash-ring splash-ring-2" />
       <div className="splash-inner">
         <p className="splash-welcome">Welcome to</p>
         <Image
           className="splash-logo"
-          src="/supreme/supreme_logo.png"
+          src="/supreme/supreme_logo@3x.png"
           alt="Supreme Trading Corp"
-          width={440}
-          height={110}
+          width={1071}
+          height={270}
           priority
+          quality={100}
+          unoptimized
         />
         <span className="splash-line" />
+        <p className="splash-tagline">Industrial &amp; Specialty Raw Materials · Since 2002</p>
       </div>
     </div>
   );

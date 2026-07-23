@@ -1,7 +1,6 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { ArrowUpRight } from "../icons";
 
 export default function ContactForm() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -70,7 +69,7 @@ export default function ContactForm() {
         </label>
       </div>
 
-      <button className="button button-honey link-arrow" type="submit">Prepare email <ArrowUpRight /></button>
+      <button className="button button-honey" type="submit">Prepare email</button>
     </form>
   );
 }

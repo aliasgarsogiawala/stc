@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "./icons";
 
 type SiteHeaderProps = {
   theme?: "light" | "solid";
@@ -26,8 +25,8 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
         <Link href="/contact">Contact</Link>
       </nav>
 
-      <Link className="button button-small button-honey link-arrow" href="/contact#enquiry">
-        Request quote <ArrowUpRight />
+      <Link className="button button-small button-honey" href="/contact#enquiry">
+        Request quote
       </Link>
 
       <details className="mobile-menu">
