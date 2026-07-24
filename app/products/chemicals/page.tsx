@@ -44,8 +44,8 @@ export default async function ChemicalsPage() {
     <main className="bg-[#f4f6f4]">
       <SiteHeader theme="solid" />
 
-      <section className="min-h-[760px] pt-[132px] pb-[68px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[minmax(0,0.9fr)_minmax(420px,0.8fr)] max-[920px]:grid-cols-1 gap-[clamp(44px,7vw,110px)] items-end bg-[#102f37] text-white relative overflow-hidden isolate before:content-[''] before:absolute before:inset-0 before:-z-[1] before:opacity-30 before:[background-image:linear-gradient(rgba(151,205,214,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(151,205,214,0.12)_1px,transparent_1px)] before:[background-size:72px_72px]">
-        <div data-hero-copy className="relative z-[2]">
+      <section data-product-hero className="min-h-[760px] pt-[132px] pb-[68px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[minmax(0,0.9fr)_minmax(420px,0.8fr)] max-[920px]:grid-cols-1 gap-[clamp(44px,7vw,110px)] items-end bg-[#102f37] text-white relative overflow-hidden isolate before:content-[''] before:absolute before:inset-0 before:-z-[1] before:opacity-30 before:[background-image:linear-gradient(rgba(151,205,214,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(151,205,214,0.12)_1px,transparent_1px)] before:[background-size:72px_72px]">
+        <div data-hero-copy data-product-copy className="relative z-[2]">
           <div className="catalog-breadcrumb mb-[74px]"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Chemicals</span></div>
           <p className="eyebrow text-[#a8d6dd]"><span /> Industrial materials</p>
           <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Industrial chemicals</h1>
@@ -56,7 +56,7 @@ export default async function ChemicalsPage() {
           </div>
         </div>
 
-        <div data-hero-media className="min-h-[500px] max-[920px]:min-h-[380px] p-7 max-[620px]:p-4 border border-[#b8dbe0]/25 rounded-[18px] bg-[#e8f0ee] relative overflow-hidden shadow-[0_36px_100px_rgba(0,0,0,0.24)]">
+        <div data-hero-media data-product-media className="min-h-[500px] max-[920px]:min-h-[380px] p-7 max-[620px]:p-4 border border-[#b8dbe0]/25 rounded-[18px] bg-[#e8f0ee] relative overflow-hidden">
           <div className="absolute inset-0 opacity-50 [background:radial-gradient(circle_at_70%_24%,rgba(89,158,171,0.32),transparent_38%),linear-gradient(145deg,#f1f5f4,#cbdcda)]" />
           <Image className="relative z-[2] w-full h-full object-contain mix-blend-multiply" src="/supreme/source/industrial_chemicals.png" alt="Laboratory glassware for industrial chemical materials" width={760} height={620} priority />
           <div className="absolute left-7 right-7 bottom-7 z-[3] py-4 border-t border-[#173e47]/25 flex justify-between gap-5 text-[#173e47] text-[9px] font-black uppercase">
@@ -72,7 +72,7 @@ export default async function ChemicalsPage() {
         </div>
         <div className="mt-14 border border-[#173e47]/18 grid grid-cols-3 max-[900px]:grid-cols-2 max-[580px]:grid-cols-1 gap-px bg-[#173e47]/18 gs-stagger">
           {applications.map((application) => (
-            <article className="min-h-[230px] p-7 flex flex-col bg-[#f7faf9] transition-colors hover:bg-white" key={application.number}>
+            <article className="tilt-card min-h-[230px] p-7 flex flex-col bg-[#f7faf9] transition-colors hover:bg-white" key={application.number}>
               <span className="text-[#4d8792] text-[10px] font-black">{application.number}</span>
               <div className="mt-auto">
                 <h3 className="mb-2 font-heading text-[28px] leading-none text-[#102f37]">{application.name}</h3>

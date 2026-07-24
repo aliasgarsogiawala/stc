@@ -44,8 +44,8 @@ export default async function FoodIngredientsPage() {
     <main className="bg-[#fffaf3]">
       <SiteHeader theme="solid" />
 
-      <section className="min-h-[760px] pt-[132px] pb-[68px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[minmax(0,0.92fr)_minmax(420px,0.78fr)] max-[920px]:grid-cols-1 gap-[clamp(44px,7vw,110px)] items-end bg-[#713b27] text-white relative overflow-hidden isolate before:content-[''] before:absolute before:inset-0 before:-z-[1] before:opacity-40 before:[background:radial-gradient(circle_at_78%_18%,rgba(237,180,92,0.38),transparent_30%),linear-gradient(145deg,#713b27,#9b5432)]">
-        <div data-hero-copy className="relative z-[2]">
+      <section data-product-hero className="min-h-[760px] pt-[132px] pb-[68px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[minmax(0,0.92fr)_minmax(420px,0.78fr)] max-[920px]:grid-cols-1 gap-[clamp(44px,7vw,110px)] items-end bg-[#713b27] text-white relative overflow-hidden isolate before:content-[''] before:absolute before:inset-0 before:-z-[1] before:opacity-40 before:[background:radial-gradient(circle_at_78%_18%,rgba(237,180,92,0.38),transparent_30%),linear-gradient(145deg,#713b27,#9b5432)]">
+        <div data-hero-copy data-product-copy className="relative z-[2]">
           <div className="catalog-breadcrumb mb-[74px]"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Food ingredients</span></div>
           <p className="eyebrow text-[#f0c584]"><span /> Food materials</p>
           <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Food herbs & powders</h1>
@@ -56,7 +56,7 @@ export default async function FoodIngredientsPage() {
           </div>
         </div>
 
-        <div data-hero-media className="min-h-[500px] max-[920px]:min-h-[380px] p-7 max-[620px]:p-4 border border-[#f3c77e]/30 rounded-[18px] bg-[#f7e9d5] relative overflow-hidden shadow-[0_36px_100px_rgba(52,21,8,0.28)]">
+        <div data-hero-media data-product-media className="min-h-[500px] max-[920px]:min-h-[380px] p-7 max-[620px]:p-4 border border-[#f3c77e]/30 rounded-[18px] bg-[#f7e9d5] relative overflow-hidden">
           <div className="absolute inset-0 opacity-70 [background:radial-gradient(circle_at_72%_24%,rgba(215,132,62,0.38),transparent_38%),linear-gradient(145deg,#fff7ea,#ecd2ae)]" />
           <Image className="relative z-[2] w-full h-full object-contain mix-blend-multiply" src="/supreme/source/food_herbs_final.png" alt="Dried food ingredients prepared for bulk supply" width={760} height={620} priority />
           <div className="absolute left-7 right-7 bottom-7 z-[3] py-4 border-t border-[#713b27]/25 flex justify-between gap-5 text-[#713b27] text-[9px] font-black uppercase">
@@ -72,7 +72,7 @@ export default async function FoodIngredientsPage() {
         </div>
         <div className="mt-14 border border-[#713b27]/18 grid grid-cols-3 max-[900px]:grid-cols-2 max-[580px]:grid-cols-1 gap-px bg-[#713b27]/18 gs-stagger">
           {families.map((family) => (
-            <article className="min-h-[230px] p-7 flex flex-col bg-[#fffaf3] transition-colors hover:bg-white" key={family.number}>
+            <article className="tilt-card min-h-[230px] p-7 flex flex-col bg-[#fffaf3] transition-colors hover:bg-white" key={family.number}>
               <span className="text-[#b5653e] text-[10px] font-black">{family.number}</span>
               <div className="mt-auto">
                 <h3 className="mb-2 font-heading text-[28px] leading-none text-[#572b1d]">{family.name}</h3>

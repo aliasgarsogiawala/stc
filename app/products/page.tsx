@@ -47,10 +47,11 @@ export default async function ProductsPage() {
     <main className="bg-paper">
       <SiteHeader theme="solid" />
 
-      <section className="min-h-[610px] pt-[142px] pb-[54px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 [background:linear-gradient(115deg,#102f4c,#1b4e78_62%,#32658e)] text-white relative isolate overflow-hidden flex flex-col justify-end before:content-[''] before:absolute before:right-[-8vw] before:top-[9%] before:w-[min(46vw,650px)] before:aspect-square before:border before:border-white/[0.13] before:rounded-full before:-z-[1] before:shadow-[0_0_0_78px_rgba(255,255,255,0.025),0_0_0_158px_rgba(255,255,255,0.018)]">
+      <section data-product-hero className="min-h-[610px] pt-[142px] pb-[54px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 [background:linear-gradient(115deg,#102f4c,#1b4e78_62%,#32658e)] text-white relative isolate overflow-hidden flex flex-col justify-end before:content-[''] before:absolute before:right-[-8vw] before:top-[9%] before:w-[min(46vw,650px)] before:aspect-square before:border before:border-white/[0.13] before:rounded-full before:-z-[1]">
         <Image
           className="absolute right-[clamp(20px,5vw,80px)] top-1/2 -translate-y-[47%] w-[min(41vw,560px)] h-auto object-contain -z-[1] opacity-[0.32] [filter:saturate(0.7)] mix-blend-screen max-[760px]:opacity-20"
           data-hero-media
+          data-product-media
           src="/supreme/source/industrial_chemicals.png"
           alt="Industrial chemical laboratory glassware"
           width={580}
@@ -78,7 +79,7 @@ export default async function ProductsPage() {
             const href = dedicatedPages[category.id] ?? "#catalog";
             const CardTag = dedicatedPages[category.id] ? Link : "a";
             return (
-              <CardTag className="min-w-0 min-h-[380px] max-[760px]:min-h-[300px] p-[19px] flex flex-col bg-white transition-[background,transform] duration-200 hover:bg-[#f3f4ed] hover:-translate-y-1" href={href} key={category.id}>
+              <CardTag className="tilt-card min-w-0 min-h-[380px] max-[760px]:min-h-[300px] p-[19px] flex flex-col bg-white transition-[background,transform,border-color] duration-200 hover:bg-[#f3f4ed]" href={href} key={category.id}>
                 <div className="flex justify-between text-clay text-[11px] font-black">
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <strong>{category.products.length}+</strong>

@@ -3815,25 +3815,23 @@ html {
 }
 
 /* ============================================================
-   Honey product page — "liquid gold"
+   Honey product page
    ============================================================ */
 .honey-page {
-  background: var(--cream);
+  background: var(--paper);
 }
 
 .honey-hero {
-  min-height: 100svh;
-  padding: 168px clamp(22px, 6vw, 92px) 90px;
+  min-height: 760px;
+  padding: 156px clamp(22px, 6vw, 92px) 84px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  color: #2a1c07;
-  background:
-    radial-gradient(circle at 78% 26%, rgba(232, 182, 77, 0.55), transparent 46%),
-    linear-gradient(160deg, #fbe9c0 0%, #f3cf82 44%, #e6ad4a 100%);
+  color: var(--white);
+  background: #102f4c;
 }
 
 .honey-hero-video {
@@ -3843,7 +3841,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.9;
+  opacity: 0.86;
 }
 
 .honey-hero-tint {
@@ -3851,8 +3849,8 @@ html {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(253, 240, 208, 0.94) 0%, rgba(253, 240, 208, 0.6) 38%, rgba(253, 240, 208, 0.05) 68%),
-    linear-gradient(0deg, rgba(255, 244, 216, 0.6), transparent 40%);
+    linear-gradient(90deg, rgba(7, 27, 47, 0.94) 0%, rgba(12, 45, 73, 0.76) 42%, rgba(12, 45, 73, 0.2) 74%),
+    linear-gradient(0deg, rgba(7, 27, 47, 0.6), transparent 46%);
   pointer-events: none;
 }
 
@@ -3890,27 +3888,27 @@ html {
 }
 
 .honey-eyebrow {
-  color: #97610f;
+  color: #f0bf59;
 }
 
 .honey-hero .catalog-breadcrumb {
   margin-bottom: 26px;
-  color: rgba(42, 28, 7, 0.6);
+  color: rgba(255, 255, 255, 0.58);
 }
 
-.honey-hero .catalog-breadcrumb a { color: #2a1c07; }
+.honey-hero .catalog-breadcrumb a { color: rgba(255, 255, 255, 0.86); }
 
 .honey-hero h1 {
   margin-bottom: 22px;
-  color: #241606;
-  font-size: clamp(58px, 7vw, 108px);
-  line-height: 0.9;
+  color: var(--white);
+  font-size: clamp(56px, 7vw, 96px);
+  line-height: 0.94;
 }
 
 .honey-hero-lead {
   max-width: 560px;
   margin: 0;
-  color: rgba(42, 28, 7, 0.78);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 17px;
   line-height: 1.7;
 }
@@ -3923,7 +3921,7 @@ html {
   flex-wrap: wrap;
 }
 
-.honey-hero-actions .text-link { color: #7c4e0a; }
+.honey-hero-actions .text-link { color: var(--white); }
 
 /* Hero floating mint leaves */
 .honey-hero-leaf {
@@ -3948,33 +3946,19 @@ html {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: var(--paper);
-}
-
-.honey-intro::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: url("/supreme/premium/kraft-linen.png") center / cover no-repeat;
-  opacity: 0.5;
-  mix-blend-mode: multiply;
+  background: var(--white);
 }
 
 .honey-intro-photo {
   margin: 0 0 16px;
-  padding: 12px;
-  border-radius: 14px;
-  background: var(--white);
-  box-shadow: 0 24px 60px rgba(150, 96, 10, 0.16);
-  transform: rotate(-1.5deg);
+  border: 1px solid var(--line);
+  background: #f1f3f4;
 }
 
 .honey-intro-photo img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
 }
 
 .honey-intro-copy h2 {
@@ -4004,21 +3988,10 @@ html {
 /* Variants */
 .honey-variants {
   padding: 116px clamp(22px, 6vw, 92px);
-  background: var(--cream);
+  background: #f1f3f4;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-}
-
-.honey-variants::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: url("/supreme/premium/honeycomb.jpg") center / cover no-repeat;
-  opacity: 0.14;
-  mix-blend-mode: multiply;
-  mask-image: radial-gradient(ellipse at 70% 30%, black, transparent 78%);
 }
 
 .honey-variants-head {
@@ -4054,47 +4027,30 @@ html {
 }
 
 .honey-variant-card {
-  min-height: 240px;
+  min-height: 220px;
   padding: 26px;
-  border: 1px solid rgba(150, 96, 10, 0.2);
-  border-radius: 16px;
+  border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  background: linear-gradient(165deg, #fffaf0, #fdeecb);
+  background: var(--white);
   position: relative;
   overflow: hidden;
   transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease, border-color 0.32s ease;
 }
 
 .honey-variant-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(150, 96, 10, 0.42);
-  box-shadow: 0 26px 56px rgba(184, 120, 20, 0.22);
+  border-color: rgba(36, 91, 138, 0.45);
+  box-shadow: 0 22px 48px rgba(18, 44, 68, 0.13);
 }
 
 .honey-variant-index {
-  color: var(--honey-deep);
+  color: #2d68a0;
   font-size: 11px;
   font-weight: 900;
 }
 
-.honey-variant-drop {
-  width: 34px;
-  height: 40px;
-  margin: 16px 0 auto;
-  background: var(--amber-grad);
-  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
-  transform: rotate(45deg);
-  box-shadow: inset -3px -4px 6px rgba(120, 74, 8, 0.35), 0 8px 16px rgba(184, 120, 20, 0.3);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.honey-variant-card:hover .honey-variant-drop {
-  transform: rotate(45deg) scale(1.12) translateY(-2px);
-}
-
 .honey-variant-card h3 {
-  margin: 18px 0 8px;
+  margin: auto 0 8px;
   font-family: var(--font-display), sans-serif;
   font-size: 26px;
   line-height: 1.05;
@@ -4110,7 +4066,7 @@ html {
 
 .honey-variant-card small {
   margin-top: 14px;
-  color: var(--honey-deep);
+  color: #2d68a0;
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.06em;
@@ -4181,21 +4137,21 @@ html {
 .honey-cta {
   min-height: 440px;
   padding: 100px clamp(22px, 6vw, 92px);
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.45fr);
+  gap: clamp(40px, 8vw, 120px);
   align-items: center;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 82% 30%, rgba(232, 182, 77, 0.5), transparent 44%),
-    linear-gradient(150deg, #f3cf82, #e6ad4a);
-  color: #241606;
+  background: #e9eef2;
+  color: var(--ink);
 }
 
 .honey-cta > div { position: relative; z-index: 2; max-width: 700px; }
 
 .honey-cta h2 {
   margin: 14px 0 0;
-  color: #241606;
+  color: var(--ink);
   font-family: var(--font-display), sans-serif;
   font-size: clamp(38px, 4.4vw, 62px);
   line-height: 1;
@@ -4205,51 +4161,23 @@ html {
 .honey-cta p:not(.eyebrow) {
   margin: 20px 0 26px;
   max-width: 460px;
-  color: rgba(42, 28, 7, 0.78);
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.7;
 }
 
 .honey-cta-jar {
-  position: absolute;
-  right: clamp(-40px, 2vw, 60px);
-  bottom: -30px;
+  position: relative;
   z-index: 1;
-  width: clamp(200px, 26vw, 380px);
+  width: min(340px, 100%);
   height: auto;
   object-fit: contain;
-  opacity: 0.92;
-  filter: drop-shadow(0 24px 40px rgba(150, 96, 10, 0.35));
-}
-
-.honey-cta-bottle {
-  position: absolute;
-  right: clamp(220px, 24vw, 380px);
-  bottom: -20px;
-  z-index: 2;
-  width: clamp(120px, 15vw, 210px);
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 34px rgba(120, 74, 8, 0.4));
-}
-
-.honey-cta-spice {
-  position: absolute;
-  left: clamp(-30px, 3vw, 60px);
-  bottom: -30px;
-  z-index: 1;
-  width: clamp(140px, 17vw, 250px);
-  height: auto;
-  object-fit: contain;
-  opacity: 0.9;
-  filter: drop-shadow(0 20px 34px rgba(90, 40, 10, 0.35));
-  will-change: transform;
+  justify-self: end;
 }
 
 @media (max-width: 720px) {
-  .honey-cta-bottle,
-  .honey-cta-spice { opacity: 0.35; }
-  .honey-cta-bottle { right: 12px; }
+  .honey-cta { grid-template-columns: 1fr; }
+  .honey-cta-jar { width: min(260px, 80%); justify-self: start; }
 }
 
 /* ============================================================
@@ -5374,11 +5302,134 @@ html {
   .honey-intro-stats { grid-template-columns: 1fr; }
   .honey-variant-grid { grid-template-columns: 1fr; }
   .honey-quality-grid { grid-template-columns: 1fr; }
-  .honey-cta-jar { opacity: 0.4; right: -30px; }
+  .honey-cta-jar { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .honey-hero-video { display: none; }
+}
+
+/* Restrained 3D response for interactive cards */
+.tilt-card {
+  --card-tilt: -2deg;
+  --glow-x: 50%;
+  --glow-y: 50%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  will-change: transform;
+  transition:
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.38s ease,
+    border-color 0.28s ease,
+    background-color 0.28s ease;
+}
+
+.tilt-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(260px circle at var(--glow-x) var(--glow-y), rgba(78, 133, 186, 0.12), transparent 62%);
+  transition: opacity 0.28s ease;
+}
+
+.tilt-card:nth-child(even) {
+  --card-tilt: 2deg;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .tilt-card:hover {
+    border-color: rgba(45, 104, 160, 0.7);
+  }
+
+  .tilt-card:hover::after {
+    opacity: 1;
+  }
+
+  .tilt-card img {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tilt-card:hover img {
+    transform: translateZ(18px) scale(1.04);
+  }
+
+  .tilt-card h2,
+  .tilt-card h3 {
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tilt-card:hover h2,
+  .tilt-card:hover h3 {
+    transform: translate3d(3px, -3px, 22px);
+  }
+}
+
+/* Scroll-aware navigation */
+.site-header {
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.site-header img,
+.site-header nav a,
+.site-header > a:last-of-type,
+.site-header summary {
+  transition: all 0.35s ease;
+}
+
+.site-header.is-scrolled {
+  border-color: rgba(23, 78, 166, 0.2) !important;
+  background: rgba(222, 237, 250, 0.96) !important;
+  box-shadow: none;
+}
+
+.site-header.is-scrolled img {
+  filter: none !important;
+}
+
+.site-header.is-scrolled nav > a,
+.site-header.is-scrolled summary {
+  color: #163b5d !important;
+}
+
+.site-header.is-scrolled > a:last-of-type {
+  border-color: #123451 !important;
+  background: #123451 !important;
+  color: #fff !important;
+}
+
+.site-header.is-scrolled details > nav {
+  background: #fff;
+}
+
+.site-header.is-scrolled details > nav a {
+  color: #122c44;
+}
+
+/* Carousel copy is masked as the active video changes. */
+.hc-content > * {
+  will-change: transform, opacity, clip-path;
+}
+
+/* Contact and footer choreography hooks */
+.contact-office-line-fill,
+.footer-blue-rule {
+  will-change: transform;
+}
+
+.contact-map-reveal {
+  isolation: isolate;
+  will-change: clip-path;
+}
+
+.contact-map-curtain {
+  will-change: transform;
 }
 
 }

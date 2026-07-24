@@ -49,7 +49,7 @@ export default function ContactPage() {
 
           <div>
             <p className="mb-4 text-[#f0bf59] text-[10px] font-extrabold tracking-[0.12em] uppercase">Supreme Trading Corp</p>
-            <h1 className="max-w-[760px] m-0 font-sans text-[clamp(58px,7vw,92px)] font-bold leading-[0.94] tracking-[-0.055em]">Contact us</h1>
+            <h1 className="max-w-[760px] m-0 font-heading text-[clamp(58px,7vw,92px)] font-semibold leading-[0.94] tracking-[-0.035em]">Contact us</h1>
             <p className="max-w-[610px] mt-6 mb-0 text-white/74 text-[15px] leading-[1.8]">
               Product availability, grade specifications, bulk quantities and delivery enquiries are handled by our Mumbai sourcing desk.
             </p>
@@ -65,21 +65,24 @@ export default function ContactPage() {
           <div className="mb-12 grid grid-cols-[0.58fr_1.42fr] max-[760px]:grid-cols-1 gap-7 items-end">
             <p className="m-0 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Office network</p>
             <div>
-              <h2 className="m-0 font-sans text-[clamp(38px,4.5vw,60px)] font-bold leading-[1.02] tracking-[-0.045em]">Locations</h2>
+              <h2 className="m-0 font-heading text-[clamp(38px,4.5vw,60px)] font-semibold leading-[1.02] tracking-[-0.03em]">Locations</h2>
               <p className="max-w-[570px] mt-4 mb-0 text-[#687681] text-sm leading-[1.75]">Head office in Mumbai with branch presence in Madhya Pradesh and Uttarakhand.</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 max-[900px]:grid-cols-1 border border-[#173a57]/16 bg-[#173a57]/16 gap-px gs-stagger">
+          <div className="contact-office-grid grid grid-cols-3 max-[900px]:grid-cols-1 border border-[#173a57]/16 bg-[#173a57]/16 gap-px gs-stagger relative">
+            <span className="absolute z-[3] left-[calc(16.66%+24px)] right-[calc(16.66%+24px)] top-[66px] h-px bg-[#2d68a0]/18 max-[900px]:hidden pointer-events-none" aria-hidden="true">
+              <i className="contact-office-line-fill block w-full h-full bg-[#2d68a0]" />
+            </span>
             {offices.map((office, index) => (
-              <article className="min-h-[330px] p-[clamp(26px,3vw,42px)] bg-[#f8f7f3] flex flex-col transition-colors hover:bg-white" key={office.city}>
+              <article className="tilt-card min-h-[330px] p-[clamp(26px,3vw,42px)] bg-[#f8f7f3] flex flex-col transition-colors hover:bg-white" key={office.city}>
                 <div className="flex items-start justify-between gap-4">
-                  <span className="w-12 h-12 border border-[#2d68a0]/30 grid place-items-center text-[#2d68a0]"><MapPin /></span>
+                  <span className="relative z-[5] w-12 h-12 border border-[#2d68a0]/30 grid place-items-center bg-[#f8f7f3] text-[#2d68a0]"><MapPin /></span>
                   <span className="text-[#85909a] text-[10px] font-bold">{String(index + 1).padStart(2, "0")}</span>
                 </div>
                 <div className="mt-auto pt-14">
                   <p className="mb-2 text-[#9a7331] text-[9px] font-extrabold tracking-[0.1em] uppercase">{office.type}</p>
-                  <h3 className="mb-4 font-sans text-[26px] font-extrabold tracking-[-0.035em]">{office.city}</h3>
+                  <h3 className="mb-4 font-heading text-[26px] font-semibold tracking-[-0.02em]">{office.city}</h3>
                   <address className="m-0 text-[#65737e] text-[12px] not-italic leading-[1.8]">{office.address}</address>
                 </div>
               </article>
@@ -105,16 +108,20 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-[clamp(82px,9vw,128px)] px-[clamp(22px,5vw,76px)] bg-[#edf1f4] gs-reveal" id="enquiry">
-        <div className="max-w-[1360px] mx-auto grid grid-cols-[0.7fr_1.3fr] max-[960px]:grid-cols-1 gap-[clamp(44px,8vw,116px)] items-start">
+      <section className="py-[clamp(76px,8vw,112px)] px-[clamp(22px,5vw,76px)] bg-[#f2f4f6] border-y border-[#173a57]/10 gs-reveal" id="enquiry">
+        <div className="max-w-[1360px] mx-auto grid grid-cols-[0.72fr_1.28fr] max-[960px]:grid-cols-1 gap-[clamp(44px,7vw,96px)] items-start">
           <aside className="sticky top-[118px] max-[960px]:static">
-            <p className="mb-4 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Product enquiry</p>
-            <h2 className="m-0 font-sans text-[clamp(38px,4.5vw,58px)] font-bold leading-[1.03] tracking-[-0.05em]">Send complete buying details.</h2>
-            <p className="max-w-[440px] mt-6 mb-0 text-[#687681] text-sm leading-[1.8]">A complete requirement helps us check the right material and commercial terms without unnecessary back-and-forth.</p>
-            <ul className="mt-9 p-0 border-t border-[#173a57]/18 list-none">
+            <div className="pl-6 border-l-[3px] border-[#174ea6]">
+              <p className="mb-4 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Information required</p>
+              <h2 className="m-0 font-heading text-[clamp(36px,4.1vw,52px)] font-semibold leading-[1.02] tracking-[-0.035em]">For an accurate quotation.</h2>
+              <p className="max-w-[420px] mt-6 mb-0 text-[#687681] text-sm leading-[1.8]">The sourcing desk reviews each enquiry against specification, quantity, packing and destination.</p>
+            </div>
+            <ul className="mt-10 p-0 border-t border-[#173a57]/20 list-none">
               {["Product or material name", "Grade or specification", "Quantity and packing", "Delivery city or country"].map((item, index) => (
-                <li className="py-4 border-b border-[#173a57]/14 grid grid-cols-[34px_1fr] gap-3 text-[12px] font-bold" key={item}>
-                  <span className="text-[#2d68a0] text-[9px]">{String(index + 1).padStart(2, "0")}</span>{item}
+                <li className="group py-[17px] border-b border-[#173a57]/14 grid grid-cols-[36px_1fr_auto] gap-3 items-center text-[12px] font-bold transition-colors hover:text-[#174ea6]" key={item}>
+                  <span className="text-[#2d68a0] text-[9px]">{String(index + 1).padStart(2, "0")}</span>
+                  <span>{item}</span>
+                  <span className="text-[#9aa5ae] font-normal transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                 </li>
               ))}
             </ul>
@@ -128,19 +135,22 @@ export default function ContactPage() {
           <div className="mb-9 flex max-[680px]:block items-end justify-between gap-10">
             <div>
               <p className="mb-3 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Mumbai head office</p>
-              <h2 className="m-0 font-sans text-[clamp(38px,4.5vw,58px)] font-bold tracking-[-0.045em]">Find us</h2>
+              <h2 className="m-0 font-heading text-[clamp(38px,4.5vw,58px)] font-semibold tracking-[-0.03em]">Find us</h2>
             </div>
             <address className="max-[680px]:mt-4 max-w-[520px] m-0 text-[#687681] text-xs not-italic leading-[1.75]">51/A, Essaji Street, Vadgadi, Masjid Bunder (W), Mumbai 400003, Maharashtra, India</address>
           </div>
         </div>
-        <iframe
-          title="Supreme Trading Corp Mumbai head office map"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30188.49523647128!2d72.835988!3d18.950776!3m2!1i1024!1i768!4f13.1!3m3!1m2!1s0x3be7ce2445fe9359%3A0xe8c4e71d26263e7a!2sTitanium%20Dioxide%20Suppliers%20-%20Supreme%20Trading%20Corp.!5e0!3m2!1sen!2sin!4v1765969497421!5m2!1sen!2sin"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-          className="w-full h-[480px] max-[720px]:h-[380px] block border-0 [filter:saturate(0.65)_contrast(1.03)]"
-        />
+        <div className="contact-map-reveal relative overflow-hidden">
+          <iframe
+            title="Supreme Trading Corp Mumbai head office map"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30188.49523647128!2d72.835988!3d18.950776!3m2!1i1024!1i768!4f13.1!3m3!1m2!1s0x3be7ce2445fe9359%3A0xe8c4e71d26263e7a!2sTitanium%20Dioxide%20Suppliers%20-%20Supreme%20Trading%20Corp.!5e0!3m2!1sen!2sin!4v1765969497421!5m2!1sen!2sin"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+            className="w-full h-[480px] max-[720px]:h-[380px] block border-0 [filter:saturate(0.65)_contrast(1.03)]"
+          />
+          <span className="contact-map-curtain absolute inset-0 z-[2] bg-[#174ea6] pointer-events-none" aria-hidden="true" />
+        </div>
       </section>
 
       <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden min-[900px]:grid border-y border-l border-[#173a57]/20 bg-white shadow-[0_12px_35px_rgba(15,45,73,0.13)]" aria-label="Quick contact">

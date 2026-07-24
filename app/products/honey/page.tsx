@@ -43,27 +43,25 @@ export default function HoneyPage() {
 
       <HoneyHero />
 
-      {/* Feel-setting band */}
       <section className="honey-intro gs-reveal">
         <div className="honey-intro-copy">
-          <p className="section-kicker">The honey desk</p>
-          <h2 data-reveal>Honey chosen the way buyers actually use it</h2>
+          <p className="section-kicker">Honey supply</p>
+          <h2 data-reveal>Selected by variant and requirement</h2>
           <p>
-            We don&apos;t treat honey as one product. Each variant carries its own colour,
-            flavour and end-use — so we source by variant, check every batch, and pack to the
-            grade your line needs.
+            Each variant has a different flavour, colour and end use. We source against the
+            buyer&apos;s required variant, grade, quantity and packing format.
           </p>
         </div>
         <div className="honey-intro-stats">
           <figure className="honey-intro-photo">
             <Image src="/supreme/premium/honey-jar.jpg" alt="Jars of natural honey with a wooden dipper" width={1000} height={760} />
           </figure>
-          <article className="bento-tile bento-honey">
+          <article className="bento-tile bento-honey tilt-card">
             <span className="bento-tag">Variants</span>
             <strong data-count="8" data-suffix="+">0</strong>
             <span>Honey types sourced to spec</span>
           </article>
-          <article className="bento-tile bento-stat">
+          <article className="bento-tile bento-stat tilt-card">
             <span className="bento-tag">Packing</span>
             <strong>Bulk</strong>
             <span>Drums, pails &amp; retail bottles</span>
@@ -71,7 +69,6 @@ export default function HoneyPage() {
         </div>
       </section>
 
-      {/* Variants bento */}
       <section className="honey-variants" id="variants">
         <div className="honey-variants-head">
           <p className="section-kicker">Selection</p>
@@ -80,9 +77,8 @@ export default function HoneyPage() {
         </div>
         <div className="honey-variant-grid gs-stagger">
           {variants.map((v, i) => (
-            <article className="honey-variant-card" key={v.name}>
+            <article className="honey-variant-card tilt-card" key={v.name}>
               <span className="honey-variant-index">{String(i + 1).padStart(2, "0")}</span>
-              <div className="honey-variant-drop" aria-hidden="true" />
               <h3>{v.name}</h3>
               <p>{v.note}</p>
               <small>{v.origin}</small>
@@ -91,7 +87,6 @@ export default function HoneyPage() {
         </div>
       </section>
 
-      {/* Quality strip */}
       <section className="honey-quality gs-reveal">
         <div className="honey-quality-head">
           <p className="eyebrow honey-eyebrow"><span /> How we handle it</p>
@@ -99,7 +94,7 @@ export default function HoneyPage() {
         </div>
         <div className="honey-quality-grid gs-stagger">
           {qualities.map((q) => (
-            <article key={q.k}>
+            <article className="tilt-card" key={q.k}>
               <span>{q.k}</span>
               <h3>{q.t}</h3>
               <p>{q.d}</p>
@@ -108,17 +103,14 @@ export default function HoneyPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="honey-cta gs-reveal">
-        <Image className="honey-cta-jar" data-parallax="0.25" src="/supreme/source/honey_img.png" alt="" width={360} height={360} />
-        <Image className="honey-cta-bottle" data-parallax="0.4" src="/supreme/premium/amber-bottle.png" alt="" width={220} height={220} />
-        <Image className="honey-cta-spice" data-float src="/supreme/premium/spice-bowl.png" alt="" width={260} height={260} />
         <div>
-          <p className="eyebrow honey-eyebrow"><span /> Bulk honey enquiry</p>
-          <h2 data-reveal>Tell us the variant, grade and quantity</h2>
-          <p>We&apos;ll confirm availability, packing options and lead time.</p>
+          <p className="eyebrow honey-eyebrow"><span /> Availability</p>
+          <h2 data-reveal>Send the variant, grade and quantity</h2>
+          <p>We&apos;ll confirm the available packing options and supply details.</p>
           <a className="button button-honey button-wa w-12 px-0" href={WA_HREF} target="_blank" rel="noopener noreferrer" aria-label="Enquire about honey on WhatsApp" title="WhatsApp"><WhatsApp /></a>
         </div>
+        <Image className="honey-cta-jar" src="/supreme/source/honey_img.png" alt="Bulk honey" width={360} height={360} />
       </section>
 
       <SiteFooter />

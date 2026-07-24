@@ -96,7 +96,7 @@ export default function Home() {
 
         <div className="grid grid-cols-4 max-[1060px]:grid-cols-2 max-[720px]:grid-cols-1 gap-px border border-line bg-line gs-stagger">
           {categories.map((category, index) => (
-            <Link className="group min-h-[440px] max-[720px]:min-h-[390px] p-[22px] grid grid-rows-[auto_154px_1fr] gap-[18px] bg-white relative overflow-hidden transition-[background,transform] duration-200 hover:bg-[#f4f6f0] hover:-translate-y-1" href={category.href} key={category.name}>
+            <Link className="tilt-card group min-h-[440px] max-[720px]:min-h-[390px] p-[22px] grid grid-rows-[auto_154px_1fr] gap-[18px] bg-white relative overflow-hidden transition-[background,transform] duration-200 hover:bg-[#f4f6f0]" href={category.href} key={category.name}>
               <span className="text-clay text-xs font-black">{String(index + 1).padStart(2, "0")}</span>
               <Image src={category.image} alt={category.imageAlt} width={290} height={239} className="h-[154px] max-h-[184px] w-full self-center justify-self-center object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-[1.04]" />
               <div>
@@ -118,7 +118,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 gap-[18px] gs-stagger">
           {whyChoose.map((item) => (
-            <article className="p-[34px_28px] border border-line rounded-[18px] bg-white transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-black/25 hover:shadow-[0_18px_42px_rgba(19,32,27,0.08)]" key={item.title}>
+            <article className="tilt-card p-[34px_28px] border border-line rounded-[18px] bg-white transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-black/25 hover:shadow-[0_18px_42px_rgba(19,32,27,0.08)]" key={item.title}>
               <span className="grid place-items-center w-[68px] h-[68px] mb-6 rounded-full [background:var(--herb-grad)] shadow-[0_14px_30px_rgba(24,74,116,0.24)]">
                 <Image src={item.icon} alt="" width={40} height={40} className="w-[34px] h-[34px] object-contain" />
               </span>
@@ -140,7 +140,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-[2] grid grid-cols-4 max-[980px]:grid-cols-2 max-[620px]:grid-cols-1 auto-rows-[minmax(190px,auto)] gap-4">
-          <article className="col-span-2 row-span-2 max-[980px]:row-span-1 max-[620px]:col-span-1 p-[30px] rounded-2xl flex flex-col justify-between gap-2.5 relative overflow-hidden [background:var(--herb-grad)] text-white transition-transform duration-300 hover:-translate-y-[5px] before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:[background:radial-gradient(circle_at_78%_12%,rgba(232,182,77,0.32),transparent_46%)]">
+          <article className="tilt-card col-span-2 row-span-2 max-[980px]:row-span-1 max-[620px]:col-span-1 p-[30px] rounded-2xl flex flex-col justify-between gap-2.5 relative overflow-hidden [background:var(--herb-grad)] text-white transition-transform duration-300 before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:[background:radial-gradient(circle_at_78%_12%,rgba(232,182,77,0.32),transparent_46%)]">
             <span className="relative z-[1] text-honey-soft text-[10px] font-black tracking-[0.06em] uppercase">Flagship capability</span>
             <div className="relative z-[1]">
               <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold text-white m-0">Grade-led sourcing across five material families</h3>
@@ -149,32 +149,37 @@ export default function Home() {
             <Link className="relative z-[1] w-fit text-honey-soft border-b border-current pb-[3px] text-xs font-black" href="/products">Browse the catalogue</Link>
           </article>
 
-          <article className="p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-[5px] hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
+          <article className="tilt-card p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
             <span className="text-clay text-[10px] font-black tracking-[0.06em] uppercase">Established</span>
             <strong className="font-heading text-[clamp(46px,5vw,68px)] leading-none font-semibold text-ink">2002</strong>
             <span className="text-muted text-xs leading-[1.5]">Trading from Mumbai</span>
           </article>
 
-          <article className="p-[30px] rounded-2xl flex flex-col justify-center gap-1.5 relative overflow-hidden [background:var(--amber-grad)] text-[#241606] transition-transform duration-300 hover:-translate-y-[5px]">
+          <article className="tilt-card p-[30px] rounded-2xl flex flex-col justify-center gap-1.5 relative overflow-hidden [background:var(--amber-grad)] text-[#241606] transition-transform duration-300">
             <span className="text-[rgba(28,19,10,0.62)] text-[10px] font-black tracking-[0.06em] uppercase">Materials</span>
             <strong data-count="800" data-suffix="+" className="font-heading text-[clamp(46px,5vw,68px)] leading-none font-semibold text-[#1c130a]">800+</strong>
             <span className="text-[rgba(28,19,10,0.72)] text-xs leading-[1.5]">Grades sourced to spec</span>
           </article>
 
-          <article className="col-span-2 max-[620px]:col-span-1 group p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-end gap-2.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-[5px] hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
-            <Image className="absolute right-[-14px] top-[-14px] w-[46%] max-w-[200px] object-contain mix-blend-multiply opacity-90 transition-transform duration-500 group-hover:scale-[1.07] group-hover:-rotate-3" src="/supreme/source/honey_img.png" alt="" width={200} height={200} />
-            <span className="text-clay text-[10px] font-black tracking-[0.06em] uppercase">Food &amp; natural</span>
-            <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold m-0">Honey, herbs &amp; food ingredients</h3>
-            <p className="text-muted text-[13px] leading-[1.6]">Powders, spices, dehydrated ingredients and natural sweeteners for food brands and formulators.</p>
+          <article className="tilt-card col-span-2 max-[620px]:col-span-1 group min-h-[280px] border border-line bg-white grid grid-cols-[minmax(0,1fr)_minmax(180px,0.42fr)] max-[620px]:grid-cols-1 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
+            <div className="p-[clamp(24px,3vw,38px)] flex flex-col justify-end gap-3 relative z-[2]">
+              <span className="text-clay text-[10px] font-black tracking-[0.06em] uppercase">Food &amp; natural</span>
+              <h3 className="max-w-[620px] font-heading text-[clamp(25px,2.35vw,36px)] leading-[1.04] font-bold m-0">Food ingredients &amp; natural products</h3>
+              <p className="max-w-[620px] m-0 text-muted text-[13px] leading-[1.65]">Powders, dehydrated ingredients, honey and natural sweeteners for food brands and formulators.</p>
+            </div>
+            <div className="min-h-[240px] max-[620px]:min-h-[190px] relative overflow-hidden bg-[#eef1f4]">
+              <Image className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]" src="/supreme/premium/honey-jar.jpg" alt="Natural honey prepared for food production" fill sizes="(max-width: 620px) 100vw, 32vw" />
+              <div className="absolute inset-y-0 left-0 w-10 max-[620px]:hidden bg-gradient-to-r from-white to-transparent" />
+            </div>
           </article>
 
-          <article className="group p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-end gap-2.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-[5px] hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
+          <article className="tilt-card group p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-end gap-2.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
             <Image className="absolute right-[-14px] top-[-14px] w-[46%] max-w-[200px] object-contain mix-blend-multiply opacity-90 transition-transform duration-500 group-hover:scale-[1.07] group-hover:-rotate-3" src="/supreme/source/essential_oil.png" alt="" width={160} height={160} />
             <span className="text-clay text-[10px] font-black tracking-[0.06em] uppercase">Oils</span>
             <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold m-0">Essential &amp; carrier oils</h3>
           </article>
 
-          <article className="p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-[5px] hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
+          <article className="tilt-card p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
             <span className="text-clay text-[10px] font-black tracking-[0.06em] uppercase">Reach</span>
             <strong className="font-heading text-[clamp(34px,3.4vw,46px)] leading-none font-semibold text-ink">India + Export</strong>
             <span className="text-muted text-xs leading-[1.5]">Bulk supply, cleanly handled</span>
@@ -212,7 +217,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 gap-5 gs-stagger">
           {facts.map((fact) => (
-            <article className="p-[36px_24px] border [border-color:rgba(161,105,87,0.18)] rounded-[18px] bg-white flex flex-col items-center gap-3 text-center transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:[border-color:rgba(161,105,87,0.4)] hover:shadow-[0_22px_46px_rgba(161,105,87,0.16)]" key={fact.label}>
+            <article className="tilt-card p-[36px_24px] border [border-color:rgba(161,105,87,0.18)] rounded-[18px] bg-white flex flex-col items-center gap-3 text-center transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:[border-color:rgba(161,105,87,0.4)] hover:shadow-[0_22px_46px_rgba(161,105,87,0.16)]" key={fact.label}>
               <span className="grid place-items-center w-[72px] h-[72px] mb-2 rounded-full [background:linear-gradient(150deg,#d79a83,#a16957)] shadow-[0_14px_30px_rgba(161,105,87,0.28)]">
                 <Image src={fact.icon} alt="" width={38} height={38} className="w-9 h-9 object-contain" />
               </span>
@@ -232,7 +237,7 @@ export default function Home() {
 
         <div className="grid grid-cols-3 max-[1060px]:grid-cols-2 max-[720px]:grid-cols-1 gap-px border border-line bg-line gs-stagger">
           {materialGroups.map((group) => (
-            <article className="group min-h-[330px] p-[26px] flex flex-col bg-white transition-[background,transform] duration-200 hover:bg-[#eef1ea] hover:-translate-y-1" key={group.name}>
+            <article className="tilt-card group min-h-[330px] p-[26px] flex flex-col bg-white transition-[background,transform] duration-200 hover:bg-[#eef1ea]" key={group.name}>
               <span className="text-clay text-[10px] font-black">{group.code}</span>
               <div className="h-[132px] mt-[18px] mb-6 grid place-items-center overflow-hidden">
                 <Image src={group.image} alt="" width={290} height={239} className="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-[1.05]" />

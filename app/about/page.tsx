@@ -75,7 +75,7 @@ export default function AboutPage() {
           { s: "Trade", n: "India", p: "Domestic and export enquiries" },
           { s: "Supply", n: "Bulk", p: "Wholesale requirements" },
         ].map((f) => (
-          <article className="min-h-[210px] max-[720px]:min-h-[170px] p-7 border-r border-line last:border-r-0 max-[980px]:[&:nth-child(2)]:border-r-0 max-[720px]:border-r-0 max-[720px]:border-b flex flex-col" key={f.s}>
+          <article className="tilt-card min-h-[210px] max-[720px]:min-h-[170px] p-7 border-r border-line last:border-r-0 max-[980px]:[&:nth-child(2)]:border-r-0 max-[720px]:border-r-0 max-[720px]:border-b flex flex-col bg-paper" key={f.s}>
             <span className="text-clay text-[9px] font-black uppercase">{f.s}</span>
             <strong className="mt-auto font-heading text-[55px] leading-none">{f.n}</strong>
             <p className="mt-[7px] text-muted text-[10px]">{f.p}</p>

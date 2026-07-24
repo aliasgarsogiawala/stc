@@ -87,7 +87,7 @@ export default function OilsPage() {
         </div>
         <div className="prod-variant-grid gs-stagger">
           {variants.map((v, i) => (
-            <article className="prod-variant-card" key={v.name}>
+            <article className="prod-variant-card tilt-card" key={v.name}>
               <span className="pv-index">{String(i + 1).padStart(2, "0")}</span>
               <div className="prod-variant-mark" aria-hidden="true" />
               <h3>{v.name}</h3>
@@ -105,7 +105,7 @@ export default function OilsPage() {
         </div>
         <div className="prod-quality-grid gs-stagger">
           {qualities.map((q) => (
-            <article key={q.k}>
+            <article className="tilt-card" key={q.k}>
               <span>{q.k}</span>
               <h3>{q.t}</h3>
               <p>{q.d}</p>

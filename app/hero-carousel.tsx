@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { gsap } from "gsap";
 
 type Slide = {
   key: string;
@@ -55,9 +56,30 @@ const slides: Slide[] = [
 export default function HeroCarousel() {
   const [active, setActive] = useState(0);
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const transitioning = useRef(false);
 
   const go = useCallback((next: number) => {
-    setActive((next + slides.length) % slides.length);
+    if (transitioning.current) return;
+    const destination = (next + slides.length) % slides.length;
+    const content = contentRef.current;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!content || reduce) {
+      setActive(destination);
+      return;
+    }
+
+    transitioning.current = true;
+    gsap.to(content.children, {
+      yPercent: -34,
+      opacity: 0,
+      clipPath: "inset(100% 0 0 0)",
+      duration: 0.46,
+      stagger: 0.035,
+      ease: "power3.in",
+      onComplete: () => setActive(destination),
+    });
   }, []);
 
   useEffect(() => {
@@ -74,6 +96,30 @@ export default function HeroCarousel() {
         video.currentTime = 0;
       }
     });
+  }, [active]);
+
+  useLayoutEffect(() => {
+    const content = contentRef.current;
+    if (!content) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      transitioning.current = false;
+      return;
+    }
+
+    gsap.fromTo(
+      content.children,
+      { yPercent: 38, opacity: 0, clipPath: "inset(0 0 100% 0)" },
+      {
+        yPercent: 0,
+        opacity: 1,
+        clipPath: "inset(0 0 0% 0)",
+        duration: 0.72,
+        stagger: 0.065,
+        ease: "power4.out",
+        onComplete: () => { transitioning.current = false; },
+      },
+    );
   }, [active]);
 
   const current = slides[active];
@@ -105,7 +151,7 @@ export default function HeroCarousel() {
       ))}
 
       <div className="hc-body">
-        <div className="hc-content" key={current.key}>
+        <div className="hc-content" key={current.key} ref={contentRef}>
           <p className="eyebrow hc-eyebrow"><span /> {current.eyebrow}</p>
           <h1>{current.title}</h1>
           <p className="hc-lead">{current.lead}</p>
