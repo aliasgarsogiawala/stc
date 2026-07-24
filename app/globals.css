@@ -4775,19 +4775,32 @@ html {
   transform: rotate(-8deg);
 }
 
-/* Real leaf branch in the top-left corner */
+/* Real leaf branches in both top corners */
 .splash-branch {
   position: absolute;
-  top: -30px;
-  left: -22px;
-  width: clamp(180px, 22vw, 330px);
   height: auto;
   z-index: 1;
   pointer-events: none;
   opacity: 0.95;
-  transform: rotate(4deg);
   filter: saturate(0.86) drop-shadow(0 22px 26px rgba(40, 70, 44, 0.16));
   will-change: transform, opacity;
+}
+
+.splash-branch-left {
+  top: -30px;
+  left: -22px;
+  width: clamp(180px, 22vw, 330px);
+  transform: rotate(4deg);
+  transform-origin: top left;
+}
+
+.splash-branch-right {
+  top: -26px;
+  right: -18px;
+  width: clamp(150px, 18vw, 280px);
+  opacity: 0.9;
+  transform: rotate(-7deg);
+  transform-origin: top right;
 }
 
 .splash-inner {

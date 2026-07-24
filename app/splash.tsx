@@ -30,7 +30,7 @@ export default function Splash() {
     });
 
     tl.from(".splash-shadow, .splash-bokeh", { opacity: 0, scale: 1.06, duration: 1.4, ease: "power2.out", stagger: 0.1 }, 0)
-      .from(".splash-branch", { opacity: 0, y: -20, rotate: -4, duration: 1.3, ease: "power3.out" }, 0.1)
+      .from(".splash-branch", { opacity: 0, y: -20, rotate: -4, duration: 1.3, stagger: 0.08, ease: "power3.out" }, 0.1)
       .from(".splash-welcome", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, 0.35)
       .from(".splash-logo", { y: 18, opacity: 0, scale: 0.97, duration: 0.9, ease: "power3.out" }, "-=0.44")
       .from(".splash-tagline", { y: 12, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.4")
@@ -57,8 +57,9 @@ export default function Splash() {
       <Image className="splash-shadow splash-shadow-2" src="/supreme/source/bg-leaf3.png" alt="" width={278} height={394} />
       <Image className="splash-shadow splash-shadow-3" src="/supreme/source/bg-leaf4.png" alt="" width={215} height={465} />
 
-      {/* Real leaf branch in the corner */}
-      <Image className="splash-branch" src="/supreme/source/ban-leafleft.png" alt="" width={249} height={307} priority />
+      {/* Real branches balance the leaf shadows on both sides */}
+      <Image className="splash-branch splash-branch-left" src="/supreme/source/ban-leafleft.png" alt="" width={249} height={307} priority />
+      <Image className="splash-branch splash-branch-right" src="/supreme/source/ban-leafright.png" alt="" width={196} height={306} priority />
 
       <div className="splash-inner">
         <p className="splash-welcome">Welcome to</p>
