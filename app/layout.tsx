@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { DM_Sans, Manrope } from "next/font/google";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import SiteMotion from "./site-motion";
 import "./globals.css";
 
-const display = DM_Sans({
+const display = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700"],

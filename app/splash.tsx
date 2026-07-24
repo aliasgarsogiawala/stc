@@ -29,7 +29,7 @@ export default function Splash() {
       },
     });
 
-    tl.from(".splash-shadow, .splash-bokeh", { opacity: 0, scale: 1.06, duration: 1.4, ease: "power2.out", stagger: 0.1 }, 0)
+    tl.from(".splash-bokeh", { opacity: 0, scale: 1.06, duration: 1.4, ease: "power2.out", stagger: 0.1 }, 0)
       .from(".splash-welcome", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, 0.35)
       .from(".splash-logo", { y: 18, opacity: 0, scale: 0.97, duration: 0.9, ease: "power3.out" }, "-=0.44")
       .from(".splash-tagline", { y: 12, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.4")
@@ -50,10 +50,6 @@ export default function Splash() {
     <div className="splash" ref={ref} aria-hidden="true">
       <span className="splash-bokeh splash-bokeh-1" />
       <span className="splash-bokeh splash-bokeh-2" />
-
-      <Image className="splash-shadow splash-shadow-1" src="/supreme/source/bg-leaf1.png" alt="" width={309} height={474} />
-      <Image className="splash-shadow splash-shadow-2" src="/supreme/source/bg-leaf3.png" alt="" width={278} height={394} />
-      <Image className="splash-shadow splash-shadow-3" src="/supreme/source/bg-leaf4.png" alt="" width={215} height={465} />
 
       <div className="splash-inner">
         <p className="splash-welcome">Welcome to</p>

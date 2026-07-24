@@ -4740,39 +4740,6 @@ html {
   opacity: 0.7;
 }
 
-.splash-shadow {
-  position: absolute;
-  height: auto;
-  pointer-events: none;
-  filter: blur(7px) brightness(0.66) saturate(0.5);
-  mix-blend-mode: multiply;
-  will-change: transform, opacity;
-}
-
-.splash-shadow-1 {
-  width: clamp(260px, 34vw, 520px);
-  left: 8vw;
-  top: -8vh;
-  opacity: 0.14;
-  transform: rotate(18deg);
-}
-
-.splash-shadow-2 {
-  width: clamp(220px, 28vw, 430px);
-  right: 4vw;
-  top: 24vh;
-  opacity: 0.12;
-  transform: rotate(-24deg);
-}
-
-.splash-shadow-3 {
-  width: clamp(200px, 24vw, 360px);
-  left: -4vw;
-  bottom: -6vh;
-  opacity: 0.11;
-  transform: rotate(-8deg);
-}
-
 .splash-inner {
   position: relative;
   z-index: 2;
@@ -4797,7 +4764,6 @@ html {
 .splash-logo {
   width: clamp(300px, 44vw, 600px);
   height: auto;
-  filter: drop-shadow(0 20px 40px rgba(30, 64, 94, 0.14));
 }
 
 .splash-tagline {
