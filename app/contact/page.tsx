@@ -4,13 +4,13 @@ import Link from "next/link";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
 import ContactForm from "./contact-form";
-import { WhatsApp } from "../icons";
+import { ArrowUpRight, WhatsApp } from "../icons";
 
 const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like to make a product enquiry.")}`;
 
 export const metadata: Metadata = {
   title: "Contact | Supreme Trading Corp",
-  description: "Supreme Trading Corp office addresses, phone numbers, email and product enquiry details.",
+  description: "Contact Supreme Trading Corp for industrial raw material sourcing, supply and export enquiries.",
   openGraph: {
     title: "Contact | Supreme Trading Corp",
     description: "Mumbai head office and branch office contact information for Supreme Trading Corp.",
@@ -30,104 +30,142 @@ const phoneNumbers = [
   { display: "+91 97138 55870", href: "+919713855870" },
 ];
 
-const heading = "font-heading text-[58px] leading-none m-0";
-const clayLabel = "text-clay text-[10px] font-black tracking-[0.05em] uppercase";
-
 export default function ContactPage() {
   return (
-    <main className="bg-paper">
+    <main className="bg-[#faf9f5] text-[#102b45]">
       <SiteHeader theme="solid" />
 
-      <section className="min-h-[640px] pt-[130px] pb-[70px] px-[clamp(22px,6vw,92px)] flex items-end relative isolate overflow-hidden text-white">
-        <Image data-hero-media src="/supreme/contact-source-hero.jpg" alt="Mortar, pestle and raw materials" fill priority sizes="100vw" className="object-cover object-center -z-20 [filter:saturate(0.7)_contrast(1.02)]" />
-        <div className="absolute inset-0 -z-10 [background:linear-gradient(90deg,rgba(8,18,14,0.92),rgba(8,18,14,0.42)_62%,rgba(8,18,14,0.24)),linear-gradient(0deg,rgba(8,18,14,0.76),transparent_55%)]" />
-        <div className="w-[min(920px,100%)]" data-hero-copy>
-          <div className="catalog-breadcrumb mb-[70px]"><Link href="/">Home</Link><span>/</span><span>Contact</span></div>
-          <p className="eyebrow text-honey-soft"><span /> Talk to the sourcing desk</p>
-          <h1 className="mb-[22px] font-heading font-semibold text-white text-[clamp(66px,9vw,132px)] leading-[0.82]">Let&apos;s talk material</h1>
-          <p className="max-w-[540px] m-0 text-white/78 text-base leading-[1.7]">Head office in Mumbai, with branch offices in Indore and Haridwar. Tell us what you need and we&apos;ll get the specifics back to you quickly.</p>
+      <section className="pt-[90px] max-[720px]:pt-[72px] grid grid-cols-[0.88fr_1.12fr] max-[900px]:grid-cols-1 min-h-[690px] max-[900px]:min-h-0 border-b border-[#173a57]/15">
+        <div className="px-[clamp(24px,6vw,92px)] py-[clamp(70px,8vw,118px)] flex flex-col justify-between bg-[#f2efe7]" data-hero-copy>
+          <div className="catalog-breadcrumb text-[#667580]">
+            <Link href="/">Home</Link><span>/</span><span>Contact</span>
+          </div>
+          <div className="mt-24 max-[900px]:mt-20">
+            <p className="mb-5 flex items-center gap-3 text-[#2d68a0] text-[10px] font-black tracking-[0.11em] uppercase">
+              <span className="w-9 h-px bg-[#2d68a0]" /> Contact
+            </p>
+            <h1 className="max-w-[690px] m-0 font-heading font-semibold text-[#102b45] text-[clamp(64px,8vw,118px)] leading-[0.82] tracking-[-0.035em]">
+              Speak to the sourcing desk
+            </h1>
+            <p className="max-w-[520px] mt-8 mb-0 text-[#5f6f7b] text-[15px] leading-[1.85]">
+              Send the material, grade, quantity and delivery location. Our team will review the requirement and respond with the relevant supply details.
+            </p>
+          </div>
+        </div>
+
+        <div className="min-h-[600px] max-[900px]:min-h-[500px] relative overflow-hidden" data-hero-media>
+          <Image
+            src="/supreme/contact-source-hero.jpg"
+            alt="Raw materials prepared for commercial sourcing"
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 56vw"
+            className="object-cover object-center [filter:saturate(0.72)_contrast(1.06)]"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,42,69,0.04),rgba(13,42,69,0.48))]" />
+          <div className="absolute inset-x-0 bottom-0 grid grid-cols-2 max-[520px]:grid-cols-1 bg-[#102b45]/94 text-white backdrop-blur-sm">
+            <a className="min-h-[112px] px-[clamp(22px,3vw,42px)] py-6 flex flex-col justify-between border-r max-[520px]:border-r-0 max-[520px]:border-b border-white/15 group" href="tel:+912223455226">
+              <span className="text-[#efbd52] text-[9px] font-black tracking-[0.1em] uppercase">Call directly</span>
+              <span className="flex items-center justify-between gap-4 text-sm font-bold">+91 22 2345 5226 <ArrowUpRight /></span>
+            </a>
+            <a className="min-h-[112px] px-[clamp(22px,3vw,42px)] py-6 flex flex-col justify-between group" href="mailto:info@supremetrading.in">
+              <span className="text-[#efbd52] text-[9px] font-black tracking-[0.1em] uppercase">Email</span>
+              <span className="flex items-center justify-between gap-4 text-sm font-bold break-all">info@supremetrading.in <ArrowUpRight /></span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="py-[104px] max-[720px]:py-[76px] px-[clamp(22px,6vw,92px)] max-[720px]:px-5 gs-reveal">
-        <div className="grid grid-cols-[0.55fr_1.45fr] max-[720px]:grid-cols-1 gap-10 max-[720px]:gap-3 items-start mb-[42px]">
-          <span className={clayLabel}>Office details</span>
-          <h2 className={`${heading} max-[720px]:text-[42px]`}>Locations and direct contacts</h2>
-        </div>
-
-        <div className="border border-line grid grid-cols-3 max-[900px]:grid-cols-1 gap-px bg-line gs-stagger">
-          {offices.map((office, index) => (
-            <article className="min-h-[330px] max-[900px]:min-h-[260px] p-[26px] flex flex-col bg-white relative overflow-hidden transition-[background,transform] duration-300 hover:bg-[#f6f4ec] hover:-translate-y-1 before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-[3px] before:[background:var(--amber-grad)] before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100" key={office.city}>
-              <div className="flex items-start justify-between">
-                <Image src="/supreme/contact-pin.png" alt="" width={32} height={32} />
-                <span className="px-[9px] py-[5px] rounded-full [background:color-mix(in_srgb,var(--amber),transparent_86%)] text-honey-deep text-[10px] font-black">{String(index + 1).padStart(2, "0")}</span>
-              </div>
-              <p className="mt-auto mb-2 text-clay text-[9px] font-black uppercase">{office.type}</p>
-              <h3 className="mb-4 font-heading text-[40px] leading-none">{office.city}</h3>
-              <address className="max-w-[360px] text-muted text-xs not-italic leading-[1.75]">{office.address}</address>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-3.5 grid grid-cols-3 max-[900px]:grid-cols-1 gap-3.5 gs-stagger">
-          <article className="min-h-[178px] p-[26px] rounded-xl grid grid-cols-[42px_1fr] gap-[18px] bg-[#f1f3ec] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(19,32,27,0.09)]">
-            <Image src="/supreme/contact-phone.png" alt="" width={32} height={32} className="w-[30px] h-[30px] object-contain p-2 box-content rounded-[10px] bg-white shadow-[0_6px_16px_rgba(19,32,27,0.08)]" />
-            <div className="flex flex-col items-start gap-1.5">
-              <span className="mb-1.5 text-clay text-[9px] font-black uppercase">Phone</span>
-              {phoneNumbers.map((phone) => <a className="m-0 text-ink text-[13px] leading-[1.55] border-b border-transparent hover:border-current" href={`tel:${phone.href}`} key={phone.href}>{phone.display}</a>)}
+      <section className="py-[110px] max-[720px]:py-20 px-[clamp(22px,6vw,92px)] max-[720px]:px-5 gs-reveal">
+        <div className="max-w-[1500px] mx-auto">
+          <div className="grid grid-cols-[0.48fr_1.52fr] max-[760px]:grid-cols-1 gap-8 items-start mb-12">
+            <span className="text-[#2d68a0] text-[10px] font-black tracking-[0.1em] uppercase">Our offices</span>
+            <div>
+              <h2 className="m-0 max-w-[860px] font-heading font-semibold text-[clamp(48px,6vw,78px)] leading-[0.94] tracking-[-0.025em]">Commercial contacts across India</h2>
+              <p className="max-w-[620px] mt-5 mb-0 text-[#667580] text-sm leading-[1.8]">Mumbai is our principal trading office, supported by branch operations in central and northern India.</p>
             </div>
-          </article>
-          <article className="min-h-[178px] p-[26px] rounded-xl grid grid-cols-[42px_1fr] gap-[18px] bg-[#f1f3ec] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(19,32,27,0.09)]">
-            <Image src="/supreme/contact-email.png" alt="" width={24} height={24} className="w-[30px] h-[30px] object-contain p-2 box-content rounded-[10px] bg-white shadow-[0_6px_16px_rgba(19,32,27,0.08)]" />
-            <div className="flex flex-col items-start gap-1.5">
-              <span className="mb-1.5 text-clay text-[9px] font-black uppercase">Email</span>
-              <a className="m-0 text-ink text-[13px] leading-[1.55] border-b border-transparent hover:border-current" href="mailto:info@supremetrading.in">info@supremetrading.in</a>
-            </div>
-          </article>
-          <article className="min-h-[178px] p-[26px] rounded-xl grid grid-cols-[42px_1fr] gap-[18px] bg-[#f1f3ec] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(19,32,27,0.09)]">
-            <span className="grid place-items-center w-[30px] h-[30px] p-2 box-content rounded-[10px] bg-[#25a05a] text-white shadow-[0_6px_16px_rgba(37,160,90,0.3)]"><WhatsApp /></span>
-            <div className="flex flex-col items-start gap-1.5">
-              <span className="mb-1.5 text-clay text-[9px] font-black uppercase">WhatsApp</span>
-              <a className="m-0 text-ink text-[13px] leading-[1.55] border-b border-transparent hover:border-current" href={WA_HREF} target="_blank" rel="noopener noreferrer">Chat with the sourcing desk</a>
-              <p className="m-0 text-muted text-xs">+91 99207 55226</p>
-            </div>
-          </article>
-        </div>
-      </section>
+          </div>
 
-      <section className="py-[100px] max-[720px]:py-[76px] px-[clamp(22px,6vw,92px)] max-[720px]:px-5 grid grid-cols-[minmax(0,1.35fr)_minmax(300px,0.65fr)] max-[900px]:grid-cols-1 gap-[clamp(34px,6vw,90px)] items-start [background:var(--herb-grad)] gs-reveal" id="enquiry">
-        <ContactForm />
-        <aside className="text-white sticky top-[120px] max-[900px]:static">
-          <span className="text-honey-soft text-[10px] font-black tracking-[0.05em] uppercase">Information to include</span>
-          <ol className="mt-[22px] p-0 border-t border-white/20 list-none">
-            {[
-              { t: "Product name", d: "Trade name or English name." },
-              { t: "Grade", d: "Required specification or application." },
-              { t: "Quantity", d: "Trial, wholesale or bulk requirement." },
-              { t: "Destination", d: "City, state or export country." },
-            ].map((g, i) => (
-              <li className="min-h-[104px] py-5 border-b border-white/20 grid grid-cols-[46px_1fr] gap-[18px]" key={g.t}>
-                <b className="text-honey-soft text-[10px]">{String(i + 1).padStart(2, "0")}</b>
-                <div><strong className="font-heading text-[25px]">{g.t}</strong><p className="mt-[5px] text-white/60 text-[11px] leading-[1.55]">{g.d}</p></div>
-              </li>
+          <div className="border-y border-[#173a57]/18 gs-stagger">
+            {offices.map((office, index) => (
+              <article className="grid grid-cols-[90px_0.65fr_1.35fr] max-[760px]:grid-cols-[48px_1fr] gap-[clamp(18px,3vw,52px)] py-9 border-b last:border-b-0 border-[#173a57]/14 items-start transition-colors hover:bg-[#edf1f4]" key={office.city}>
+                <span className="text-[#2d68a0] text-[11px] font-black">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <p className="mb-2 text-[#8d6c32] text-[9px] font-black tracking-[0.09em] uppercase">{office.type}</p>
+                  <h3 className="m-0 font-heading font-semibold text-[38px] leading-none">{office.city}</h3>
+                </div>
+                <address className="max-[760px]:col-start-2 max-w-[600px] text-[#667580] text-[13px] not-italic leading-[1.8]">{office.address}</address>
+              </article>
             ))}
-          </ol>
-        </aside>
+          </div>
+        </div>
       </section>
 
-      <section className="py-[100px] max-[720px]:py-[76px] px-[clamp(22px,6vw,92px)] max-[720px]:px-5 gs-reveal">
-        <div className="grid grid-cols-[0.55fr_1.45fr] max-[720px]:grid-cols-1 gap-10 max-[720px]:gap-3 items-start mb-[42px]">
-          <span className={clayLabel}>Mumbai head office</span>
-          <h2 className="font-heading text-[clamp(46px,6vw,72px)] leading-none m-0">Map</h2>
+      <section className="px-[clamp(22px,6vw,92px)] max-[720px]:px-5 pb-[110px] max-[720px]:pb-20 gs-reveal">
+        <div className="max-w-[1500px] mx-auto grid grid-cols-3 max-[900px]:grid-cols-1 border border-[#173a57]/16 bg-[#102b45] text-white">
+          <article className="min-h-[210px] p-[clamp(26px,3vw,42px)] border-r max-[900px]:border-r-0 max-[900px]:border-b border-white/15 flex flex-col">
+            <span className="text-[#efbd52] text-[9px] font-black tracking-[0.1em] uppercase">Telephone</span>
+            <div className="mt-auto grid gap-2">
+              {phoneNumbers.map((phone) => (
+                <a className="w-fit text-sm font-semibold text-white/85 hover:text-white" href={`tel:${phone.href}`} key={phone.href}>{phone.display}</a>
+              ))}
+            </div>
+          </article>
+          <article className="min-h-[210px] p-[clamp(26px,3vw,42px)] border-r max-[900px]:border-r-0 max-[900px]:border-b border-white/15 flex flex-col">
+            <span className="text-[#efbd52] text-[9px] font-black tracking-[0.1em] uppercase">Email</span>
+            <a className="mt-auto w-fit text-[clamp(16px,1.5vw,22px)] font-semibold text-white hover:text-[#efbd52] break-all" href="mailto:info@supremetrading.in">info@supremetrading.in</a>
+          </article>
+          <article className="min-h-[210px] p-[clamp(26px,3vw,42px)] flex flex-col">
+            <span className="text-[#efbd52] text-[9px] font-black tracking-[0.1em] uppercase">WhatsApp</span>
+            <a className="mt-auto flex items-center justify-between gap-5 text-sm font-bold text-white hover:text-[#efbd52]" href={WA_HREF} target="_blank" rel="noopener noreferrer">
+              <span className="flex items-center gap-3"><WhatsApp className="text-[#5ddd91]" /> Chat with the desk</span>
+              <ArrowUpRight />
+            </a>
+          </article>
         </div>
-        <iframe
-          title="Supreme Trading Corp Mumbai head office map"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30188.49523647128!2d72.835988!3d18.950776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce2445fe9359%3A0xe8c4e71d26263e7a!2sTitanium%20Dioxide%20Suppliers%20-%20Supreme%20Trading%20Corp.!5e0!3m2!1sen!2sin!4v1765969497421!5m2!1sen!2sin"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-          className="w-full h-[520px] max-[720px]:h-[420px] block rounded-[14px] border border-[rgba(19,32,27,0.14)] [filter:saturate(0.7)_contrast(1.03)]"
-        />
+      </section>
+
+      <section className="py-[110px] max-[720px]:py-20 px-[clamp(22px,6vw,92px)] max-[720px]:px-5 bg-[#e9eef2] border-y border-[#173a57]/12 gs-reveal" id="enquiry">
+        <div className="max-w-[1500px] mx-auto grid grid-cols-[minmax(0,1.35fr)_minmax(300px,0.65fr)] max-[940px]:grid-cols-1 gap-0 items-stretch">
+          <ContactForm />
+          <aside className="p-[clamp(28px,4vw,54px)] bg-[#102b45] text-white">
+            <span className="text-[#efbd52] text-[10px] font-black tracking-[0.1em] uppercase">Before you send</span>
+            <h3 className="mt-4 mb-0 font-heading text-[clamp(34px,4vw,50px)] font-semibold leading-[0.95]">Include the details that affect supply.</h3>
+            <ol className="mt-10 p-0 border-t border-white/18 list-none">
+              {[
+                { t: "Product name", d: "Trade name or English name" },
+                { t: "Grade", d: "Specification or end use" },
+                { t: "Quantity", d: "Trial, wholesale or bulk" },
+                { t: "Destination", d: "City, state or export country" },
+              ].map((item, index) => (
+                <li className="py-5 border-b border-white/18 grid grid-cols-[42px_1fr] gap-3" key={item.t}>
+                  <b className="text-[#efbd52] text-[10px]">{String(index + 1).padStart(2, "0")}</b>
+                  <div>
+                    <strong className="text-sm font-bold">{item.t}</strong>
+                    <p className="mt-1 mb-0 text-white/55 text-[11px] leading-[1.55]">{item.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section className="py-[110px] max-[720px]:py-20 px-[clamp(22px,6vw,92px)] max-[720px]:px-5 gs-reveal">
+        <div className="max-w-[1500px] mx-auto">
+          <div className="grid grid-cols-[0.48fr_1.52fr] max-[760px]:grid-cols-1 gap-8 items-end mb-10">
+            <span className="text-[#2d68a0] text-[10px] font-black tracking-[0.1em] uppercase">Mumbai head office</span>
+            <h2 className="m-0 font-heading text-[clamp(48px,6vw,76px)] font-semibold leading-none">Find us</h2>
+          </div>
+          <iframe
+            title="Supreme Trading Corp Mumbai head office map"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30188.49523647128!2d72.835988!3d18.950776!3m2!1i1024!1i768!4f13.1!3m3!1m2!1s0x3be7ce2445fe9359%3A0xe8c4e71d26263e7a!2sTitanium%20Dioxide%20Suppliers%20-%20Supreme%20Trading%20Corp.!5e0!3m2!1sen!2sin!4v1765969497421!5m2!1sen!2sin"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+            className="w-full h-[500px] max-[720px]:h-[400px] block border border-[#173a57]/16 [filter:saturate(0.55)_contrast(1.04)]"
+          />
+        </div>
       </section>
 
       <SiteFooter />

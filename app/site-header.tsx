@@ -13,15 +13,15 @@ const navLinks = [
 ];
 
 const navLinkClass =
-  "relative text-[15px] font-semibold text-ink/80 hover:text-ink transition-colors " +
-  "after:absolute after:left-0 after:-bottom-2 after:h-[1.5px] after:w-full after:origin-right after:scale-x-0 " +
-  "after:bg-[image:var(--amber-grad)] after:transition-transform after:duration-200 hover:after:origin-left hover:after:scale-x-100";
+  "relative py-3 text-[12px] font-extrabold tracking-[0.055em] uppercase text-[#24384b]/75 hover:text-[#0d2a45] transition-colors " +
+  "after:absolute after:left-0 after:bottom-1 after:h-[2px] after:w-full after:origin-right after:scale-x-0 " +
+  "after:bg-[#2d68a0] after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100";
 
 export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 grid grid-cols-[1fr_auto_1fr] max-[1060px]:grid-cols-[1fr_auto_auto] max-[720px]:grid-cols-[1fr_auto] items-center gap-[26px] h-24 max-[720px]:h-[74px] px-[clamp(24px,5vw,90px)] max-[720px]:px-5 border-b border-black/10 backdrop-blur-xl backdrop-saturate-150 ${
-        theme === "solid" ? "bg-paper/97" : "bg-paper/90"
+      className={`fixed inset-x-0 top-0 z-50 grid grid-cols-[1fr_auto_1fr] max-[1060px]:grid-cols-[1fr_auto] items-center gap-[28px] h-[90px] max-[720px]:h-[72px] px-[clamp(22px,4.5vw,78px)] max-[720px]:px-5 border-b border-[#16344f]/15 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgba(17,42,64,0.045)] ${
+        theme === "solid" ? "bg-[#faf9f5]/98" : "bg-[#faf9f5]/94"
       }`}
     >
       <Link className="justify-self-start inline-flex" href="/" aria-label="Supreme Trading Corp home">
@@ -30,31 +30,32 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
           alt="Supreme Trading Corp"
           width={1071}
           height={270}
-          className="w-[clamp(200px,17vw,250px)] max-[720px]:w-44 h-auto"
+          className="w-[clamp(218px,17vw,270px)] max-[720px]:w-[190px] h-auto"
           priority
           unoptimized
         />
       </Link>
 
-      <nav className="hidden min-[1060px]:flex items-center gap-[clamp(30px,3.4vw,54px)]" aria-label="Primary navigation">
+      <nav className="hidden min-[1060px]:flex items-center gap-[clamp(26px,3vw,48px)]" aria-label="Primary navigation">
         {navLinks.map((link) => (
           <Link key={link.href} className={navLinkClass} href={link.href}>{link.label}</Link>
         ))}
       </nav>
 
       <Link
-        className="justify-self-end inline-flex items-center justify-center min-h-[46px] px-5 rounded-full border border-deep bg-deep text-white text-[13px] font-extrabold tracking-[0.01em] transition hover:-translate-y-0.5 hover:bg-ink"
+        className="justify-self-end max-[1060px]:hidden inline-flex items-center justify-center min-h-[44px] px-[22px] border border-[#123451] bg-[#123451] text-white text-[11px] font-extrabold tracking-[0.065em] uppercase transition-colors hover:bg-[#2d68a0] hover:border-[#2d68a0]"
         href="/contact#enquiry"
       >
-        Request a quote
+        Enquire now
       </Link>
 
       <details className="hidden max-[1060px]:block relative justify-self-end">
-        <summary className="list-none cursor-pointer text-[13px] font-extrabold tracking-wider uppercase [&::-webkit-details-marker]:hidden">Menu</summary>
-        <nav className="w-[230px] p-[18px] grid gap-3.5 border border-line bg-paper absolute top-[34px] right-0 shadow-[0_18px_45px_rgba(19,32,27,0.12)]" aria-label="Mobile navigation">
+        <summary className="list-none cursor-pointer min-h-10 px-4 border border-[#123451] grid place-items-center text-[#123451] text-[11px] font-extrabold tracking-[0.08em] uppercase [&::-webkit-details-marker]:hidden">Menu</summary>
+        <nav className="w-[250px] p-5 grid border border-[#16344f]/15 bg-[#faf9f5] absolute top-[48px] right-0 shadow-[0_22px_50px_rgba(17,42,64,0.14)]" aria-label="Mobile navigation">
           {navLinks.map((link) => (
-            <Link key={link.href} className="py-2 border-b border-line text-[13px] font-extrabold" href={link.href}>{link.label}</Link>
+            <Link key={link.href} className="py-3.5 border-b border-[#16344f]/12 text-[12px] font-extrabold tracking-[0.04em] uppercase" href={link.href}>{link.label}</Link>
           ))}
+          <Link className="mt-5 min-h-11 px-4 grid place-items-center bg-[#123451] text-white text-[11px] font-extrabold tracking-[0.06em] uppercase" href="/contact#enquiry">Enquire now</Link>
         </nav>
       </details>
     </header>

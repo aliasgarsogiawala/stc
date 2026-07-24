@@ -30,15 +30,15 @@ export default function ContactForm() {
     window.location.href = `mailto:info@supremetrading.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
-  const labelCls = "grid gap-2 text-ink text-[10px] font-black uppercase";
-  const inputCls = "w-full h-[46px] border-0 border-b border-line rounded-none outline-0 bg-transparent text-ink text-sm font-medium normal-case focus:border-[#d99a2b] focus:shadow-[0_1px_0_#d99a2b]";
+  const labelCls = "grid gap-2.5 text-[#5b6d7c] text-[9px] font-extrabold tracking-[0.08em] uppercase";
+  const inputCls = "w-full h-[48px] border-0 border-b border-[#173a57]/20 rounded-none outline-0 bg-transparent text-[#102b45] text-sm font-semibold normal-case placeholder:text-[#82909b] focus:border-[#2d68a0] focus:shadow-[0_1px_0_#2d68a0]";
 
   return (
-    <form className="p-[clamp(26px,4vw,54px)] bg-white rounded-2xl shadow-[0_30px_70px_rgba(0,0,0,0.22)]" onSubmit={handleSubmit}>
-      <div className="mb-9">
-        <span className="text-honey text-[10px] font-black uppercase">Product enquiry</span>
-        <h2 className="mt-3 font-heading text-[58px] leading-none">Send a requirement</h2>
-        <p className="mt-3 text-muted text-[11px]">The form prepares an email in your default mail application.</p>
+    <form className="p-[clamp(28px,4vw,56px)] bg-white border border-[#173a57]/14 shadow-[0_22px_60px_rgba(22,49,72,0.08)]" onSubmit={handleSubmit}>
+      <div className="mb-10 pb-8 border-b border-[#173a57]/12">
+        <span className="text-[#2d68a0] text-[10px] font-black tracking-[0.09em] uppercase">Product enquiry</span>
+        <h2 className="mt-3 mb-0 font-heading text-[clamp(43px,5vw,62px)] font-semibold leading-[0.95] text-[#102b45]">Send a requirement</h2>
+        <p className="mt-4 mb-0 max-w-[560px] text-[#667580] text-xs leading-[1.7]">Share the product, grade and commercial details. Submitting opens a prepared email to our sourcing desk.</p>
       </div>
 
       <div className="grid grid-cols-2 max-[720px]:grid-cols-1 gap-x-[18px] gap-y-[22px]">
@@ -72,7 +72,7 @@ export default function ContactForm() {
         </label>
       </div>
 
-      <button className="button button-honey mt-[30px]" type="submit">Prepare email</button>
+      <button className="mt-9 min-h-[50px] px-7 border border-[#123451] bg-[#123451] text-white text-[11px] font-extrabold tracking-[0.065em] uppercase transition-colors hover:bg-[#2d68a0] hover:border-[#2d68a0]" type="submit">Prepare enquiry email</button>
     </form>
   );
 }
