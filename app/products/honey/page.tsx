@@ -117,7 +117,7 @@ export default function HoneyPage() {
           <p className="eyebrow honey-eyebrow"><span /> Bulk honey enquiry</p>
           <h2 data-reveal>Tell us the variant, grade and quantity</h2>
           <p>We&apos;ll confirm availability, packing options and lead time.</p>
-          <a className="button button-honey button-wa" href={WA_HREF} target="_blank" rel="noopener noreferrer"><WhatsApp /> Enquire on WhatsApp</a>
+          <a className="button button-honey button-wa w-12 px-0" href={WA_HREF} target="_blank" rel="noopener noreferrer" aria-label="Enquire about honey on WhatsApp" title="WhatsApp"><WhatsApp /></a>
         </div>
       </section>
 

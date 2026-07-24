@@ -20,7 +20,7 @@ const navLinkClass =
 export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 grid grid-cols-[1fr_auto_1fr] max-[1060px]:grid-cols-[1fr_auto] items-center gap-[28px] h-[90px] max-[720px]:h-[72px] px-[clamp(22px,4.5vw,78px)] max-[720px]:px-5 border-b border-[#16344f]/15 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgba(17,42,64,0.045)] ${
+      className={`fixed inset-x-0 top-0 z-50 grid grid-cols-[1fr_auto_1fr] max-[1060px]:grid-cols-[1fr_auto] items-center gap-[28px] h-[82px] max-[720px]:h-[70px] px-[clamp(22px,4.5vw,78px)] max-[720px]:px-5 border-b border-[#16344f]/15 backdrop-blur-xl backdrop-saturate-150 ${
         theme === "solid" ? "bg-[#faf9f5]/98" : "bg-[#faf9f5]/94"
       }`}
     >
@@ -30,7 +30,7 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
           alt="Supreme Trading Corp"
           width={1071}
           height={270}
-          className="w-[clamp(218px,17vw,270px)] max-[720px]:w-[190px] h-auto"
+          className="w-[clamp(230px,18vw,280px)] max-[720px]:w-[195px] h-auto"
           priority
           unoptimized
         />

@@ -103,20 +103,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-[126px] max-[720px]:py-[82px] px-[clamp(22px,6vw,92px)] gs-reveal">
-        <div className="max-w-[900px]">
-          <span className={label}>Quality and order handling</span>
-          <h2 className={`${h2} mt-4`}>From enquiry to dispatch</h2>
-          <p className="max-w-[580px] mt-7 text-muted text-[13px] leading-[1.75]">Material fit, quality requirements and handling details are reviewed before an order moves forward.</p>
-        </div>
-        <div className="mt-[66px] border border-line grid grid-cols-4 max-[980px]:grid-cols-2 max-[720px]:grid-cols-1 bg-line gap-px gs-stagger">
-          {qualitySteps.map((step) => (
-            <article className="min-h-[310px] max-[720px]:min-h-[250px] p-[25px] flex flex-col bg-white" key={step.number}>
-              <span className="text-clay text-[9px] font-black">{step.number}</span>
-              <h3 className="mt-auto mb-3.5 font-heading text-[30px] leading-none">{step.title}</h3>
-              <p className="m-0 text-muted text-[11px] leading-[1.7]">{step.text}</p>
-            </article>
-          ))}
+      <section className="py-[116px] max-[720px]:py-[78px] px-[clamp(22px,6vw,92px)] bg-[#f1f3f4] gs-reveal">
+        <div className="max-w-[1380px] mx-auto grid grid-cols-[0.62fr_1.38fr] max-[900px]:grid-cols-1 gap-[clamp(48px,8vw,120px)] items-start">
+          <div className="sticky top-[120px] max-[900px]:static">
+            <span className="text-[#2d68a0] text-[9px] font-black tracking-[0.08em] uppercase">Order handling</span>
+            <h2 className="max-w-[430px] mt-4 mb-0 font-sans text-[clamp(38px,4.5vw,58px)] leading-[1.02] font-bold tracking-[-0.045em]">How an order moves</h2>
+            <p className="max-w-[420px] mt-6 mb-0 text-muted text-[13px] leading-[1.8]">The requirement is checked commercially and technically before packing and dispatch are confirmed.</p>
+          </div>
+
+          <ol className="m-0 p-0 border-t border-[#173a57]/20 list-none gs-stagger">
+            {qualitySteps.map((step) => (
+              <li className="py-7 px-1 border-b border-[#173a57]/16 grid grid-cols-[48px_minmax(190px,0.72fr)_minmax(260px,1.28fr)] max-[720px]:grid-cols-[42px_1fr] gap-[clamp(18px,3vw,48px)] items-start transition-colors hover:bg-white" key={step.number}>
+                <span className="pt-1 text-[#2d68a0] text-[9px] font-black">{step.number}</span>
+                <h3 className="m-0 font-sans text-[17px] leading-[1.35] font-extrabold tracking-[-0.025em]">{step.title}</h3>
+                <p className="max-[720px]:col-start-2 m-0 text-muted text-[12px] leading-[1.75]">{step.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

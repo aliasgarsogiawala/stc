@@ -31,3 +31,29 @@ export function WhatsApp({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+export function Phone({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M5.4 3.5h3l1.5 4.2-2.2 1.7c1.4 3 3.6 5.2 6.6 6.6l1.7-2.2 4.2 1.5v3c0 1.2-1 2.2-2.2 2.2C10 20.5 3.5 14 3.5 6c0-1.4.8-2.5 1.9-2.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function Mail({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3.5" y="5" width="17" height="14" stroke="currentColor" strokeWidth="1.6" />
+      <path d="m4.5 6.5 7.5 6 7.5-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function MapPin({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M19 10c0 5-7 10.5-7 10.5S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+}

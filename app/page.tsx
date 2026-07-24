@@ -119,7 +119,7 @@ export default function Home() {
         <div className="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 gap-[18px] gs-stagger">
           {whyChoose.map((item) => (
             <article className="p-[34px_28px] border border-line rounded-[18px] bg-white transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-black/25 hover:shadow-[0_18px_42px_rgba(19,32,27,0.08)]" key={item.title}>
-              <span className="grid place-items-center w-[68px] h-[68px] mb-6 rounded-full [background:var(--herb-grad)] shadow-[0_14px_30px_rgba(28,65,51,0.24)]">
+              <span className="grid place-items-center w-[68px] h-[68px] mb-6 rounded-full [background:var(--herb-grad)] shadow-[0_14px_30px_rgba(24,74,116,0.24)]">
                 <Image src={item.icon} alt="" width={40} height={40} className="w-[34px] h-[34px] object-contain" />
               </span>
               <h3 className="mb-2.5 font-heading text-[23px] leading-[1.1] font-bold">{item.title}</h3>
@@ -264,9 +264,7 @@ export default function Home() {
       <section className="py-[110px] max-[760px]:py-20 px-[clamp(18px,4vw,64px)] bg-[#f6f1e8] gs-reveal" id="contact">
         <div className="max-w-[1680px] mx-auto p-[clamp(26px,4.5vw,72px)] grid grid-cols-[minmax(0,1.05fr)_minmax(430px,0.75fr)] max-[980px]:grid-cols-1 gap-[clamp(42px,7vw,110px)] items-center bg-[#123451] text-white relative isolate overflow-hidden shadow-[0_26px_70px_rgba(18,52,81,0.14)]">
           <div>
-            <div className="w-fit px-3.5 py-2 border border-[#e7ba57]/35 bg-[#e7ba57]/10 flex items-center gap-2 text-[#f2cb76] text-[9px] font-black tracking-[0.11em] uppercase">
-              <i className="w-1.5 h-1.5 bg-[#f2cb76]" /> Product enquiry
-            </div>
+           
             <h2 data-reveal className="max-w-[800px] mt-6 mb-0 font-heading text-[clamp(48px,5.7vw,82px)] leading-[0.94] font-semibold text-white">
               Send one complete requirement
             </h2>
@@ -295,7 +293,7 @@ export default function Home() {
           <div className="grid grid-cols-2 max-[520px]:grid-cols-1 gap-3.5">
             <figure className="col-span-2 max-[520px]:col-span-1 min-h-[290px] m-0 overflow-hidden relative bg-[#d9dfd6]">
               <Image className="object-cover object-[68%_center] transition-transform duration-700 hover:scale-[1.035]" src="/supreme/neutral-materials-hero.png" alt="Industrial liquids, powders and raw material samples" fill sizes="(max-width: 980px) 92vw, 42vw" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#102f24]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102f4c]/80 via-transparent to-transparent" />
               <div className="absolute left-5 right-5 bottom-5 flex items-end justify-between gap-5 text-white">
                 <div><span className="text-[9px] font-black tracking-[0.1em] uppercase text-[#f2cb76]">Catalogue</span><p className="mt-1 mb-0 font-heading text-[27px] leading-none">800+ listed materials</p></div>
                 <Link className="w-11 h-11 grid place-items-center bg-white text-[#123451] transition-colors hover:bg-[#efc35f]" href="/products" aria-label="Open product catalogue"><ArrowUpRight /></Link>

@@ -103,7 +103,7 @@ export default async function FoodIngredientsPage() {
 
       <section className="min-h-[440px] py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[1.2fr_0.8fr] max-[800px]:grid-cols-1 gap-14 items-center bg-[#572b1d] text-white gs-reveal">
         <div><p className="eyebrow text-[#f0c584]"><span /> Ingredient enquiry</p><h2 className="max-w-[800px] m-0 font-heading text-[clamp(44px,5vw,72px)] leading-[0.96] text-white">Confirm form, quantity and availability</h2></div>
-        <div><p className="text-white/65 text-sm leading-[1.75]">Share the ingredient name, form, processing detail, pack size and destination.</p><a className="button button-light mt-4 inline-flex items-center gap-2.5" href={WA_HREF} target="_blank" rel="noopener noreferrer"><WhatsApp /> Enquire on WhatsApp</a></div>
+        <div><p className="text-white/65 text-sm leading-[1.75]">Share the ingredient name, form, processing detail, pack size and destination.</p><a className="mt-4 w-12 h-12 grid place-items-center bg-white text-[#25a05a]" href={WA_HREF} target="_blank" rel="noopener noreferrer" aria-label="Enquire about food ingredients on WhatsApp" title="WhatsApp"><WhatsApp /></a></div>
       </section>
 
       <SiteFooter />

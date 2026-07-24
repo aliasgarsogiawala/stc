@@ -154,13 +154,14 @@ export default function ProductCatalog({ categories }: ProductCatalogProps) {
                     {product.subgroup && <small className="mt-2.5 block text-clay text-[8px] font-black tracking-[0.04em] uppercase">{product.subgroup}</small>}
                   </div>
                   <a
-                    className="mt-auto py-2 px-[13px] inline-flex items-center gap-[7px] w-fit border border-[rgba(37,160,90,0.28)] rounded-full bg-[rgba(37,211,102,0.08)] text-[#1f7d45] text-[11px] font-extrabold transition hover:bg-[rgba(37,211,102,0.16)] hover:border-[rgba(37,160,90,0.5)] hover:-translate-y-px [&_.ico-wa]:text-[#25a05a]"
+                    className="mt-auto w-10 h-10 grid place-items-center border border-[rgba(37,160,90,0.3)] bg-[rgba(37,211,102,0.07)] text-[#25a05a] transition-colors hover:bg-[rgba(37,211,102,0.15)] hover:border-[rgba(37,160,90,0.52)] [&_.ico-wa]:text-[#25a05a]"
                     href={waHref(product.name)}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Enquire about ${product.name} on WhatsApp`}
+                    title={`WhatsApp enquiry for ${product.name}`}
                   >
-                    <WhatsApp /> Enquire on WhatsApp
+                    <WhatsApp />
                   </a>
                 </article>
               );

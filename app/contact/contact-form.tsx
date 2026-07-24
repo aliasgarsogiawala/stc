@@ -31,14 +31,14 @@ export default function ContactForm() {
   };
 
   const labelCls = "grid gap-2.5 text-[#5b6d7c] text-[9px] font-extrabold tracking-[0.08em] uppercase";
-  const inputCls = "w-full h-[48px] border-0 border-b border-[#173a57]/20 rounded-none outline-0 bg-transparent text-[#102b45] text-sm font-semibold normal-case placeholder:text-[#82909b] focus:border-[#2d68a0] focus:shadow-[0_1px_0_#2d68a0]";
+  const inputCls = "w-full h-[52px] px-4 border border-[#173a57]/16 rounded-none outline-0 bg-[#f8fafb] text-[#102b45] text-sm font-semibold normal-case placeholder:text-[#82909b] transition focus:border-[#2d68a0] focus:bg-white focus:shadow-[0_0_0_3px_rgba(45,104,160,0.09)]";
 
   return (
-    <form className="p-[clamp(28px,4vw,56px)] bg-white border border-[#173a57]/14 shadow-[0_22px_60px_rgba(22,49,72,0.08)]" onSubmit={handleSubmit}>
-      <div className="mb-10 pb-8 border-b border-[#173a57]/12">
+    <form className="p-[clamp(26px,4vw,48px)] bg-white border border-[#173a57]/14 shadow-[0_18px_55px_rgba(18,44,68,0.06)]" onSubmit={handleSubmit}>
+      <div className="mb-9 pb-7 border-b border-[#173a57]/12">
         <span className="text-[#2d68a0] text-[10px] font-black tracking-[0.09em] uppercase">Product enquiry</span>
-        <h2 className="mt-3 mb-0 font-heading text-[clamp(43px,5vw,62px)] font-semibold leading-[0.95] text-[#102b45]">Send a requirement</h2>
-        <p className="mt-4 mb-0 max-w-[560px] text-[#667580] text-xs leading-[1.7]">Share the product, grade and commercial details. Submitting opens a prepared email to our sourcing desk.</p>
+        <h2 className="mt-3 mb-0 font-sans text-[clamp(32px,4vw,46px)] font-bold leading-[1.05] tracking-[-0.045em] text-[#102b45]">Send your requirement</h2>
+        <p className="mt-4 mb-0 max-w-[580px] text-[#667580] text-xs leading-[1.7]">Complete the fields below. The form will prepare an email to the sourcing desk.</p>
       </div>
 
       <div className="grid grid-cols-2 max-[720px]:grid-cols-1 gap-x-[18px] gap-y-[22px]">

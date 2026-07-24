@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "next/font/google";
 import SiteMotion from "./site-motion";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const display = DM_Sans({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
