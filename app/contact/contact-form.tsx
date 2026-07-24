@@ -30,46 +30,49 @@ export default function ContactForm() {
     window.location.href = `mailto:info@supremetrading.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
+  const labelCls = "grid gap-2 text-ink text-[10px] font-black uppercase";
+  const inputCls = "w-full h-[46px] border-0 border-b border-line rounded-none outline-0 bg-transparent text-ink text-sm font-medium normal-case focus:border-[#d99a2b] focus:shadow-[0_1px_0_#d99a2b]";
+
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
-      <div className="contact-form-heading">
-        <span>Product enquiry</span>
-        <h2>Send a requirement</h2>
-        <p>The form prepares an email in your default mail application.</p>
+    <form className="p-[clamp(26px,4vw,54px)] bg-white rounded-2xl shadow-[0_30px_70px_rgba(0,0,0,0.22)]" onSubmit={handleSubmit}>
+      <div className="mb-9">
+        <span className="text-honey text-[10px] font-black uppercase">Product enquiry</span>
+        <h2 className="mt-3 font-heading text-[58px] leading-none">Send a requirement</h2>
+        <p className="mt-3 text-muted text-[11px]">The form prepares an email in your default mail application.</p>
       </div>
 
-      <div className="contact-form-grid">
-        <label>
+      <div className="grid grid-cols-2 max-[720px]:grid-cols-1 gap-x-[18px] gap-y-[22px]">
+        <label className={labelCls}>
           Name
-          <input name="name" autoComplete="name" required />
+          <input className={inputCls} name="name" autoComplete="name" required />
         </label>
-        <label>
+        <label className={labelCls}>
           Company
-          <input name="company" autoComplete="organization" required />
+          <input className={inputCls} name="company" autoComplete="organization" required />
         </label>
-        <label>
+        <label className={labelCls}>
           Phone
-          <input name="phone" type="tel" autoComplete="tel" required />
+          <input className={inputCls} name="phone" type="tel" autoComplete="tel" required />
         </label>
-        <label>
+        <label className={labelCls}>
           Product or material
-          <input name="product" required />
+          <input className={inputCls} name="product" required />
         </label>
-        <label>
+        <label className={labelCls}>
           Required quantity
-          <input name="quantity" placeholder="For example: 500 kg" required />
+          <input className={inputCls} name="quantity" placeholder="For example: 500 kg" required />
         </label>
-        <label>
+        <label className={labelCls}>
           Delivery location
-          <input name="destination" autoComplete="shipping locality" required />
+          <input className={inputCls} name="destination" autoComplete="shipping locality" required />
         </label>
-        <label className="contact-form-message">
+        <label className={`${labelCls} col-span-full`}>
           Grade, packing or other details
-          <textarea name="message" rows={5} />
+          <textarea className={`${inputCls} h-auto py-3 resize-y`} name="message" rows={5} />
         </label>
       </div>
 
-      <button className="button button-honey" type="submit">Prepare email</button>
+      <button className="button button-honey mt-[30px]" type="submit">Prepare email</button>
     </form>
   );
 }

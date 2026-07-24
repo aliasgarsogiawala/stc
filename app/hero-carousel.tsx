@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft } from "./icons";
 
 type Slide = {
   key: string;
@@ -60,7 +59,7 @@ export default function HeroCarousel() {
   const [paused, setPaused] = useState(false);
 
   const go = useCallback((next: number) => {
-    setActive((prev) => (next + slides.length) % slides.length);
+    setActive((next + slides.length) % slides.length);
   }, []);
 
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -105,20 +104,18 @@ export default function HeroCarousel() {
           <h1>{current.title}</h1>
           <p className="hc-lead">{current.lead}</p>
           <div className="hc-actions">
-            <Link className="button button-honey" href={current.cta.href}>{current.cta.label}</Link>
+            <Link className="button" href={current.cta.href}>{current.cta.label}</Link>
             <Link className="text-link" href="/contact#enquiry">Send enquiry</Link>
           </div>
         </div>
 
         <div className="hc-controls">
-          <button type="button" className="hc-arrow" aria-label="Previous slide" onClick={() => go(active - 1)}>
-            <ArrowLeft />
-          </button>
           <div className="hc-dots" role="tablist">
             {slides.map((slide, i) => (
               <button
                 key={slide.key}
                 type="button"
+                role="tab"
                 className={`hc-dot ${i === active ? "is-active" : ""}`}
                 aria-label={`Go to ${slide.key} slide`}
                 aria-selected={i === active}
@@ -129,9 +126,6 @@ export default function HeroCarousel() {
               </button>
             ))}
           </div>
-          <button type="button" className="hc-arrow" aria-label="Next slide" onClick={() => go(active + 1)}>
-            <ArrowRight />
-          </button>
         </div>
       </div>
 

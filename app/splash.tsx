@@ -12,7 +12,8 @@ export default function Splash() {
     // Show on every reload for now (never for reduced-motion users).
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
-    setShow(true);
+    const frame = window.requestAnimationFrame(() => setShow(true));
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {
@@ -28,14 +29,15 @@ export default function Splash() {
       },
     });
 
-    tl.from(".splash-ring", { opacity: 0, scale: 0.92, duration: 1.1, ease: "power2.out", stagger: 0.12 }, 0)
-      .from(".splash-welcome", { y: 22, opacity: 0, duration: 0.8, ease: "power3.out" }, 0.15)
-      .from(".splash-logo", { y: 20, opacity: 0, scale: 0.96, duration: 0.95, ease: "power3.out" }, "-=0.42")
-      .from(".splash-line", { scaleX: 0, duration: 0.8, ease: "power2.out" }, "-=0.5")
-      .from(".splash-tagline", { y: 12, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.45")
-      .to({}, { duration: 0.8 })
-      .to(".splash-inner", { y: -18, opacity: 0, duration: 0.55, ease: "power2.in" })
-      .to(el, { yPercent: -100, duration: 0.9, ease: "power4.inOut" }, "-=0.15");
+    tl.from(".splash-shadow, .splash-bokeh", { opacity: 0, scale: 1.06, duration: 1.4, ease: "power2.out", stagger: 0.1 }, 0)
+      .from(".splash-branch", { opacity: 0, y: -20, rotate: -4, duration: 1.3, ease: "power3.out" }, 0.1)
+      .from(".splash-welcome", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, 0.35)
+      .from(".splash-logo", { y: 18, opacity: 0, scale: 0.97, duration: 0.9, ease: "power3.out" }, "-=0.44")
+      .from(".splash-tagline", { y: 12, opacity: 0, duration: 0.7, ease: "power2.out" }, "-=0.4")
+      .fromTo(".splash-progress > span", { scaleX: 0 }, { scaleX: 1, duration: 2.0, ease: "power1.inOut" }, 0.5)
+      .to({}, { duration: 0.35 })
+      .to(".splash-inner, .splash-progress", { y: -16, opacity: 0, duration: 0.5, ease: "power2.in" })
+      .to(el, { yPercent: -100, duration: 0.9, ease: "power4.inOut" }, "-=0.12");
 
     return () => {
       tl.kill();
@@ -47,8 +49,17 @@ export default function Splash() {
 
   return (
     <div className="splash" ref={ref} aria-hidden="true">
-      <span className="splash-ring splash-ring-1" />
-      <span className="splash-ring splash-ring-2" />
+      <span className="splash-bokeh splash-bokeh-1" />
+      <span className="splash-bokeh splash-bokeh-2" />
+
+      {/* Soft dappled leaf shadows */}
+      <Image className="splash-shadow splash-shadow-1" src="/supreme/source/bg-leaf1.png" alt="" width={309} height={474} />
+      <Image className="splash-shadow splash-shadow-2" src="/supreme/source/bg-leaf3.png" alt="" width={278} height={394} />
+      <Image className="splash-shadow splash-shadow-3" src="/supreme/source/bg-leaf4.png" alt="" width={215} height={465} />
+
+      {/* Real leaf branch in the corner */}
+      <Image className="splash-branch" src="/supreme/source/ban-leafleft.png" alt="" width={249} height={307} priority />
+
       <div className="splash-inner">
         <p className="splash-welcome">Welcome to</p>
         <Image
@@ -61,9 +72,10 @@ export default function Splash() {
           quality={100}
           unoptimized
         />
-        <span className="splash-line" />
-        <p className="splash-tagline">Industrial &amp; Specialty Raw Materials · Since 2002</p>
+        <p className="splash-tagline">Sourced · Graded · Delivered</p>
       </div>
+
+      <div className="splash-progress"><span /></div>
     </div>
   );
 }
