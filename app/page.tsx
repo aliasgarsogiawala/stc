@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, WhatsApp } from "./icons";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 import Splash from "./splash";
@@ -260,13 +261,56 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-[clamp(14px,3vw,42px)] max-[720px]:mx-2 min-h-[560px] py-[92px] max-[720px]:py-20 px-[clamp(24px,9vw,140px)] max-[720px]:px-[22px] rounded-lg flex flex-col items-start justify-center text-white relative overflow-hidden gs-reveal [background:linear-gradient(90deg,rgba(19,32,27,0.95),rgba(24,52,42,0.78)),url('/supreme/source/achievement-bg.png')_center/cover]" id="contact">
-        <p className="eyebrow text-[#e4b39f]"><span /> Required details</p>
-        <h2 data-reveal className="max-w-[860px] font-heading text-[clamp(38px,5vw,66px)] leading-none font-semibold text-white m-0">Product enquiry</h2>
-        <p className="max-w-[560px] mt-6 text-white/70 text-base leading-[1.75]">Send the material name, grade, quantity, packing requirement and delivery location.</p>
-        <div className="mt-[34px] flex items-center gap-7 flex-wrap relative z-[3]">
-          <Link className="button button-light" href="/contact#enquiry">Contact details</Link>
-          <a className="phone-link" href="tel:+912223455226">+91 22 2345 5226</a>
+      <section className="py-[110px] max-[760px]:py-20 px-[clamp(18px,4vw,64px)] bg-[#f6f1e8] gs-reveal" id="contact">
+        <div className="max-w-[1680px] mx-auto p-[clamp(26px,4.5vw,72px)] rounded-[30px] grid grid-cols-[minmax(0,1.05fr)_minmax(430px,0.75fr)] max-[980px]:grid-cols-1 gap-[clamp(42px,7vw,110px)] items-center bg-[#153a2b] text-white relative isolate overflow-hidden shadow-[0_34px_90px_rgba(20,52,39,0.18)] before:content-[''] before:absolute before:-z-[1] before:w-[620px] before:h-[620px] before:-right-[240px] before:-top-[300px] before:rounded-full before:border before:border-white/10 before:shadow-[0_0_0_90px_rgba(255,255,255,0.025),0_0_0_180px_rgba(255,255,255,0.018)]">
+          <div>
+            <div className="w-fit px-3.5 py-2 rounded-full border border-[#e7ba57]/35 bg-[#e7ba57]/10 flex items-center gap-2 text-[#f2cb76] text-[9px] font-black tracking-[0.11em] uppercase">
+              <i className="w-1.5 h-1.5 rounded-full bg-[#f2cb76]" /> Product enquiry
+            </div>
+            <h2 data-reveal className="max-w-[800px] mt-6 mb-0 font-heading text-[clamp(48px,5.7vw,82px)] leading-[0.94] font-semibold text-white">
+              Send one complete requirement
+            </h2>
+            <p className="max-w-[620px] mt-7 mb-0 text-white/68 text-[15px] leading-[1.8]">
+              Include the information below so the sourcing desk can review the material and respond with the right commercial option.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {["Product", "Grade", "Quantity", "Packing", "Destination"].map((item, index) => (
+                <span className="px-3.5 py-2 rounded-full border border-white/15 bg-white/[0.055] text-white/78 text-[10px] font-bold" key={item}>
+                  <b className="mr-1.5 text-[#f2cb76]">{String(index + 1).padStart(2, "0")}</b>{item}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-10 flex items-center gap-3.5 flex-wrap">
+              <Link className="group min-h-[52px] px-6 rounded-md inline-flex items-center gap-3 bg-[#efc35f] text-[#143426] text-xs font-black transition-[transform,background] hover:-translate-y-0.5 hover:bg-[#f8d782]" href="/contact#enquiry">
+                Send requirement <ArrowUpRight />
+              </Link>
+              <a className="min-h-[52px] px-5 rounded-md border border-white/20 inline-flex items-center gap-2.5 bg-white/[0.055] text-white text-xs font-black transition-colors hover:bg-white/10" href="https://wa.me/919920755226" target="_blank" rel="noopener noreferrer">
+                <WhatsApp className="text-[#56d98b]" /> WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 max-[520px]:grid-cols-1 gap-3.5">
+            <figure className="col-span-2 max-[520px]:col-span-1 min-h-[290px] m-0 rounded-[20px] overflow-hidden relative bg-[#d9dfd6]">
+              <Image className="object-cover object-[68%_center] transition-transform duration-700 hover:scale-[1.035]" src="/supreme/neutral-materials-hero.png" alt="Industrial liquids, powders and raw material samples" fill sizes="(max-width: 980px) 92vw, 42vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102f24]/80 via-transparent to-transparent" />
+              <div className="absolute left-5 right-5 bottom-5 flex items-end justify-between gap-5 text-white">
+                <div><span className="text-[9px] font-black tracking-[0.1em] uppercase text-[#f2cb76]">Catalogue</span><p className="mt-1 mb-0 font-heading text-[27px] leading-none">800+ listed materials</p></div>
+                <Link className="w-11 h-11 rounded-full grid place-items-center bg-white text-[#143426] transition-transform hover:translate-x-1" href="/products" aria-label="Open product catalogue"><ArrowUpRight /></Link>
+              </div>
+            </figure>
+
+            <a className="min-h-[108px] p-[18px] rounded-md border border-[#d9d1c3] flex flex-col justify-between bg-[#f5efe3] text-[#143426] transition-[transform,border-color] hover:-translate-y-0.5 hover:border-[#bcae99]" href="tel:+912223455226">
+              <span className="text-[9px] font-black tracking-[0.11em] uppercase text-[#8b6b42]">Call</span>
+              <strong className="font-sans text-[15px] leading-tight font-bold tracking-[-0.015em] whitespace-nowrap">+91 22 2345 5226</strong>
+            </a>
+            <a className="min-h-[108px] p-[18px] rounded-md border border-[#d8aa42] flex flex-col justify-between bg-[#efc35f] text-[#143426] transition-[transform,background] hover:-translate-y-0.5 hover:bg-[#f4ce78]" href="mailto:info@supremetrading.in">
+              <span className="text-[9px] font-black tracking-[0.11em] uppercase text-[#71521f]">Email</span>
+              <strong className="font-sans text-[14px] leading-tight font-bold tracking-[-0.015em] break-words">info@supremetrading.in</strong>
+            </a>
+          </div>
         </div>
       </section>
 

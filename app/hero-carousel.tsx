@@ -52,24 +52,29 @@ const slides: Slide[] = [
   },
 ];
 
-const DURATION = 6000;
-
 export default function HeroCarousel() {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
 
   const go = useCallback((next: number) => {
     setActive((next + slides.length) % slides.length);
   }, []);
 
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
-    if (paused) return;
-    timer.current = setTimeout(() => go(active + 1), DURATION);
-    return () => {
-      if (timer.current) clearTimeout(timer.current);
-    };
-  }, [active, paused, go]);
+    videoRefs.current.forEach((video, index) => {
+      if (!video) return;
+
+      if (index === active) {
+        video.currentTime = 0;
+        void video.play().catch(() => {
+          // Muted inline playback is allowed by modern browsers; the poster remains as fallback.
+        });
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }, [active]);
 
   const current = slides[active];
 
@@ -78,19 +83,20 @@ export default function HeroCarousel() {
       className="hero-carousel"
       aria-roledescription="carousel"
       aria-label="Product highlights"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
     >
       {slides.map((slide, i) => (
         <div className={`hc-slide ${i === active ? "is-active" : ""}`} key={slide.key} aria-hidden={i !== active}>
           <video
+            ref={(video) => { videoRefs.current[i] = video; }}
             className="hc-video"
-            autoPlay
+            autoPlay={i === 0}
             muted
-            loop
             playsInline
-            preload={i === 0 ? "auto" : "metadata"}
+            preload={i === active || i === (active + 1) % slides.length ? "auto" : "metadata"}
             poster={slide.poster}
+            onEnded={() => {
+              if (i === active) go(i + 1);
+            }}
           >
             <source src={slide.video} type="video/mp4" />
           </video>
@@ -109,24 +115,6 @@ export default function HeroCarousel() {
           </div>
         </div>
 
-        <div className="hc-controls">
-          <div className="hc-dots" role="tablist">
-            {slides.map((slide, i) => (
-              <button
-                key={slide.key}
-                type="button"
-                role="tab"
-                className={`hc-dot ${i === active ? "is-active" : ""}`}
-                aria-label={`Go to ${slide.key} slide`}
-                aria-selected={i === active}
-                onClick={() => setActive(i)}
-              >
-                <span className="hc-dot-label">{slide.key}</span>
-                <i style={{ animationDuration: `${DURATION}ms`, animationPlayState: i === active && !paused ? "running" : "paused" }} />
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
 
       <div className="hero-proof" aria-label="Company highlights">
