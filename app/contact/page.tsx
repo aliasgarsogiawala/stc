@@ -70,20 +70,25 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="contact-office-grid grid grid-cols-3 max-[900px]:grid-cols-1 border border-[#173a57]/16 bg-[#173a57]/16 gap-px gs-stagger relative">
-            <span className="absolute z-[3] left-[calc(16.66%+24px)] right-[calc(16.66%+24px)] top-[66px] h-px bg-[#2d68a0]/18 max-[900px]:hidden pointer-events-none" aria-hidden="true">
+          <div className="contact-office-grid grid grid-cols-3 max-[900px]:grid-cols-1 gap-5 gs-stagger relative">
+            <span className="absolute z-[3] left-[16.666%] right-[16.666%] top-[49px] h-px bg-[#2d68a0]/20 max-[900px]:hidden pointer-events-none" aria-hidden="true">
               <i className="contact-office-line-fill block w-full h-full bg-[#2d68a0]" />
             </span>
             {offices.map((office, index) => (
-              <article className="tilt-card min-h-[330px] p-[clamp(26px,3vw,42px)] bg-[#f8f7f3] flex flex-col transition-colors hover:bg-white" key={office.city}>
-                <div className="flex items-start justify-between gap-4">
-                  <span className="relative z-[5] w-12 h-12 border border-[#2d68a0]/30 grid place-items-center bg-[#f8f7f3] text-[#2d68a0]"><MapPin /></span>
-                  <span className="text-[#85909a] text-[10px] font-bold">{String(index + 1).padStart(2, "0")}</span>
-                </div>
-                <div className="mt-auto pt-14">
-                  <p className="mb-2 text-[#9a7331] text-[9px] font-extrabold tracking-[0.1em] uppercase">{office.type}</p>
-                  <h3 className="mb-4 font-heading text-[26px] font-semibold tracking-[-0.02em]">{office.city}</h3>
-                  <address className="m-0 text-[#65737e] text-[12px] not-italic leading-[1.8]">{office.address}</address>
+              <article
+                className={`tilt-card min-h-[286px] px-[clamp(24px,2.6vw,36px)] pt-[104px] pb-8 border relative overflow-hidden transition-[background-color,border-color] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-[#174ea6] after:transition-[width] after:duration-500 hover:after:w-full ${
+                  index === 0
+                    ? "border-[#2d68a0]/28 bg-[#eef5fb]"
+                    : "border-[#173a57]/16 bg-[#fafbfc] hover:bg-white"
+                }`}
+                key={office.city}
+              >
+                <span className="absolute z-[5] left-1/2 top-[29px] -translate-x-1/2 w-10 h-10 border border-[#2d68a0]/35 rounded-full grid place-items-center bg-white text-[#2d68a0]"><MapPin /></span>
+                <span className="absolute right-[clamp(24px,2.6vw,36px)] top-[39px] text-[#7b8a98] text-[10px] font-bold tracking-[0.08em]">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <p className="mb-3 text-[#9a7331] text-[10px] font-extrabold tracking-[0.09em] uppercase">{office.type}</p>
+                  <h3 className="mb-5 font-heading text-[30px] leading-none font-semibold tracking-[-0.025em]">{office.city}</h3>
+                  <address className="max-w-[390px] m-0 text-[#617181] text-[13px] font-medium not-italic leading-[1.75]">{office.address}</address>
                 </div>
               </article>
             ))}

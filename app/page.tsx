@@ -130,8 +130,22 @@ export default function Home() {
       </section>
 
       <section className="py-[118px] max-[620px]:py-[82px] px-[clamp(22px,6vw,92px)] max-[620px]:px-5 bg-cream relative overflow-hidden">
-        <Image className="absolute z-0 pointer-events-none right-[-3vw] top-[4vh] w-[clamp(150px,18vw,300px)] opacity-[0.42] h-auto" data-float src="/supreme/source/bg-leaf1.png" alt="" width={300} height={300} />
-        <Image className="absolute z-0 pointer-events-none left-[-3vw] bottom-[-4vh] w-[clamp(120px,13vw,210px)] opacity-[0.34] h-auto" data-float src="/supreme/source/bg-leaf2.png" alt="" width={210} height={210} />
+        <Image
+          className="absolute z-0 pointer-events-none right-[-92px] top-[72px] w-[clamp(180px,16vw,260px)] opacity-[0.16] h-auto [filter:saturate(0.55)] max-[620px]:right-[-76px] max-[620px]:top-[42px] max-[620px]:w-[170px]"
+          data-parallax="0.08"
+          src="/supreme/source/bg-leaf1.png"
+          alt=""
+          width={300}
+          height={300}
+        />
+        <Image
+          className="absolute z-0 pointer-events-none left-[-74px] bottom-[-48px] w-[clamp(140px,12vw,190px)] opacity-[0.1] h-auto rotate-[10deg] [filter:saturate(0.5)] max-[620px]:hidden"
+          data-parallax="0.05"
+          src="/supreme/source/bg-leaf2.png"
+          alt=""
+          width={210}
+          height={210}
+        />
 
         <div className="max-w-[720px] mb-[46px] relative z-[2]">
           <div className="section-kicker">Capabilities</div>
