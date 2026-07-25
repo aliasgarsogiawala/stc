@@ -55,7 +55,6 @@ export default async function FoodIngredientsPage() {
         <div className="catalog-full-hero-overlay" />
         <div data-hero-copy data-product-copy className="catalog-full-hero-copy">
           <div className="catalog-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Food ingredients</span></div>
-          <p className="eyebrow text-[#f0c584]"><span /> Food materials</p>
           <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Food herbs & powders</h1>
           <p className="max-w-[650px] mb-0 text-white/72 text-[15px] leading-[1.8]">Dehydrated vegetables, spices, herbal powders and spray-dried ingredients supplied by form, processing requirement and pack size.</p>
           <div className="mt-8 flex items-center gap-6 flex-wrap">

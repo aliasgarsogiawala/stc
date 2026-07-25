@@ -58,7 +58,6 @@ export default function OilsPage() {
             <Link href="/products">Products</Link><span>/</span>
             <span>Oils</span>
           </div>
-          <p className="eyebrow prod-eyebrow"><span /> Distilled &amp; pressed</p>
           <h1>Essential &amp; medical oils</h1>
           <p className="prod-hero-lead">
             Steam-distilled essential oils and cold-pressed carrier oils, supplied in bulk

@@ -58,7 +58,6 @@ export default function HerbsPage() {
             <Link href="/products">Products</Link><span>/</span>
             <span>Herbs &amp; Spices</span>
           </div>
-          <p className="eyebrow prod-eyebrow"><span /> Whole &amp; botanical</p>
           <h1>Herbs, roots &amp; trade spices</h1>
           <p className="prod-hero-lead">
             Whole botanicals, roots, barks, seeds and flowers, cleaned and graded, then
