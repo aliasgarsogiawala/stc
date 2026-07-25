@@ -138,14 +138,14 @@ export default async function ProductsPage() {
         </div>
       </section>
 
-      <section className="min-h-[510px] py-[92px] max-[760px]:py-[78px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[1.35fr_0.65fr] max-[1100px]:grid-cols-1 gap-20 max-[1100px]:gap-8 items-center bg-deep text-white gs-reveal">
+      <section className="min-h-[510px] py-[92px] max-[760px]:py-[78px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[1.35fr_0.65fr] max-[1100px]:grid-cols-1 gap-20 max-[1100px]:gap-8 items-center bg-[#dceaf6] text-[#122c44] gs-reveal">
         <div>
-          <p className="eyebrow text-[#e4b39f]"><span /> Custom requirement</p>
-          <h2 className="max-w-[780px] m-0 text-white font-heading text-[clamp(42px,5vw,64px)] leading-[0.98] font-semibold">Product sourcing enquiry</h2>
+          <p className="eyebrow text-[#356fa7]"><span className="!bg-[#356fa7]" /> Custom requirement</p>
+          <h2 className="max-w-[780px] m-0 text-[#122c44] font-heading text-[clamp(42px,5vw,64px)] leading-[0.98] font-semibold">Product sourcing enquiry</h2>
         </div>
         <div>
-          <p className="text-white/70 text-sm leading-[1.75]">Include the material name, grade, required quantity, packing preference and destination for a faster response.</p>
-          <Link className="button button-light mt-4" href="/contact#enquiry">Send requirement</Link>
+          <p className="text-[#526b80] text-sm leading-[1.75]">Include the material name, grade, required quantity, packing preference and destination for a faster response.</p>
+          <Link className="button mt-4 bg-[#356fa7] border-[#356fa7] text-white hover:bg-[#2d6193]" href="/contact#enquiry">Send requirement</Link>
         </div>
       </section>
 

@@ -57,9 +57,9 @@ export default function Home() {
       </section>
 
       <section className="gs-reveal py-28 max-[600px]:py-[78px] px-[clamp(22px,6vw,92px)] bg-paper" id="why">
-        <div className="max-w-[660px] mb-[46px]">
-          <h2 data-reveal className="text-ink font-heading text-[clamp(40px,4.6vw,64px)] leading-none font-semibold">Why buyers choose us</h2>
-          <p className="max-w-[540px] mt-[18px] text-muted text-base leading-[1.7]">A sourcing partner that works to your grade, quantity and timeline.</p>
+        <div className="max-w-[1040px] mx-auto mb-[46px] text-center">
+          <h2 data-reveal className="text-ink font-heading text-[clamp(40px,4.6vw,64px)] leading-none font-semibold text-center whitespace-nowrap max-[760px]:whitespace-normal">Why buyers choose us</h2>
+          <p className="max-w-[540px] mx-auto mt-[18px] text-muted text-base leading-[1.7]">A sourcing partner that works to your grade, quantity and timeline.</p>
         </div>
         <div className="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 gap-[18px] gs-stagger">
           {whyChoose.map((item) => (
@@ -92,10 +92,10 @@ export default function Home() {
           height={210}
         />
 
-        <div className="max-w-[720px] mb-[46px] relative z-[2]">
+        <div className="max-w-[1040px] mx-auto mb-[46px] relative z-[2] text-center">
           <div className="section-kicker">Capabilities</div>
-          <h2 data-reveal className="font-heading text-[clamp(44px,5vw,72px)] leading-[0.98] font-semibold text-ink m-0">One desk, every material</h2>
-          <p className="max-w-[540px] mt-5 text-muted text-base leading-[1.75]">Two decades of material knowledge, a wide supplier network and a team that reads a specification the way a buyer does.</p>
+          <h2 data-reveal className="font-heading text-[clamp(44px,5vw,72px)] leading-[0.98] font-semibold text-ink m-0 text-center whitespace-nowrap max-[860px]:whitespace-normal">One desk, every material</h2>
+          <p className="max-w-[540px] mx-auto mt-5 text-muted text-base leading-[1.75]">Two decades of material knowledge, a wide supplier network and a team that reads a specification the way a buyer does.</p>
         </div>
 
         <div className="home-bento-grid relative z-[2] grid grid-cols-6 grid-flow-dense max-[980px]:grid-cols-2 max-[620px]:grid-cols-1 auto-rows-[minmax(190px,auto)] gap-4">
@@ -163,16 +163,16 @@ export default function Home() {
           </div>
         </div>
         <div className="relative z-[2]">
-          <p className="eyebrow text-[#e4b39f]"><span /> Built for trade</p>
-          <h2 data-reveal className="font-heading text-[clamp(38px,5vw,66px)] leading-none font-semibold text-white m-0">Sourcing and bulk supply</h2>
+          <p className="eyebrow justify-center text-[#e4b39f]"><span /> Built for trade</p>
+          <h2 data-reveal className="font-heading text-[clamp(38px,5vw,66px)] leading-none font-semibold text-white m-0 text-center">Sourcing and bulk supply</h2>
           <p className="max-w-[660px] mt-7 text-white/75 text-base leading-[1.8]">Every enquiry is reviewed by material, grade, origin, handling, quantity and delivery timing.</p>
           <p className="max-w-[660px] mt-4 text-white/75 text-base leading-[1.8]">We support coating manufacturers, formulation houses, food brands, fragrance makers, wholesale traders and industrial buyers with practical material guidance and repeatable supply.</p>
         </div>
       </section>
 
       <section className="gs-reveal py-[106px] max-[600px]:py-[78px] px-[clamp(22px,6vw,92px)] [background:linear-gradient(180deg,#f3f7fb_0%,#eaf2f8_100%)] text-ink" id="facts">
-        <div className="max-w-[640px] mb-[50px]">
-          <h2 data-reveal className="text-ink font-heading text-[clamp(40px,4.6vw,64px)] leading-none font-semibold">Benefit from choosing the best</h2>
+        <div className="max-w-[1100px] mx-auto mb-[50px] text-center">
+          <h2 data-reveal className="text-ink font-heading text-[clamp(40px,4.6vw,64px)] leading-none font-semibold text-center whitespace-nowrap max-[920px]:whitespace-normal">Benefit from choosing the best</h2>
         </div>
         <div className="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 gap-5 gs-stagger">
           {facts.map((fact) => (
@@ -188,10 +188,10 @@ export default function Home() {
       </section>
 
       <section className="py-[118px] max-[720px]:py-[84px] px-[clamp(22px,6vw,92px)] max-[720px]:px-5 bg-[#f1f2ec] gs-reveal" id="products">
-        <div className="section-kicker">Catalogue</div>
-        <div className="flex items-end justify-between gap-8 max-[720px]:block mb-12">
-          <h2 data-reveal className="max-w-[720px] font-heading text-[clamp(38px,5vw,66px)] leading-none font-semibold text-ink m-0">Product categories</h2>
-          <Link className="text-link max-[720px]:inline-block max-[720px]:mt-[22px]" href="/products">Explore full catalogue</Link>
+        <div className="section-kicker text-center">Catalogue</div>
+        <div className="flex flex-col items-center gap-5 mb-12 text-center">
+          <h2 data-reveal className="max-w-[920px] font-heading text-[clamp(38px,5vw,66px)] leading-none font-semibold text-ink m-0 text-center whitespace-nowrap max-[620px]:whitespace-normal">Product categories</h2>
+          <Link className="text-link inline-block" href="/products">Explore full catalogue</Link>
         </div>
 
         <div className="grid grid-cols-3 max-[1060px]:grid-cols-2 max-[720px]:grid-cols-1 auto-rows-fr gap-5 gs-stagger">
@@ -226,8 +226,8 @@ export default function Home() {
 
       <section className="py-[118px] max-[720px]:py-[84px] px-[clamp(22px,6vw,92px)] max-[720px]:px-5 grid grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] max-[1060px]:grid-cols-1 gap-[clamp(44px,8vw,120px)] bg-paper gs-reveal" id="standard">
         <div className="sticky top-[120px] self-start max-[1060px]:static">
-          <p className="eyebrow"><span /> Order handling</p>
-          <h2 data-reveal className="font-heading text-[clamp(38px,5vw,66px)] leading-none font-semibold text-ink m-0">Supply process</h2>
+          <p className="eyebrow justify-center"><span /> Order handling</p>
+          <h2 data-reveal className="font-heading text-[clamp(38px,5vw,66px)] leading-none font-semibold text-ink m-0 text-center">Supply process</h2>
           <p className="max-w-[520px] mt-7 text-muted text-base leading-[1.8]">Buyers do not need decorative promises. They need responsive sourcing, consistent material, sensible packing and a team that understands bulk trade.</p>
         </div>
         <div className="border-t border-line gs-stagger">
@@ -244,7 +244,7 @@ export default function Home() {
         <div className="max-w-[1680px] mx-auto p-[clamp(26px,4.5vw,72px)] grid grid-cols-[minmax(0,1.05fr)_minmax(430px,0.75fr)] max-[980px]:grid-cols-1 gap-[clamp(42px,7vw,110px)] items-center bg-[#123451] text-white relative isolate overflow-hidden shadow-[0_26px_70px_rgba(18,52,81,0.14)]">
           <div>
            
-            <h2 data-reveal className="max-w-[800px] mt-6 mb-0 font-heading text-[clamp(48px,5.7vw,82px)] leading-[0.94] font-semibold text-white">
+            <h2 data-reveal className="max-w-[800px] mx-auto mt-6 mb-0 font-heading text-[clamp(48px,5.7vw,82px)] leading-[0.94] font-semibold text-white text-center">
               Send one complete requirement
             </h2>
             <p className="max-w-[620px] mt-7 mb-0 text-white/68 text-[15px] leading-[1.8]">
