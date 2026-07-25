@@ -3,7 +3,7 @@ import Image from "next/image";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import HoneyHero from "./honey-hero";
-import { WhatsApp } from "../../icons";
+import { HoneyGlyph, WhatsApp } from "../../icons";
 
 const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like a honey enquiry. Please share variants, grade and packing.")}`;
 
@@ -79,6 +79,7 @@ export default function HoneyPage() {
           {variants.map((v, i) => (
             <article className="honey-variant-card tilt-card" key={v.name}>
               <span className="honey-variant-index">{String(i + 1).padStart(2, "0")}</span>
+              <div className="product-card-glyph honey-card-glyph" aria-hidden="true"><HoneyGlyph /></div>
               <h3>{v.name}</h3>
               <p>{v.note}</p>
               <small>{v.origin}</small>

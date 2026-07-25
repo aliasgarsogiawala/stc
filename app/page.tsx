@@ -6,48 +6,13 @@ import SiteHeader from "./site-header";
 import Splash from "./splash";
 import HeroCarousel from "./hero-carousel";
 
-const categories = [
-  {
-    name: "Industrial Chemicals",
-    detail: "Acids, solvents, salts and process chemicals for dependable production supply.",
-    examples: "Acids · Solvents · Salts",
-    href: "/products/chemicals",
-    image: "/supreme/source/industrial_chemicals.png",
-    imageAlt: "Laboratory glassware for industrial chemical supply",
-  },
-  {
-    name: "Resins & Additives",
-    detail: "Coating resins, cellulose products, pigments and performance additives.",
-    examples: "Resins · Pigments · Cellulose",
-    href: "/products/chemicals",
-    image: "/supreme/source/tren-pro4.png",
-    imageAlt: "Powder and liquid raw material samples",
-  },
-  {
-    name: "Oils & Liquid Ingredients",
-    detail: "Essential, medical and speciality oils supplied against your required grade.",
-    examples: "Essential · Medical · Carrier",
-    href: "/products/oils",
-    image: "/supreme/source/essential_oil.png",
-    imageAlt: "Speciality oils in laboratory bottles",
-  },
-  {
-    name: "Custom Bulk Sourcing",
-    detail: "Specified grades, bulk quantities and harder-to-find materials across categories.",
-    examples: "Grade · Quantity · Destination",
-    href: "/contact#enquiry",
-    image: "/supreme/source/nb.png",
-    imageAlt: "Bulk ingredient sample and dispensing bottle",
-  },
-];
-
 const materialGroups = [
-  { code: "01", name: "Industrial chemicals", note: "Acids, solvents, salts and process materials", image: "/supreme/source/industrial_chemicals.png", href: "/products/chemicals", fit: "contain" },
-  { code: "02", name: "Resins & polymers", note: "Acrylic, polyurethane and speciality resin systems", image: "/supreme/source/tren-pro4.png", href: "/products/chemicals", fit: "cover" },
-  { code: "03", name: "Additives & cellulose", note: "Wetting agents, defoamers, HPMC, HEC and CMC", image: "/supreme/source/tren-pro3.png", href: "/products/chemicals", fit: "cover" },
-  { code: "04", name: "Oils & liquids", note: "Essential, medical, carrier and speciality oils", image: "/supreme/media/oils-loop-poster.jpg", href: "/products/oils", fit: "cover" },
-  { code: "05", name: "Food ingredients", note: "Powders, spices and dehydrated ingredients", image: "/supreme/media/honey-pour-loop-poster.jpg", href: "/products/food-ingredients", fit: "cover" },
-  { code: "06", name: "Specified sourcing", note: "Grade-led, quantity-led and destination-led supply", image: "/supreme/neutral-materials-hero.png", href: "/contact#enquiry", fit: "cover" },
+  { code: "01", name: "Industrial chemicals", note: "Acids, solvents, salts and process materials", image: "/supreme/neutral-materials-hero.png", href: "/products/chemicals" },
+  { code: "02", name: "Resins & polymers", note: "Acrylic, polyurethane and speciality resin systems", image: "/supreme/source/tren-pro4.png", href: "/products/chemicals" },
+  { code: "03", name: "Additives & cellulose", note: "Wetting agents, defoamers, HPMC, HEC and CMC", image: "/supreme/source/tren-pro3.png", href: "/products/chemicals" },
+  { code: "04", name: "Oils & liquids", note: "Essential, medical, carrier and speciality oils", image: "/supreme/media/oils-loop-poster.jpg", href: "/products/oils" },
+  { code: "05", name: "Food ingredients", note: "Powders, spices and dehydrated ingredients", image: "/supreme/media/honey-pour-loop-poster.jpg", href: "/products/food-ingredients" },
+  { code: "06", name: "Specified sourcing", note: "Grade-led, quantity-led and destination-led supply", image: "/supreme/product-categories-hero.png", href: "/contact#enquiry" },
 ];
 
 const whyChoose = [
@@ -79,33 +44,14 @@ export default function Home() {
 
       <HeroCarousel />
 
-      <section className="overflow-hidden border-y border-line bg-[#f1efe7]" aria-label="Product specialities">
-        <div className="min-w-max py-[18px] flex items-center gap-[54px] animate-ticker">
-          {["Chemicals", "Resins", "Additives", "Oils", "Food ingredients", "Custom sourcing"].map((t) => (
-            <span key={t} className="text-deep font-heading text-[23px] font-semibold">{t}</span>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-[118px] max-[720px]:py-[84px] px-[clamp(22px,6vw,92px)] bg-paper gs-reveal" id="range">
-        <div className="section-kicker">What we source</div>
-        <div className="grid grid-cols-[minmax(0,0.95fr)_minmax(280px,0.55fr)] max-[720px]:block gap-[70px] items-end mb-12">
-          <h2 data-reveal className="font-heading text-[clamp(38px,5vw,66px)] leading-none font-semibold text-ink">Four material categories</h2>
-          <p className="text-muted text-base leading-[1.75] mb-1.5 max-[720px]:mt-[22px]">Supreme works like a sourcing desk: understand the requirement, shortlist practical options, check material fit, then move the consignment cleanly.</p>
-        </div>
-
-        <div className="grid grid-cols-4 max-[1060px]:grid-cols-2 max-[720px]:grid-cols-1 gap-px border border-line bg-line gs-stagger">
-          {categories.map((category, index) => (
-            <Link className="tilt-card group min-h-[440px] max-[720px]:min-h-[390px] p-[22px] grid grid-rows-[auto_154px_1fr] gap-[18px] bg-white relative overflow-hidden transition-[background,transform] duration-200 hover:bg-[#f4f6f0]" href={category.href} key={category.name}>
-              <span className="text-clay text-xs font-black">{String(index + 1).padStart(2, "0")}</span>
-              <Image src={category.image} alt={category.imageAlt} width={290} height={239} className="h-[154px] max-h-[184px] w-full self-center justify-self-center object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-[1.04]" />
-              <div>
-                <h3 className="font-heading text-[29px] leading-[1.08] font-bold m-0">{category.name}</h3>
-                <p className="mt-3 text-muted text-sm leading-[1.65]">{category.detail}</p>
-                <small className="mt-3.5 block text-clay text-[9px] font-black tracking-[0.04em] uppercase">{category.examples}</small>
-                <span className="mt-5 pb-[5px] border-b border-current inline-flex text-deep text-xs font-black">Request availability</span>
-              </div>
-            </Link>
+      <section className="home-ticker" aria-label="Product specialities">
+        <div className="home-ticker-track">
+          {[0, 1].map((copy) => (
+            <div className="home-ticker-set" aria-hidden={copy === 1} key={copy}>
+              {["Chemicals", "Resins", "Additives", "Oils", "Food ingredients", "Custom sourcing"].map((item) => (
+                <span className="home-ticker-item" key={`${copy}-${item}`}>{item}</span>
+              ))}
+            </div>
           ))}
         </div>
       </section>
@@ -254,27 +200,24 @@ export default function Home() {
             <article className="tilt-card group min-h-[390px] h-full border border-[#173a57]/16 flex flex-col bg-white overflow-hidden transition-[background-color,border-color] duration-300 hover:border-[#2d68a0]/55" key={group.name}>
               <div className="min-h-[48px] px-5 border-b border-[#173a57]/12 flex items-center justify-between text-[#2d68a0]">
                 <span className="text-[10px] font-black tracking-[0.08em]">{group.code}</span>
-                <span className="text-[15px] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">↗</span>
+                <span className="text-[26px] leading-none font-light transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true">→</span>
               </div>
-              <div className="h-[176px] border-b border-[#173a57]/12 bg-[#eaf0f5] relative overflow-hidden">
+              <div className="h-[200px] border-b border-[#173a57]/12 bg-[#eaf0f5] relative overflow-hidden">
                 <Image
                   src={group.image}
                   alt=""
                   fill
                   sizes="(max-width: 720px) 100vw, (max-width: 1060px) 50vw, 33vw"
-                  className={`transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045] ${
-                    group.fit === "contain"
-                      ? "object-contain p-4 mix-blend-multiply"
-                      : "object-cover object-center"
-                  }`}
+                  className="object-contain object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[0.985]"
                 />
                 <span className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,transparent_62%,rgba(13,42,69,0.08))]" />
               </div>
               <div className="p-[24px] flex flex-1 flex-col">
                 <h3 className="mb-3 font-heading text-[clamp(25px,2.1vw,31px)] leading-[1.02] font-semibold tracking-[-0.025em]">{group.name}</h3>
                 <p className="m-0 text-muted text-[13px] leading-[1.65]">{group.note}</p>
-                <Link href={group.href} aria-label={`Browse ${group.name}`} className="w-fit mt-auto pt-6 inline-flex items-center gap-2 text-[#174ea6] text-[11px] font-extrabold tracking-[0.02em]">
-                  Browse range <span aria-hidden="true">→</span>
+                <Link href={group.href} aria-label={`Browse ${group.name}`} className="w-full mt-auto pt-6 inline-flex items-center justify-between gap-4 text-[#174ea6] text-[11px] font-extrabold tracking-[0.02em] group/link">
+                  <span>Browse range</span>
+                  <span className="text-[25px] leading-none font-light transition-transform duration-300 group-hover/link:translate-x-1.5" aria-hidden="true">→</span>
                 </Link>
               </div>
             </article>

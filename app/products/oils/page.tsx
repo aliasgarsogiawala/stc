@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
-import { WhatsApp } from "../../icons";
+import { OilDrop, WhatsApp } from "../../icons";
 
 const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like an oils enquiry. Please share the range, grade and packing.")}`;
 
@@ -89,7 +89,7 @@ export default function OilsPage() {
           {variants.map((v, i) => (
             <article className="prod-variant-card tilt-card" key={v.name}>
               <span className="pv-index">{String(i + 1).padStart(2, "0")}</span>
-              <div className="prod-variant-mark" aria-hidden="true" />
+              <div className="product-card-glyph" aria-hidden="true"><OilDrop /></div>
               <h3>{v.name}</h3>
               <p>{v.note}</p>
               <small>{v.origin}</small>

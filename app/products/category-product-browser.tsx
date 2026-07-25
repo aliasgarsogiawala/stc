@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { CatalogProduct } from "./catalog-data";
+import { IngredientBowlGlyph, TestTubeGlyph } from "../icons";
 
 type ProductBrowserProps = {
   categoryName: string;
@@ -16,6 +17,7 @@ const themeClasses = {
     badge: "border-[#86b5bd]/35 bg-[#86b5bd]/10 text-[#b9dde2]",
     index: "text-[#78aeb8]",
     cardHover: "hover:border-[#78aeb8]/65 hover:shadow-[0_20px_50px_rgba(7,39,47,0.12)]",
+    glyph: "border-[#78aeb8]/35 bg-[#eff7f8] text-[#3f7d88]",
     button: "border-[#173e47] bg-[#173e47] text-white hover:bg-[#0b2f37]",
     focus: "focus:border-[#4f8994] focus:ring-[#4f8994]/15",
   },
@@ -23,6 +25,7 @@ const themeClasses = {
     badge: "border-[#b86d45]/30 bg-[#b86d45]/10 text-[#8d452a]",
     index: "text-[#b5653e]",
     cardHover: "hover:border-[#b5653e]/60 hover:shadow-[0_20px_50px_rgba(110,54,30,0.11)]",
+    glyph: "border-[#b5653e]/30 bg-[#fff6ec] text-[#a95632]",
     button: "border-[#8d452a] bg-[#8d452a] text-white hover:bg-[#71351f]",
     focus: "focus:border-[#b5653e] focus:ring-[#b5653e]/15",
   },
@@ -105,7 +108,10 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
                 <span className={`text-[10px] font-black ${styles.index}`}>{String(start + index + 1).padStart(3, "0")}</span>
                 {product.subgroup && <span className="max-w-[64%] px-2.5 py-1 rounded-full bg-[#f1f1eb] text-muted text-[8px] font-black uppercase text-right">{product.subgroup}</span>}
               </div>
-              <div className="mt-auto pt-14">
+              <div className={`mt-5 w-11 h-11 border grid place-items-center ${styles.glyph}`} aria-hidden="true">
+                {theme === "chemicals" ? <TestTubeGlyph /> : <IngredientBowlGlyph />}
+              </div>
+              <div className="mt-auto pt-10">
                 <h3 className="m-0 font-heading text-[28px] leading-none font-bold text-ink break-words">{product.name}</h3>
                 {product.detail && <p className="mt-2 mb-0 text-muted text-[11px] leading-[1.55]">{product.detail}</p>}
               </div>

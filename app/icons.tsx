@@ -57,3 +57,47 @@ export function MapPin({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+export function HerbSprig({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M13 39c7-10 13-18 22-29M20 29c-7 1-11-3-12-9 7-1 12 2 12 9ZM27 21c0-7 4-11 11-12 1 7-3 12-11 12ZM16 34c-5 1-8-1-10-6 5-1 9 1 10 6ZM31 15c0-5 3-8 8-9 1 5-2 9-8 9Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function OilDrop({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M24 6S12 20 12 29a12 12 0 0 0 24 0C36 20 24 6 24 6Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M29.5 32.5c-1.4 2.4-3.5 3.5-6.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function HoneyGlyph({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} width="25" height="25" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="m17 9 7-4 7 4v8l-7 4-7-4V9ZM10 21l7-4 7 4v8l-7 4-7-4v-8ZM24 21l7-4 7 4v8l-7 4-7-4v-8Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <path d="M24 33s-5 5.4-5 8.1a5 5 0 0 0 10 0C29 38.4 24 33 24 33Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function TestTubeGlyph({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M16 6h16M19 6v25.5a8 8 0 0 0 16 0V6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M19 24c5 3 10-3 16 0M23 30h.1M30 34h.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function IngredientBowlGlyph({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} width="25" height="25" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M8 23h32c-1 10-7 16-16 16S9 33 8 23ZM13 39h22" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M17 18c0-4 3-7 7-7M25 18c0-5 4-9 9-9M31 18c0-3 2-5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}

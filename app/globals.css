@@ -381,6 +381,64 @@ h1 {
   to { transform: translateX(-46vw); }
 }
 
+.home-ticker {
+  width: 100%;
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: #f1efe7;
+}
+
+.home-ticker-track {
+  width: max-content;
+  display: flex;
+  will-change: transform;
+  animation: home-ticker-slide 28s linear infinite;
+}
+
+.home-ticker-set {
+  flex: none;
+  display: flex;
+  align-items: center;
+}
+
+.home-ticker-item {
+  flex: none;
+  min-height: 70px;
+  padding-right: clamp(38px, 5vw, 76px);
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(38px, 5vw, 76px);
+  color: var(--deep);
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(19px, 2vw, 23px);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.home-ticker-item::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  flex: none;
+  background: #2d68a0;
+  opacity: 0.38;
+  transform: rotate(45deg);
+}
+
+.home-ticker:hover .home-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes home-ticker-slide {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-ticker-track {
+    animation: none;
+  }
+}
+
 .section {
   padding: 118px clamp(22px, 6vw, 92px);
 }
@@ -4009,7 +4067,7 @@ html {
 }
 
 .honey-variant-card h3 {
-  margin: auto 0 8px;
+  margin: 0 0 8px;
   font-family: var(--font-display), sans-serif;
   font-size: 26px;
   line-height: 1.05;
@@ -4300,16 +4358,31 @@ html {
 
 .prod-variant-card span.pv-index { color: var(--pa-deep); font-size: 11px; font-weight: 900; }
 
-.prod-variant-mark {
-  width: 40px;
-  height: 40px;
+.product-card-glyph {
+  width: 44px;
+  height: 44px;
   margin: 16px 0 auto;
-  border-radius: 46% 54% 50% 50% / 56% 56% 44% 44%;
-  background: linear-gradient(150deg, var(--pa-soft), var(--pa-deep));
-  box-shadow: inset -3px -4px 6px color-mix(in srgb, var(--pa-deep), black 20%), 0 8px 16px color-mix(in srgb, var(--pa), transparent 60%);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid color-mix(in srgb, var(--pa-deep), transparent 62%);
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--pa-soft), white 70%);
+  color: var(--pa-deep);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
-.prod-variant-card:hover .prod-variant-mark { transform: scale(1.14) rotate(-6deg); }
+.prod-variant-card:hover .product-card-glyph,
+.honey-variant-card:hover .product-card-glyph {
+  border-color: var(--pa-deep, #2d68a0);
+  transform: translateY(-3px);
+}
+
+.honey-card-glyph {
+  border-color: rgba(45, 104, 160, 0.3);
+  background: #f4f8fb;
+  color: #2d68a0;
+}
 
 .prod-variant-card h3 { margin: 18px 0 8px; font-family: var(--font-display), sans-serif; font-size: 26px; line-height: 1.05; font-weight: 700; }
 .prod-variant-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
