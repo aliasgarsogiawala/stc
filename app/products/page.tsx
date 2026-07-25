@@ -62,17 +62,18 @@ export default async function ProductsPage() {
     <main className="bg-paper">
       <SiteHeader theme="solid" />
 
-      <section data-product-hero className="min-h-[610px] pt-[142px] pb-[54px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 [background:linear-gradient(115deg,#102f4c,#1b4e78_62%,#32658e)] text-white relative isolate overflow-hidden flex flex-col justify-end before:content-[''] before:absolute before:right-[-8vw] before:top-[9%] before:w-[min(46vw,650px)] before:aspect-square before:border before:border-white/[0.13] before:rounded-full before:-z-[1]">
+      <section data-product-hero className="min-h-[610px] pt-[142px] pb-[54px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#102f4c] text-white relative isolate overflow-hidden flex flex-col justify-end">
         <Image
-          className="absolute right-[clamp(20px,5vw,80px)] top-1/2 -translate-y-[47%] w-[min(41vw,560px)] h-auto object-contain -z-[1] opacity-[0.32] [filter:saturate(0.7)] mix-blend-screen max-[760px]:opacity-20"
+          className="absolute left-0 top-[-8%] w-full h-[116%] object-cover object-center -z-[2]"
           data-hero-media
           data-product-media
-          src="/supreme/source/industrial_chemicals.png"
-          alt="Industrial chemical laboratory glassware"
-          width={580}
-          height={478}
+          src="/supreme/product-categories-hero.png"
+          alt="Industrial powders, resin granules, oils, honey and food ingredients arranged for bulk trade"
+          width={3168}
+          height={1344}
           priority
         />
+        <div className="absolute inset-0 -z-[1] bg-[linear-gradient(90deg,rgba(7,27,47,0.94)_0%,rgba(10,39,65,0.78)_38%,rgba(10,39,65,0.34)_70%,rgba(10,39,65,0.2)_100%),linear-gradient(0deg,rgba(7,27,47,0.58)_0%,transparent_52%)]" />
         <div className="catalog-breadcrumb mb-auto" data-hero-item><Link href="/">Home</Link><span>/</span><span>Products</span></div>
         <h1 data-hero-item className="max-w-[900px] mb-[34px] font-heading font-semibold text-white text-[clamp(52px,7vw,100px)] leading-[0.92]">Product Categories</h1>
         <div className="pt-6 border-t border-white/25 flex items-center justify-between gap-[42px] max-[760px]:flex-col max-[760px]:items-start" data-hero-meta>
