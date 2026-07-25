@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const colClass = "flex flex-col items-start gap-[12px]";
-const colHead = "mb-[10px] font-heading text-[#245f91] text-[11px] font-semibold tracking-[0.045em] uppercase";
-const colLink = "font-sans text-[#4f5f70] text-[13px] font-medium leading-[1.65] tracking-[-0.01em] not-italic hover:text-[#17304f] transition-colors";
+const colHead = "mb-[10px] font-heading text-[#245f91] text-[12px] font-semibold tracking-[0.025em]";
+const colLink = "font-sans text-[#4f5f70] text-[14px] font-medium leading-[1.65] tracking-[-0.015em] not-italic hover:text-[#17304f] transition-colors";
 
 export default function SiteFooter() {
   return (
@@ -41,7 +41,7 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="footer-motion pt-[22px] border-t border-[#cbd3dc] flex justify-between gap-5 text-[#73808d] text-[10px] font-semibold tracking-[0.045em] uppercase max-[720px]:flex-col max-[720px]:items-start">
+      <div className="footer-motion pt-[22px] border-t border-[#cbd3dc] flex justify-between gap-5 text-[#73808d] text-[11px] font-semibold tracking-[0.025em] max-[720px]:flex-col max-[720px]:items-start">
         <span>© 2026 Supreme Trading Corp · Mumbai, India</span>
         <span>Wholesale · Import · Export</span>
       </div>

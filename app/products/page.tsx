@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
+import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../seo";
 import { getCatalog } from "./catalog-data";
 
 // Categories with their own tailored landing page.
@@ -15,11 +15,11 @@ const dedicatedPages: Record<string, string> = {
 };
 
 const categoryImages: Record<string, string> = {
-  "herbs-spices": "/supreme/source/herbs_and_spices.png",
-  oils: "/supreme/source/essential_oil.png",
-  honey: "/supreme/source/honey_img.png",
-  "food-herbs": "/supreme/source/food_herbs_final.png",
-  industrial: "/supreme/source/industrial_chemicals.png",
+  "herbs-spices": "/supreme/media/herbs-loop-poster.jpg",
+  oils: "/supreme/media/oils-loop-poster.jpg",
+  honey: "/supreme/media/honey-pour-loop-poster.jpg",
+  "food-herbs": "/Dried spices and powder scoops.jpg.jpeg",
+  industrial: "/supreme/neutral-materials-hero.png",
 };
 
 const categoryTones: Record<string, string> = {
@@ -38,21 +38,17 @@ const categoryOfferings: Record<string, string[]> = {
   industrial: ["Resins", "Performance additives", "Pigments", "Cellulose & process chemicals"],
 };
 
-export const metadata: Metadata = {
+const description = "Explore Supreme Trading Corp's industrial chemicals, food ingredients, herbs, oils and honey categories for bulk and export supply.";
+
+export const metadata = createPageMetadata({
   title: "Product Categories | Supreme Trading Corp",
-  description: "Explore Supreme Trading Corp's herbs, spices, oils, honey, food ingredients and industrial chemical categories.",
-  openGraph: {
-    title: "Product Categories | Supreme Trading Corp",
-    description: "Explore botanical, food, oil and industrial material categories.",
-    images: [{ url: "/supreme/source/bredcrumb-bg.jpg", width: 1920, height: 987, alt: "Supreme Trading Corp raw material catalogue" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Product Categories | Supreme Trading Corp",
-    description: "Explore botanical, food, oil and industrial material categories.",
-    images: ["/supreme/source/bredcrumb-bg.jpg"],
-  },
-};
+  description,
+  path: "/products",
+  image: "/og-products.png",
+  imageAlt: "Supreme Trading Corp product categories",
+  imageWidth: 1727,
+  imageHeight: 911,
+});
 
 export default async function ProductsPage() {
   const categories = await getCatalog();
@@ -60,9 +56,15 @@ export default async function ProductsPage() {
 
   return (
     <main className="bg-paper">
+      <JsonLd data={collectionPageJsonLd({
+        name: "Supreme Trading Corp product categories",
+        description,
+        path: "/products",
+        items: categories.map((category) => category.name),
+      })} />
       <SiteHeader theme="solid" />
 
-      <section data-product-hero className="min-h-[610px] pt-[142px] pb-[54px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#102f4c] text-white relative isolate overflow-hidden flex flex-col justify-end">
+      <section data-product-hero className="products-index-hero min-h-[610px] pt-[142px] pb-[54px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#102f4c] text-white relative isolate overflow-hidden flex flex-col justify-end">
         <Image
           className="absolute left-0 top-[-8%] w-full h-[116%] object-cover object-center -z-[2]"
           data-hero-media
@@ -99,21 +101,24 @@ export default async function ProductsPage() {
             const imageFirst = index % 2 === 0;
             const offers = categoryOfferings[category.id] ?? category.products.slice(0, 4).map((product) => product.name);
             return (
-              <article className="group min-h-[500px] max-[820px]:min-h-0 border-b border-[#173a57]/18 grid grid-cols-2 max-[820px]:grid-cols-1 overflow-hidden gs-reveal" key={category.id}>
-                <div className={`min-h-[500px] max-[820px]:min-h-[330px] relative overflow-hidden ${categoryTones[category.id] ?? "bg-[#e8edf1]"} ${imageFirst ? "order-1" : "order-2"} max-[820px]:order-1`}>
+              <article className="product-category-row group min-h-[500px] max-[820px]:min-h-0 border-b border-[#173a57]/18 grid grid-cols-2 max-[820px]:grid-cols-1 overflow-hidden gs-reveal" key={category.id}>
+                <div className={`product-category-media min-h-[500px] max-[820px]:min-h-[330px] relative overflow-hidden ${categoryTones[category.id] ?? "bg-[#e8edf1]"} ${imageFirst ? "order-1" : "order-2"} max-[820px]:order-1`}>
                   <Image
                     src={categoryImages[category.id]}
                     alt={`${category.name} category`}
                     fill
                     sizes="(max-width: 820px) 100vw, 50vw"
-                    className="object-contain p-[clamp(34px,5vw,76px)] mix-blend-multiply transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.055]"
+                    className={`object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045] ${
+                      category.id === "industrial" ? "object-[68%_center]" : "object-center"
+                    }`}
                   />
+                  <span className="absolute inset-0 bg-[linear-gradient(180deg,transparent_54%,rgba(10,39,65,0.18))]" aria-hidden="true" />
                   <span className="absolute left-7 top-7 w-11 h-11 border border-[#173a57]/18 bg-white/70 grid place-items-center text-[#174ea6] text-[10px] font-black tracking-[0.08em]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
-                <div className={`p-[clamp(32px,5vw,76px)] flex flex-col justify-center bg-white ${imageFirst ? "order-2" : "order-1"} max-[820px]:order-2`}>
+                <div className={`product-category-copy p-[clamp(32px,5vw,76px)] flex flex-col justify-center bg-white ${imageFirst ? "order-2" : "order-1"} max-[820px]:order-2`}>
                   <div className="flex items-center justify-between gap-5 text-[10px] font-extrabold tracking-[0.08em] uppercase">
                     <span className="text-[#2d68a0]">Material family</span>
                     <span className="text-[#7d8994]">{category.products.length} listed</span>

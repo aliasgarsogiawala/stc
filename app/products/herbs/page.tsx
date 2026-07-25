@@ -1,22 +1,23 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import { HerbSprig, WhatsApp } from "../../icons";
+import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
 
 const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like a herbs & spices enquiry. Please share the range, form and packing.")}`;
 
-export const metadata: Metadata = {
+const description = "Whole botanicals, roots, barks, seeds, flowers and trade spices sourced in bulk to grade for food, wellness and Ayurvedic buyers.";
+
+export const metadata = createPageMetadata({
   title: "Herbs & Spices | Supreme Trading Corp",
-  description:
-    "Whole botanicals, roots, barks, seeds, flowers and trade spices — sourced in bulk to grade for food, wellness and Ayurvedic buyers.",
-  openGraph: {
-    title: "Herbs & Spices | Supreme Trading Corp",
-    description: "Whole botanicals, roots, seeds and trade spices sourced to grade.",
-    images: [{ url: "/supreme/media/herbs-loop-poster.jpg", width: 1920, height: 1080, alt: "Fresh green herbs with dew" }],
-  },
-};
+  description,
+  path: "/products/herbs",
+  image: "/supreme/media/herbs-loop-poster.jpg",
+  imageAlt: "Bulk herbs, roots and spices",
+  imageWidth: 1920,
+  imageHeight: 1080,
+});
 
 const variants = [
   { name: "Ashwagandha", note: "Withania root, a cornerstone Ayurvedic botanical.", origin: "Root" },
@@ -38,10 +39,16 @@ const qualities = [
 
 export default function HerbsPage() {
   return (
-    <main className="prod-page herbs-page">
+    <main className="product-detail-page prod-page herbs-page">
+      <JsonLd data={collectionPageJsonLd({
+        name: "Herbs and spices",
+        description,
+        path: "/products/herbs",
+        items: variants.map((variant) => variant.name),
+      })} />
       <SiteHeader theme="solid" />
 
-      <section className="prod-hero">
+      <section className="product-detail-hero prod-hero">
         <video className="prod-hero-video" autoPlay muted loop playsInline poster="/supreme/media/herbs-loop-poster.jpg">
           <source src="/supreme/media/herbs-loop.mp4" type="video/mp4" />
         </video>

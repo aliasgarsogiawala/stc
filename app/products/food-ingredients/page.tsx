@@ -1,23 +1,25 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import { WhatsApp } from "../../icons";
+import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
 import { getCatalog } from "../catalog-data";
 import CategoryProductBrowser from "../category-product-browser";
 
 const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like a food ingredients enquiry. Please share form, grade, packing and availability.")}`;
 
-export const metadata: Metadata = {
-  title: "Food Herbs & Powders | Supreme Trading Corp",
-  description: "Dehydrated vegetables, food herbs, spices and fruit and vegetable powders sourced in bulk for food and nutritional manufacturing.",
-  openGraph: {
-    title: "Food Herbs & Powders | Supreme Trading Corp",
-    description: "Food ingredients, powders and dehydrated materials supplied in bulk.",
-    images: [{ url: "/supreme/source/food_herbs_final.png", width: 1200, height: 900, alt: "Food herbs and dried ingredients" }],
-  },
-};
+const description = "Dehydrated vegetables, food herbs, spices and fruit and vegetable powders sourced in bulk for food and nutritional manufacturing.";
+
+export const metadata = createPageMetadata({
+  title: "Food Ingredients & Powders | Supreme Trading Corp",
+  description,
+  path: "/products/food-ingredients",
+  image: "/Dried spices and powder scoops.jpg.jpeg",
+  imageAlt: "Dried spices and powdered food ingredients",
+  imageWidth: 4096,
+  imageHeight: 4096,
+});
 
 const families = [
   { number: "01", name: "Dehydrated vegetables", detail: "Flakes, granules and powders for packaged food." },
@@ -41,10 +43,16 @@ export default async function FoodIngredientsPage() {
   const products = category?.products ?? [];
 
   return (
-    <main className="bg-[#fffaf3]">
+    <main className="product-detail-page catalog-detail-page bg-[#fffaf3]">
+      <JsonLd data={collectionPageJsonLd({
+        name: "Food ingredients and powders",
+        description,
+        path: "/products/food-ingredients",
+        items: products.map((product) => product.name),
+      })} />
       <SiteHeader theme="solid" />
 
-      <section data-product-hero className="min-h-[760px] pt-[132px] pb-[68px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[minmax(0,0.92fr)_minmax(420px,0.78fr)] max-[920px]:grid-cols-1 gap-[clamp(44px,7vw,110px)] items-end bg-[#713b27] text-white relative overflow-hidden isolate before:content-[''] before:absolute before:inset-0 before:-z-[1] before:opacity-40 before:[background:radial-gradient(circle_at_78%_18%,rgba(237,180,92,0.38),transparent_30%),linear-gradient(145deg,#713b27,#9b5432)]">
+      <section data-product-hero className="product-detail-hero min-h-[760px] pt-[132px] pb-[68px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[minmax(0,0.92fr)_minmax(420px,0.78fr)] max-[920px]:grid-cols-1 gap-[clamp(44px,7vw,110px)] items-end bg-[#713b27] text-white relative overflow-hidden isolate before:content-[''] before:absolute before:inset-0 before:-z-[1] before:opacity-40 before:[background:radial-gradient(circle_at_78%_18%,rgba(237,180,92,0.38),transparent_30%),linear-gradient(145deg,#713b27,#9b5432)]">
         <div data-hero-copy data-product-copy className="relative z-[2]">
           <div className="catalog-breadcrumb mb-[74px]"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Food ingredients</span></div>
           <p className="eyebrow text-[#f0c584]"><span /> Food materials</p>
@@ -56,10 +64,10 @@ export default async function FoodIngredientsPage() {
           </div>
         </div>
 
-        <div data-hero-media data-product-media className="min-h-[500px] max-[920px]:min-h-[380px] p-7 max-[620px]:p-4 border border-[#f3c77e]/30 rounded-[18px] bg-[#f7e9d5] relative overflow-hidden">
-          <div className="absolute inset-0 opacity-70 [background:radial-gradient(circle_at_72%_24%,rgba(215,132,62,0.38),transparent_38%),linear-gradient(145deg,#fff7ea,#ecd2ae)]" />
-          <Image className="relative z-[2] w-full h-full object-contain mix-blend-multiply" src="/supreme/source/food_herbs_final.png" alt="Dried food ingredients prepared for bulk supply" width={760} height={620} priority />
-          <div className="absolute left-7 right-7 bottom-7 z-[3] py-4 border-t border-[#713b27]/25 flex justify-between gap-5 text-[#713b27] text-[9px] font-black uppercase">
+        <div data-hero-media data-product-media className="product-detail-hero-media min-h-[500px] max-[920px]:min-h-[380px] border border-[#f3c77e]/30 bg-[#f7e9d5] relative overflow-hidden">
+          <Image className="object-cover object-center" src="/Dried spices and powder scoops.jpg.jpeg" alt="Dried spices and powdered food ingredients prepared for bulk supply" fill sizes="(max-width: 920px) 100vw, 44vw" priority />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(70,29,16,0.68))]" />
+          <div className="absolute left-7 right-7 bottom-7 z-[3] py-4 border-t border-white/35 flex justify-between gap-5 text-white text-[9px] font-black uppercase">
             <span>Food-grade sourcing</span><span>{products.length} listed materials</span>
           </div>
         </div>

@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "About Supreme Trading Corp | Mumbai",
-  description: "Supreme Trading Corp was established in Mumbai in 2002 and supplies raw materials for industrial, food, fragrance, Ayurvedic and Unani applications.",
-  openGraph: {
-    title: "About Supreme Trading Corp",
-    description: "Raw material import, export and wholesale supply from Mumbai since 2002.",
-    images: [{ url: "/supreme/source/abouts.png", width: 570, height: 354, alt: "Supreme Trading Corp raw materials" }],
-  },
-};
+export const metadata = createPageMetadata({
+  title: "About Supreme Trading Corp | Mumbai Raw Material Supplier",
+  description: "Established in Mumbai in 2002, Supreme Trading Corp supplies raw materials for industrial, food, fragrance, Ayurvedic and Unani applications.",
+  path: "/about",
+  image: "/og-materials.png",
+  imageAlt: "Supreme Trading Corp industrial and natural raw materials",
+  imageWidth: 1726,
+  imageHeight: 911,
+});
 
 const industries = [
   "Paint & polish",
@@ -40,7 +40,7 @@ export default function AboutPage() {
     <main className="bg-paper">
       <SiteHeader theme="solid" />
 
-      <section className="min-h-[760px] pt-[150px] pb-[78px] px-[clamp(22px,6vw,92px)] grid grid-cols-[minmax(0,0.92fr)_minmax(420px,0.78fr)] max-[980px]:grid-cols-1 gap-[clamp(50px,7vw,120px)] items-end bg-[#e8e9e1] relative overflow-hidden before:content-[''] before:absolute before:right-[-19vw] before:top-[-16vw] before:w-[52vw] before:h-[52vw] before:border before:border-[rgba(19,32,27,0.11)] before:rounded-full before:shadow-[0_0_0_90px_rgba(19,32,27,0.025),0_0_0_180px_rgba(19,32,27,0.018)]">
+      <section className="about-hero min-h-[760px] pt-[150px] pb-[78px] px-[clamp(22px,6vw,92px)] grid grid-cols-[minmax(0,0.92fr)_minmax(420px,0.78fr)] max-[980px]:grid-cols-1 gap-[clamp(50px,7vw,120px)] items-end bg-[#e8e9e1] relative overflow-hidden before:content-[''] before:absolute before:right-[-19vw] before:top-[-16vw] before:w-[52vw] before:h-[52vw] before:border before:border-[rgba(19,32,27,0.11)] before:rounded-full before:shadow-[0_0_0_90px_rgba(19,32,27,0.025),0_0_0_180px_rgba(19,32,27,0.018)]">
         <div className="relative z-[2]" data-hero-copy>
           <div className="catalog-breadcrumb mb-[82px] text-muted [&_a]:text-ink"><Link href="/">Home</Link><span>/</span><span>About</span></div>
           <p className="eyebrow"><span /> Mumbai · Since 2002</p>

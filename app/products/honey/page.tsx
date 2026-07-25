@@ -1,22 +1,23 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import HoneyHero from "./honey-hero";
 import { HoneyGlyph, WhatsApp } from "../../icons";
+import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
 
 const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like a honey enquiry. Please share variants, grade and packing.")}`;
 
-export const metadata: Metadata = {
-  title: "Honey | Supreme Trading Corp",
-  description:
-    "Raw and natural honey variants — multiflora, forest, jamun, tulsi, neem and eucalyptus — sourced in bulk for food, wellness and Ayurvedic buyers.",
-  openGraph: {
-    title: "Honey | Supreme Trading Corp",
-    description: "Single-origin and multiflora honey sourced to grade for food, wellness and Ayurvedic use.",
-    images: [{ url: "/supreme/source/honey_img.png", width: 1200, height: 1200, alt: "Supreme Trading Corp honey" }],
-  },
-};
+const description = "Raw and natural honey variants — multiflora, forest, jamun, tulsi, neem and eucalyptus — sourced in bulk for food, wellness and Ayurvedic buyers.";
+
+export const metadata = createPageMetadata({
+  title: "Bulk Raw & Natural Honey | Supreme Trading Corp",
+  description,
+  path: "/products/honey",
+  image: "/supreme/media/honey-pour-loop-poster.jpg",
+  imageAlt: "Natural honey being poured for bulk supply",
+  imageWidth: 1920,
+  imageHeight: 1080,
+});
 
 const variants = [
   { name: "Multiflora Honey", note: "Balanced, all-season blend from mixed wildflower nectar.", origin: "Pan-India" },
@@ -38,7 +39,13 @@ const qualities = [
 
 export default function HoneyPage() {
   return (
-    <main className="honey-page">
+    <main className="product-detail-page honey-page">
+      <JsonLd data={collectionPageJsonLd({
+        name: "Raw and natural honey",
+        description,
+        path: "/products/honey",
+        items: variants.map((variant) => variant.name),
+      })} />
       <SiteHeader theme="solid" />
 
       <HoneyHero />

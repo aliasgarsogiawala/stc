@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HoneyHero() {
   return (
-    <section className="honey-hero">
+    <section className="product-detail-hero honey-hero">
       <video
         className="honey-hero-video"
         autoPlay
@@ -23,6 +23,7 @@ export default function HoneyHero() {
         </div>
         <p className="eyebrow honey-eyebrow" data-hero-item><span /> Bulk supply</p>
         <h1 data-hero-item>Raw Honey</h1>
+        <p className="honey-hero-lead" data-hero-item>Natural honey selected by variant, grade, quantity and packing requirement for food and wellness buyers.</p>
         <div className="honey-hero-actions" data-hero-item>
           <a className="button button-honey" href="#variants">View variants</a>
           <Link className="text-link" href="/contact#enquiry">Send requirement</Link>

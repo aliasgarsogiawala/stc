@@ -64,7 +64,7 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
     >
       <div className="grid grid-cols-[minmax(0,1fr)_minmax(280px,0.55fr)] max-[820px]:grid-cols-1 gap-12 items-end">
         <div>
-          <span className={`inline-flex px-3 py-2 border rounded-full text-[9px] font-black tracking-[0.08em] uppercase ${styles.badge}`}>
+          <span className={`inline-flex px-3 py-2 border text-[10px] font-bold tracking-[0.045em] ${styles.badge}`}>
             Product index
           </span>
           <h2 className="max-w-[760px] mt-5 mb-0 font-heading text-[clamp(44px,5vw,70px)] leading-[0.96] font-semibold text-ink">
@@ -73,7 +73,7 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
         </div>
 
         <label className="grid gap-2.5">
-          <span className="text-[10px] font-black tracking-[0.05em] uppercase text-muted">Search {categoryName}</span>
+          <span className="text-[11px] font-bold tracking-[0.025em] text-muted">Search {categoryName}</span>
           <input
             className={`h-14 px-4 border border-line rounded-md outline-none bg-white text-ink text-sm transition-[border,box-shadow] focus:ring-4 ${styles.focus}`}
             type="search"
@@ -101,22 +101,22 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
         <div className="mt-5 grid grid-cols-4 max-[1180px]:grid-cols-3 max-[840px]:grid-cols-2 max-[580px]:grid-cols-1 gap-3 gs-stagger">
           {visible.map((product, index) => (
             <article
-              className={`tilt-card min-h-[260px] p-5 border border-line rounded-lg flex flex-col bg-white transition-[transform,border-color,box-shadow] duration-300 ${styles.cardHover}`}
+              className={`tilt-card min-h-[260px] max-[580px]:min-h-[220px] p-5 border border-line flex flex-col bg-white transition-[transform,border-color,box-shadow] duration-300 ${styles.cardHover}`}
               key={product.id}
             >
               <div className="flex items-start justify-between gap-3">
                 <span className={`text-[10px] font-black ${styles.index}`}>{String(start + index + 1).padStart(3, "0")}</span>
-                {product.subgroup && <span className="max-w-[64%] px-2.5 py-1 rounded-full bg-[#f1f1eb] text-muted text-[8px] font-black uppercase text-right">{product.subgroup}</span>}
+                {product.subgroup && <span className="max-w-[64%] px-2.5 py-1 bg-[#f1f1eb] text-muted text-[9px] font-bold tracking-[0.02em] text-right">{product.subgroup}</span>}
               </div>
               <div className={`mt-5 w-11 h-11 border grid place-items-center ${styles.glyph}`} aria-hidden="true">
                 {theme === "chemicals" ? <TestTubeGlyph /> : <IngredientBowlGlyph />}
               </div>
               <div className="mt-auto pt-10">
                 <h3 className="m-0 font-heading text-[28px] leading-none font-bold text-ink break-words">{product.name}</h3>
-                {product.detail && <p className="mt-2 mb-0 text-muted text-[11px] leading-[1.55]">{product.detail}</p>}
+                {product.detail && <p className="mt-2 mb-0 text-muted text-[12px] leading-[1.6]">{product.detail}</p>}
               </div>
               <a
-                className="w-fit mt-6 pb-1 border-b border-current text-ink text-[10px] font-black"
+                className="w-fit mt-6 pb-1 border-b border-current text-ink text-[11px] font-bold"
                 href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}
                 aria-label={`Enquire about ${product.name}`}
               >

@@ -1,22 +1,23 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import { OilDrop, WhatsApp } from "../../icons";
+import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
 
 const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like an oils enquiry. Please share the range, grade and packing.")}`;
 
-export const metadata: Metadata = {
+const description = "Natural, essential, aroma and medical oils — cold-pressed and steam-distilled — sourced in bulk to grade for personal care, wellness and formulation buyers.";
+
+export const metadata = createPageMetadata({
   title: "Essential & Medical Oils | Supreme Trading Corp",
-  description:
-    "Natural, essential, aroma and medical oils — cold-pressed and steam-distilled — sourced in bulk to grade for personal care, wellness and formulation buyers.",
-  openGraph: {
-    title: "Essential & Medical Oils | Supreme Trading Corp",
-    description: "Essential, carrier and medical oils sourced to grade for wellness and formulation.",
-    images: [{ url: "/supreme/media/oils-loop-poster.jpg", width: 1920, height: 1080, alt: "Golden essential oil dropper" }],
-  },
-};
+  description,
+  path: "/products/oils",
+  image: "/supreme/media/oils-loop-poster.jpg",
+  imageAlt: "Golden essential oil and glass dropper",
+  imageWidth: 1920,
+  imageHeight: 1080,
+});
 
 const variants = [
   { name: "Almond Oil", note: "Light carrier oil for cosmetics and massage blends.", origin: "Cold-pressed" },
@@ -38,10 +39,16 @@ const qualities = [
 
 export default function OilsPage() {
   return (
-    <main className="prod-page oils-page">
+    <main className="product-detail-page prod-page oils-page">
+      <JsonLd data={collectionPageJsonLd({
+        name: "Essential and medical oils",
+        description,
+        path: "/products/oils",
+        items: variants.map((variant) => variant.name),
+      })} />
       <SiteHeader theme="solid" />
 
-      <section className="prod-hero">
+      <section className="product-detail-hero prod-hero">
         <video className="prod-hero-video" autoPlay muted loop playsInline poster="/supreme/media/oils-loop-poster.jpg">
           <source src="/supreme/media/oils-loop.mp4" type="video/mp4" />
         </video>

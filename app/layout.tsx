@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import SiteMotion from "./site-motion";
+import { JsonLd, organizationJsonLd, websiteJsonLd } from "./seo";
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -16,28 +17,39 @@ const sans = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://supremetrading.in"),
-  title: "Supreme Trading Corp | Industrial & Specialty Raw Materials",
+  title: {
+    default: "Supreme Trading Corp | Industrial & Specialty Raw Materials",
+    template: "%s | Supreme Trading Corp",
+  },
   description:
     "Mumbai-based sourcing partner for industrial chemicals, resins, oils, food ingredients and specialty raw materials for wholesale and export buyers.",
+  alternates: { canonical: "/" },
   icons: { icon: "/supreme/favicon.png" },
   openGraph: {
     title: "Supreme Trading Corp | Industrial & Specialty Raw Materials",
     description: "Supplier of industrial chemicals, resins, oils, food ingredients and specialty raw materials.",
+    url: "/",
+    siteName: "Supreme Trading Corp",
+    locale: "en_IN",
     type: "website",
-    images: [{ url: "/supreme/source/bredcrumb-bg.jpg", width: 1920, height: 987, alt: "Supreme Trading Corp raw material sourcing" }],
+    images: [{ url: "/og.png", width: 1730, height: 909, alt: "Supreme Trading Corp raw material sourcing" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Supreme Trading Corp | Industrial & Specialty Raw Materials",
     description: "Supplier of industrial chemicals, resins, oils, food ingredients and specialty raw materials.",
-    images: ["/supreme/source/bredcrumb-bg.jpg"],
+    images: ["/og.png"],
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body><SiteMotion />{children}</body>
+      <body>
+        <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
+        <SiteMotion />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,17 +1,22 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
 import ContactForm from "./contact-form";
 import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone, WhatsApp } from "../icons";
+import { createPageMetadata } from "../seo";
 
 const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like to make a product enquiry.")}`;
 
-export const metadata: Metadata = {
-  title: "Contact | Supreme Trading Corp",
-  description: "Contact Supreme Trading Corp for industrial raw material sourcing, supply and export enquiries.",
-};
+export const metadata = createPageMetadata({
+  title: "Contact Supreme Trading Corp | Product & Bulk Enquiries",
+  description: "Contact Supreme Trading Corp in Mumbai for industrial raw material sourcing, bulk supply, packing, availability and export enquiries.",
+  path: "/contact",
+  image: "/og.png",
+  imageAlt: "Supreme Trading Corp sourcing and contact desk",
+  imageWidth: 1730,
+  imageHeight: 909,
+});
 
 const offices = [
   {
@@ -28,7 +33,7 @@ export default function ContactPage() {
     <main className="bg-[#f8f7f3] text-[#122c44]">
       <SiteHeader theme="solid" />
 
-      <section className="min-h-[540px] max-[720px]:min-h-[500px] pt-[82px] max-[720px]:pt-[70px] relative isolate overflow-hidden text-white">
+      <section className="contact-hero min-h-[540px] max-[720px]:min-h-[500px] pt-[82px] max-[720px]:pt-[70px] relative isolate overflow-hidden text-white">
         <Image
           data-hero-media
           src="/supreme/neutral-materials-hero.png"
