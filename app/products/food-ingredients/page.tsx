@@ -62,7 +62,6 @@ export default async function FoodIngredientsPage() {
             <Link className="text-link text-white" href="/contact#enquiry">Send requirement</Link>
           </div>
         </div>
-        <div className="catalog-full-hero-meta"><span>Food-grade sourcing</span><span>{products.length} listed materials</span></div>
       </section>
 
       <section className="py-[112px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#f7ead8] gs-reveal">

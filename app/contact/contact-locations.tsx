@@ -105,14 +105,8 @@ export function LocationMap() {
 
   return (
     <section className="contact-map-section-new bg-[#f4f7fa] gs-reveal" aria-live="polite">
-      <div className="contact-map-header max-w-[1480px] mx-auto px-[clamp(22px,5vw,76px)] py-[clamp(54px,6vw,76px)]">
-        <div className="grid grid-cols-[0.75fr_1.25fr] max-[760px]:grid-cols-1 items-end gap-[clamp(36px,7vw,110px)]">
-          <div>
-            <p className="mb-3 text-[#356fa7] text-[10px] font-extrabold tracking-[0.1em] uppercase">{activeOffice.city} {activeOffice.type}</p>
-            <h2 className="m-0 font-heading text-[clamp(38px,4.5vw,58px)] font-semibold tracking-[-0.03em]">Find us</h2>
-          </div>
-          <address className="max-w-[620px] m-0 pl-8 max-[760px]:pl-0 max-[760px]:pt-6 border-l max-[760px]:border-l-0 max-[760px]:border-t border-[#356fa7]/24 text-[#526473] text-[14px] not-italic leading-[1.75]">{activeOffice.address}</address>
-        </div>
+      <div className="contact-map-header px-[clamp(22px,5vw,76px)] py-[clamp(48px,5vw,66px)] text-center">
+        <h2 className="m-0 font-heading text-[clamp(44px,5vw,68px)] leading-none font-semibold tracking-[-0.035em] text-[#123451]">Find us Here</h2>
       </div>
       <div className="contact-map-reveal relative overflow-hidden">
         <iframe

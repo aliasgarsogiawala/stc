@@ -5693,10 +5693,6 @@ main {
   transform: none;
 }
 
-.catalog-detail-page .product-detail-hero > [data-product-copy] {
-  padding-bottom: 10px;
-}
-
 .catalog-detail-page .product-detail-hero .catalog-breadcrumb,
 .prod-hero .catalog-breadcrumb,
 .honey-hero .catalog-breadcrumb {
@@ -6194,22 +6190,6 @@ main {
   text-wrap: balance;
 }
 
-.catalog-full-hero-meta {
-  position: absolute;
-  right: clamp(24px, 6vw, 92px);
-  bottom: 82px;
-  z-index: 2;
-  padding-top: 14px;
-  border-top: 1px solid rgb(255 255 255 / 44%);
-  display: flex;
-  gap: 42px;
-  color: rgb(255 255 255 / 76%);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 /* Interactive product index hero */
 .products-grid-hero {
   min-height: 590px;
@@ -6318,10 +6298,6 @@ main {
   .catalog-full-hero-copy {
     width: 100%;
     padding: 116px 20px 62px;
-  }
-
-  .catalog-full-hero-meta {
-    display: none;
   }
 
   .catalog-full-hero--chemicals .catalog-full-hero-overlay,

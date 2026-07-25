@@ -18,7 +18,7 @@ export type CatalogCategory = {
 const sources = [
   {
     id: "herbs-spices",
-    name: "Herbs & Spices",
+    name: "Raw Herbs & Spices",
     shortName: "Herbs",
     path: "Herbs-Spices.asp",
     description: "Whole botanicals, roots, barks, seeds, flowers, gums and trade spices.",
