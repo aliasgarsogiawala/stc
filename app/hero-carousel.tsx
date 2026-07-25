@@ -162,12 +162,6 @@ export default function HeroCarousel() {
         </div>
 
       </div>
-
-      <div className="hero-proof" aria-label="Company highlights">
-        <div><strong>2002</strong><span>Established in Mumbai</span></div>
-        <div><strong>800+</strong><span>Materials sourced</span></div>
-        <div><strong>Bulk</strong><span>India and export supply</span></div>
-      </div>
     </section>
   );
 }

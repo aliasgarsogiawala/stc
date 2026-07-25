@@ -42,12 +42,12 @@ const categories = [
 ];
 
 const materialGroups = [
-  { code: "01", name: "Industrial chemicals", note: "Acids, solvents, salts and process materials", image: "/supreme/source/industrial_chemicals.png", href: "/products/chemicals" },
-  { code: "02", name: "Resins & polymers", note: "Acrylic, polyurethane and speciality resin systems", image: "/supreme/source/tren-pro4.png", href: "/products/chemicals" },
-  { code: "03", name: "Additives & cellulose", note: "Wetting agents, defoamers, HPMC, HEC and CMC", image: "/supreme/source/tren-pro3.png", href: "/products/chemicals" },
-  { code: "04", name: "Oils & liquids", note: "Essential, medical, carrier and speciality oils", image: "/supreme/source/essential_oil.png", href: "/products/oils" },
-  { code: "05", name: "Food ingredients", note: "Powders, spices and dehydrated ingredients", image: "/supreme/source/honey_img.png", href: "/products/food-ingredients" },
-  { code: "06", name: "Specified sourcing", note: "Grade-led, quantity-led and destination-led supply", image: "/supreme/source/nb.png", href: "/contact#enquiry" },
+  { code: "01", name: "Industrial chemicals", note: "Acids, solvents, salts and process materials", image: "/supreme/source/industrial_chemicals.png", href: "/products/chemicals", fit: "contain" },
+  { code: "02", name: "Resins & polymers", note: "Acrylic, polyurethane and speciality resin systems", image: "/supreme/source/tren-pro4.png", href: "/products/chemicals", fit: "cover" },
+  { code: "03", name: "Additives & cellulose", note: "Wetting agents, defoamers, HPMC, HEC and CMC", image: "/supreme/source/tren-pro3.png", href: "/products/chemicals", fit: "cover" },
+  { code: "04", name: "Oils & liquids", note: "Essential, medical, carrier and speciality oils", image: "/supreme/media/oils-loop-poster.jpg", href: "/products/oils", fit: "cover" },
+  { code: "05", name: "Food ingredients", note: "Powders, spices and dehydrated ingredients", image: "/supreme/media/honey-pour-loop-poster.jpg", href: "/products/food-ingredients", fit: "cover" },
+  { code: "06", name: "Specified sourcing", note: "Grade-led, quantity-led and destination-led supply", image: "/supreme/neutral-materials-hero.png", href: "/contact#enquiry", fit: "cover" },
 ];
 
 const whyChoose = [
@@ -249,16 +249,34 @@ export default function Home() {
           <Link className="text-link max-[720px]:inline-block max-[720px]:mt-[22px]" href="/products">Explore full catalogue</Link>
         </div>
 
-        <div className="grid grid-cols-3 max-[1060px]:grid-cols-2 max-[720px]:grid-cols-1 gap-px border border-line bg-line gs-stagger">
+        <div className="grid grid-cols-3 max-[1060px]:grid-cols-2 max-[720px]:grid-cols-1 auto-rows-fr gap-5 gs-stagger">
           {materialGroups.map((group) => (
-            <article className="tilt-card group min-h-[330px] p-[26px] flex flex-col bg-white transition-[background,transform] duration-200 hover:bg-[#eef1ea]" key={group.name}>
-              <span className="text-clay text-[10px] font-black">{group.code}</span>
-              <div className="h-[132px] mt-[18px] mb-6 grid place-items-center overflow-hidden">
-                <Image src={group.image} alt="" width={290} height={239} className="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-[1.05]" />
+            <article className="tilt-card group min-h-[390px] h-full border border-[#173a57]/16 flex flex-col bg-white overflow-hidden transition-[background-color,border-color] duration-300 hover:border-[#2d68a0]/55" key={group.name}>
+              <div className="min-h-[48px] px-5 border-b border-[#173a57]/12 flex items-center justify-between text-[#2d68a0]">
+                <span className="text-[10px] font-black tracking-[0.08em]">{group.code}</span>
+                <span className="text-[15px] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">↗</span>
               </div>
-              <h3 className="mt-auto mb-2.5 font-heading text-[31px] leading-none font-bold">{group.name}</h3>
-              <p className="min-h-[42px] m-0 text-muted text-xs leading-[1.65]">{group.note}</p>
-              <Link href={group.href} aria-label={`Browse ${group.name}`} className="w-fit mt-[22px] pb-1 border-b border-current text-deep text-[11px] font-black">Browse range</Link>
+              <div className="h-[176px] border-b border-[#173a57]/12 bg-[#eaf0f5] relative overflow-hidden">
+                <Image
+                  src={group.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 720px) 100vw, (max-width: 1060px) 50vw, 33vw"
+                  className={`transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045] ${
+                    group.fit === "contain"
+                      ? "object-contain p-4 mix-blend-multiply"
+                      : "object-cover object-center"
+                  }`}
+                />
+                <span className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,transparent_62%,rgba(13,42,69,0.08))]" />
+              </div>
+              <div className="p-[24px] flex flex-1 flex-col">
+                <h3 className="mb-3 font-heading text-[clamp(25px,2.1vw,31px)] leading-[1.02] font-semibold tracking-[-0.025em]">{group.name}</h3>
+                <p className="m-0 text-muted text-[13px] leading-[1.65]">{group.note}</p>
+                <Link href={group.href} aria-label={`Browse ${group.name}`} className="w-fit mt-auto pt-6 inline-flex items-center gap-2 text-[#174ea6] text-[11px] font-extrabold tracking-[0.02em]">
+                  Browse range <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </article>
           ))}
         </div>

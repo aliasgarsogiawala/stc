@@ -199,18 +199,7 @@ export default function SiteMotion() {
           });
         });
 
-        // Contact office route and map curtain.
-        const officeLine = document.querySelector<HTMLElement>(".contact-office-line-fill");
-        if (officeLine) {
-          gsap.fromTo(officeLine, { scaleX: 0 }, {
-            scaleX: 1,
-            duration: 1.2,
-            ease: "power3.inOut",
-            transformOrigin: "left center",
-            scrollTrigger: { trigger: ".contact-office-grid", start: "top 76%", once: true },
-          });
-        }
-
+        // Contact map curtain.
         const mapReveal = document.querySelector<HTMLElement>(".contact-map-reveal");
         const mapCurtain = document.querySelector<HTMLElement>(".contact-map-curtain");
         if (mapReveal && mapCurtain) {

@@ -330,36 +330,6 @@ h1 {
   color: var(--white);
 }
 
-.hero-proof {
-  width: min(900px, calc(100% - 44px));
-  border-top: 1px solid rgba(255, 255, 255, 0.34);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  color: var(--white);
-}
-
-.hero-proof div {
-  min-height: 86px;
-  padding: 20px 24px 0 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.hero-proof strong {
-  font-family: var(--font-display), sans-serif;
-  font-size: 34px;
-  line-height: 1;
-  font-weight: 600;
-}
-
-.hero-proof span {
-  max-width: 150px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 12px;
-  line-height: 1.45;
-}
-
 .floating-leaf {
   position: absolute;
   pointer-events: none;
@@ -918,17 +888,6 @@ footer {
 
   .hero-actions {
     gap: 18px;
-  }
-
-  .hero-proof {
-    width: min(100%, 330px);
-    grid-template-columns: 1fr;
-  }
-
-  .hero-proof div {
-    min-height: auto;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   }
 
   .ticker span {
@@ -4825,12 +4784,6 @@ html {
   to { opacity: 1; transform: none; }
 }
 
-.hero-carousel .hero-proof {
-  position: relative;
-  z-index: 2;
-  margin-top: 40px;
-}
-
 @media (max-width: 720px) {
   .hero-carousel {
     min-height: 88svh;
@@ -5418,7 +5371,6 @@ html {
 }
 
 /* Contact and footer choreography hooks */
-.contact-office-line-fill,
 .footer-blue-rule {
   will-change: transform;
 }

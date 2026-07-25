@@ -62,33 +62,34 @@ export default function ContactPage() {
 
       <section className="py-[clamp(76px,8vw,112px)] px-[clamp(22px,5vw,76px)] bg-white gs-reveal">
         <div className="max-w-[1360px] mx-auto">
-          <div className="mb-12 grid grid-cols-[0.58fr_1.42fr] max-[760px]:grid-cols-1 gap-7 items-end">
-            <p className="m-0 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Office network</p>
-            <div>
-              <h2 className="m-0 font-heading text-[clamp(38px,4.5vw,60px)] font-semibold leading-[1.02] tracking-[-0.03em]">Locations</h2>
-              <p className="max-w-[570px] mt-4 mb-0 text-[#687681] text-sm leading-[1.75]">Head office in Mumbai with branch presence in Madhya Pradesh and Uttarakhand.</p>
-            </div>
+          <div className="max-w-[720px] mx-auto mb-14 text-center">
+            <p className="mb-4 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Office network</p>
+            <h2 className="m-0 font-heading text-[clamp(42px,5vw,64px)] font-semibold leading-none tracking-[-0.03em]">Locations</h2>
+            <p className="max-w-[620px] mx-auto mt-5 mb-0 text-[#687681] text-sm leading-[1.75]">Head office in Mumbai with branch presence in Madhya Pradesh and Uttarakhand.</p>
           </div>
 
-          <div className="contact-office-grid grid grid-cols-3 max-[900px]:grid-cols-1 gap-5 gs-stagger relative">
-            <span className="absolute z-[3] left-[16.666%] right-[16.666%] top-[49px] h-px bg-[#2d68a0]/20 max-[900px]:hidden pointer-events-none" aria-hidden="true">
-              <i className="contact-office-line-fill block w-full h-full bg-[#2d68a0]" />
-            </span>
+          <div className="contact-office-grid grid grid-cols-[1.16fr_1fr_1fr] max-[900px]:grid-cols-1 gap-5 gs-stagger">
             {offices.map((office, index) => (
               <article
-                className={`tilt-card min-h-[286px] px-[clamp(24px,2.6vw,36px)] pt-[104px] pb-8 border relative overflow-hidden transition-[background-color,border-color] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-[#174ea6] after:transition-[width] after:duration-500 hover:after:w-full ${
+                className={`tilt-card min-h-[324px] p-[clamp(26px,3vw,40px)] border relative overflow-hidden flex flex-col transition-[background-color,border-color] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[4px] after:w-0 after:transition-[width] after:duration-500 hover:after:w-full ${
                   index === 0
-                    ? "border-[#2d68a0]/28 bg-[#eef5fb]"
-                    : "border-[#173a57]/16 bg-[#fafbfc] hover:bg-white"
+                    ? "border-[#123451] bg-[#123451] text-white after:bg-[#efc35f]"
+                    : "border-[#173a57]/16 bg-[#f5f8fa] text-[#122c44] after:bg-[#174ea6] hover:bg-white"
                 }`}
                 key={office.city}
               >
-                <span className="absolute z-[5] left-1/2 top-[29px] -translate-x-1/2 w-10 h-10 border border-[#2d68a0]/35 rounded-full grid place-items-center bg-white text-[#2d68a0]"><MapPin /></span>
-                <span className="absolute right-[clamp(24px,2.6vw,36px)] top-[39px] text-[#7b8a98] text-[10px] font-bold tracking-[0.08em]">{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <p className="mb-3 text-[#9a7331] text-[10px] font-extrabold tracking-[0.09em] uppercase">{office.type}</p>
-                  <h3 className="mb-5 font-heading text-[30px] leading-none font-semibold tracking-[-0.025em]">{office.city}</h3>
-                  <address className="max-w-[390px] m-0 text-[#617181] text-[13px] font-medium not-italic leading-[1.75]">{office.address}</address>
+                <div className="flex items-start justify-between gap-5">
+                  <span className={`w-11 h-11 border grid place-items-center ${
+                    index === 0
+                      ? "border-white/25 bg-white/[0.06] text-[#efc35f]"
+                      : "border-[#2d68a0]/28 bg-white text-[#2d68a0]"
+                  }`}><MapPin /></span>
+                  <span className={`text-[10px] font-bold tracking-[0.1em] ${index === 0 ? "text-white/50" : "text-[#7b8a98]"}`}>{String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <div className="mt-auto pt-14">
+                  <p className={`mb-3 text-[10px] font-extrabold tracking-[0.09em] uppercase ${index === 0 ? "text-[#efc35f]" : "text-[#9a7331]"}`}>{office.type}</p>
+                  <h3 className={`mb-5 font-heading text-[clamp(32px,3vw,42px)] leading-none font-semibold tracking-[-0.03em] ${index === 0 ? "text-white" : ""}`}>{office.city}</h3>
+                  <address className={`max-w-[410px] m-0 text-[13px] font-medium not-italic leading-[1.75] ${index === 0 ? "text-white/65" : "text-[#617181]"}`}>{office.address}</address>
                 </div>
               </article>
             ))}

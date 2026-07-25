@@ -4,7 +4,6 @@ import Link from "next/link";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
 import { getCatalog } from "./catalog-data";
-import ProductCatalog from "./product-catalog";
 
 // Categories with their own tailored landing page.
 const dedicatedPages: Record<string, string> = {
@@ -23,18 +22,34 @@ const categoryImages: Record<string, string> = {
   industrial: "/supreme/source/industrial_chemicals.png",
 };
 
+const categoryTones: Record<string, string> = {
+  "herbs-spices": "bg-[#e7eee8]",
+  oils: "bg-[#e8edf1]",
+  honey: "bg-[#f3e8cf]",
+  "food-herbs": "bg-[#efe5da]",
+  industrial: "bg-[#dceaf3]",
+};
+
+const categoryOfferings: Record<string, string[]> = {
+  "herbs-spices": ["Whole herbs", "Roots & barks", "Seeds & flowers", "Trade spices"],
+  oils: ["Essential oils", "Carrier oils", "Aroma oils", "Traditional oils"],
+  honey: ["Multiflora honey", "Forest honey", "Monofloral honey", "Bulk packing"],
+  "food-herbs": ["Dehydrated vegetables", "Ayurvedic powders", "Ground spices", "Spray-dried powders"],
+  industrial: ["Resins", "Performance additives", "Pigments", "Cellulose & process chemicals"],
+};
+
 export const metadata: Metadata = {
-  title: "Product Catalogue | Supreme Trading Corp",
-  description: "Search Supreme Trading Corp's range of herbs, spices, natural oils, honey, food powders and industrial chemicals.",
+  title: "Product Categories | Supreme Trading Corp",
+  description: "Explore Supreme Trading Corp's herbs, spices, oils, honey, food ingredients and industrial chemical categories.",
   openGraph: {
-    title: "Product Catalogue | Supreme Trading Corp",
-    description: "Search 700+ botanical, food, oil and industrial material listings.",
+    title: "Product Categories | Supreme Trading Corp",
+    description: "Explore botanical, food, oil and industrial material categories.",
     images: [{ url: "/supreme/source/bredcrumb-bg.jpg", width: 1920, height: 987, alt: "Supreme Trading Corp raw material catalogue" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Catalogue | Supreme Trading Corp",
-    description: "Search 700+ botanical, food, oil and industrial material listings.",
+    title: "Product Categories | Supreme Trading Corp",
+    description: "Explore botanical, food, oil and industrial material categories.",
     images: ["/supreme/source/bredcrumb-bg.jpg"],
   },
 };
@@ -59,47 +74,73 @@ export default async function ProductsPage() {
           priority
         />
         <div className="catalog-breadcrumb mb-auto" data-hero-item><Link href="/">Home</Link><span>/</span><span>Products</span></div>
-        <h1 data-hero-item className="max-w-[900px] mb-[34px] font-heading font-semibold text-white text-[clamp(52px,7vw,100px)] leading-[0.92]">Product Catalogue</h1>
+        <h1 data-hero-item className="max-w-[900px] mb-[34px] font-heading font-semibold text-white text-[clamp(52px,7vw,100px)] leading-[0.92]">Product Categories</h1>
         <div className="pt-6 border-t border-white/25 flex items-center justify-between gap-[42px] max-[760px]:flex-col max-[760px]:items-start" data-hero-meta>
           <p className="max-w-[690px] m-0 text-white/72 text-[15px] leading-[1.75]">
             {totalProducts} listed products across herbs and spices, oils, honey, food ingredients and industrial chemicals.
             Grade, packing and availability are confirmed on enquiry.
           </p>
-          <a className="button button-light" href="#catalog">Browse catalogue</a>
+          <a className="button button-light" href="#catalog">Explore categories</a>
         </div>
       </section>
 
-      <section className="pt-[88px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 gs-reveal" aria-label="Product categories">
-        <div className="grid grid-cols-[0.55fr_1.45fr] max-[760px]:grid-cols-1 gap-10 max-[760px]:gap-3 items-start mb-[34px]">
+      <section id="catalog" className="py-[104px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 gs-reveal" aria-label="Product categories">
+        <div className="grid grid-cols-[0.55fr_1.45fr] max-[760px]:grid-cols-1 gap-10 max-[760px]:gap-3 items-start mb-14">
           <p className="section-kicker">Catalogue</p>
-          <h2 className="max-w-[850px] m-0 font-heading text-[clamp(40px,4vw,52px)] leading-none">Product categories</h2>
+          <div>
+            <h2 className="max-w-[850px] m-0 font-heading text-[clamp(42px,5vw,64px)] font-semibold leading-none tracking-[-0.03em]">Product categories</h2>
+            <p className="max-w-[680px] mt-5 mb-0 text-muted text-[15px] leading-[1.75]">Choose a material family to review the relevant range, sourcing approach and enquiry information.</p>
+          </div>
         </div>
-        <div className="border border-line grid grid-cols-5 max-[1100px]:grid-cols-3 max-[760px]:grid-cols-1 bg-line gap-px gs-stagger">
+        <div className="border-t border-[#173a57]/18">
           {categories.map((category, index) => {
-            const href = dedicatedPages[category.id] ?? "#catalog";
-            const CardTag = dedicatedPages[category.id] ? Link : "a";
+            const href = dedicatedPages[category.id] ?? "/contact#enquiry";
+            const imageFirst = index % 2 === 0;
+            const offers = categoryOfferings[category.id] ?? category.products.slice(0, 4).map((product) => product.name);
             return (
-              <CardTag className="tilt-card min-w-0 min-h-[380px] max-[760px]:min-h-[300px] p-[19px] flex flex-col bg-white transition-[background,transform,border-color] duration-200 hover:bg-[#f3f4ed]" href={href} key={category.id}>
-                <div className="flex justify-between text-clay text-[11px] font-black">
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{category.products.length}+</strong>
+              <article className="group min-h-[500px] max-[820px]:min-h-0 border-b border-[#173a57]/18 grid grid-cols-2 max-[820px]:grid-cols-1 overflow-hidden gs-reveal" key={category.id}>
+                <div className={`min-h-[500px] max-[820px]:min-h-[330px] relative overflow-hidden ${categoryTones[category.id] ?? "bg-[#e8edf1]"} ${imageFirst ? "order-1" : "order-2"} max-[820px]:order-1`}>
+                  <Image
+                    src={categoryImages[category.id]}
+                    alt={`${category.name} category`}
+                    fill
+                    sizes="(max-width: 820px) 100vw, 50vw"
+                    className="object-contain p-[clamp(34px,5vw,76px)] mix-blend-multiply transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.055]"
+                  />
+                  <span className="absolute left-7 top-7 w-11 h-11 border border-[#173a57]/18 bg-white/70 grid place-items-center text-[#174ea6] text-[10px] font-black tracking-[0.08em]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <Image
-                  src={categoryImages[category.id]}
-                  alt={`${category.name} category`}
-                  width={290}
-                  height={239}
-                  className="w-full h-[140px] my-[18px] object-contain mix-blend-multiply max-[760px]:w-[42%] max-[760px]:self-end"
-                />
-                <h3 className="mt-auto mb-2.5 font-heading text-[27px] leading-[1.05]">{category.name}</h3>
-                <p className="m-0 text-muted text-xs leading-[1.6]">{category.description}</p>
-              </CardTag>
+
+                <div className={`p-[clamp(32px,5vw,76px)] flex flex-col justify-center bg-white ${imageFirst ? "order-2" : "order-1"} max-[820px]:order-2`}>
+                  <div className="flex items-center justify-between gap-5 text-[10px] font-extrabold tracking-[0.08em] uppercase">
+                    <span className="text-[#2d68a0]">Material family</span>
+                    <span className="text-[#7d8994]">{category.products.length} listed</span>
+                  </div>
+                  <h3 className="max-w-[640px] mt-6 mb-5 font-heading text-[clamp(38px,4.5vw,64px)] leading-[0.95] font-semibold tracking-[-0.035em]">{category.name}</h3>
+                  <p className="max-w-[590px] m-0 text-muted text-[15px] leading-[1.75]">{category.description}</p>
+
+                  <div className="mt-9 pt-6 border-t border-[#173a57]/16">
+                    <p className="mb-4 text-[#7b8792] text-[9px] font-extrabold tracking-[0.1em] uppercase">What we offer</p>
+                    <ul className="m-0 p-0 grid grid-cols-2 max-[520px]:grid-cols-1 gap-x-7 list-none">
+                      {offers.map((offer) => (
+                        <li className="py-3 border-b border-[#173a57]/11 flex items-center gap-3 text-[#24384b] text-[12px] font-semibold leading-[1.45]" key={offer}>
+                          <span className="w-1.5 h-1.5 bg-[#2d68a0]" aria-hidden="true" />
+                          {offer}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link className="w-fit mt-8 inline-flex items-center gap-3 text-[#174ea6] text-[11px] font-extrabold tracking-[0.03em] uppercase group/link" href={href}>
+                    Explore category <span className="text-base transition-transform duration-300 group-hover/link:translate-x-1" aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </article>
             );
           })}
         </div>
       </section>
-
-      <ProductCatalog categories={categories} />
 
       <section className="min-h-[510px] py-[92px] max-[760px]:py-[78px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[1.35fr_0.65fr] max-[1100px]:grid-cols-1 gap-20 max-[1100px]:gap-8 items-center bg-deep text-white gs-reveal">
         <div>
