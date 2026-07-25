@@ -3,7 +3,8 @@ import Link from "next/link";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
 import ContactForm from "./contact-form";
-import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone, WhatsApp } from "../icons";
+import { LocationCards, LocationMap, LocationProvider } from "./contact-locations";
+import { ArrowRight, ArrowUpRight, Mail, Phone, WhatsApp } from "../icons";
 import { createPageMetadata } from "../seo";
 
 const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like to make a product enquiry.")}`;
@@ -17,16 +18,6 @@ export const metadata = createPageMetadata({
   imageWidth: 1730,
   imageHeight: 909,
 });
-
-const offices = [
-  {
-    type: "Head office",
-    city: "Mumbai",
-    address: "51/A, Essaji Street, Opp. Shah Roadways, Vadgadi, Masjid Bunder (W), Mumbai 400003, Maharashtra, India",
-  },
-  { type: "Branch office", city: "Indore", address: "Loha Mandi, Siyaganj, Indore, Madhya Pradesh" },
-  { type: "Branch office", city: "Haridwar", address: "Jamalpur Kalan, District Haridwar, Uttarakhand" },
-];
 
 export default function ContactPage() {
   return (
@@ -65,54 +56,21 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-[clamp(76px,8vw,112px)] px-[clamp(22px,5vw,76px)] bg-white gs-reveal">
-        <div className="max-w-[1360px] mx-auto">
-          <div className="max-w-[720px] mx-auto mb-14 text-center">
-            <p className="mb-4 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Office network</p>
-            <h2 className="m-0 font-heading text-[clamp(42px,5vw,64px)] font-semibold leading-none tracking-[-0.03em]">Locations</h2>
-          </div>
+      <LocationProvider>
+        <LocationCards />
 
-          <div className="contact-office-grid grid grid-cols-[1.16fr_1fr_1fr] max-[900px]:grid-cols-1 gap-5 gs-stagger">
-            {offices.map((office, index) => (
-              <article
-                className={`tilt-card min-h-[324px] p-[clamp(26px,3vw,40px)] border relative overflow-hidden flex flex-col transition-[background-color,border-color] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[4px] after:w-0 after:transition-[width] after:duration-500 hover:after:w-full ${
-                  index === 0
-                    ? "border-[#123451] bg-[#123451] text-white after:bg-[#efc35f]"
-                    : "border-[#173a57]/16 bg-[#f5f8fa] text-[#122c44] after:bg-[#174ea6] hover:bg-white"
-                }`}
-                key={office.city}
-              >
-                <div className="flex items-start justify-between gap-5">
-                  <span className={`w-11 h-11 border grid place-items-center ${
-                    index === 0
-                      ? "border-white/25 bg-white/[0.06] text-[#efc35f]"
-                      : "border-[#2d68a0]/28 bg-white text-[#2d68a0]"
-                  }`}><MapPin /></span>
-                  <span className={`text-[10px] font-bold tracking-[0.1em] ${index === 0 ? "text-white/50" : "text-[#7b8a98]"}`}>{String(index + 1).padStart(2, "0")}</span>
-                </div>
-                <div className="mt-auto pt-14">
-                  <p className={`mb-3 text-[10px] font-extrabold tracking-[0.09em] uppercase ${index === 0 ? "text-[#efc35f]" : "text-[#9a7331]"}`}>{office.type}</p>
-                  <h3 className={`mb-5 font-heading text-[clamp(32px,3vw,42px)] leading-none font-semibold tracking-[-0.03em] ${index === 0 ? "text-white" : ""}`}>{office.city}</h3>
-                  <address className={`max-w-[410px] m-0 text-[13px] font-medium not-italic leading-[1.75] ${index === 0 ? "text-white/65" : "text-[#617181]"}`}>{office.address}</address>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#102f4c] text-white">
+      <section className="bg-[#dceaf6] text-[#122c44]">
         <div className="max-w-[1480px] mx-auto px-[clamp(22px,5vw,76px)] grid grid-cols-3 max-[880px]:grid-cols-1">
-          <a className="min-h-[160px] py-8 pr-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-white/15 group" href="tel:+912223455226">
-            <span className="flex items-center gap-3 text-[#f0bf59] text-[9px] font-extrabold tracking-[0.1em] uppercase"><Phone /> Call the desk</span>
+          <a className="min-h-[160px] py-8 pr-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-[#356fa7]/20 group" href="tel:+912223455226">
+            <span className="flex items-center gap-3 text-[#356fa7] text-[9px] font-extrabold tracking-[0.1em] uppercase"><Phone /> Call the desk</span>
             <strong className="flex items-center justify-between gap-4 text-[clamp(17px,2vw,24px)] font-bold tracking-[-0.025em]">+91 22 2345 5226 <ArrowUpRight /></strong>
           </a>
-          <a className="min-h-[160px] py-8 px-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-white/15 group" href="mailto:info@supremetrading.in">
-            <span className="flex items-center gap-3 text-[#f0bf59] text-[9px] font-extrabold tracking-[0.1em] uppercase"><Mail /> Email</span>
+          <a className="min-h-[160px] py-8 px-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-[#356fa7]/20 group" href="mailto:info@supremetrading.in">
+            <span className="flex items-center gap-3 text-[#356fa7] text-[9px] font-extrabold tracking-[0.1em] uppercase"><Mail /> Email</span>
             <strong className="flex items-center justify-between gap-4 text-[clamp(15px,1.5vw,20px)] font-bold tracking-[-0.025em] break-all">info@supremetrading.in <ArrowUpRight /></strong>
           </a>
           <a className="min-h-[160px] py-8 pl-[clamp(20px,3vw,44px)] flex flex-col justify-between group" href={WA_HREF} target="_blank" rel="noopener noreferrer">
-            <span className="flex items-center gap-3 text-[#f0bf59] text-[9px] font-extrabold tracking-[0.1em] uppercase"><WhatsApp className="text-[#5ddd91]" /> WhatsApp</span>
+            <span className="flex items-center gap-3 text-[#356fa7] text-[9px] font-extrabold tracking-[0.1em] uppercase"><WhatsApp className="text-[#27935b]" /> WhatsApp</span>
             <strong className="flex items-center justify-between gap-4 text-[clamp(17px,2vw,24px)] font-bold tracking-[-0.025em]">+91 99207 55226 <ArrowUpRight /></strong>
           </a>
         </div>
@@ -140,28 +98,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="contact-map-section-new bg-[#f4f7fa] gs-reveal">
-        <div className="contact-map-header max-w-[1480px] mx-auto px-[clamp(22px,5vw,76px)] py-[clamp(54px,6vw,76px)]">
-          <div className="grid grid-cols-[0.75fr_1.25fr] max-[760px]:grid-cols-1 items-end gap-[clamp(36px,7vw,110px)]">
-            <div>
-              <p className="mb-3 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Mumbai head office</p>
-              <h2 className="m-0 font-heading text-[clamp(38px,4.5vw,58px)] font-semibold tracking-[-0.03em]">Find us</h2>
-            </div>
-            <address className="max-w-[620px] m-0 pl-8 max-[760px]:pl-0 max-[760px]:pt-6 border-l max-[760px]:border-l-0 max-[760px]:border-t border-[#173a57]/18 text-[#526473] text-[14px] not-italic leading-[1.75]">51/A, Essaji Street, Vadgadi, Masjid Bunder (W),<br className="max-[760px]:hidden" /> Mumbai 400003, Maharashtra, India</address>
-          </div>
-        </div>
-        <div className="contact-map-reveal relative overflow-hidden">
-          <iframe
-            title="Supreme Trading Corp Mumbai head office map"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30188.49523647128!2d72.835988!3d18.950776!3m2!1i1024!1i768!4f13.1!3m3!1m2!1s0x3be7ce2445fe9359%3A0xe8c4e71d26263e7a!2sTitanium%20Dioxide%20Suppliers%20-%20Supreme%20Trading%20Corp.!5e0!3m2!1sen!2sin!4v1765969497421!5m2!1sen!2sin"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-            className="w-full h-[480px] max-[720px]:h-[380px] block border-0 [filter:saturate(0.65)_contrast(1.03)]"
-          />
-          <span className="contact-map-curtain absolute inset-0 z-[2] bg-[#174ea6] pointer-events-none" aria-hidden="true" />
-        </div>
-      </section>
+        <LocationMap />
+      </LocationProvider>
 
       <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden min-[900px]:grid border-y border-l border-[#173a57]/20 bg-white shadow-[0_12px_35px_rgba(15,45,73,0.13)]" aria-label="Quick contact">
         <a className="w-12 h-12 grid place-items-center border-b border-[#173a57]/15 text-[#245b8a] hover:bg-[#245b8a] hover:text-white transition-colors" href="tel:+912223455226" aria-label="Call Supreme Trading Corp" title="Call"><Phone /></a>
