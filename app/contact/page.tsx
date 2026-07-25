@@ -70,7 +70,6 @@ export default function ContactPage() {
           <div className="max-w-[720px] mx-auto mb-14 text-center">
             <p className="mb-4 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Office network</p>
             <h2 className="m-0 font-heading text-[clamp(42px,5vw,64px)] font-semibold leading-none tracking-[-0.03em]">Locations</h2>
-            <p className="max-w-[620px] mx-auto mt-5 mb-0 text-[#687681] text-sm leading-[1.75]">Head office in Mumbai with branch presence in Madhya Pradesh and Uttarakhand.</p>
           </div>
 
           <div className="contact-office-grid grid grid-cols-[1.16fr_1fr_1fr] max-[900px]:grid-cols-1 gap-5 gs-stagger">
@@ -141,14 +140,14 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white gs-reveal">
-        <div className="max-w-[1480px] mx-auto px-[clamp(22px,5vw,76px)] pt-[clamp(76px,8vw,108px)]">
-          <div className="mb-9 flex max-[680px]:block items-end justify-between gap-10">
+      <section className="contact-map-section-new bg-[#f4f7fa] gs-reveal">
+        <div className="contact-map-header max-w-[1480px] mx-auto px-[clamp(22px,5vw,76px)] py-[clamp(54px,6vw,76px)]">
+          <div className="grid grid-cols-[0.75fr_1.25fr] max-[760px]:grid-cols-1 items-end gap-[clamp(36px,7vw,110px)]">
             <div>
               <p className="mb-3 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Mumbai head office</p>
               <h2 className="m-0 font-heading text-[clamp(38px,4.5vw,58px)] font-semibold tracking-[-0.03em]">Find us</h2>
             </div>
-            <address className="max-[680px]:mt-4 max-w-[520px] m-0 text-[#687681] text-xs not-italic leading-[1.75]">51/A, Essaji Street, Vadgadi, Masjid Bunder (W), Mumbai 400003, Maharashtra, India</address>
+            <address className="max-w-[620px] m-0 pl-8 max-[760px]:pl-0 max-[760px]:pt-6 border-l max-[760px]:border-l-0 max-[760px]:border-t border-[#173a57]/18 text-[#526473] text-[14px] not-italic leading-[1.75]">51/A, Essaji Street, Vadgadi, Masjid Bunder (W),<br className="max-[760px]:hidden" /> Mumbai 400003, Maharashtra, India</address>
           </div>
         </div>
         <div className="contact-map-reveal relative overflow-hidden">

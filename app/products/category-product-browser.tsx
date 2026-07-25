@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { CatalogProduct } from "./catalog-data";
-import { IngredientBowlGlyph, TestTubeGlyph } from "../icons";
+import { ArrowLeft, ArrowRight, ArrowUpRight, IngredientBowlGlyph, TestTubeGlyph } from "../icons";
 
 type ProductBrowserProps = {
   categoryName: string;
@@ -120,7 +120,7 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
                 href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}
                 aria-label={`Enquire about ${product.name}`}
               >
-                Enquire <span aria-hidden="true">↗</span>
+                Enquire <ArrowUpRight />
               </a>
             </article>
           ))}
@@ -137,7 +137,7 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
             onClick={() => changePage(currentPage - 1)}
             disabled={currentPage === 1}
           >
-            ← Previous
+            <ArrowLeft /> Previous
           </button>
           <p className="m-0 text-muted text-[11px] max-[580px]:col-span-2 max-[580px]:row-start-1 max-[580px]:text-center">Page <strong className="text-ink">{currentPage}</strong> of {pageCount}</p>
           <button
@@ -146,7 +146,7 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
             onClick={() => changePage(currentPage + 1)}
             disabled={currentPage === pageCount}
           >
-            Next →
+            Next <ArrowRight />
           </button>
         </nav>
       )}

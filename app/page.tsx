@@ -58,8 +58,7 @@ export default function Home() {
 
       <section className="gs-reveal py-28 max-[600px]:py-[78px] px-[clamp(22px,6vw,92px)] bg-paper" id="why">
         <div className="max-w-[660px] mb-[46px]">
-          <div className="section-label"><i /> Why Supreme</div>
-          <h2 data-reveal className="mt-[18px] text-ink font-heading text-[clamp(40px,4.6vw,64px)] leading-none font-semibold">Why buyers choose us</h2>
+          <h2 data-reveal className="text-ink font-heading text-[clamp(40px,4.6vw,64px)] leading-none font-semibold">Why buyers choose us</h2>
           <p className="max-w-[540px] mt-[18px] text-muted text-base leading-[1.7]">A sourcing partner that works to your grade, quantity and timeline.</p>
         </div>
         <div className="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 gap-[18px] gs-stagger">
@@ -99,8 +98,8 @@ export default function Home() {
           <p className="max-w-[540px] mt-5 text-muted text-base leading-[1.75]">Two decades of material knowledge, a wide supplier network and a team that reads a specification the way a buyer does.</p>
         </div>
 
-        <div className="relative z-[2] grid grid-cols-4 max-[980px]:grid-cols-2 max-[620px]:grid-cols-1 auto-rows-[minmax(190px,auto)] gap-4">
-          <article className="tilt-card col-span-2 row-span-2 max-[980px]:row-span-1 max-[620px]:col-span-1 p-[30px] rounded-2xl flex flex-col justify-between gap-2.5 relative overflow-hidden [background:var(--herb-grad)] text-white transition-transform duration-300 before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:[background:radial-gradient(circle_at_78%_12%,rgba(232,182,77,0.32),transparent_46%)]">
+        <div className="home-bento-grid relative z-[2] grid grid-cols-6 grid-flow-dense max-[980px]:grid-cols-2 max-[620px]:grid-cols-1 auto-rows-[minmax(190px,auto)] gap-4">
+          <article className="tilt-card col-span-3 row-span-2 max-[980px]:col-span-2 max-[980px]:row-span-1 max-[620px]:col-span-1 p-[30px] rounded-2xl flex flex-col justify-between gap-2.5 relative overflow-hidden [background:var(--herb-grad)] text-white transition-transform duration-300 before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:[background:radial-gradient(circle_at_78%_12%,rgba(232,182,77,0.32),transparent_46%)]">
             <span className="relative z-[1] text-honey-soft text-[10px] font-black tracking-[0.06em] uppercase">Flagship capability</span>
             <div className="relative z-[1]">
               <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold text-white m-0">Grade-led sourcing across five material families</h3>
@@ -121,7 +120,7 @@ export default function Home() {
             <span className="text-[rgba(28,19,10,0.72)] text-xs leading-[1.5]">Grades sourced to spec</span>
           </article>
 
-          <article className="tilt-card col-span-2 max-[620px]:col-span-1 group min-h-[280px] border border-line bg-white grid grid-cols-[minmax(0,1fr)_minmax(180px,0.42fr)] max-[620px]:grid-cols-1 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
+          <article className="tilt-card col-span-2 max-[980px]:col-span-2 max-[620px]:col-span-1 group min-h-[280px] border border-line bg-white grid grid-cols-[minmax(0,1fr)_minmax(180px,0.42fr)] max-[620px]:grid-cols-1 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
             <div className="p-[clamp(24px,3vw,38px)] flex flex-col justify-end gap-3 relative z-[2]">
               <span className="text-clay text-[10px] font-black tracking-[0.06em] uppercase">Food &amp; natural</span>
               <h3 className="max-w-[620px] font-heading text-[clamp(25px,2.35vw,36px)] leading-[1.04] font-bold m-0">Food ingredients &amp; natural products</h3>
@@ -134,9 +133,10 @@ export default function Home() {
           </article>
 
           <article className="tilt-card group p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-end gap-2.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
-            <Image className="absolute right-[-14px] top-[-14px] w-[46%] max-w-[200px] object-contain mix-blend-multiply opacity-90 transition-transform duration-500 group-hover:scale-[1.07] group-hover:-rotate-3" src="/supreme/source/essential_oil.png" alt="" width={160} height={160} />
-            <span className="text-clay text-[10px] font-black tracking-[0.06em] uppercase">Oils</span>
-            <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold m-0">Essential &amp; carrier oils</h3>
+            <Image className="absolute inset-0 w-full h-full object-cover opacity-[0.24] transition-transform duration-700 group-hover:scale-[1.04]" src="/supreme/media/oils-loop-poster.jpg" alt="" fill sizes="(max-width: 980px) 50vw, 18vw" />
+            <span className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/20" aria-hidden="true" />
+            <span className="relative text-clay text-[10px] font-black tracking-[0.06em] uppercase">Oils</span>
+            <h3 className="relative font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold m-0">Essential &amp; carrier oils</h3>
           </article>
 
           <article className="tilt-card p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
@@ -170,18 +170,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="gs-reveal py-[106px] max-[600px]:py-[78px] px-[clamp(22px,6vw,92px)] [background:linear-gradient(180deg,#f7f1ea_0%,#f1e7dd_100%)] text-ink" id="facts">
+      <section className="gs-reveal py-[106px] max-[600px]:py-[78px] px-[clamp(22px,6vw,92px)] [background:linear-gradient(180deg,#f3f7fb_0%,#eaf2f8_100%)] text-ink" id="facts">
         <div className="max-w-[640px] mb-[50px]">
-          <div className="section-label bg-white [border-color:rgba(161,105,87,0.28)] text-terra-deep"><i /> Our recent achievements</div>
-          <h2 data-reveal className="mt-[18px] text-ink font-heading text-[clamp(40px,4.6vw,64px)] leading-none font-semibold">Benefit from choosing the best</h2>
+          <h2 data-reveal className="text-ink font-heading text-[clamp(40px,4.6vw,64px)] leading-none font-semibold">Benefit from choosing the best</h2>
         </div>
         <div className="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 gap-5 gs-stagger">
           {facts.map((fact) => (
-            <article className="tilt-card p-[36px_24px] border [border-color:rgba(161,105,87,0.18)] rounded-[18px] bg-white flex flex-col items-center gap-3 text-center transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:[border-color:rgba(161,105,87,0.4)] hover:shadow-[0_22px_46px_rgba(161,105,87,0.16)]" key={fact.label}>
-              <span className="grid place-items-center w-[72px] h-[72px] mb-2 rounded-full [background:linear-gradient(150deg,#d79a83,#a16957)] shadow-[0_14px_30px_rgba(161,105,87,0.28)]">
+            <article className="tilt-card p-[36px_24px] border [border-color:rgba(53,111,167,0.18)] rounded-[18px] bg-white flex flex-col items-center gap-3 text-center transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:[border-color:rgba(53,111,167,0.42)] hover:shadow-[0_22px_46px_rgba(53,111,167,0.14)]" key={fact.label}>
+              <span className="grid place-items-center w-[72px] h-[72px] mb-2 rounded-full [background:linear-gradient(150deg,#5f91c0,#356fa7)] shadow-[0_14px_30px_rgba(53,111,167,0.24)]">
                 <Image src={fact.icon} alt="" width={38} height={38} className="w-9 h-9 object-contain" />
               </span>
-              <strong data-count={String(fact.value)} data-suffix={fact.suffix} className="font-heading text-[clamp(42px,4.8vw,56px)] leading-none font-semibold text-terra-deep">{fact.value}{fact.suffix}</strong>
+              <strong data-count={String(fact.value)} data-suffix={fact.suffix} className="font-heading text-[clamp(42px,4.8vw,56px)] leading-none font-semibold text-[#356fa7]">{fact.value}{fact.suffix}</strong>
               <span className="text-muted text-[13px] font-bold">{fact.label}</span>
             </article>
           ))}

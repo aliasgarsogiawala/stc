@@ -86,18 +86,18 @@ export function HoneyGlyph({ className = "" }: { className?: string }) {
 
 export function TestTubeGlyph({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <path d="M16 6h16M19 6v25.5a8 8 0 0 0 16 0V6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      <path d="M19 24c5 3 10-3 16 0M23 30h.1M30 34h.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <svg className={className} width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M17 6h14M20 6v12L10.5 35.2A4.5 4.5 0 0 0 14.4 42h19.2a4.5 4.5 0 0 0 3.9-6.8L28 18V6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15.5 31h17M19 26h10M18.5 36h.1M27.5 34h.1M31 38h.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   );
 }
 
 export function IngredientBowlGlyph({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} width="25" height="25" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <path d="M8 23h32c-1 10-7 16-16 16S9 33 8 23ZM13 39h22" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M17 18c0-4 3-7 7-7M25 18c0-5 4-9 9-9M31 18c0-3 2-5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <svg className={className} width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M9 25h30c-1.1 8.8-6.5 14-15 14S10.1 33.8 9 25ZM14 39h20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M19 22V10M19 14c-4 0-6-2-7-5 4-1 7 1 7 5ZM19 18c4 0 7-2 8-6-4-1-7 1-8 6ZM30 22c0-4 2-7 6-9M27 22c0-3-2-5-5-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

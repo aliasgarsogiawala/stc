@@ -173,8 +173,6 @@ export default function SiteMotion() {
             gsap.to(card, {
               rotateX: (0.5 - py) * 4,
               rotateY: (px - 0.5) * 5,
-              y: -7,
-              scale: 1.008,
               duration: 0.32,
               ease: "power2.out",
               overwrite: "auto",
@@ -184,8 +182,6 @@ export default function SiteMotion() {
             gsap.to(card, {
               rotateX: 0,
               rotateY: 0,
-              y: 0,
-              scale: 1,
               duration: 0.55,
               ease: "power3.out",
               overwrite: "auto",

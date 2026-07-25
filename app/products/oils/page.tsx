@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
-import { OilDrop, WhatsApp } from "../../icons";
+import { OilDrop } from "../../icons";
 import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
-
-const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like an oils enquiry. Please share the range, grade and packing.")}`;
+import NextCategory from "../next-category";
 
 const description = "Natural, essential, aroma and medical oils — cold-pressed and steam-distilled — sourced in bulk to grade for personal care, wellness and formulation buyers.";
 
@@ -81,8 +80,8 @@ export default function OilsPage() {
             We source by extraction method, check every batch, and pack light-safe to protect the profile.
           </p>
         </div>
-        <div className="prod-intro-media">
-          <Image src="/supreme/premium/amber-bottle.png" alt="Amber glass dropper bottle of essential oil" width={440} height={440} />
+        <div className="prod-intro-media prod-intro-photo">
+          <Image src="/supreme/media/oils-loop-poster.jpg" alt="Amber bottles and essential oil prepared for bulk supply" fill sizes="(max-width: 1000px) 100vw, 40vw" />
         </div>
       </section>
 
@@ -121,15 +120,12 @@ export default function OilsPage() {
         </div>
       </section>
 
-      <section className="prod-cta gs-reveal">
-        <Image className="prod-cta-art" data-parallax="0.3" src="/supreme/premium/amber-bottle.png" alt="" width={300} height={300} />
-        <div>
-          <p className="eyebrow prod-eyebrow"><span /> Bulk oil enquiry</p>
-          <h2 data-reveal>Tell us the oil, grade and quantity</h2>
-          <p>We&apos;ll confirm availability, packing options and lead time.</p>
-          <a className="button button-accent button-wa w-12 px-0" href={WA_HREF} target="_blank" rel="noopener noreferrer" aria-label="Enquire about oils on WhatsApp" title="WhatsApp"><WhatsApp /></a>
-        </div>
-      </section>
+      <NextCategory
+        href="/products/honey"
+        image="/supreme/media/honey-pour-loop-poster.jpg"
+        imageAlt="Natural honey being poured"
+        name="Honey"
+      />
 
       <SiteFooter />
     </main>

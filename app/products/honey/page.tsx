@@ -2,10 +2,9 @@ import Image from "next/image";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import HoneyHero from "./honey-hero";
-import { HoneyGlyph, WhatsApp } from "../../icons";
+import { HoneyGlyph } from "../../icons";
 import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
-
-const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like a honey enquiry. Please share variants, grade and packing.")}`;
+import NextCategory from "../next-category";
 
 const description = "Raw and natural honey variants — multiflora, forest, jamun, tulsi, neem and eucalyptus — sourced in bulk for food, wellness and Ayurvedic buyers.";
 
@@ -111,15 +110,12 @@ export default function HoneyPage() {
         </div>
       </section>
 
-      <section className="honey-cta gs-reveal">
-        <div>
-          <p className="eyebrow honey-eyebrow"><span /> Availability</p>
-          <h2 data-reveal>Send the variant, grade and quantity</h2>
-          <p>We&apos;ll confirm the available packing options and supply details.</p>
-          <a className="button button-honey button-wa w-12 px-0" href={WA_HREF} target="_blank" rel="noopener noreferrer" aria-label="Enquire about honey on WhatsApp" title="WhatsApp"><WhatsApp /></a>
-        </div>
-        <Image className="honey-cta-jar" src="/supreme/source/honey_img.png" alt="Bulk honey" width={360} height={360} />
-      </section>
+      <NextCategory
+        href="/products/herbs"
+        image="/supreme/media/herbs-loop-poster.jpg"
+        imageAlt="Bulk herbs and spices"
+        name="Herbs & spices"
+      />
 
       <SiteFooter />
     </main>

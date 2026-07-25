@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
-import { HerbSprig, WhatsApp } from "../../icons";
+import { HerbSprig } from "../../icons";
 import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
-
-const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like a herbs & spices enquiry. Please share the range, form and packing.")}`;
+import NextCategory from "../next-category";
 
 const description = "Whole botanicals, roots, barks, seeds, flowers and trade spices sourced in bulk to grade for food, wellness and Ayurvedic buyers.";
 
@@ -121,15 +120,12 @@ export default function HerbsPage() {
         </div>
       </section>
 
-      <section className="prod-cta gs-reveal">
-        <Image className="prod-cta-art" data-parallax="0.3" src="/supreme/premium/spice-bowl.png" alt="" width={320} height={320} />
-        <div>
-          <p className="eyebrow prod-eyebrow"><span /> Bulk botanical enquiry</p>
-          <h2 data-reveal>Tell us the botanical, form and quantity</h2>
-          <p>We&apos;ll confirm availability, packing options and lead time.</p>
-          <a className="button button-accent button-wa w-12 px-0" href={WA_HREF} target="_blank" rel="noopener noreferrer" aria-label="Enquire about herbs and spices on WhatsApp" title="WhatsApp"><WhatsApp /></a>
-        </div>
-      </section>
+      <NextCategory
+        href="/products/food-ingredients"
+        image="/supreme/product-categories-hero.png"
+        imageAlt="Food powders, spices and ingredients"
+        name="Food ingredients"
+      />
 
       <SiteFooter />
     </main>

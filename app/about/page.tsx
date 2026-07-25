@@ -40,19 +40,25 @@ export default function AboutPage() {
     <main className="bg-paper">
       <SiteHeader theme="solid" />
 
-      <section className="about-hero min-h-[760px] pt-[150px] pb-[78px] px-[clamp(22px,6vw,92px)] grid grid-cols-[minmax(0,0.92fr)_minmax(420px,0.78fr)] max-[980px]:grid-cols-1 gap-[clamp(50px,7vw,120px)] items-end bg-[#e8e9e1] relative overflow-hidden before:content-[''] before:absolute before:right-[-19vw] before:top-[-16vw] before:w-[52vw] before:h-[52vw] before:border before:border-[rgba(19,32,27,0.11)] before:rounded-full before:shadow-[0_0_0_90px_rgba(19,32,27,0.025),0_0_0_180px_rgba(19,32,27,0.018)]">
-        <div className="relative z-[2]" data-hero-copy>
-          <div className="catalog-breadcrumb mb-[82px] text-muted [&_a]:text-ink"><Link href="/">Home</Link><span>/</span><span>About</span></div>
-          <p className="eyebrow"><span /> Mumbai · Since 2002</p>
-          <h1 className="max-w-[740px] mb-[26px] text-ink font-heading font-semibold text-[clamp(62px,7vw,108px)] leading-[0.88]">About Supreme Trading Corp</h1>
-          <p className="max-w-[580px] text-muted text-[15px] leading-[1.75]">Import, export and wholesale supply of raw materials for manufacturers and traders.</p>
+      <section className="about-hero">
+        <div className="about-hero-backdrop" aria-hidden="true">
+          <span>STC</span>
+          <small>Mumbai / Trade / 2002</small>
         </div>
+        <div className="about-hero-shell">
+          <div className="about-hero-copy" data-hero-copy>
+            <div className="catalog-breadcrumb"><Link href="/">Home</Link><span>/</span><span>About</span></div>
+            <p className="eyebrow"><span /> Mumbai · Since 2002</p>
+            <h1>About Us</h1>
+            <p>Import, export and wholesale supply of raw materials for manufacturers and traders.</p>
+          </div>
 
-        <div className="relative z-[2] p-4 bg-paper max-[980px]:w-[min(700px,100%)]" data-hero-media>
-          <Image className="image-drift w-full h-auto block" src="/supreme/source/abouts.png" alt="Raw materials handled by Supreme Trading Corp" width={570} height={354} priority sizes="(max-width: 820px) 92vw, 48vw" />
-          <div className="pt-[18px] px-1 pb-0.5 flex justify-between gap-5 text-muted text-[9px] uppercase" data-hero-meta>
-            <span>Head office</span>
-            <strong className="text-ink">Mumbai, Maharashtra</strong>
+          <div className="about-hero-media" data-hero-media>
+            <Image className="image-drift" src="/supreme/source/abouts.png" alt="Raw materials handled by Supreme Trading Corp" width={570} height={354} priority sizes="(max-width: 820px) 92vw, 48vw" />
+            <div className="about-hero-caption" data-hero-meta>
+              <span>Head office</span>
+              <strong>Mumbai, Maharashtra</strong>
+            </div>
           </div>
         </div>
       </section>

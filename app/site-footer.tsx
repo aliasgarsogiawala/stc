@@ -41,9 +41,8 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="footer-motion pt-[22px] border-t border-[#cbd3dc] flex justify-between gap-5 text-[#73808d] text-[11px] font-semibold tracking-[0.025em] max-[720px]:flex-col max-[720px]:items-start">
+      <div className="footer-motion pt-[22px] border-t border-[#cbd3dc] flex justify-center text-center text-[#73808d] text-[11px] font-semibold tracking-[0.025em]">
         <span>© 2026 Supreme Trading Corp · Mumbai, India</span>
-        <span>Wholesale · Import · Export</span>
       </div>
       </div>
     </footer>

@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
+import { ArrowRight } from "../icons";
 import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../seo";
 import { getCatalog } from "./catalog-data";
+import ProductGridPlayground from "./product-grid-playground";
 
 // Categories with their own tailored landing page.
 const dedicatedPages: Record<string, string> = {
@@ -18,7 +20,7 @@ const categoryImages: Record<string, string> = {
   "herbs-spices": "/supreme/media/herbs-loop-poster.jpg",
   oils: "/supreme/media/oils-loop-poster.jpg",
   honey: "/supreme/media/honey-pour-loop-poster.jpg",
-  "food-herbs": "/Dried spices and powder scoops.jpg.jpeg",
+  "food-herbs": "/supreme/product-categories-hero.png",
   industrial: "/supreme/neutral-materials-hero.png",
 };
 
@@ -64,36 +66,20 @@ export default async function ProductsPage() {
       })} />
       <SiteHeader theme="solid" />
 
-      <section data-product-hero className="products-index-hero min-h-[610px] pt-[142px] pb-[54px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#102f4c] text-white relative isolate overflow-hidden flex flex-col justify-end">
-        <Image
-          className="absolute left-0 top-[-8%] w-full h-[116%] object-cover object-center -z-[2]"
-          data-hero-media
-          data-product-media
-          src="/supreme/product-categories-hero.png"
-          alt="Industrial powders, resin granules, oils, honey and food ingredients arranged for bulk trade"
-          width={3168}
-          height={1344}
-          priority
-        />
-        <div className="absolute inset-0 -z-[1] bg-[linear-gradient(90deg,rgba(7,27,47,0.94)_0%,rgba(10,39,65,0.78)_38%,rgba(10,39,65,0.34)_70%,rgba(10,39,65,0.2)_100%),linear-gradient(0deg,rgba(7,27,47,0.58)_0%,transparent_52%)]" />
-        <div className="catalog-breadcrumb mb-auto" data-hero-item><Link href="/">Home</Link><span>/</span><span>Products</span></div>
-        <h1 data-hero-item className="max-w-[900px] mb-[34px] font-heading font-semibold text-white text-[clamp(52px,7vw,100px)] leading-[0.92]">Product Categories</h1>
-        <div className="pt-6 border-t border-white/25 flex items-center justify-between gap-[42px] max-[760px]:flex-col max-[760px]:items-start" data-hero-meta>
-          <p className="max-w-[690px] m-0 text-white/72 text-[15px] leading-[1.75]">
-            {totalProducts} listed products across herbs and spices, oils, honey, food ingredients and industrial chemicals.
-            Grade, packing and availability are confirmed on enquiry.
-          </p>
-          <a className="button button-light" href="#catalog">Explore categories</a>
+      <section data-product-hero className="products-index-hero products-grid-hero">
+        <ProductGridPlayground />
+        <div className="products-grid-hero-copy" data-hero-copy data-product-copy>
+          <div className="catalog-breadcrumb products-grid-breadcrumb"><Link href="/">Home</Link><span>/</span><span>Products</span></div>
+          <h1>Product categories</h1>
+          <p>{totalProducts} listed materials across industrial chemicals, oils, honey, herbs and food ingredients.</p>
+          <a className="next-category-button products-grid-hero-button" href="#catalog">Explore categories <ArrowRight /></a>
         </div>
       </section>
 
       <section id="catalog" className="py-[104px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 gs-reveal" aria-label="Product categories">
-        <div className="grid grid-cols-[0.55fr_1.45fr] max-[760px]:grid-cols-1 gap-10 max-[760px]:gap-3 items-start mb-14">
-          <p className="section-kicker">Catalogue</p>
-          <div>
-            <h2 className="max-w-[850px] m-0 font-heading text-[clamp(42px,5vw,64px)] font-semibold leading-none tracking-[-0.03em]">Product categories</h2>
-            <p className="max-w-[680px] mt-5 mb-0 text-muted text-[15px] leading-[1.75]">Choose a material family to review the relevant range, sourcing approach and enquiry information.</p>
-          </div>
+        <div className="max-w-[760px] mb-14">
+          <h2 className="max-w-[850px] m-0 font-heading text-[clamp(42px,5vw,64px)] font-semibold leading-none tracking-[-0.03em]">Explore the range</h2>
+          <p className="max-w-[680px] mt-5 mb-0 text-muted text-[15px] leading-[1.75]">Choose a material family to review the relevant range, sourcing approach and enquiry information.</p>
         </div>
         <div className="border-t border-[#173a57]/18">
           {categories.map((category, index) => {
@@ -109,7 +95,11 @@ export default async function ProductsPage() {
                     fill
                     sizes="(max-width: 820px) 100vw, 50vw"
                     className={`object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045] ${
-                      category.id === "industrial" ? "object-[68%_center]" : "object-center"
+                      category.id === "industrial"
+                        ? "object-[68%_center]"
+                        : category.id === "food-herbs"
+                          ? "object-[78%_center]"
+                          : "object-center"
                     }`}
                   />
                   <span className="absolute inset-0 bg-[linear-gradient(180deg,transparent_54%,rgba(10,39,65,0.18))]" aria-hidden="true" />
@@ -139,7 +129,7 @@ export default async function ProductsPage() {
                   </div>
 
                   <Link className="w-fit mt-8 inline-flex items-center gap-3 text-[#174ea6] text-[11px] font-extrabold tracking-[0.03em] uppercase group/link" href={href}>
-                    Explore category <span className="text-base transition-transform duration-300 group-hover/link:translate-x-1" aria-hidden="true">→</span>
+                    Explore category <ArrowRight />
                   </Link>
                 </div>
               </article>

@@ -2,12 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
-import { WhatsApp } from "../../icons";
 import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
 import { getCatalog } from "../catalog-data";
 import CategoryProductBrowser from "../category-product-browser";
-
-const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like an industrial chemicals enquiry. Please share grade, packing and availability.")}`;
+import NextCategory from "../next-category";
 
 const description = "Industrial chemicals, resins, additives, pigments and cellulose products sourced in bulk to grade for manufacturers and formulators.";
 
@@ -52,9 +50,11 @@ export default async function ChemicalsPage() {
       })} />
       <SiteHeader theme="solid" />
 
-      <section data-product-hero className="product-detail-hero min-h-[760px] pt-[132px] pb-[68px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[minmax(0,0.9fr)_minmax(420px,0.8fr)] max-[920px]:grid-cols-1 gap-[clamp(44px,7vw,110px)] items-end bg-[#102f37] text-white relative overflow-hidden isolate before:content-[''] before:absolute before:inset-0 before:-z-[1] before:opacity-30 before:[background-image:linear-gradient(rgba(151,205,214,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(151,205,214,0.12)_1px,transparent_1px)] before:[background-size:72px_72px]">
-        <div data-hero-copy data-product-copy className="relative z-[2]">
-          <div className="catalog-breadcrumb mb-[74px]"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Chemicals</span></div>
+      <section data-product-hero className="product-detail-hero catalog-full-hero catalog-full-hero--chemicals">
+        <Image data-product-media className="catalog-full-hero-image object-[62%_center]" src="/supreme/neutral-materials-hero.png" alt="Industrial liquids, powders and raw material samples" fill sizes="100vw" priority />
+        <div className="catalog-full-hero-overlay" />
+        <div data-hero-copy data-product-copy className="catalog-full-hero-copy">
+          <div className="catalog-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Chemicals</span></div>
           <p className="eyebrow text-[#a8d6dd]"><span /> Industrial materials</p>
           <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Industrial chemicals</h1>
           <p className="max-w-[650px] mb-0 text-white/70 text-[15px] leading-[1.8]">Resins, additives, pigments, cellulose products, acids and process chemicals sourced against grade, application and packing requirements.</p>
@@ -63,14 +63,7 @@ export default async function ChemicalsPage() {
             <Link className="text-link text-white" href="/contact#enquiry">Send specification</Link>
           </div>
         </div>
-
-        <div data-hero-media data-product-media className="product-detail-hero-media min-h-[500px] max-[920px]:min-h-[380px] border border-[#b8dbe0]/25 bg-[#e8f0ee] relative overflow-hidden">
-          <Image className="object-cover object-[68%_center]" src="/supreme/neutral-materials-hero.png" alt="Industrial liquids, powders and raw material samples" fill sizes="(max-width: 920px) 100vw, 44vw" priority />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(8,34,55,0.68))]" />
-          <div className="absolute left-7 right-7 bottom-7 z-[3] py-4 border-t border-white/35 flex justify-between gap-5 text-white text-[9px] font-black uppercase">
-            <span>Technical sourcing</span><span>{products.length} listed materials</span>
-          </div>
-        </div>
+        <div className="catalog-full-hero-meta"><span>Technical sourcing</span><span>{products.length} listed materials</span></div>
       </section>
 
       <section className="py-[112px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#e8efed] gs-reveal">
@@ -109,10 +102,12 @@ export default async function ChemicalsPage() {
         </ol>
       </section>
 
-      <section className="min-h-[440px] py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[1.2fr_0.8fr] max-[800px]:grid-cols-1 gap-14 items-center bg-[#0d2b32] text-white gs-reveal">
-        <div><p className="eyebrow text-[#a8d6dd]"><span /> Chemical enquiry</p><h2 className="max-w-[800px] m-0 font-heading text-[clamp(44px,5vw,72px)] leading-[0.96] text-white">Confirm grade, quantity and availability</h2></div>
-        <div><p className="text-white/65 text-sm leading-[1.75]">Share the chemical name, specification, application, packing and destination.</p><a className="mt-4 w-12 h-12 grid place-items-center bg-white text-[#25a05a]" href={WA_HREF} target="_blank" rel="noopener noreferrer" aria-label="Enquire about chemicals on WhatsApp" title="WhatsApp"><WhatsApp /></a></div>
-      </section>
+      <NextCategory
+        href="/products/oils"
+        image="/supreme/media/oils-loop-poster.jpg"
+        imageAlt="Amber oil bottles prepared for bulk supply"
+        name="Oils & liquids"
+      />
 
       <SiteFooter />
     </main>
