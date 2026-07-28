@@ -7,30 +7,30 @@ import { getCatalog } from "../catalog-data";
 import CategoryProductBrowser from "../category-product-browser";
 import NextCategory from "../next-category";
 
-const description = "Dried petals and whole flowers sourced in bulk for teas, food blends, fragrance, wellness and traditional applications.";
+const description = "Dried petals sourced in bulk for teas, food blends, fragrance, wellness and traditional applications.";
 
 export const metadata = createPageMetadata({
-  title: "Petals & Dried Flowers | Supreme Trading Corp",
+  title: "Petals | Supreme Trading Corp",
   description,
   path: "/products/petals",
   image: "/supreme/generated/petals-flatlay-full-hero.png",
-  imageAlt: "Dried petals and flowers prepared for bulk supply",
+  imageAlt: "Dried petals prepared for bulk supply",
   imageWidth: 1672,
   imageHeight: 941,
 });
 
 const applications = [
-  { number: "01", name: "Tea & infusions", detail: "Whole petals and flowers for loose-leaf and blended teas." },
+  { number: "01", name: "Tea & infusions", detail: "Whole petals for loose-leaf and blended teas." },
   { number: "02", name: "Food blends", detail: "Colour, aroma and garnish for culinary formulations." },
   { number: "03", name: "Fragrance", detail: "Dried floral material for perfume, incense and potpourri." },
-  { number: "04", name: "Wellness", detail: "Selected flowers for traditional and personal-care products." },
+  { number: "04", name: "Wellness", detail: "Selected petals for traditional and personal-care products." },
   { number: "05", name: "Extracts", detail: "Botanical inputs supplied against processing requirements." },
   { number: "06", name: "Custom grades", detail: "Whole, sifted or broken material packed to specification." },
 ];
 
 const requirementSteps = [
-  ["Flower or petal", "State the botanical, common or trade name required."],
-  ["Form and grade", "Specify whole flowers, loose petals, sifted material or powder."],
+  ["Petal type", "State the botanical, common or trade name required."],
+  ["Form and grade", "Specify whole, loose, sifted or powdered petals."],
   ["Quality detail", "Share colour, aroma, moisture and cleanliness expectations."],
   ["Quantity and packing", "Include bulk volume, preferred pack size and destination."],
 ];
@@ -43,7 +43,7 @@ export default async function PetalsPage() {
   return (
     <main className="product-detail-page catalog-detail-page bg-[#f3f7fb]">
       <JsonLd data={collectionPageJsonLd({
-        name: "Petals and dried flowers",
+        name: "Petals",
         description,
         path: "/products/petals",
         items: products.map((product) => product.name),
@@ -55,7 +55,7 @@ export default async function PetalsPage() {
           data-product-media
           className="catalog-full-hero-image object-center"
           src="/supreme/generated/petals-flatlay-full-hero.png"
-          alt="Dried rose, hibiscus, chamomile and violet flowers prepared for bulk supply"
+          alt="Dried rose, hibiscus, chamomile and violet petals prepared for bulk supply"
           fill
           sizes="100vw"
           priority
@@ -67,9 +67,9 @@ export default async function PetalsPage() {
             <Link href="/products">Products</Link><span>/</span>
             <span>Petals</span>
           </div>
-          <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Petals &amp; dried flowers</h1>
+          <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Petals</h1>
           <p className="max-w-[650px] mb-0 text-white/72 text-[15px] leading-[1.8]">
-            Rose, hibiscus, chamomile and other dried flowers supplied by botanical,
+            Rose, hibiscus, chamomile and other dried petals supplied by botanical,
             form, grade and packing requirement.
           </p>
           <div className="mt-8 flex items-center gap-6 flex-wrap">
@@ -82,7 +82,7 @@ export default async function PetalsPage() {
       <section className="py-[112px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#e8f1f8] gs-reveal">
         <div className="max-w-[820px]">
           <span className="text-[#356fa7] text-[10px] font-black tracking-[0.08em] uppercase">Applications</span>
-          <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,72px)] leading-[0.96] font-semibold text-[#123451]">Floral materials, selected to use</h2>
+          <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,72px)] leading-[0.96] font-semibold text-[#123451]">Petals, selected to use</h2>
         </div>
         <div className="mt-14 border border-[#356fa7]/18 grid grid-cols-3 max-[900px]:grid-cols-2 max-[580px]:grid-cols-1 gap-px bg-[#356fa7]/18 gs-stagger">
           {applications.map((application) => (
@@ -97,12 +97,12 @@ export default async function PetalsPage() {
         </div>
       </section>
 
-      <CategoryProductBrowser categoryName="petals and flowers" products={products} theme="petals" />
+      <CategoryProductBrowser categoryName="petals" products={products} theme="petals" />
 
       <section className="py-[108px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[0.75fr_1.25fr] max-[850px]:grid-cols-1 gap-[clamp(48px,8vw,130px)] bg-[#dceaf6] gs-reveal">
         <div>
           <span className="text-[#356fa7] text-[10px] font-black tracking-[0.08em] uppercase">Before we quote</span>
-          <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,68px)] leading-[0.96] font-semibold text-[#123451]">Send the floral requirement</h2>
+          <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,68px)] leading-[0.96] font-semibold text-[#123451]">Send the petal requirement</h2>
         </div>
         <ol className="m-0 p-0 border-t border-[#356fa7]/20 list-none gs-stagger">
           {requirementSteps.map(([title, detail], index) => (
@@ -118,8 +118,8 @@ export default async function PetalsPage() {
       <NextCategory
         href="/products/food-ingredients"
         image="/supreme/generated/food-herbs-flatlay-full-hero.png"
-        imageAlt="Food herbs and dehydrated ingredients prepared for bulk supply"
-        name="Food herbs & powders"
+        imageAlt="Food ingredients prepared for bulk supply"
+        name="Food ingredients"
       />
 
       <SiteFooter />

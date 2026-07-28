@@ -10,7 +10,7 @@ const productLinks = [
   { href: "/products/honey", label: "Honey" },
   { href: "/products/petals", label: "Petals" },
   { href: "/products/herbs", label: "Herbs & spices" },
-  { href: "/products/food-ingredients", label: "Food herbs & powders" },
+  { href: "/products/food-ingredients", label: "Food ingredients" },
 ];
 
 const navLinkClass =

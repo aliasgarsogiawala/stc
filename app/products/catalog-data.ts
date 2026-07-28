@@ -43,20 +43,20 @@ const sources = [
   },
   {
     id: "petals",
-    name: "Petals & Flowers",
+    name: "Petals",
     shortName: "Petals",
     path: "Herbs-Spices.asp",
-    description: "Dried petals and flowers for teas, blends, fragrance, wellness and traditional applications.",
+    description: "Dried petals for teas, blends, fragrance, wellness and traditional applications.",
     fallback: [
-      ["Gulab", "Rose Petals"], ["Gudhal", "Hibiscus Flower"],
-      ["Babuna", "Chamomile"], ["Banafsha", "Blue Violet Flower"],
-      ["Dhai Phool", "Fire Flame Bush Flower"], ["Anar Phool", "Pomegranate Flower"],
+      ["Gulab", "Rose Petals"], ["Gudhal", "Hibiscus Petals"],
+      ["Babuna", "Chamomile Petals"], ["Banafsha", "Blue Violet Petals"],
+      ["Dhai Phool", "Fire Flame Bush Petals"], ["Anar Phool", "Pomegranate Petals"],
     ],
   },
   {
     id: "food-herbs",
-    name: "Food Herbs & Powders",
-    shortName: "Food",
+    name: "Food Ingredients",
+    shortName: "Food ingredients",
     path: "Food-Herbs.asp",
     description: "Dehydrated vegetables, Ayurvedic powders, spices and spray-dried produce powders.",
     fallback: [

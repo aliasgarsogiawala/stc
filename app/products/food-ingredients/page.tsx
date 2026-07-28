@@ -10,11 +10,11 @@ import NextCategory from "../next-category";
 const description = "Dehydrated vegetables, food herbs, spices and fruit and vegetable powders sourced in bulk for food and nutritional manufacturing.";
 
 export const metadata = createPageMetadata({
-  title: "Food Ingredients & Powders | Supreme Trading Corp",
+  title: "Food Ingredients | Supreme Trading Corp",
   description,
   path: "/products/food-ingredients",
   image: "/supreme/generated/food-herbs-flatlay-full-hero.png",
-  imageAlt: "Food herbs and dehydrated ingredients prepared for bulk supply",
+  imageAlt: "Food ingredients prepared for bulk supply",
   imageWidth: 1672,
   imageHeight: 941,
 });
@@ -43,7 +43,7 @@ export default async function FoodIngredientsPage() {
   return (
     <main className="product-detail-page catalog-detail-page bg-[#f3f7fb]">
       <JsonLd data={collectionPageJsonLd({
-        name: "Food ingredients and powders",
+        name: "Food ingredients",
         description,
         path: "/products/food-ingredients",
         items: products.map((product) => product.name),
@@ -55,7 +55,7 @@ export default async function FoodIngredientsPage() {
         <div className="catalog-full-hero-overlay" />
         <div data-hero-copy data-product-copy className="catalog-full-hero-copy">
           <div className="catalog-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Food ingredients</span></div>
-          <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Food herbs & powders</h1>
+          <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Food ingredients</h1>
           <p className="max-w-[650px] mb-0 text-white/72 text-[15px] leading-[1.8]">Dehydrated vegetables, spices, herbal powders and spray-dried ingredients supplied by form, processing requirement and pack size.</p>
           <div className="mt-8 flex items-center gap-6 flex-wrap">
             <a className="button bg-[#dceaf6] border-[#dceaf6] text-[#123451] hover:bg-white" href="#category-products">View ingredient range</a>
@@ -82,7 +82,7 @@ export default async function FoodIngredientsPage() {
         </div>
       </section>
 
-      <CategoryProductBrowser categoryName="food herbs" products={products} theme="petals" />
+      <CategoryProductBrowser categoryName="food ingredients" products={products} theme="petals" />
 
       <section className="py-[108px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[0.75fr_1.25fr] max-[850px]:grid-cols-1 gap-[clamp(48px,8vw,130px)] bg-[#dceaf6] gs-reveal">
         <div>

@@ -122,8 +122,8 @@ export default function HerbsPage() {
       <NextCategory
         href="/products/petals"
         image="/supreme/generated/petals-flatlay-full-hero.png"
-        imageAlt="Dried petals and flowers prepared for bulk supply"
-        name="Petals & flowers"
+        imageAlt="Dried petals prepared for bulk supply"
+        name="Petals"
       />
 
       <SiteFooter />

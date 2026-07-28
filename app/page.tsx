@@ -10,8 +10,8 @@ const materialGroups = [
   { code: "01", name: "Industrial chemicals", note: "Acids, solvents, salts and process materials", image: "/supreme/neutral-materials-hero.png", href: "/products/chemicals" },
   { code: "02", name: "Resins & polymers", note: "Acrylic, polyurethane and speciality resin systems", image: "/supreme/source/tren-pro4.png", href: "/products/chemicals" },
   { code: "03", name: "Additives & cellulose", note: "Wetting agents, defoamers, HPMC, HEC and CMC", image: "/supreme/source/tren-pro3.png", href: "/products/chemicals" },
-  { code: "04", name: "Petals", note: "Rose, hibiscus, chamomile and other dried flowers", image: "/supreme/generated/petals-flatlay-full-hero.png", href: "/products/petals" },
-  { code: "05", name: "Food herbs & powders", note: "Culinary herbs, spices and dehydrated ingredients", image: "/supreme/generated/food-herbs-flatlay-full-hero.png", href: "/products/food-ingredients" },
+  { code: "04", name: "Petals", note: "Rose, hibiscus, chamomile and other dried petals", image: "/supreme/generated/petals-flatlay-full-hero.png", href: "/products/petals" },
+  { code: "05", name: "Food ingredients", note: "Culinary herbs, spices and dehydrated ingredients", image: "/supreme/generated/food-herbs-flatlay-full-hero.png", href: "/products/food-ingredients" },
   { code: "06", name: "Specified sourcing", note: "Grade-led, quantity-led and destination-led supply", image: "/supreme/product-categories-hero.png", href: "/contact#enquiry" },
 ];
 
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="home-ticker-track">
           {[0, 1].map((copy) => (
             <div className="home-ticker-set" aria-hidden={copy === 1} key={copy}>
-              {["Chemicals", "Resins", "Additives", "Petals", "Food herbs", "Custom sourcing"].map((item) => (
+              {["Chemicals", "Resins", "Additives", "Petals", "Food ingredients", "Custom sourcing"].map((item) => (
                 <span className="home-ticker-item" key={`${copy}-${item}`}>{item}</span>
               ))}
             </div>

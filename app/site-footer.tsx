@@ -36,7 +36,7 @@ export default function SiteFooter() {
               <Link href="/products/honey">Honey</Link>
               <Link href="/products/petals">Petals</Link>
               <Link href="/products/herbs">Herbs &amp; spices</Link>
-              <Link href="/products/food-ingredients">Food herbs &amp; powders</Link>
+              <Link href="/products/food-ingredients">Food ingredients</Link>
             </nav>
 
             <div className="footer-column footer-office">

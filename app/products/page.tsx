@@ -34,7 +34,7 @@ const categoryTones: Record<string, string> = {
 
 const categoryOfferings: Record<string, string[]> = {
   "herbs-spices": ["Whole herbs", "Roots & barks", "Seeds & flowers", "Trade spices"],
-  petals: ["Rose petals", "Hibiscus", "Chamomile", "Traditional flowers"],
+  petals: ["Rose petals", "Hibiscus petals", "Chamomile petals", "Traditional petals"],
   honey: ["Multiflora honey", "Forest honey", "Monofloral honey", "Bulk packing"],
   "food-herbs": ["Dehydrated vegetables", "Ayurvedic powders", "Ground spices", "Spray-dried powders"],
   industrial: ["Resins", "Performance additives", "Pigments", "Cellulose & process chemicals"],
