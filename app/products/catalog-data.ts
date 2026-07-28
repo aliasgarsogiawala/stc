@@ -69,7 +69,7 @@ const sources = [
   },
   {
     id: "industrial",
-    name: "Industrial Chemicals",
+    name: "Chemicals",
     shortName: "Industrial",
     path: "Industrial-Chemicals.asp",
     description: "Resins, additives, pigments, cellulose products and specialty industrial chemicals.",
