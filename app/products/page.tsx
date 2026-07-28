@@ -17,11 +17,11 @@ const dedicatedPages: Record<string, string> = {
 };
 
 const categoryImages: Record<string, string> = {
-  "herbs-spices": "/supreme/media/herbs-loop-poster.jpg",
+  "herbs-spices": "/supreme/generated/herbs-spices-flatlay-full-hero.png",
   petals: "/supreme/generated/petals-flatlay-full-hero.png",
-  honey: "/supreme/media/honey-pour-loop-poster.jpg",
+  honey: "/supreme/generated/honey-flatlay-full-hero.png",
   "food-herbs": "/supreme/generated/food-herbs-flatlay-full-hero.png",
-  industrial: "/supreme/neutral-materials-hero.png",
+  industrial: "/supreme/generated/industrial-flatlay-full-hero.png",
 };
 
 const categoryTones: Record<string, string> = {
@@ -94,13 +94,7 @@ export default async function ProductsPage() {
                     alt={`${category.name} category`}
                     fill
                     sizes="(max-width: 820px) 100vw, 50vw"
-                    className={`object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045] ${
-                      category.id === "industrial"
-                        ? "object-[68%_center]"
-                        : category.id === "food-herbs"
-                          ? "object-[78%_center]"
-                          : "object-center"
-                    }`}
+                    className="object-cover object-center transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045]"
                   />
                   <span className="absolute inset-0 bg-[linear-gradient(180deg,transparent_54%,rgba(10,39,65,0.18))]" aria-hidden="true" />
                   <span className="absolute left-7 top-7 w-11 h-11 border border-[#173a57]/18 bg-white/70 grid place-items-center text-[#174ea6] text-[10px] font-black tracking-[0.08em]">
