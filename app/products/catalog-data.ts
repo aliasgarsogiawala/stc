@@ -48,9 +48,11 @@ const sources = [
     path: "Herbs-Spices.asp",
     description: "Dried petals for teas, blends, fragrance, wellness and traditional applications.",
     fallback: [
-      ["Gulab", "Rose Petals"], ["Gudhal", "Hibiscus Petals"],
-      ["Babuna", "Chamomile Petals"], ["Banafsha", "Blue Violet Petals"],
-      ["Dhai Phool", "Fire Flame Bush Petals"], ["Anar Phool", "Pomegranate Petals"],
+      ["Rose Petals", "Gulab"], ["Chamomile", "Babuna"],
+      ["Hibiscus", "Gudhal"], ["Lavender", "Ustekhadus"],
+      ["Butterfly Pea", "Clitoria ternatea"], ["Calendula", "Calendula officinalis"],
+      ["Blue Pea", "Clitoria ternatea"], ["Jasmine", "Jasmine petals"],
+      ["Lemongrass", "Lemon grass"],
     ],
   },
   {
@@ -134,13 +136,15 @@ function fallbackProducts(source: (typeof sources)[number]): CatalogProduct[] {
 export async function getCatalog(): Promise<CatalogCategory[]> {
   return Promise.all(sources.map(async (source) => {
     const sourceUrl = `https://supremetrading.in/${source.path}`;
-    let products: CatalogProduct[] = [];
+    let products: CatalogProduct[] = source.id === "petals" ? fallbackProducts(source) : [];
 
-    try {
-      const response = await fetch(sourceUrl, { next: { revalidate: 86_400 } });
-      if (response.ok) products = parseProducts(await response.text(), source);
-    } catch {
-      // The local fallback keeps the catalogue usable when the source is temporarily unavailable.
+    if (source.id !== "petals") {
+      try {
+        const response = await fetch(sourceUrl, { next: { revalidate: 86_400 } });
+        if (response.ok) products = parseProducts(await response.text(), source);
+      } catch {
+        // The local fallback keeps the catalogue usable when the source is temporarily unavailable.
+      }
     }
 
     return {
