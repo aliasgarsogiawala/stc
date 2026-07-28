@@ -30,18 +30,6 @@ const sources = [
     ],
   },
   {
-    id: "oils",
-    name: "Medical & Essential Oils",
-    shortName: "Oils",
-    path: "Essential-MedicalOil.asp",
-    description: "Natural, essential, aroma, personal-care and traditional massage oils.",
-    fallback: [
-      ["Ajwain Oil", ""], ["Almond Oil", ""], ["Amla Oil", ""], ["Argan Oil", ""],
-      ["Basil Oil / Tulsi Oil", ""], ["Citronella Oil", ""], ["Clove Oil", ""],
-      ["Eucalyptus Oil", ""], ["Lavender Oil", ""], ["Rosemary Oil", ""],
-    ],
-  },
-  {
     id: "honey",
     name: "Honey",
     shortName: "Honey",
@@ -51,6 +39,18 @@ const sources = [
       ["Multiflora Honey", ""], ["Raw Forest Honey", ""], ["Jamun Honey", ""],
       ["Ajwain Honey", ""], ["Litchi Honey", ""], ["Eucalyptus Honey", ""],
       ["Neem Honey", ""], ["Tulsi Honey", ""],
+    ],
+  },
+  {
+    id: "petals",
+    name: "Petals & Flowers",
+    shortName: "Petals",
+    path: "Herbs-Spices.asp",
+    description: "Dried petals and flowers for teas, blends, fragrance, wellness and traditional applications.",
+    fallback: [
+      ["Gulab", "Rose Petals"], ["Gudhal", "Hibiscus Flower"],
+      ["Babuna", "Chamomile"], ["Banafsha", "Blue Violet Flower"],
+      ["Dhai Phool", "Fire Flame Bush Flower"], ["Anar Phool", "Pomegranate Flower"],
     ],
   },
   {
@@ -103,12 +103,19 @@ function parseProducts(html: string, source: (typeof sources)[number]): CatalogP
 
     const detail = row.match(/class="english-name">([\s\S]*?)<\/td>/i)?.[1];
     const subgroup = row.match(/class="category-badge">([\s\S]*?)<\/span>/i)?.[1];
+    const cleanName = clean(name);
+    const cleanDetail = detail ? clean(detail).replace(/^\*+$/, "") : undefined;
+
+    if (
+      source.id === "petals" &&
+      !/petal|flower|rose|gulab|gudhal|hibiscus|chamomile|babuna|banafsha/i.test(`${cleanName} ${cleanDetail ?? ""}`)
+    ) return [];
 
     return [{
       id: `${source.id}-${index + 1}`,
-      name: clean(name),
+      name: cleanName,
       category: source.id,
-      detail: detail ? clean(detail).replace(/^\*+$/, "") : undefined,
+      detail: cleanDetail,
       subgroup: subgroup ? clean(subgroup) : undefined,
     }];
   });
@@ -119,7 +126,7 @@ function fallbackProducts(source: (typeof sources)[number]): CatalogProduct[] {
     id: `${source.id}-fallback-${index + 1}`,
     name,
     category: source.id,
-    detail: source.id === "herbs-spices" ? detail || undefined : undefined,
+    detail: source.id === "herbs-spices" || source.id === "petals" ? detail || undefined : undefined,
     subgroup: source.id === "food-herbs" || source.id === "industrial" ? detail || undefined : undefined,
   }));
 }

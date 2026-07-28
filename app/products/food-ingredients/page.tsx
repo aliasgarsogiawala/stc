@@ -13,10 +13,10 @@ export const metadata = createPageMetadata({
   title: "Food Ingredients & Powders | Supreme Trading Corp",
   description,
   path: "/products/food-ingredients",
-  image: "/supreme/product-categories-hero.png",
-  imageAlt: "Powders, spices, honey and food ingredients for bulk supply",
-  imageWidth: 3168,
-  imageHeight: 1344,
+  image: "/supreme/generated/food-herbs-flatlay-full-hero.png",
+  imageAlt: "Food herbs and dehydrated ingredients prepared for bulk supply",
+  imageWidth: 1672,
+  imageHeight: 941,
 });
 
 const families = [
@@ -41,7 +41,7 @@ export default async function FoodIngredientsPage() {
   const products = category?.products ?? [];
 
   return (
-    <main className="product-detail-page catalog-detail-page bg-[#fffaf3]">
+    <main className="product-detail-page catalog-detail-page bg-[#f3f7fb]">
       <JsonLd data={collectionPageJsonLd({
         name: "Food ingredients and powders",
         description,
@@ -51,50 +51,50 @@ export default async function FoodIngredientsPage() {
       <SiteHeader theme="solid" />
 
       <section data-product-hero className="product-detail-hero catalog-full-hero catalog-full-hero--food">
-        <Image data-product-media className="catalog-full-hero-image object-[72%_center]" src="/supreme/product-categories-hero.png" alt="Powders, spices, honey and food ingredients prepared for bulk supply" fill sizes="100vw" priority />
+        <Image data-product-media className="catalog-full-hero-image object-center" src="/supreme/generated/food-herbs-flatlay-full-hero.png" alt="Food herbs, dehydrated ingredients and powders prepared for bulk supply" fill sizes="100vw" priority />
         <div className="catalog-full-hero-overlay" />
         <div data-hero-copy data-product-copy className="catalog-full-hero-copy">
           <div className="catalog-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Food ingredients</span></div>
           <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Food herbs & powders</h1>
           <p className="max-w-[650px] mb-0 text-white/72 text-[15px] leading-[1.8]">Dehydrated vegetables, spices, herbal powders and spray-dried ingredients supplied by form, processing requirement and pack size.</p>
           <div className="mt-8 flex items-center gap-6 flex-wrap">
-            <a className="button bg-[#f4d7a6] border-[#f4d7a6] text-[#572b1d] hover:bg-white" href="#category-products">View ingredient range</a>
+            <a className="button bg-[#dceaf6] border-[#dceaf6] text-[#123451] hover:bg-white" href="#category-products">View ingredient range</a>
             <Link className="text-link text-white" href="/contact#enquiry">Send requirement</Link>
           </div>
         </div>
       </section>
 
-      <section className="py-[112px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#f7ead8] gs-reveal">
+      <section className="py-[112px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#e8f1f8] gs-reveal">
         <div className="max-w-[820px]">
-          <span className="text-[#a95632] text-[10px] font-black tracking-[0.08em] uppercase">Ingredient families</span>
-          <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,72px)] leading-[0.96] font-semibold text-[#572b1d]">Built for food production</h2>
+          <span className="text-[#356fa7] text-[10px] font-black tracking-[0.08em] uppercase">Ingredient families</span>
+          <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,72px)] leading-[0.96] font-semibold text-[#123451]">Built for food production</h2>
         </div>
-        <div className="mt-14 border border-[#713b27]/18 grid grid-cols-3 max-[900px]:grid-cols-2 max-[580px]:grid-cols-1 gap-px bg-[#713b27]/18 gs-stagger">
+        <div className="mt-14 border border-[#356fa7]/18 grid grid-cols-3 max-[900px]:grid-cols-2 max-[580px]:grid-cols-1 gap-px bg-[#356fa7]/18 gs-stagger">
           {families.map((family) => (
-            <article className="tilt-card min-h-[230px] p-7 flex flex-col bg-[#fffaf3] transition-colors hover:bg-white" key={family.number}>
-              <span className="text-[#b5653e] text-[10px] font-black">{family.number}</span>
+            <article className="tilt-card min-h-[230px] p-7 flex flex-col bg-[#f8fbfd] transition-colors hover:bg-white" key={family.number}>
+              <span className="text-[#4d78a5] text-[10px] font-black">{family.number}</span>
               <div className="mt-auto">
-                <h3 className="mb-2 font-heading text-[28px] leading-none text-[#572b1d]">{family.name}</h3>
-                <p className="m-0 text-[#806050] text-xs leading-[1.65]">{family.detail}</p>
+                <h3 className="mb-2 font-heading text-[28px] leading-none text-[#123451]">{family.name}</h3>
+                <p className="m-0 text-[#607384] text-xs leading-[1.65]">{family.detail}</p>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <CategoryProductBrowser categoryName="food ingredients" products={products} theme="food" />
+      <CategoryProductBrowser categoryName="food herbs" products={products} theme="petals" />
 
-      <section className="py-[108px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[0.75fr_1.25fr] max-[850px]:grid-cols-1 gap-[clamp(48px,8vw,130px)] bg-[#efd8bd] gs-reveal">
+      <section className="py-[108px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[0.75fr_1.25fr] max-[850px]:grid-cols-1 gap-[clamp(48px,8vw,130px)] bg-[#dceaf6] gs-reveal">
         <div>
-          <span className="text-[#a95632] text-[10px] font-black tracking-[0.08em] uppercase">Before we quote</span>
-          <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,68px)] leading-[0.96] font-semibold text-[#572b1d]">Send the ingredient requirement</h2>
+          <span className="text-[#356fa7] text-[10px] font-black tracking-[0.08em] uppercase">Before we quote</span>
+          <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,68px)] leading-[0.96] font-semibold text-[#123451]">Send the ingredient requirement</h2>
         </div>
-        <ol className="m-0 p-0 border-t border-[#713b27]/20 list-none gs-stagger">
+        <ol className="m-0 p-0 border-t border-[#356fa7]/20 list-none gs-stagger">
           {requirementSteps.map(([title, detail], index) => (
-            <li className="py-6 border-b border-[#713b27]/20 grid grid-cols-[42px_0.6fr_1fr] max-[580px]:grid-cols-[36px_1fr] gap-5 items-start" key={title}>
-              <span className="text-[#b5653e] text-[9px] font-black">{String(index + 1).padStart(2, "0")}</span>
-              <strong className="font-heading text-[22px] leading-none text-[#572b1d]">{title}</strong>
-              <p className="m-0 text-[#806050] text-xs leading-[1.65] max-[580px]:col-start-2">{detail}</p>
+            <li className="py-6 border-b border-[#356fa7]/20 grid grid-cols-[42px_0.6fr_1fr] max-[580px]:grid-cols-[36px_1fr] gap-5 items-start" key={title}>
+              <span className="text-[#4d78a5] text-[9px] font-black">{String(index + 1).padStart(2, "0")}</span>
+              <strong className="font-heading text-[22px] leading-none text-[#123451]">{title}</strong>
+              <p className="m-0 text-[#607384] text-xs leading-[1.65] max-[580px]:col-start-2">{detail}</p>
             </li>
           ))}
         </ol>

@@ -101,10 +101,10 @@ export default async function ChemicalsPage() {
       </section>
 
       <NextCategory
-        href="/products/oils"
-        image="/supreme/media/oils-loop-poster.jpg"
-        imageAlt="Amber oil bottles prepared for bulk supply"
-        name="Oils & liquids"
+        href="/products/honey"
+        image="/supreme/media/honey-pour-loop-poster.jpg"
+        imageAlt="Honey prepared for bulk supply"
+        name="Honey"
       />
 
       <SiteFooter />

@@ -33,7 +33,7 @@ function imageForProduct(name: string) {
 // Short category codes used on the neutral tiles.
 const categoryCode: Record<string, string> = {
   "herbs-spices": "HB",
-  oils: "OL",
+  petals: "PT",
   honey: "HY",
   "food-herbs": "FD",
   industrial: "IN",

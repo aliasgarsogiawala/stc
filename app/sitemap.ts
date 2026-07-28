@@ -8,7 +8,7 @@ const routes = [
   "/products/food-ingredients",
   "/products/herbs",
   "/products/honey",
-  "/products/oils",
+  "/products/petals",
   "/contact",
 ];
 

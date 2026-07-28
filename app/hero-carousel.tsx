@@ -16,9 +16,36 @@ type Slide = {
 
 const slides: Slide[] = [
   {
+    key: "herbs",
+    eyebrow: "Whole & botanical",
+    title: "Medicinal Herbs & Spices",
+    lead: "Cleaned, graded and supplied whole, cut or milled to your specification.",
+    video: "/supreme/media/herbs-loop.mp4",
+    poster: "/supreme/media/herbs-loop-poster.jpg",
+    cta: { label: "Explore herbs", href: "/products/herbs" },
+  },
+  {
     key: "overview",
     eyebrow: "Established in Mumbai · 2002",
-    title: "Industrial Chemicals & Raw Materials",
+    title: "Chemicals",
+    lead: "Sourced to spec and supplied in bulk to manufacturers, wholesalers and export buyers.",
+    video: "/supreme/media/botanical-trade-loop.mp4",
+    poster: "/supreme/media/botanical-trade-loop-poster.jpg",
+    cta: { label: "Explore food herbs", href: "/products/food-ingredients" },
+  },
+  {
+    key: "food-overview",
+    eyebrow: "Established in Mumbai · 2002",
+    title: "Food Herbs",
+    lead: "Sourced to spec and supplied in bulk to manufacturers, wholesalers and export buyers.",
+    video: "/supreme/media/botanical-trade-loop.mp4",
+    poster: "/supreme/media/botanical-trade-loop-poster.jpg",
+    cta: { label: "Explore petals", href: "/products/petals" },
+  },
+  {
+    key: "Petals",
+    eyebrow: "Established in Mumbai · 2002",
+    title: "Petals",
     lead: "Sourced to spec and supplied in bulk to manufacturers, wholesalers and export buyers.",
     video: "/supreme/media/botanical-trade-loop.mp4",
     poster: "/supreme/media/botanical-trade-loop-poster.jpg",
@@ -27,29 +54,11 @@ const slides: Slide[] = [
   {
     key: "honey",
     eyebrow: "Pure & raw",
-    title: "Honey, sourced by variant",
+    title: "Honey",
     lead: "Multiflora, forest, jamun and tulsi honey, supplied in bulk to grade.",
     video: "/supreme/media/honey-pour-loop.mp4",
     poster: "/supreme/media/honey-pour-loop-poster.jpg",
     cta: { label: "Explore honey", href: "/products/honey" },
-  },
-  {
-    key: "herbs",
-    eyebrow: "Whole & botanical",
-    title: "Herbs, roots & trade spices",
-    lead: "Cleaned, graded and supplied whole, cut or milled to your specification.",
-    video: "/supreme/media/herbs-loop.mp4",
-    poster: "/supreme/media/herbs-loop-poster.jpg",
-    cta: { label: "Explore herbs", href: "/products/herbs" },
-  },
-  {
-    key: "oils",
-    eyebrow: "Distilled & pressed",
-    title: "Essential & medical oils",
-    lead: "Steam-distilled and cold-pressed, packed light-safe to protect the profile.",
-    video: "/supreme/media/oils-loop.mp4",
-    poster: "/supreme/media/oils-loop-poster.jpg",
-    cta: { label: "Explore oils", href: "/products/oils" },
   },
 ];
 

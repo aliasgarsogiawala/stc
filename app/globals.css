@@ -4198,7 +4198,7 @@ html {
 }
 
 /* ============================================================
-   Generic themed product page (oils, herbs, …)
+   Generic themed product page (herbs, food ingredients, …)
    Theme via .prod-page wrapper setting the --pa* custom props.
    ============================================================ */
 .prod-page {
@@ -4426,14 +4426,6 @@ html {
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 24px 40px color-mix(in srgb, var(--pa-deep), transparent 55%));
-}
-
-/* Oils theme */
-.oils-page {
-  --pa: #c1922f; --pa-soft: #e0b45a; --pa-deep: #7c5a15; --pa-ink: #2c2005;
-  --p-cream: #f6efdf; --p-wash: rgba(250, 240, 214, 0.94);
-  --p-quality-grad: linear-gradient(135deg, #102f4c 0%, #1b4e78 60%, #32658e 100%);
-  --p-cta-grad: radial-gradient(circle at 82% 30%, rgba(224, 180, 90, 0.5), transparent 44%), linear-gradient(150deg, #eccf8a, #d7ac52);
 }
 
 /* Herbs theme */
@@ -6134,6 +6126,7 @@ main {
     padding: 48px 22px;
     justify-content: flex-end;
   }
+
 }
 
 /* Full-width catalogue heroes */
@@ -6159,7 +6152,8 @@ main {
   z-index: -2;
 }
 
-.catalog-full-hero--chemicals .catalog-full-hero-overlay {
+.catalog-full-hero--chemicals .catalog-full-hero-overlay,
+.catalog-full-hero--petals .catalog-full-hero-overlay {
   background:
     linear-gradient(90deg, rgb(5 27 42 / 94%) 0%, rgb(8 35 52 / 78%) 42%, rgb(8 35 52 / 18%) 76%),
     linear-gradient(0deg, rgb(5 24 38 / 62%) 0%, transparent 58%);
@@ -6167,8 +6161,8 @@ main {
 
 .catalog-full-hero--food .catalog-full-hero-overlay {
   background:
-    linear-gradient(90deg, rgb(56 25 17 / 94%) 0%, rgb(75 34 21 / 76%) 42%, rgb(65 29 19 / 14%) 78%),
-    linear-gradient(0deg, rgb(49 21 13 / 62%) 0%, transparent 58%);
+    linear-gradient(90deg, rgb(8 32 53 / 94%) 0%, rgb(15 52 82 / 76%) 42%, rgb(15 52 82 / 14%) 78%),
+    linear-gradient(0deg, rgb(6 27 45 / 62%) 0%, transparent 58%);
 }
 
 .catalog-full-hero-copy {
@@ -6301,6 +6295,7 @@ main {
   }
 
   .catalog-full-hero--chemicals .catalog-full-hero-overlay,
+  .catalog-full-hero--petals .catalog-full-hero-overlay,
   .catalog-full-hero--food .catalog-full-hero-overlay {
     background: linear-gradient(0deg, rgb(6 27 43 / 94%) 0%, rgb(7 29 47 / 45%) 70%, rgb(7 29 47 / 18%) 100%);
   }
@@ -6321,6 +6316,134 @@ main {
 
   .grid-float-b {
     right: 4%;
+  }
+}
+
+/* Professional footer */
+.site-footer.site-footer-professional {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+}
+
+.footer-dark {
+  position: relative;
+  background:
+    radial-gradient(circle at 82% 8%, rgb(53 111 167 / 8%), transparent 34%),
+    #eaf1f7;
+}
+
+.footer-dark .footer-blue-rule {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  height: 3px;
+  display: block;
+  background: #4b86bb;
+}
+
+.footer-dark-inner {
+  width: min(1680px, 100%);
+  margin-inline: auto;
+  padding: 78px clamp(22px, 6vw, 92px) 26px;
+}
+
+.footer-main {
+  padding-bottom: 72px;
+  display: grid;
+  grid-template-columns: minmax(300px, 1.45fr) minmax(120px, 0.62fr) minmax(190px, 0.86fr) minmax(240px, 1fr);
+  gap: clamp(36px, 6vw, 96px);
+}
+
+.footer-brand img {
+  width: min(310px, 100%);
+  height: auto;
+  display: block;
+  filter: none;
+}
+
+.footer-brand p {
+  max-width: 430px;
+  margin: 30px 0 0;
+  color: #5b6d7d;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.footer-column-heading {
+  margin: 0 0 14px;
+  color: #356fa7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-column a,
+.footer-column address {
+  margin: 0;
+  color: #45596b;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.7;
+  transition: color 200ms ease;
+}
+
+.footer-column a:hover {
+  color: #123451;
+}
+
+.footer-office address {
+  margin-bottom: 4px;
+}
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgb(53 111 167 / 18%);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #71808e;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 980px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 34px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .footer-dark-inner {
+    padding-top: 58px;
+  }
+
+  .footer-main {
+    padding-bottom: 54px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
   }
 }
 

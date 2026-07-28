@@ -66,15 +66,6 @@ export function HerbSprig({ className = "" }: { className?: string }) {
   );
 }
 
-export function OilDrop({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <path d="M24 6S12 20 12 29a12 12 0 0 0 24 0C36 20 24 6 24 6Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-      <path d="M29.5 32.5c-1.4 2.4-3.5 3.5-6.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 export function HoneyGlyph({ className = "" }: { className?: string }) {
   return (
     <svg className={className} width="25" height="25" viewBox="0 0 48 48" fill="none" aria-hidden="true">

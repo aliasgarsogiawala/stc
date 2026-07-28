@@ -7,10 +7,10 @@ type SiteHeaderProps = {
 
 const productLinks = [
   { href: "/products/chemicals", label: "Industrial chemicals" },
-  { href: "/products/oils", label: "Oils & liquids" },
   { href: "/products/honey", label: "Honey" },
+  { href: "/products/petals", label: "Petals" },
   { href: "/products/herbs", label: "Herbs & spices" },
-  { href: "/products/food-ingredients", label: "Food ingredients" },
+  { href: "/products/food-ingredients", label: "Food herbs & powders" },
 ];
 
 const navLinkClass =

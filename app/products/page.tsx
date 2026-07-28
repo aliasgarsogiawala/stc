@@ -10,7 +10,7 @@ import ProductGridPlayground from "./product-grid-playground";
 // Categories with their own tailored landing page.
 const dedicatedPages: Record<string, string> = {
   honey: "/products/honey",
-  oils: "/products/oils",
+  petals: "/products/petals",
   "herbs-spices": "/products/herbs",
   "food-herbs": "/products/food-ingredients",
   industrial: "/products/chemicals",
@@ -18,15 +18,15 @@ const dedicatedPages: Record<string, string> = {
 
 const categoryImages: Record<string, string> = {
   "herbs-spices": "/supreme/media/herbs-loop-poster.jpg",
-  oils: "/supreme/media/oils-loop-poster.jpg",
+  petals: "/supreme/generated/petals-flatlay-full-hero.png",
   honey: "/supreme/media/honey-pour-loop-poster.jpg",
-  "food-herbs": "/supreme/product-categories-hero.png",
+  "food-herbs": "/supreme/generated/food-herbs-flatlay-full-hero.png",
   industrial: "/supreme/neutral-materials-hero.png",
 };
 
 const categoryTones: Record<string, string> = {
   "herbs-spices": "bg-[#e7eee8]",
-  oils: "bg-[#e8edf1]",
+  petals: "bg-[#edf2f7]",
   honey: "bg-[#f3e8cf]",
   "food-herbs": "bg-[#efe5da]",
   industrial: "bg-[#dceaf3]",
@@ -34,13 +34,13 @@ const categoryTones: Record<string, string> = {
 
 const categoryOfferings: Record<string, string[]> = {
   "herbs-spices": ["Whole herbs", "Roots & barks", "Seeds & flowers", "Trade spices"],
-  oils: ["Essential oils", "Carrier oils", "Aroma oils", "Traditional oils"],
+  petals: ["Rose petals", "Hibiscus", "Chamomile", "Traditional flowers"],
   honey: ["Multiflora honey", "Forest honey", "Monofloral honey", "Bulk packing"],
   "food-herbs": ["Dehydrated vegetables", "Ayurvedic powders", "Ground spices", "Spray-dried powders"],
   industrial: ["Resins", "Performance additives", "Pigments", "Cellulose & process chemicals"],
 };
 
-const description = "Explore Supreme Trading Corp's industrial chemicals, food ingredients, herbs, oils and honey categories for bulk and export supply.";
+const description = "Explore Supreme Trading Corp's industrial chemicals, food herbs, petals, botanicals and honey categories for bulk and export supply.";
 
 export const metadata = createPageMetadata({
   title: "Product Categories | Supreme Trading Corp",
@@ -71,7 +71,7 @@ export default async function ProductsPage() {
         <div className="products-grid-hero-copy" data-hero-copy data-product-copy>
           <div className="catalog-breadcrumb products-grid-breadcrumb"><Link href="/">Home</Link><span>/</span><span>Products</span></div>
           <h1>Product categories</h1>
-          <p>{totalProducts} listed materials across industrial chemicals, oils, honey, herbs and food ingredients.</p>
+          <p>{totalProducts} listed materials across industrial chemicals, honey, petals, herbs and food ingredients.</p>
           <a className="next-category-button products-grid-hero-button" href="#catalog">Explore categories <ArrowRight /></a>
         </div>
       </section>

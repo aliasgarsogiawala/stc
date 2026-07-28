@@ -92,7 +92,7 @@ export default function HerbsPage() {
         </div>
         <div className="prod-variant-grid gs-stagger">
           {variants.map((v, i) => (
-            <article className="prod-variant-card tilt-card" key={v.name}>
+            <article className="prod-variant-card tilt-card" id={v.name.startsWith("Gulab") ? "petals" : undefined} key={v.name}>
               <span className="pv-index">{String(i + 1).padStart(2, "0")}</span>
               <div className="product-card-glyph" aria-hidden="true"><HerbSprig /></div>
               <h3>{v.name}</h3>
@@ -120,10 +120,10 @@ export default function HerbsPage() {
       </section>
 
       <NextCategory
-        href="/products/food-ingredients"
-        image="/supreme/product-categories-hero.png"
-        imageAlt="Food powders, spices and ingredients"
-        name="Food ingredients"
+        href="/products/petals"
+        image="/supreme/generated/petals-flatlay-full-hero.png"
+        imageAlt="Dried petals and flowers prepared for bulk supply"
+        name="Petals & flowers"
       />
 
       <SiteFooter />

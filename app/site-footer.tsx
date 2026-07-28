@@ -1,49 +1,60 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const colClass = "flex flex-col items-start gap-[12px]";
-const colHead = "mb-[10px] font-heading text-[#245f91] text-[12px] font-semibold tracking-[0.025em]";
-const colLink = "font-sans text-[#4f5f70] text-[14px] font-medium leading-[1.65] tracking-[-0.015em] not-italic hover:text-[#17304f] transition-colors";
-
 export default function SiteFooter() {
   return (
-    <footer className="site-footer relative block px-[clamp(22px,6vw,92px)] pb-[26px] border-t border-[#cbd3dc] bg-[#eef2f5] text-[#172a42] font-sans overflow-hidden">
-      <span className="footer-blue-rule absolute left-0 top-0 w-full h-[3px] bg-[#174ea6]" aria-hidden="true" />
-      <div className="max-w-[1680px] mx-auto">
-      <div className="footer-motion py-[72px] grid grid-cols-[1.5fr_0.7fr_0.7fr_1.05fr] gap-[clamp(38px,7vw,110px)] max-[900px]:grid-cols-2 max-[900px]:gap-x-[30px] max-[900px]:gap-y-10 max-[560px]:grid-cols-1">
-        <div className="max-[900px]:col-span-full">
-          <Image src="/supreme/supreme_logo@3x.png" alt="Supreme Trading Corp" width={1071} height={270} unoptimized className="w-[min(300px,100%)] h-auto" />
-          <p className="max-w-[410px] mt-7 text-[#5c6978] text-[14px] font-medium leading-[1.75] tracking-[-0.012em]">Import, export and bulk trading of industrial chemicals, oils, herbs, honey and specialty raw materials — from Mumbai since 2002.</p>
-        </div>
+    <footer className="site-footer site-footer-professional">
+      <div className="footer-dark">
+        <span className="footer-blue-rule" aria-hidden="true" />
+        <div className="footer-dark-inner">
+          <div className="footer-main footer-motion">
+            <div className="footer-brand">
+              <Image
+                src="/supreme/supreme_logo@3x.png"
+                alt="Supreme Trading Corp"
+                width={1071}
+                height={270}
+                unoptimized
+              />
+              <p>
+                Import, export and bulk trading of industrial chemicals, food ingredients,
+                honey and speciality raw materials—from Mumbai since 2002.
+              </p>
+            </div>
 
-        <div className={colClass}>
-          <p className={colHead}>Company</p>
-          <Link className={colLink} href="/">Home</Link>
-          <Link className={colLink} href="/about">About</Link>
-          <Link className={colLink} href="/products">Products</Link>
-          <Link className={colLink} href="/contact">Contact</Link>
-        </div>
+            <nav className="footer-column" aria-label="Company">
+              <p className="footer-column-heading">Company</p>
+              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
+              <Link href="/products">Products</Link>
+              <Link href="/contact">Contact</Link>
+            </nav>
 
-        <div className={colClass}>
-          <p className={colHead}>Range</p>
-          <Link className={colLink} href="/products/chemicals">Industrial chemicals</Link>
-          <Link className={colLink} href="/products/food-ingredients">Food ingredients</Link>
-          <Link className={colLink} href="/products/honey">Honey</Link>
-          <Link className={colLink} href="/products/herbs">Herbs &amp; spices</Link>
-          <Link className={colLink} href="/products/oils">Essential oils</Link>
-        </div>
+            <nav className="footer-column" aria-label="Product range">
+              <p className="footer-column-heading">Product range</p>
+              <Link href="/products/chemicals">Industrial chemicals</Link>
+              <Link href="/products/honey">Honey</Link>
+              <Link href="/products/petals">Petals</Link>
+              <Link href="/products/herbs">Herbs &amp; spices</Link>
+              <Link href="/products/food-ingredients">Food herbs &amp; powders</Link>
+            </nav>
 
-        <div className={colClass}>
-          <p className={colHead}>Mumbai head office</p>
-          <address className={colLink}>51/A, Essaji Street, Vadgadi,<br />Masjid Bunder (W), Mumbai 400003</address>
-          <a className={colLink} href="tel:+912223455226">+91 22 2345 5226</a>
-          <a className={colLink} href="mailto:info@supremetrading.in">info@supremetrading.in</a>
-        </div>
-      </div>
+            <div className="footer-column footer-office">
+              <p className="footer-column-heading">Mumbai head office</p>
+              <address>
+                51/A, Essaji Street, Vadgadi,
+                <br />
+                Masjid Bunder (W), Mumbai 400003
+              </address>
+              <a href="tel:+912223455226">+91 22 2345 5226</a>
+              <a href="mailto:info@supremetrading.in">info@supremetrading.in</a>
+            </div>
+          </div>
 
-      <div className="footer-motion pt-[22px] border-t border-[#cbd3dc] flex justify-center text-center text-[#73808d] text-[11px] font-semibold tracking-[0.025em]">
-        <span>© 2026 Supreme Trading Corp · Mumbai, India</span>
-      </div>
+          <div className="footer-bottom footer-motion">
+            <span>© 2026 Supreme Trading Corp · Mumbai, India</span>
+          </div>
+        </div>
       </div>
     </footer>
   );

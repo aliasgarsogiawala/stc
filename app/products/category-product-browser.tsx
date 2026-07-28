@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, IngredientBowlGlyph, TestTubeGlyph
 type ProductBrowserProps = {
   categoryName: string;
   products: CatalogProduct[];
-  theme: "chemicals" | "food";
+  theme: "chemicals" | "food" | "petals";
 };
 
 const PAGE_SIZE = 24;
@@ -28,6 +28,14 @@ const themeClasses = {
     glyph: "border-[#b5653e]/30 bg-[#fff6ec] text-[#a95632]",
     button: "border-[#8d452a] bg-[#8d452a] text-white hover:bg-[#71351f]",
     focus: "focus:border-[#b5653e] focus:ring-[#b5653e]/15",
+  },
+  petals: {
+    badge: "border-[#5f86b2]/30 bg-[#5f86b2]/10 text-[#315f91]",
+    index: "text-[#4d78a5]",
+    cardHover: "hover:border-[#5f86b2]/60 hover:shadow-[0_20px_50px_rgba(30,71,111,0.11)]",
+    glyph: "border-[#5f86b2]/30 bg-[#edf4fa] text-[#315f91]",
+    button: "border-[#315f91] bg-[#315f91] text-white hover:bg-[#244c76]",
+    focus: "focus:border-[#4d78a5] focus:ring-[#4d78a5]/15",
   },
 } as const;
 

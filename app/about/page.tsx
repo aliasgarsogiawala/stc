@@ -69,7 +69,7 @@ export default function AboutPage() {
           <h2 className={h2}>Trading and sourcing across material categories</h2>
           <div className="mt-[46px] pt-8 border-t border-line grid grid-cols-2 max-[720px]:grid-cols-1 gap-[clamp(30px,5vw,76px)]">
             <p className="m-0 text-muted text-sm leading-[1.85]">Supreme Trading Corp was established in Mumbai in 2002 with a focus on reliable supply and product quality. The company operates in imports, exports and wholesale trading.</p>
-            <p className="m-0 text-muted text-sm leading-[1.85]">Its range serves Ayurvedic and Unani medicine, perfumery, essence, paint, polish, food and other industrial applications. The catalogue includes industrial chemicals, oils, gums, food ingredients, spices and botanical raw materials.</p>
+            <p className="m-0 text-muted text-sm leading-[1.85]">Its range serves Ayurvedic and Unani medicine, perfumery, essence, paint, polish, food and other industrial applications. The catalogue includes industrial chemicals, gums, food ingredients, spices and botanical raw materials.</p>
           </div>
         </div>
       </section>

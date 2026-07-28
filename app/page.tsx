@@ -10,15 +10,15 @@ const materialGroups = [
   { code: "01", name: "Industrial chemicals", note: "Acids, solvents, salts and process materials", image: "/supreme/neutral-materials-hero.png", href: "/products/chemicals" },
   { code: "02", name: "Resins & polymers", note: "Acrylic, polyurethane and speciality resin systems", image: "/supreme/source/tren-pro4.png", href: "/products/chemicals" },
   { code: "03", name: "Additives & cellulose", note: "Wetting agents, defoamers, HPMC, HEC and CMC", image: "/supreme/source/tren-pro3.png", href: "/products/chemicals" },
-  { code: "04", name: "Oils & liquids", note: "Essential, medical, carrier and speciality oils", image: "/supreme/media/oils-loop-poster.jpg", href: "/products/oils" },
-  { code: "05", name: "Food ingredients", note: "Powders, spices and dehydrated ingredients", image: "/supreme/media/honey-pour-loop-poster.jpg", href: "/products/food-ingredients" },
+  { code: "04", name: "Petals", note: "Rose, hibiscus, chamomile and other dried flowers", image: "/supreme/generated/petals-flatlay-full-hero.png", href: "/products/petals" },
+  { code: "05", name: "Food herbs & powders", note: "Culinary herbs, spices and dehydrated ingredients", image: "/supreme/generated/food-herbs-flatlay-full-hero.png", href: "/products/food-ingredients" },
   { code: "06", name: "Specified sourcing", note: "Grade-led, quantity-led and destination-led supply", image: "/supreme/product-categories-hero.png", href: "/contact#enquiry" },
 ];
 
 const whyChoose = [
   { icon: "/supreme/why-icon1.png", title: "Grade-verified sourcing", text: "Every material matched to your grade, origin and application before we quote." },
   { icon: "/supreme/achieve-icon4.png", title: "Consistent quality", text: "Reviewed batch by batch so repeat orders stay reliable and predictable." },
-  { icon: "/supreme/achieve-icon3.png", title: "Wide material range", text: "Chemicals, resins, oils, food ingredients and botanicals from one desk." },
+  { icon: "/supreme/achieve-icon3.png", title: "Wide material range", text: "Chemicals, resins, food ingredients and botanicals from one desk." },
   { icon: "/supreme/achieve-icon2.png", title: "Bulk & export ready", text: "Sensible packing and clean dispatch across India and for export buyers." },
 ];
 
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="home-ticker-track">
           {[0, 1].map((copy) => (
             <div className="home-ticker-set" aria-hidden={copy === 1} key={copy}>
-              {["Chemicals", "Resins", "Additives", "Oils", "Food ingredients", "Custom sourcing"].map((item) => (
+              {["Chemicals", "Resins", "Additives", "Petals", "Food herbs", "Custom sourcing"].map((item) => (
                 <span className="home-ticker-item" key={`${copy}-${item}`}>{item}</span>
               ))}
             </div>
@@ -102,8 +102,8 @@ export default function Home() {
           <article className="tilt-card col-span-3 row-span-2 max-[980px]:col-span-2 max-[980px]:row-span-1 max-[620px]:col-span-1 p-[30px] rounded-2xl flex flex-col justify-between gap-2.5 relative overflow-hidden [background:var(--herb-grad)] text-white transition-transform duration-300 before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:[background:radial-gradient(circle_at_78%_12%,rgba(232,182,77,0.32),transparent_46%)]">
             <span className="relative z-[1] text-honey-soft text-[10px] font-black tracking-[0.06em] uppercase">Flagship capability</span>
             <div className="relative z-[1]">
-              <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold text-white m-0">Grade-led sourcing across five material families</h3>
-              <p className="mt-2.5 text-white/70 text-[15px] leading-[1.6] max-w-[420px]">From industrial chemicals and coating resins to essential oils, food ingredients and speciality raw materials — matched to your grade, quantity and destination.</p>
+              <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold text-white m-0">Grade-led sourcing across four material families</h3>
+              <p className="mt-2.5 text-white/70 text-[15px] leading-[1.6] max-w-[420px]">From industrial chemicals and coating resins to food ingredients and speciality raw materials — matched to your grade, quantity and destination.</p>
             </div>
             <Link className="relative z-[1] w-fit text-honey-soft border-b border-current pb-[3px] text-xs font-black" href="/products">Browse the catalogue</Link>
           </article>
@@ -130,13 +130,6 @@ export default function Home() {
               <Image className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]" src="/supreme/premium/honey-jar.jpg" alt="Natural honey prepared for food production" fill sizes="(max-width: 620px) 100vw, 32vw" />
               <div className="absolute inset-y-0 left-0 w-10 max-[620px]:hidden bg-gradient-to-r from-white to-transparent" />
             </div>
-          </article>
-
-          <article className="tilt-card group p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-end gap-2.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
-            <Image className="absolute inset-0 w-full h-full object-cover opacity-[0.24] transition-transform duration-700 group-hover:scale-[1.04]" src="/supreme/media/oils-loop-poster.jpg" alt="" fill sizes="(max-width: 980px) 50vw, 18vw" />
-            <span className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/20" aria-hidden="true" />
-            <span className="relative text-clay text-[10px] font-black tracking-[0.06em] uppercase">Oils</span>
-            <h3 className="relative font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold m-0">Essential &amp; carrier oils</h3>
           </article>
 
           <article className="tilt-card p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
