@@ -4,8 +4,8 @@ import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
 import { getCatalog } from "../catalog-data";
-import CategoryProductBrowser from "../category-product-browser";
 import NextCategory from "../next-category";
+import PetalProductGrid from "./petal-product-grid";
 
 const description = "Dried petals sourced in bulk for teas, food blends, fragrance, wellness and traditional applications.";
 
@@ -97,7 +97,7 @@ export default async function PetalsPage() {
         </div>
       </section>
 
-      <CategoryProductBrowser categoryName="petals" products={products} theme="petals" />
+      <PetalProductGrid products={products} />
 
       <section className="py-[108px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[0.75fr_1.25fr] max-[850px]:grid-cols-1 gap-[clamp(48px,8vw,130px)] bg-[#dceaf6] gs-reveal">
         <div>

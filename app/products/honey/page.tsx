@@ -2,11 +2,10 @@ import Image from "next/image";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import HoneyHero from "./honey-hero";
-import { HoneyGlyph } from "../../icons";
 import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
 import NextCategory from "../next-category";
 
-const description = "Raw and natural honey variants — multiflora, forest, jamun, tulsi, neem and eucalyptus — sourced in bulk for food, wellness and Ayurvedic buyers.";
+const description = "Natural and infused honey varieties sourced in bulk for food, wellness and Ayurvedic buyers.";
 
 export const metadata = createPageMetadata({
   title: "Bulk Raw & Natural Honey | Supreme Trading Corp",
@@ -18,16 +17,46 @@ export const metadata = createPageMetadata({
   imageHeight: 1080,
 });
 
-const variants = [
-  { name: "Multiflora Honey", note: "Balanced, all-season blend from mixed wildflower nectar.", origin: "Pan-India" },
-  { name: "Raw Forest Honey", note: "Unprocessed, deep-amber honey from forest belts.", origin: "Forest belts" },
-  { name: "Jamun Honey", note: "Dark, mineral-rich honey prized in wellness formulas.", origin: "Central India" },
-  { name: "Tulsi Honey", note: "Aromatic holy-basil honey for Ayurvedic use.", origin: "North India" },
-  { name: "Ajwain Honey", note: "Carom-blossom honey with a warm, savoury note.", origin: "West India" },
-  { name: "Litchi Honey", note: "Light, floral and delicately sweet.", origin: "East India" },
-  { name: "Eucalyptus Honey", note: "Cooling, herbal profile for wellness blends.", origin: "Hill regions" },
-  { name: "Neem Honey", note: "Bittersweet honey valued in traditional remedies.", origin: "Pan-India" },
+const naturalHoney = [
+  { name: "Wild Forest Honey", detail: "Apis dorsata" },
+  { name: "Black Forest Honey", detail: "Apis dorsata" },
+  { name: "Himalayan Multi-flora Honey" },
+  { name: "Sidr / Berry / Jujube Honey" },
+  { name: "Litchi Honey" },
+  { name: "Jamun / Wild Berry Honey" },
+  { name: "Tulsi Honey" },
+  { name: "Shisham / Rosewood Honey" },
+  { name: "Eucalyptus / Safeda Honey" },
+  { name: "Ajwain / Carom Seeds Honey" },
+  { name: "Sunflower Honey" },
+  { name: "Mustard / White / Creamy Honey" },
+  { name: "Barseem / Clover Honey" },
+  { name: "Rajasthan Acacia / Kikar / Babool Honey" },
+  { name: "Kashmiri Acacia / Keekar Honey" },
+  { name: "Saunf / Aniseed Honey" },
+  { name: "Coriander / Dhaniya Honey" },
+  { name: "Red Honey" },
+  { name: "Karanj Honey" },
+  {
+    name: "Brankut Honey",
+    detail: "Aravalli Hills, Rajasthan · rare, limited stock",
+  },
+  { name: "Sundarvan Forest / Mangrove Honey" },
 ];
+
+const infusedHoney = [
+  { name: "Cinnamon Honey" },
+  { name: "Lemon Honey" },
+  { name: "Ginger Honey" },
+  { name: "Vanilla Honey" },
+  { name: "Ashwagandha Honey" },
+  { name: "Coffee Honey" },
+  { name: "Amla Honey" },
+  { name: "Moringa Honey" },
+  { name: "Chocolate Honey" },
+];
+
+const variants = [...naturalHoney, ...infusedHoney];
 
 const qualities = [
   { k: "01", t: "Raw & unheated", d: "Handled to preserve natural enzymes, pollen and aroma." },
@@ -60,11 +89,16 @@ export default function HoneyPage() {
         </div>
         <div className="honey-intro-stats">
           <figure className="honey-intro-photo">
-            <Image src="/supreme/premium/honey-jar.jpg" alt="Jars of natural honey with a wooden dipper" width={1000} height={760} />
+            <Image
+              src="/supreme/generated/honey/honey-editorial-v2.png"
+              alt="Premium natural honey, honeycomb and wooden dipper"
+              width={1693}
+              height={929}
+            />
           </figure>
           <article className="bento-tile bento-honey tilt-card">
             <span className="bento-tag">Variants</span>
-            <strong data-count="8" data-suffix="+">0</strong>
+            <strong data-count="30" data-suffix="+">0</strong>
             <span>Honey types sourced to spec</span>
           </article>
           <article className="bento-tile bento-stat tilt-card">
@@ -77,20 +111,57 @@ export default function HoneyPage() {
 
       <section className="honey-variants" id="variants">
         <div className="honey-variants-head">
-          <p className="section-kicker">Selection</p>
-          <h2 data-reveal>Honey variants</h2>
-          <p>Availability, grade and packing confirmed on enquiry.</p>
+          <h2 data-reveal>Honey range</h2>
+          <p>Natural and infused varieties available against your required grade and quantity.</p>
         </div>
-        <div className="honey-variant-grid gs-stagger">
-          {variants.map((v, i) => (
-            <article className="honey-variant-card tilt-card" key={v.name}>
-              <span className="honey-variant-index">{String(i + 1).padStart(2, "0")}</span>
-              <div className="product-card-glyph honey-card-glyph" aria-hidden="true"><HoneyGlyph /></div>
-              <h3>{v.name}</h3>
-              <p>{v.note}</p>
-              <small>{v.origin}</small>
-            </article>
-          ))}
+
+        <div className="honey-catalog-group">
+          <div className="honey-catalog-heading">
+            <div>
+              <span>01</span>
+              <h3>Natural Honey</h3>
+            </div>
+            <p>{naturalHoney.length} varieties</p>
+          </div>
+          <div className="honey-variant-grid honey-catalog-grid gs-stagger">
+            {naturalHoney.map((variant, index) => (
+              <article className="honey-variant-card honey-catalog-card tilt-card" key={variant.name}>
+                <span className="honey-variant-index">{String(index + 1).padStart(2, "0")}</span>
+                <h3>{variant.name}</h3>
+                {variant.detail && <p>{variant.detail}</p>}
+                <a
+                  className="honey-catalog-enquire"
+                  href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Honey enquiry: ${variant.name}`)}`}
+                >
+                  Enquire
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="honey-catalog-group honey-catalog-group-infused">
+          <div className="honey-catalog-heading">
+            <div>
+              <span>02</span>
+              <h3>Infused Natural Honey</h3>
+            </div>
+            <p>{infusedHoney.length} varieties</p>
+          </div>
+          <div className="honey-variant-grid honey-catalog-grid gs-stagger">
+            {infusedHoney.map((variant, index) => (
+              <article className="honey-variant-card honey-catalog-card tilt-card" key={variant.name}>
+                <span className="honey-variant-index">{String(index + 1).padStart(2, "0")}</span>
+                <h3>{variant.name}</h3>
+                <a
+                  className="honey-catalog-enquire"
+                  href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Honey enquiry: ${variant.name}`)}`}
+                >
+                  Enquire
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
