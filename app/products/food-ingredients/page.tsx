@@ -102,8 +102,8 @@ export default async function FoodHerbsPage() {
 
       <NextCategory
         href="/products/chemicals"
-        image="/supreme/neutral-materials-hero.png"
-        imageAlt="Industrial liquids, powders and material samples"
+        image="/supreme/generated/industrial-flatlay-full-hero.png"
+        imageAlt="Top-view industrial chemicals arrangement prepared for bulk supply"
         name="Industrial chemicals"
       />
 

@@ -1,18 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HoneyHero() {
   return (
     <section className="product-detail-hero honey-hero">
-      <video
+      <Image
         className="honey-hero-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/supreme/media/honey-pour-loop-poster.jpg"
-      >
-        <source src="/supreme/media/honey-pour-loop.mp4" type="video/mp4" />
-      </video>
+        src="/supreme/generated/honey-flatlay-full-hero.png"
+        alt="Top-view natural honey arrangement prepared for bulk supply"
+        fill
+        priority
+        sizes="100vw"
+      />
       <div className="honey-hero-tint" />
 
       <div className="honey-hero-inner">

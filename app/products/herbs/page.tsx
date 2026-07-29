@@ -13,10 +13,10 @@ export const metadata = createPageMetadata({
   title: "Medicinal Herbs & Spices | Supreme Trading Corp",
   description,
   path: "/products/herbs",
-  image: "/supreme/media/herbs-loop-poster.jpg",
+  image: "/supreme/generated/medicinal-herbs-flatlay.jpg",
   imageAlt: "Bulk herbs, roots and spices",
-  imageWidth: 1920,
-  imageHeight: 1080,
+  imageWidth: 1600,
+  imageHeight: 1066,
 });
 
 const qualities = [
@@ -42,9 +42,14 @@ export default async function HerbsPage() {
       <SiteHeader theme="solid" />
 
       <section className="product-detail-hero prod-hero">
-        <video className="prod-hero-video" autoPlay muted loop playsInline poster="/supreme/media/herbs-loop-poster.jpg">
-          <source src="/supreme/media/herbs-loop.mp4" type="video/mp4" />
-        </video>
+        <Image
+          className="prod-hero-video"
+          src="/supreme/generated/medicinal-herbs-flatlay.jpg"
+          alt="Top view of medicinal herbs, roots, petals and spices"
+          fill
+          priority
+          sizes="100vw"
+        />
         <div className="prod-hero-tint" />
         <div className="prod-hero-inner">
           <div className="catalog-breadcrumb">

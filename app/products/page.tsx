@@ -17,7 +17,7 @@ const dedicatedPages: Record<string, string> = {
 };
 
 const categoryImages: Record<string, string> = {
-  "herbs-spices": "/supreme/generated/herbs-spices-flatlay-full-hero-v2.png",
+  "herbs-spices": "/supreme/generated/medicinal-herbs-flatlay.jpg",
   petals: "/supreme/generated/petals-flatlay-full-hero.png",
   honey: "/supreme/generated/honey-flatlay-full-hero.png",
   "food-herbs": "/supreme/generated/food-herbs-flatlay-full-hero.png",

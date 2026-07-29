@@ -11,10 +11,10 @@ export const metadata = createPageMetadata({
   title: "Bulk Raw & Natural Honey | Supreme Trading Corp",
   description,
   path: "/products/honey",
-  image: "/supreme/media/honey-pour-loop-poster.jpg",
-  imageAlt: "Natural honey being poured for bulk supply",
-  imageWidth: 1920,
-  imageHeight: 1080,
+  image: "/supreme/generated/honey-flatlay-full-hero.png",
+  imageAlt: "Top-view natural honey assortment prepared for bulk supply",
+  imageWidth: 1672,
+  imageHeight: 941,
 });
 
 const naturalHoney = [
@@ -183,7 +183,7 @@ export default function HoneyPage() {
 
       <NextCategory
         href="/products/herbs"
-        image="/supreme/media/herbs-loop-poster.jpg"
+        image="/supreme/generated/medicinal-herbs-flatlay.jpg"
         imageAlt="Bulk medicinal herbs and spices"
         name="Medicinal herbs & spices"
       />

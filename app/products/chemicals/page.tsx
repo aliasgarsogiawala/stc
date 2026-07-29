@@ -13,8 +13,8 @@ export const metadata = createPageMetadata({
   title: "Industrial Chemicals | Supreme Trading Corp",
   description,
   path: "/products/chemicals",
-  image: "/supreme/neutral-materials-hero.png",
-  imageAlt: "Industrial powders, liquids and raw material samples",
+  image: "/supreme/generated/industrial-flatlay-full-hero.png",
+  imageAlt: "Top-view industrial chemicals layout with powders and process materials",
   imageWidth: 1672,
   imageHeight: 941,
 });
@@ -51,7 +51,7 @@ export default async function ChemicalsPage() {
       <SiteHeader theme="solid" />
 
       <section data-product-hero className="product-detail-hero catalog-full-hero catalog-full-hero--chemicals">
-        <Image data-product-media className="catalog-full-hero-image object-[62%_center]" src="/supreme/neutral-materials-hero.png" alt="Industrial liquids, powders and raw material samples" fill sizes="100vw" priority />
+        <Image data-product-media className="catalog-full-hero-image object-center" src="/supreme/generated/industrial-flatlay-full-hero.png" alt="Top-view industrial chemicals arrangement prepared for bulk supply" fill sizes="100vw" priority />
         <div className="catalog-full-hero-overlay" />
         <div data-hero-copy data-product-copy className="catalog-full-hero-copy">
           <div className="catalog-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Chemicals</span></div>
@@ -102,8 +102,8 @@ export default async function ChemicalsPage() {
 
       <NextCategory
         href="/products/honey"
-        image="/supreme/media/honey-pour-loop-poster.jpg"
-        imageAlt="Honey prepared for bulk supply"
+        image="/supreme/generated/honey-flatlay-full-hero.png"
+        imageAlt="Top-view natural honey assortment prepared for bulk supply"
         name="Honey"
       />
 

@@ -6799,11 +6799,13 @@ main {
 }
 
 .refined-about-facts article {
-  min-height: 190px;
-  padding: 26px;
+  min-height: 228px;
+  padding: 30px clamp(26px, 2.5vw, 42px) 34px;
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: 42px;
   background: var(--paper);
 }
 
@@ -6813,25 +6815,32 @@ main {
 
 .refined-about-facts span {
   color: #356fa7;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.075em;
   text-transform: uppercase;
 }
 
+.refined-about-facts article > div {
+  min-width: 0;
+}
+
 .refined-about-facts strong {
-  max-width: 230px;
-  margin-top: auto;
-  font-size: clamp(33px, 3.2vw, 48px);
+  display: block;
+  max-width: none;
+  margin: 0;
+  font-size: clamp(32px, 2.85vw, 46px);
   font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1;
+  letter-spacing: -0.05em;
+  line-height: 1.04;
+  text-wrap: balance;
 }
 
 .refined-about-facts p {
-  margin: 9px 0 0;
+  margin: 12px 0 0;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
+  line-height: 1.45;
 }
 
 .refined-about-industries {
@@ -7087,7 +7096,7 @@ main {
 
   .refined-about-facts article,
   .refined-about-facts article:nth-child(2) {
-    min-height: 155px;
+    min-height: 176px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }

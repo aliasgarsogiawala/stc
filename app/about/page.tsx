@@ -121,19 +121,21 @@ export default function AboutPage() {
       </section>
 
       <section
-        className="refined-about-facts gs-stagger"
+        className="refined-about-facts gs-reveal"
         aria-label="Company facts"
       >
         {[
           { s: "Established", n: "2002", p: "Mumbai, Maharashtra" },
           { s: "Catalogue", n: "800+", p: "Listed raw materials" },
-          { s: "Trade", n: "Import + export", p: "Domestic and international enquiries" },
-          { s: "Supply", n: "Bulk", p: "Wholesale requirements" },
+          { s: "Trade", n: "Import / Export", p: "Domestic and international enquiries" },
+          { s: "Supply", n: "Bulk supply", p: "Wholesale requirements" },
         ].map((fact) => (
           <article className="tilt-card" key={fact.s}>
             <span>{fact.s}</span>
-            <strong>{fact.n}</strong>
-            <p>{fact.p}</p>
+            <div>
+              <strong>{fact.n}</strong>
+              <p>{fact.p}</p>
+            </div>
           </article>
         ))}
       </section>
