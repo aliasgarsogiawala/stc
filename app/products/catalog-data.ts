@@ -18,8 +18,8 @@ export type CatalogCategory = {
 const sources = [
   {
     id: "herbs-spices",
-    name: "Raw Herbs & Spices",
-    shortName: "Herbs",
+    name: "Medicinal Herbs & Spices",
+    shortName: "Medicinal herbs & spices",
     path: "Herbs-Spices.asp",
     description: "Whole botanicals, roots, barks, seeds, flowers, gums and trade spices.",
     fallback: [
@@ -69,8 +69,8 @@ const sources = [
   },
   {
     id: "food-herbs",
-    name: "Food Ingredients",
-    shortName: "Food ingredients",
+    name: "Food Herbs",
+    shortName: "Food herbs",
     path: "Food-Herbs.asp",
     description: "Dehydrated vegetables, Ayurvedic powders, spices and spray-dried produce powders.",
     fallback: [

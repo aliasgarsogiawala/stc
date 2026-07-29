@@ -184,8 +184,8 @@ export default function HoneyPage() {
       <NextCategory
         href="/products/herbs"
         image="/supreme/media/herbs-loop-poster.jpg"
-        imageAlt="Bulk herbs and spices"
-        name="Herbs & spices"
+        imageAlt="Bulk medicinal herbs and spices"
+        name="Medicinal herbs & spices"
       />
 
       <SiteFooter />

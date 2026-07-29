@@ -6,7 +6,8 @@ import { createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata({
   title: "About Supreme Trading Corp | Mumbai Raw Material Supplier",
-  description: "Established in Mumbai in 2002, Supreme Trading Corp supplies raw materials for industrial, food, fragrance, Ayurvedic and Unani applications.",
+  description:
+    "Established in Mumbai in 2002, Supreme Trading Corp imports, exports and supplies industrial and natural raw materials to manufacturers and traders.",
   path: "/about",
   image: "/og-materials.png",
   imageAlt: "Supreme Trading Corp industrial and natural raw materials",
@@ -26,18 +27,36 @@ const industries = [
 ];
 
 const qualitySteps = [
-  { number: "01", title: "Requirement review", text: "Material, grade, intended application, quantity and destination are established before sourcing." },
-  { number: "02", title: "Material assessment", text: "Products are reviewed against the required specification and the appropriate supply option is shortlisted." },
-  { number: "03", title: "Packing and handling", text: "Packing format and handling requirements are aligned with the product and order size." },
-  { number: "04", title: "Dispatch coordination", text: "Orders are prepared for domestic or export movement with clear delivery coordination." },
+  {
+    number: "01",
+    title: "Product quality",
+    text: "Materials are reviewed against the required grade, specification and intended application.",
+  },
+  {
+    number: "02",
+    title: "Buyer requirements",
+    text: "Product form, quantity and packing are aligned with the buyer’s stated requirement.",
+  },
+  {
+    number: "03",
+    title: "Commercial clarity",
+    text: "Commercial terms, payment and availability are confirmed before the order proceeds.",
+  },
+  {
+    number: "04",
+    title: "Dispatch coordination",
+    text: "Packing, documentation and movement are coordinated for domestic or export supply.",
+  },
 ];
 
-const label = "text-clay text-[9px] font-black tracking-[0.08em] uppercase";
-const h2 = "font-heading text-[clamp(46px,5vw,76px)] leading-[0.96] font-semibold m-0";
+const label =
+  "font-sans text-[#356fa7] text-[10px] font-extrabold tracking-[0.075em] uppercase";
+const h2 =
+  "font-sans text-[clamp(40px,4.4vw,64px)] leading-[1.02] font-bold tracking-[-0.045em] m-0";
 
 export default function AboutPage() {
   return (
-    <main className="bg-paper">
+    <main className="refined-about bg-paper">
       <SiteHeader theme="solid" />
 
       <section className="about-hero">
@@ -47,14 +66,31 @@ export default function AboutPage() {
         </div>
         <div className="about-hero-shell">
           <div className="about-hero-copy" data-hero-copy>
-            <div className="catalog-breadcrumb"><Link href="/">Home</Link><span>/</span><span>About</span></div>
-            <p className="eyebrow"><span /> Mumbai · Since 2002</p>
+            <div className="catalog-breadcrumb">
+              <Link href="/">Home</Link>
+              <span>/</span>
+              <span>About</span>
+            </div>
+            <p className="eyebrow">
+              <span /> Mumbai · Established 2002
+            </p>
             <h1>About Us</h1>
-            <p>Import, export and wholesale supply of raw materials for manufacturers and traders.</p>
+            <p>
+              Import, export and wholesale trading of industrial and natural
+              raw materials for manufacturers and traders.
+            </p>
           </div>
 
           <div className="about-hero-media" data-hero-media>
-            <Image className="image-drift" src="/supreme/source/abouts.png" alt="Raw materials handled by Supreme Trading Corp" width={570} height={354} priority sizes="(max-width: 820px) 92vw, 48vw" />
+            <Image
+              className="image-drift"
+              src="/supreme/source/abouts.png"
+              alt="Herbal raw materials handled by Supreme Trading Corp"
+              width={570}
+              height={354}
+              priority
+              sizes="(max-width: 820px) 92vw, 48vw"
+            />
             <div className="about-hero-caption" data-hero-meta>
               <span>Head office</span>
               <strong>Mumbai, Maharashtra</strong>
@@ -63,92 +99,137 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-[118px] max-[720px]:py-[82px] px-[clamp(22px,6vw,92px)] grid grid-cols-[0.32fr_1.68fr] max-[720px]:grid-cols-1 gap-[42px] gs-reveal">
-        <div className={label}>Company</div>
+      <section className="refined-about-intro gs-reveal">
+        <div className={label}>Company profile</div>
         <div>
-          <h2 className={h2}>Trading and sourcing across material categories</h2>
-          <div className="mt-[46px] pt-8 border-t border-line grid grid-cols-2 max-[720px]:grid-cols-1 gap-[clamp(30px,5vw,76px)]">
-            <p className="m-0 text-muted text-sm leading-[1.85]">Supreme Trading Corp was established in Mumbai in 2002 with a focus on reliable supply and product quality. The company operates in imports, exports and wholesale trading.</p>
-            <p className="m-0 text-muted text-sm leading-[1.85]">Its range serves Ayurvedic and Unani medicine, perfumery, essence, paint, polish, food and other industrial applications. The catalogue includes industrial chemicals, gums, food ingredients, spices and botanical raw materials.</p>
+          <h2 className={h2}>Import, export and wholesale trading since 2002.</h2>
+          <div className="refined-about-copy">
+            <p>
+              Supreme Trading Corp was established in Mumbai, Maharashtra, with
+              the objective of providing reliable supply and consistent product
+              quality. The company operates across imports, exports and
+              wholesale trading.
+            </p>
+            <p>
+              Its range includes herbal raw materials used in Ayurvedic and
+              Unani medicines, perfumery, essence, paint and related
+              applications, together with gums, food herbs, spices and other
+              commercial raw materials.
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="mx-[clamp(22px,6vw,92px)] max-[720px]:mx-5 border-y border-line grid grid-cols-4 max-[980px]:grid-cols-2 max-[720px]:grid-cols-1 gs-stagger" aria-label="Company facts">
+      <section
+        className="refined-about-facts gs-stagger"
+        aria-label="Company facts"
+      >
         {[
           { s: "Established", n: "2002", p: "Mumbai, Maharashtra" },
           { s: "Catalogue", n: "800+", p: "Listed raw materials" },
-          { s: "Trade", n: "India", p: "Domestic and export enquiries" },
+          { s: "Trade", n: "Import + export", p: "Domestic and international enquiries" },
           { s: "Supply", n: "Bulk", p: "Wholesale requirements" },
-        ].map((f) => (
-          <article className="tilt-card min-h-[210px] max-[720px]:min-h-[170px] p-7 border-r border-line last:border-r-0 max-[980px]:[&:nth-child(2)]:border-r-0 max-[720px]:border-r-0 max-[720px]:border-b flex flex-col bg-paper" key={f.s}>
-            <span className="text-clay text-[9px] font-black uppercase">{f.s}</span>
-            <strong className="mt-auto font-heading text-[55px] leading-none">{f.n}</strong>
-            <p className="mt-[7px] text-muted text-[10px]">{f.p}</p>
+        ].map((fact) => (
+          <article className="tilt-card" key={fact.s}>
+            <span>{fact.s}</span>
+            <strong>{fact.n}</strong>
+            <p>{fact.p}</p>
           </article>
         ))}
       </section>
 
-      <section className="py-[130px] max-[720px]:py-[82px] px-[clamp(22px,6vw,92px)] grid grid-cols-[minmax(260px,0.8fr)_minmax(220px,0.55fr)_minmax(340px,0.75fr)] max-[980px]:grid-cols-[1fr_0.75fr] gap-[22px] items-center bg-deep text-white overflow-hidden gs-reveal">
-        <div className="overflow-hidden image-drift">
-          <Image src="/supreme/source/abu.png" alt="Raw material preparation and handling" width={570} height={354} className="w-full h-auto block" />
+      <section className="refined-about-industries gs-reveal">
+        <div className="refined-about-image-primary image-drift">
+          <Image
+            src="/supreme/source/abu.png"
+            alt="Traditional raw material preparation"
+            width={570}
+            height={354}
+          />
         </div>
-        <div className="overflow-hidden image-drift mt-[130px] max-[980px]:mt-0 max-[980px]:ml-[18%]">
-          <Image src="/supreme/source/nb.png" alt="Liquid and powdered material samples" width={570} height={400} className="w-full h-auto block" />
+        <div className="refined-about-image-secondary image-drift">
+          <Image
+            src="/supreme/source/nb.png"
+            alt="Natural raw material samples"
+            width={570}
+            height={400}
+          />
         </div>
-        <div className="pl-[clamp(18px,4vw,64px)] max-[980px]:col-span-full max-[980px]:pl-0 max-[980px]:pt-[50px]">
+        <div className="refined-about-industries-copy">
           <span className={label}>Applications</span>
-          <h2 className={`${h2} mt-3.5 text-white`}>Industries supplied</h2>
-          <div className="mt-[42px] border-t border-white/20 grid max-[980px]:grid-cols-2 gs-stagger">
+          <h2 className={`${h2} mt-4 text-white`}>Industries supplied</h2>
+          <p>
+            The company’s range serves traditional medicine, food, fragrance
+            and industrial formulation businesses.
+          </p>
+          <div className="refined-about-industry-list gs-stagger">
             {industries.map((industry, index) => (
-              <div className="py-[13px] border-b border-white/20 grid grid-cols-[38px_1fr] gap-3 text-[11px]" key={industry}>
-                <b className="text-[#dfa98f] text-[8px]">{String(index + 1).padStart(2, "0")}</b><span>{industry}</span>
+              <div key={industry}>
+                <b>{String(index + 1).padStart(2, "0")}</b>
+                <span>{industry}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-[116px] max-[720px]:py-[78px] px-[clamp(22px,6vw,92px)] bg-[#f1f3f4] gs-reveal">
-        <div className="max-w-[1380px] mx-auto grid grid-cols-[0.62fr_1.38fr] max-[900px]:grid-cols-1 gap-[clamp(48px,8vw,120px)] items-start">
-          <div className="sticky top-[120px] max-[900px]:static">
-            <span className="text-[#2d68a0] text-[9px] font-black tracking-[0.08em] uppercase">Order handling</span>
-            <h2 className="max-w-[430px] mt-4 mb-0 font-sans text-[clamp(38px,4.5vw,58px)] leading-[1.02] font-bold tracking-[-0.045em]">How an order moves</h2>
-            <p className="max-w-[420px] mt-6 mb-0 text-muted text-[13px] leading-[1.8]">The requirement is checked commercially and technically before packing and dispatch are confirmed.</p>
+      <section className="refined-about-quality gs-reveal">
+        <div className="refined-about-quality-inner">
+          <div className="refined-about-quality-heading">
+            <span className={label}>Quality approach</span>
+            <h2>Quality reviewed before supply.</h2>
+            <p>
+              Supreme Trading Corp states that stringent quality control and
+              all-round excellence remain central to its operations. Each
+              enquiry begins with the buyer’s actual material requirement.
+            </p>
           </div>
 
-          <ol className="m-0 p-0 border-t border-[#173a57]/20 list-none gs-stagger">
+          <ol className="refined-about-quality-list gs-stagger">
             {qualitySteps.map((step) => (
-              <li className="py-7 px-1 border-b border-[#173a57]/16 grid grid-cols-[48px_minmax(190px,0.72fr)_minmax(260px,1.28fr)] max-[720px]:grid-cols-[42px_1fr] gap-[clamp(18px,3vw,48px)] items-start transition-colors hover:bg-white" key={step.number}>
-                <span className="pt-1 text-[#2d68a0] text-[9px] font-black">{step.number}</span>
-                <h3 className="m-0 font-sans text-[17px] leading-[1.35] font-extrabold tracking-[-0.025em]">{step.title}</h3>
-                <p className="max-[720px]:col-start-2 m-0 text-muted text-[12px] leading-[1.75]">{step.text}</p>
+              <li key={step.number}>
+                <span>{step.number}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="py-[104px] max-[720px]:py-[82px] px-[clamp(22px,6vw,92px)] grid grid-cols-[minmax(300px,0.8fr)_minmax(360px,1.2fr)] max-[720px]:grid-cols-1 gap-[clamp(54px,9vw,150px)] bg-[#ebece5] gs-reveal">
+      <section className="refined-about-principles gs-reveal">
         <div>
           <span className={label}>Working principles</span>
-          <h2 className={`${h2} mt-4`}>Commercially practical supply</h2>
+          <h2 className={`${h2} mt-4`}>What the business is built around.</h2>
         </div>
-        <ul className="m-0 p-0 border-t border-line list-none">
-          {["Product quality and material fit", "Customisation against buyer requirements", "Competitive commercial terms", "Timely delivery coordination", "Clear payment and order communication"].map((li) => (
-            <li className="py-[22px] px-1 border-b border-line font-heading text-[25px]" key={li}>{li}</li>
+        <ul>
+          {[
+            "Product quality",
+            "Customisation against buyer requirements",
+            "Competitive commercial terms",
+            "Clear payment communication",
+            "Quality-control focus",
+          ].map((principle) => (
+            <li key={principle}>{principle}</li>
           ))}
         </ul>
       </section>
 
-      <section className="min-h-[450px] py-[90px] max-[720px]:py-[82px] px-[clamp(22px,6vw,92px)] grid grid-cols-[1.25fr_0.75fr] max-[720px]:grid-cols-1 gap-[clamp(48px,8vw,120px)] items-center bg-deep text-white gs-reveal">
+      <section className="refined-about-cta gs-reveal">
         <div>
-          <span className={label}>Next step</span>
-          <h2 className={`${h2} mt-4 text-white`}>Discuss a material requirement</h2>
+          <span className={label}>Enquiries</span>
+          <h2 className={`${h2} mt-4 text-white`}>
+            Discuss a material requirement.
+          </h2>
         </div>
         <div>
-          <p className="max-w-[430px] text-white/65 text-[13px] leading-[1.7]">Share the product name, grade, quantity, packing and destination.</p>
-          <Link className="button button-light mt-[18px]" href="/contact#enquiry">Send enquiry</Link>
+          <p>
+            Share the product name, grade, quantity, packing and destination
+            with the sourcing desk.
+          </p>
+          <Link className="button button-light" href="/contact#enquiry">
+            Send enquiry
+          </Link>
         </div>
       </section>
 

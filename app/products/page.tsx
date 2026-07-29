@@ -71,7 +71,7 @@ export default async function ProductsPage() {
         <div className="products-grid-hero-copy" data-hero-copy data-product-copy>
           <div className="catalog-breadcrumb products-grid-breadcrumb"><Link href="/">Home</Link><span>/</span><span>Products</span></div>
           <h1>Product categories</h1>
-          <p>{totalProducts} listed materials across industrial chemicals, honey, petals, herbs and food ingredients.</p>
+          <p>{totalProducts} listed materials across industrial chemicals, honey, petals, medicinal herbs and spices, and food herbs.</p>
           <a className="next-category-button products-grid-hero-button" href="#catalog">Explore categories <ArrowRight /></a>
         </div>
       </section>

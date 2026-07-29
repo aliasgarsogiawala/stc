@@ -11,14 +11,14 @@ const materialGroups = [
   { code: "02", name: "Resins & polymers", note: "Acrylic, polyurethane and speciality resin systems", image: "/supreme/source/tren-pro4.png", href: "/products/chemicals" },
   { code: "03", name: "Additives & cellulose", note: "Wetting agents, defoamers, HPMC, HEC and CMC", image: "/supreme/source/tren-pro3.png", href: "/products/chemicals" },
   { code: "04", name: "Petals", note: "Rose, hibiscus, chamomile and other dried petals", image: "/supreme/generated/petals-flatlay-full-hero.png", href: "/products/petals" },
-  { code: "05", name: "Food ingredients", note: "Culinary herbs, spices and dehydrated ingredients", image: "/supreme/generated/food-herbs-flatlay-full-hero.png", href: "/products/food-ingredients" },
+  { code: "05", name: "Food herbs", note: "Culinary herbs, spices and dehydrated ingredients", image: "/supreme/generated/food-herbs-flatlay-full-hero.png", href: "/products/food-ingredients" },
   { code: "06", name: "Specified sourcing", note: "Grade-led, quantity-led and destination-led supply", image: "/supreme/product-categories-hero.png", href: "/contact#enquiry" },
 ];
 
 const whyChoose = [
   { icon: "/supreme/why-icon1.png", title: "Grade-verified sourcing", text: "Every material matched to your grade, origin and application before we quote." },
   { icon: "/supreme/achieve-icon4.png", title: "Consistent quality", text: "Reviewed batch by batch so repeat orders stay reliable and predictable." },
-  { icon: "/supreme/achieve-icon3.png", title: "Wide material range", text: "Chemicals, resins, food ingredients and botanicals from one desk." },
+  { icon: "/supreme/achieve-icon3.png", title: "Wide material range", text: "Chemicals, resins, food herbs and botanicals from one desk." },
   { icon: "/supreme/achieve-icon2.png", title: "Bulk & export ready", text: "Sensible packing and clean dispatch across India and for export buyers." },
 ];
 
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="home-ticker-track">
           {[0, 1].map((copy) => (
             <div className="home-ticker-set" aria-hidden={copy === 1} key={copy}>
-              {["Chemicals", "Resins", "Additives", "Petals", "Food ingredients", "Custom sourcing"].map((item) => (
+              {["Chemicals", "Resins", "Additives", "Petals", "Food herbs", "Custom sourcing"].map((item) => (
                 <span className="home-ticker-item" key={`${copy}-${item}`}>{item}</span>
               ))}
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
             <span className="relative z-[1] text-honey-soft text-[10px] font-black tracking-[0.06em] uppercase">Flagship capability</span>
             <div className="relative z-[1]">
               <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold text-white m-0">Grade-led sourcing across four material families</h3>
-              <p className="mt-2.5 text-white/70 text-[15px] leading-[1.6] max-w-[420px]">From industrial chemicals and coating resins to food ingredients and speciality raw materials — matched to your grade, quantity and destination.</p>
+              <p className="mt-2.5 text-white/70 text-[15px] leading-[1.6] max-w-[420px]">From industrial chemicals and coating resins to food herbs and speciality raw materials — matched to your grade, quantity and destination.</p>
             </div>
             <Link className="relative z-[1] w-fit text-honey-soft border-b border-current pb-[3px] text-xs font-black" href="/products">Browse the catalogue</Link>
           </article>
@@ -123,7 +123,7 @@ export default function Home() {
           <article className="tilt-card col-span-2 max-[980px]:col-span-2 max-[620px]:col-span-1 group min-h-[280px] border border-line bg-white grid grid-cols-[minmax(0,1fr)_minmax(180px,0.42fr)] max-[620px]:grid-cols-1 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
             <div className="p-[clamp(24px,3vw,38px)] flex flex-col justify-end gap-3 relative z-[2]">
               <span className="text-clay text-[10px] font-black tracking-[0.06em] uppercase">Food &amp; natural</span>
-              <h3 className="max-w-[620px] font-heading text-[clamp(25px,2.35vw,36px)] leading-[1.04] font-bold m-0">Food ingredients &amp; natural products</h3>
+              <h3 className="max-w-[620px] font-heading text-[clamp(25px,2.35vw,36px)] leading-[1.04] font-bold m-0">Food herbs &amp; natural products</h3>
               <p className="max-w-[620px] m-0 text-muted text-[13px] leading-[1.65]">Powders, dehydrated ingredients, honey and natural sweeteners for food brands and formulators.</p>
             </div>
             <div className="min-h-[240px] max-[620px]:min-h-[190px] relative overflow-hidden bg-[#eef1f4]">

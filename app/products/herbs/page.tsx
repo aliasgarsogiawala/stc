@@ -10,7 +10,7 @@ import NextCategory from "../next-category";
 const description = "Whole botanicals, roots, barks, seeds, flowers and trade spices sourced in bulk to grade for food, wellness and Ayurvedic buyers.";
 
 export const metadata = createPageMetadata({
-  title: "Herbs & Spices | Supreme Trading Corp",
+  title: "Medicinal Herbs & Spices | Supreme Trading Corp",
   description,
   path: "/products/herbs",
   image: "/supreme/media/herbs-loop-poster.jpg",
@@ -34,7 +34,7 @@ export default async function HerbsPage() {
   return (
     <main className="product-detail-page prod-page herbs-page">
       <JsonLd data={collectionPageJsonLd({
-        name: "Herbs and spices",
+        name: "Medicinal herbs and spices",
         description,
         path: "/products/herbs",
         items: products.map((product) => product.name),
@@ -50,9 +50,9 @@ export default async function HerbsPage() {
           <div className="catalog-breadcrumb">
             <Link href="/">Home</Link><span>/</span>
             <Link href="/products">Products</Link><span>/</span>
-            <span>Herbs &amp; Spices</span>
+            <span>Medicinal Herbs &amp; Spices</span>
           </div>
-          <h1>Herbs, roots &amp; trade spices</h1>
+          <h1>Medicinal herbs &amp; spices</h1>
           <p className="prod-hero-lead">
             Whole botanicals, roots, barks, seeds and flowers, cleaned and graded, then
             supplied in bulk — whole, cut or milled to your spec.

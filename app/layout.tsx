@@ -22,12 +22,12 @@ export const metadata: Metadata = {
     template: "%s | Supreme Trading Corp",
   },
   description:
-    "Mumbai-based sourcing partner for industrial chemicals, resins, food ingredients and specialty raw materials for wholesale and export buyers.",
+    "Mumbai-based sourcing partner for industrial chemicals, resins, food herbs and specialty raw materials for wholesale and export buyers.",
   alternates: { canonical: "/" },
   icons: { icon: "/supreme/favicon.png" },
   openGraph: {
     title: "Supreme Trading Corp | Industrial & Specialty Raw Materials",
-    description: "Supplier of industrial chemicals, resins, food ingredients and specialty raw materials.",
+    description: "Supplier of industrial chemicals, resins, food herbs and specialty raw materials.",
     url: "/",
     siteName: "Supreme Trading Corp",
     locale: "en_IN",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Supreme Trading Corp | Industrial & Specialty Raw Materials",
-    description: "Supplier of industrial chemicals, resins, food ingredients and specialty raw materials.",
+    description: "Supplier of industrial chemicals, resins, food herbs and specialty raw materials.",
     images: ["/og.png"],
   },
 };

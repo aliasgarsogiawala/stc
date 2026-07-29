@@ -22,7 +22,7 @@ const slides: Slide[] = [
     lead: "Cleaned, graded and supplied whole, cut or milled to your specification.",
     video: "/supreme/media/herbs-loop.mp4",
     poster: "/supreme/media/herbs-loop-poster.jpg",
-    cta: { label: "Explore herbs", href: "/products/herbs" },
+    cta: { label: "Explore medicinal herbs", href: "/products/herbs" },
   },
   {
     key: "overview",
@@ -31,12 +31,12 @@ const slides: Slide[] = [
     lead: "Sourced to spec and supplied in bulk to manufacturers, wholesalers and export buyers.",
     video: "/supreme/media/botanical-trade-loop.mp4",
     poster: "/supreme/media/botanical-trade-loop-poster.jpg",
-    cta: { label: "Explore food ingredients", href: "/products/food-ingredients" },
+    cta: { label: "Explore food herbs", href: "/products/food-ingredients" },
   },
   {
     key: "food-overview",
     eyebrow: "Established in Mumbai · 2002",
-    title: "Food Ingredients",
+    title: "Food Herbs",
     lead: "Sourced to spec and supplied in bulk to manufacturers, wholesalers and export buyers.",
     video: "/supreme/media/botanical-trade-loop.mp4",
     poster: "/supreme/media/botanical-trade-loop-poster.jpg",

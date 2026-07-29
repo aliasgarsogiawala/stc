@@ -17,7 +17,7 @@ export default function SiteFooter() {
                 unoptimized
               />
               <p>
-                Import, export and bulk trading of industrial chemicals, food ingredients,
+                Import, export and bulk trading of industrial chemicals, food herbs,
                 honey and speciality raw materials—from Mumbai since 2002.
               </p>
             </div>
@@ -35,8 +35,8 @@ export default function SiteFooter() {
               <Link href="/products/chemicals">Industrial chemicals</Link>
               <Link href="/products/honey">Honey</Link>
               <Link href="/products/petals">Petals</Link>
-              <Link href="/products/herbs">Herbs &amp; spices</Link>
-              <Link href="/products/food-ingredients">Food ingredients</Link>
+              <Link href="/products/herbs">Medicinal herbs &amp; spices</Link>
+              <Link href="/products/food-ingredients">Food herbs</Link>
             </nav>
 
             <div className="footer-column footer-office">
