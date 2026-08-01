@@ -116,10 +116,7 @@ export default async function PetalsPage() {
       </section>
 
       <NextCategory
-        href="/products/food-ingredients"
-        image="/supreme/generated/food-herbs-flatlay-full-hero.png"
-        imageAlt="Food herbs prepared for bulk supply"
-        name="Food herbs"
+        currentId="petals"
       />
 
       <SiteFooter />

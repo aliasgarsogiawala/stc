@@ -101,10 +101,7 @@ export default async function FoodHerbsPage() {
       </section>
 
       <NextCategory
-        href="/products/chemicals"
-        image="/supreme/generated/industrial-flatlay-full-hero.png"
-        imageAlt="Top-view industrial chemicals arrangement prepared for bulk supply"
-        name="Industrial chemicals"
+        currentId="food-herbs"
       />
 
       <SiteFooter />

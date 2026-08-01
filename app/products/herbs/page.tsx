@@ -102,10 +102,7 @@ export default async function HerbsPage() {
       </section>
 
       <NextCategory
-        href="/products/petals"
-        image="/supreme/generated/petals-flatlay-full-hero.png"
-        imageAlt="Dried petals prepared for bulk supply"
-        name="Petals"
+        currentId="herbs-spices"
       />
 
       <SiteFooter />

@@ -101,10 +101,7 @@ export default async function ChemicalsPage() {
       </section>
 
       <NextCategory
-        href="/products/honey"
-        image="/supreme/generated/honey-flatlay-full-hero.png"
-        imageAlt="Top-view natural honey assortment prepared for bulk supply"
-        name="Honey"
+        currentId="industrial"
       />
 
       <SiteFooter />

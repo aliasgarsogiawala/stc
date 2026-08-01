@@ -182,10 +182,7 @@ export default function HoneyPage() {
       </section>
 
       <NextCategory
-        href="/products/herbs"
-        image="/supreme/generated/medicinal-herbs-flatlay.jpg"
-        imageAlt="Bulk medicinal herbs and spices"
-        name="Medicinal herbs & spices"
+        currentId="honey"
       />
 
       <SiteFooter />

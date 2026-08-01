@@ -137,11 +137,11 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
             </nav>
 
             <Link
-              className="group/enquire h-full justify-self-end min-w-[174px] px-5 bg-[#3c79ae] text-white inline-flex items-center justify-between gap-5 transition-colors duration-300 hover:bg-[#326b9d]"
+              className="header-enquiry-button group/enquire self-center justify-self-end"
               href="/contact#enquiry"
             >
-              <span className="text-[13px] font-bold">Send an enquiry</span>
-              <span className="w-4 transition-transform duration-300 group-hover/enquire:translate-x-0.5 group-hover/enquire:-translate-y-0.5">
+              <span className="header-enquiry-label">Send an enquiry</span>
+              <span className="header-enquiry-icon">
                 <ArrowUpRight />
               </span>
             </Link>

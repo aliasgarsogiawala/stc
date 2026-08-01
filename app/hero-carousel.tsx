@@ -3,12 +3,12 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
+import { ArrowUpRight } from "./icons";
 
 type Slide = {
   key: string;
   eyebrow: string;
   title: string;
-  lead: string;
   video: string;
   poster: string;
   cta: { label: string; href: string };
@@ -19,7 +19,6 @@ const slides: Slide[] = [
     key: "herbs",
     eyebrow: "Whole & botanical",
     title: "Medicinal Herbs & Spices",
-    lead: "Cleaned, graded and supplied whole, cut or milled to your specification.",
     video: "/supreme/media/medicinal-herbs-home-loop.mp4",
     poster: "/supreme/generated/medicinal-herbs-flatlay.jpg",
     cta: { label: "Explore medicinal herbs", href: "/products/herbs" },
@@ -28,7 +27,6 @@ const slides: Slide[] = [
     key: "chemicals",
     eyebrow: "Industrial & speciality",
     title: "Chemicals",
-    lead: "Sourced to spec and supplied in bulk to manufacturers, wholesalers and export buyers.",
     video: "/supreme/media/chemicals-home-loop.mp4",
     poster: "/supreme/media/chemicals-home-poster.jpg",
     cta: { label: "Explore chemicals", href: "/products/chemicals" },
@@ -37,7 +35,6 @@ const slides: Slide[] = [
     key: "food-overview",
     eyebrow: "Established in Mumbai · 2002",
     title: "Food Herbs",
-    lead: "Sourced to spec and supplied in bulk to manufacturers, wholesalers and export buyers.",
     video: "/supreme/media/food-herbs-home-loop.mp4",
     poster: "/supreme/media/food-herbs-home-poster.jpg",
     cta: { label: "Explore food herbs", href: "/products/food-ingredients" },
@@ -46,7 +43,6 @@ const slides: Slide[] = [
     key: "Petals",
     eyebrow: "Established in Mumbai · 2002",
     title: "Petals",
-    lead: "Sourced to spec and supplied in bulk to manufacturers, wholesalers and export buyers.",
     video: "/supreme/media/petals-home-loop.mp4",
     poster: "/supreme/media/petals-home-poster.jpg",
     cta: { label: "Explore petals", href: "/products/petals" },
@@ -55,7 +51,6 @@ const slides: Slide[] = [
     key: "honey",
     eyebrow: "Pure & raw",
     title: "Honey",
-    lead: "Multiflora, forest, jamun and tulsi honey, supplied in bulk to grade.",
     video: "/supreme/media/honey-pour-loop.mp4",
     poster: "/supreme/media/honey-pour-loop-poster.jpg",
     cta: { label: "Explore honey", href: "/products/honey" },
@@ -163,12 +158,17 @@ export default function HeroCarousel() {
         <div className="hc-content" key={current.key} ref={contentRef}>
           <p className="eyebrow hc-eyebrow"><span /> {current.eyebrow}</p>
           <h1>{current.title}</h1>
-          <p className="hc-lead">{current.lead}</p>
         </div>
 
         <div className="hc-actions">
-          <Link className="button" href={current.cta.href}>{current.cta.label}</Link>
-          <Link className="text-link" href="/contact#enquiry">Send enquiry</Link>
+          <Link className="button" href={current.cta.href}>
+            <span className="hc-action-label">{current.cta.label}</span>
+            <span className="hc-action-icon"><ArrowUpRight /></span>
+          </Link>
+          <Link className="text-link" href="/contact#enquiry">
+            <span className="hc-action-label">Send enquiry</span>
+            <span className="hc-action-icon"><ArrowUpRight /></span>
+          </Link>
         </div>
       </div>
     </section>

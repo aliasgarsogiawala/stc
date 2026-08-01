@@ -66,4 +66,11 @@ export const productCategoryCards = [
     image: categoryImages.industrial,
     href: dedicatedPages.industrial,
   },
-];
+] as const;
+
+export type ProductCategoryId = (typeof productCategoryCards)[number]["id"];
+
+export function getNextProductCategory(currentId: ProductCategoryId) {
+  const currentIndex = productCategoryCards.findIndex((category) => category.id === currentId);
+  return productCategoryCards[(currentIndex + 1) % productCategoryCards.length];
+}

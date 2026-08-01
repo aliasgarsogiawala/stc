@@ -94,7 +94,7 @@ export default function Home() {
 
         <div className="max-w-[1040px] mx-auto mb-[46px] relative z-[2] text-center">
           <div className="section-kicker">Capabilities</div>
-          <h2 data-reveal className="font-heading text-[clamp(44px,5vw,72px)] leading-[0.98] font-semibold text-ink m-0 text-center whitespace-nowrap max-[860px]:whitespace-normal">One desk, every material</h2>
+          <h2 data-reveal className="font-heading text-[clamp(44px,5vw,72px)] leading-[0.98] font-semibold text-ink m-0 text-center whitespace-nowrap max-[860px]:whitespace-normal">One stop , Complete solution</h2>
           <p className="max-w-[540px] mx-auto mt-5 text-muted text-base leading-[1.75]">Two decades of material knowledge, a wide supplier network and a team that reads a specification the way a buyer does.</p>
         </div>
 
@@ -281,6 +281,52 @@ export default function Home() {
             <a className="min-h-[108px] p-[18px] border border-[#d8aa42] flex flex-col justify-between bg-[#efc35f] text-[#123451] transition-colors hover:bg-[#f4ce78]" href={`mailto:${CONTACT_EMAIL}`}>
               <span className="text-[9px] font-black tracking-[0.11em] uppercase text-[#71521f]">Email</span>
               <strong className="font-sans text-[14px] leading-tight font-bold tracking-[-0.015em] break-words">{CONTACT_EMAIL}</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-[110px] max-[760px]:py-20 px-[clamp(18px,4vw,64px)] bg-[#e8eef2] gs-reveal" aria-labelledby="certifications-title">
+        <div className="max-w-[1540px] mx-auto">
+          <h2 id="certifications-title" data-reveal className="m-0 text-center font-heading text-[clamp(42px,5vw,68px)] leading-none font-semibold text-[#123451]">
+            Licences &amp; certifications
+          </h2>
+
+          <div className="mt-14 mx-auto grid max-w-[1040px] grid-cols-2 gap-6 max-[720px]:grid-cols-1 gs-stagger">
+            <a
+              className="group block overflow-hidden border border-[#c8d5df] bg-white transition-colors hover:border-[#356fa7]"
+              href="/supreme/certificates/fssai-state-license.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Supreme Trading Corp FSSAI State License"
+            >
+              <div className="relative aspect-[3/4] bg-[#f0f5f8] overflow-hidden">
+                <Image
+                  className="object-contain p-[clamp(14px,2vw,26px)] transition-transform duration-500 group-hover:scale-[1.012]"
+                  src="/supreme/certificates/fssai-state-license-preview.png"
+                  alt="Preview of Supreme Trading Corp FSSAI State License"
+                  fill
+                  sizes="(max-width: 720px) 92vw, 500px"
+                />
+              </div>
+            </a>
+
+            <a
+              className="group block overflow-hidden border border-[#c8d5df] bg-white transition-colors hover:border-[#356fa7]"
+              href="/supreme/certificates/iso-9001-2015.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Supreme Trading Corp ISO 9001:2015 certificate"
+            >
+              <div className="relative aspect-[3/4] bg-[#f0f5f8] overflow-hidden">
+                <Image
+                  className="object-contain p-[clamp(14px,2vw,26px)] transition-transform duration-500 group-hover:scale-[1.012]"
+                  src="/supreme/certificates/iso-9001-2015-preview.png"
+                  alt="Preview of Supreme Trading Corp ISO 9001:2015 certificate"
+                  fill
+                  sizes="(max-width: 720px) 92vw, 500px"
+                />
+              </div>
             </a>
           </div>
         </div>

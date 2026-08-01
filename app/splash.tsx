@@ -63,7 +63,7 @@ export default function Splash() {
           quality={100}
           unoptimized
         />
-        <p className="splash-tagline">Sourced · Graded · Delivered</p>
+        <p className="splash-tagline">Sourcing Quality.....Delivering Trust</p>
       </div>
 
       <div className="splash-progress"><span /></div>
