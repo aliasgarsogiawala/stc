@@ -4895,11 +4895,11 @@ html {
 .splash-tagline {
   max-width: 90vw;
   margin: 4px 0 0;
-  color: #6a7884;
-  font-size: clamp(14px, 1.8vw, 18px);
-  line-height: 1.5;
+  color: #000;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.35;
   font-weight: 700;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
