@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 import { MapPin } from "../icons";
+import { MUMBAI_MAP_SRC, MUMBAI_OFFICE } from "../contact-details";
 
 type Office = {
   type: string;
@@ -14,8 +15,8 @@ const offices: Office[] = [
   {
     type: "Head office",
     city: "Mumbai",
-    address: "51/A, Essaji Street, Opp. Shah Roadways, Vadgadi, Masjid Bunder (W), Mumbai 400003, Maharashtra, India",
-    mapSrc: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30188.49523647128!2d72.835988!3d18.950776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce2445fe9359%3A0xe8c4e71d26263e7a!2sTitanium%20Dioxide%20Suppliers%20-%20Supreme%20Trading%20Corp.!5e0!3m2!1sen!2sin!4v1765969497421!5m2!1sen!2sin",
+    address: MUMBAI_OFFICE.full,
+    mapSrc: MUMBAI_MAP_SRC,
   },
   {
     type: "Branch office",

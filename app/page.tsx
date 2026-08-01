@@ -5,15 +5,15 @@ import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 import Splash from "./splash";
 import HeroCarousel from "./hero-carousel";
+import {
+  CONTACT_EMAIL,
+  PRIMARY_PHONE,
+  SECONDARY_PHONE,
+  WHATSAPP_NUMBER,
+} from "./contact-details";
+import { productCategoryCards } from "./products/category-config";
 
-const materialGroups = [
-  { code: "01", name: "Industrial chemicals", note: "Acids, solvents, salts and process materials", image: "/supreme/neutral-materials-hero.png", href: "/products/chemicals" },
-  { code: "02", name: "Resins & polymers", note: "Acrylic, polyurethane and speciality resin systems", image: "/supreme/source/tren-pro4.png", href: "/products/chemicals" },
-  { code: "03", name: "Additives & cellulose", note: "Wetting agents, defoamers, HPMC, HEC and CMC", image: "/supreme/source/tren-pro3.png", href: "/products/chemicals" },
-  { code: "04", name: "Petals", note: "Rose, hibiscus, chamomile and other dried petals", image: "/supreme/generated/petals-flatlay-full-hero.png", href: "/products/petals" },
-  { code: "05", name: "Food herbs", note: "Culinary herbs, spices and dehydrated ingredients", image: "/supreme/generated/food-herbs-flatlay-full-hero.png", href: "/products/food-ingredients" },
-  { code: "06", name: "Specified sourcing", note: "Grade-led, quantity-led and destination-led supply", image: "/supreme/product-categories-hero.png", href: "/contact#enquiry" },
-];
+const tickerItems = productCategoryCards.map((category) => category.name);
 
 const whyChoose = [
   { icon: "/supreme/why-icon1.png", title: "Grade-verified sourcing", text: "Every material matched to your grade, origin and application before we quote." },
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="home-ticker-track">
           {[0, 1].map((copy) => (
             <div className="home-ticker-set" aria-hidden={copy === 1} key={copy}>
-              {["Chemicals", "Resins", "Additives", "Petals", "Food herbs", "Custom sourcing"].map((item) => (
+              {tickerItems.map((item) => (
                 <span className="home-ticker-item" key={`${copy}-${item}`}>{item}</span>
               ))}
             </div>
@@ -187,29 +187,28 @@ export default function Home() {
           <Link className="text-link inline-block" href="/products">Explore full catalogue</Link>
         </div>
 
-        <div className="grid grid-cols-3 max-[1060px]:grid-cols-2 max-[720px]:grid-cols-1 auto-rows-fr gap-5 gs-stagger">
-          {materialGroups.map((group) => (
-            <article className="tilt-card group min-h-[390px] h-full border border-[#173a57]/16 flex flex-col bg-white overflow-hidden transition-[background-color,border-color] duration-300 hover:border-[#2d68a0]/55" key={group.name}>
-              <div className="min-h-[48px] px-5 border-b border-[#173a57]/12 flex items-center justify-between text-[#2d68a0]">
-                <span className="text-[10px] font-black tracking-[0.08em]">{group.code}</span>
-                <span className="text-[26px] leading-none font-light transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true">→</span>
-              </div>
-              <div className="h-[200px] border-b border-[#173a57]/12 bg-[#eaf0f5] relative overflow-hidden">
+        <div className="grid grid-cols-6 max-[1060px]:grid-cols-2 max-[720px]:grid-cols-1 auto-rows-fr gap-5 gs-stagger">
+          {productCategoryCards.map((group, index) => (
+            <article className={`tilt-card group col-span-2 max-[1060px]:col-span-1 max-[1060px]:col-start-auto min-h-[420px] h-full border border-[#173a57]/14 flex flex-col bg-white overflow-hidden transition-colors duration-300 hover:border-[#2d68a0]/45 ${index === 3 ? "col-start-2" : ""} ${index === 4 ? "col-start-4" : ""}`} key={group.name}>
+              <div className="h-[228px] bg-[#eaf0f5] relative overflow-hidden">
                 <Image
                   src={group.image}
                   alt=""
                   fill
                   sizes="(max-width: 720px) 100vw, (max-width: 1060px) 50vw, 33vw"
-                  className="object-contain object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[0.985]"
+                  className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
                 />
-                <span className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,transparent_62%,rgba(13,42,69,0.08))]" />
+                <span className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(8,35,59,0.06),transparent_35%,rgba(8,35,59,0.12))]" />
+                <span className="absolute left-5 top-5 min-w-9 h-9 px-2 grid place-items-center bg-white/92 text-[#2d68a0] text-[10px] font-black tracking-[0.08em]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
               </div>
-              <div className="p-[24px] flex flex-1 flex-col">
-                <h3 className="mb-3 font-heading text-[clamp(25px,2.1vw,31px)] leading-[1.02] font-semibold tracking-[-0.025em]">{group.name}</h3>
+              <div className="p-[26px_26px_24px] flex flex-1 flex-col">
+                <h3 className="mb-3 font-heading text-[clamp(26px,2.1vw,32px)] leading-[1.02] font-semibold tracking-[-0.025em]">{group.name}</h3>
                 <p className="m-0 text-muted text-[13px] leading-[1.65]">{group.note}</p>
-                <Link href={group.href} aria-label={`Browse ${group.name}`} className="w-full mt-auto pt-6 inline-flex items-center justify-between gap-4 text-[#174ea6] text-[11px] font-extrabold tracking-[0.02em] group/link">
+                <Link href={group.href} aria-label={`Browse ${group.name}`} className="w-full mt-auto pt-7 inline-flex items-center justify-between gap-4 text-[#2d68a0] text-[12px] font-extrabold tracking-[0.01em] group/link">
                   <span>Browse range</span>
-                  <span className="text-[25px] leading-none font-light transition-transform duration-300 group-hover/link:translate-x-1.5" aria-hidden="true">→</span>
+                  <span className="text-[23px] leading-none font-light transition-transform duration-300 group-hover/link:translate-x-1.5" aria-hidden="true">→</span>
                 </Link>
               </div>
             </article>
@@ -256,7 +255,7 @@ export default function Home() {
               <Link className="group min-h-[52px] px-6 inline-flex items-center gap-3 bg-[#efc35f] text-[#123451] text-xs font-black transition-colors hover:bg-[#f8d782]" href="/contact#enquiry">
                 Send requirement <ArrowUpRight />
               </Link>
-              <a className="min-h-[52px] px-5 border border-white/20 inline-flex items-center gap-2.5 bg-white/[0.055] text-white text-xs font-black transition-colors hover:bg-white/10" href="https://wa.me/919920755226" target="_blank" rel="noopener noreferrer">
+              <a className="min-h-[52px] px-5 border border-white/20 inline-flex items-center gap-2.5 bg-white/[0.055] text-white text-xs font-black transition-colors hover:bg-white/10" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
                 <WhatsApp className="text-[#56d98b]" /> WhatsApp
               </a>
             </div>
@@ -272,13 +271,16 @@ export default function Home() {
               </div>
             </figure>
 
-            <a className="min-h-[108px] p-[18px] border border-[#d9d1c3] flex flex-col justify-between bg-[#f5efe3] text-[#123451] transition-colors hover:border-[#9dacb8]" href="tel:+912223455226">
+            <div className="min-h-[108px] p-[18px] border border-[#d9d1c3] flex flex-col justify-between bg-[#f5efe3] text-[#123451]">
               <span className="text-[9px] font-black tracking-[0.11em] uppercase text-[#8b6b42]">Call</span>
-              <strong className="font-sans text-[15px] leading-tight font-bold tracking-[-0.015em] whitespace-nowrap">+91 22 2345 5226</strong>
-            </a>
-            <a className="min-h-[108px] p-[18px] border border-[#d8aa42] flex flex-col justify-between bg-[#efc35f] text-[#123451] transition-colors hover:bg-[#f4ce78]" href="mailto:info@supremetrading.in">
+              <div className="flex flex-col items-start gap-1">
+                <a className="font-sans text-[13px] leading-tight font-bold tracking-[-0.015em] whitespace-nowrap hover:text-[#356fa7]" href={PRIMARY_PHONE.href}>{PRIMARY_PHONE.display}</a>
+                <a className="font-sans text-[13px] leading-tight font-bold tracking-[-0.015em] whitespace-nowrap hover:text-[#356fa7]" href={SECONDARY_PHONE.href}>{SECONDARY_PHONE.display}</a>
+              </div>
+            </div>
+            <a className="min-h-[108px] p-[18px] border border-[#d8aa42] flex flex-col justify-between bg-[#efc35f] text-[#123451] transition-colors hover:bg-[#f4ce78]" href={`mailto:${CONTACT_EMAIL}`}>
               <span className="text-[9px] font-black tracking-[0.11em] uppercase text-[#71521f]">Email</span>
-              <strong className="font-sans text-[14px] leading-tight font-bold tracking-[-0.015em] break-words">info@supremetrading.in</strong>
+              <strong className="font-sans text-[14px] leading-tight font-bold tracking-[-0.015em] break-words">{CONTACT_EMAIL}</strong>
             </a>
           </div>
         </div>

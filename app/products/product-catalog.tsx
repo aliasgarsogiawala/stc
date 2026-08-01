@@ -4,8 +4,9 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { CatalogCategory } from "./catalog-data";
 import { WhatsApp } from "../icons";
+import { WHATSAPP_NUMBER } from "../contact-details";
 
-const WA_NUMBER = "919920755226";
+const WA_NUMBER = WHATSAPP_NUMBER;
 function waHref(product: string) {
   const text = `Hi Supreme Trading, I'd like to enquire about ${product}. Please share grade, packing and availability.`;
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;

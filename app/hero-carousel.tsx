@@ -164,12 +164,12 @@ export default function HeroCarousel() {
           <p className="eyebrow hc-eyebrow"><span /> {current.eyebrow}</p>
           <h1>{current.title}</h1>
           <p className="hc-lead">{current.lead}</p>
-          <div className="hc-actions">
-            <Link className="button" href={current.cta.href}>{current.cta.label}</Link>
-            <Link className="text-link" href="/contact#enquiry">Send enquiry</Link>
-          </div>
         </div>
 
+        <div className="hc-actions">
+          <Link className="button" href={current.cta.href}>{current.cta.label}</Link>
+          <Link className="text-link" href="/contact#enquiry">Send enquiry</Link>
+        </div>
       </div>
     </section>
   );

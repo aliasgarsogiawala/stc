@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Libre_Franklin, Source_Sans_3 } from "next/font/google";
 import SiteMotion from "./site-motion";
 import { JsonLd, organizationJsonLd, websiteJsonLd } from "./seo";
 import "./globals.css";
 
-const display = Space_Grotesk({
+const display = Libre_Franklin({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  display: "swap",
 });
 
-const sans = Manrope({
+const sans = Source_Sans_3({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

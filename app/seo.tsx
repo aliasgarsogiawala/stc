@@ -1,4 +1,10 @@
 import type { Metadata } from "next";
+import {
+  CONTACT_EMAIL,
+  MUMBAI_OFFICE,
+  PRIMARY_PHONE,
+  SECONDARY_PHONE,
+} from "./contact-details";
 
 export const SITE_URL = "https://supremetrading.in";
 export const SITE_NAME = "Supreme Trading Corp";
@@ -50,16 +56,16 @@ export const organizationJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/supreme/supreme_logo@3x.png`,
-  email: "info@supremetrading.in",
-  telephone: "+91-22-2345-5226",
+  email: CONTACT_EMAIL,
+  telephone: [PRIMARY_PHONE.tel, SECONDARY_PHONE.tel],
   foundingDate: "2002",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "51/A, Essaji Street, Vadgadi, Masjid Bunder (W)",
-    addressLocality: "Mumbai",
-    postalCode: "400003",
-    addressRegion: "Maharashtra",
-    addressCountry: "IN",
+    streetAddress: MUMBAI_OFFICE.streetAddress,
+    addressLocality: MUMBAI_OFFICE.locality,
+    postalCode: MUMBAI_OFFICE.postalCode,
+    addressRegion: MUMBAI_OFFICE.region,
+    addressCountry: MUMBAI_OFFICE.country,
   },
 };
 

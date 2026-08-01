@@ -6,8 +6,14 @@ import ContactForm from "./contact-form";
 import { LocationCards, LocationMap, LocationProvider } from "./contact-locations";
 import { ArrowRight, ArrowUpRight, Mail, Phone, WhatsApp } from "../icons";
 import { createPageMetadata } from "../seo";
+import {
+  CONTACT_EMAIL,
+  PRIMARY_PHONE,
+  SECONDARY_PHONE,
+  WHATSAPP_NUMBER,
+} from "../contact-details";
 
-const WA_HREF = `https://wa.me/919920755226?text=${encodeURIComponent("Hi Supreme Trading, I'd like to make a product enquiry.")}`;
+const WA_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Supreme Trading, I'd like to make a product enquiry.")}`;
 
 export const metadata = createPageMetadata({
   title: "Contact Supreme Trading Corp | Product & Bulk Enquiries",
@@ -61,17 +67,23 @@ export default function ContactPage() {
 
       <section className="bg-[#dceaf6] text-[#122c44]">
         <div className="max-w-[1480px] mx-auto px-[clamp(22px,5vw,76px)] grid grid-cols-3 max-[880px]:grid-cols-1">
-          <a className="min-h-[160px] py-8 pr-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-[#356fa7]/20 group" href="tel:+912223455226">
+          <div className="min-h-[160px] py-8 pr-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-[#356fa7]/20">
             <span className="flex items-center gap-3 text-[#356fa7] text-[9px] font-extrabold tracking-[0.1em] uppercase"><Phone /> Call the desk</span>
-            <strong className="flex items-center justify-between gap-4 text-[clamp(17px,2vw,24px)] font-bold tracking-[-0.025em]">+91 22 2345 5226 <ArrowUpRight /></strong>
-          </a>
-          <a className="min-h-[160px] py-8 px-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-[#356fa7]/20 group" href="mailto:info@supremetrading.in">
+            <div className="grid gap-2">
+              {[PRIMARY_PHONE, SECONDARY_PHONE].map((phone) => (
+                <a className="group flex items-center justify-between gap-4 text-[clamp(16px,1.65vw,21px)] font-bold tracking-[-0.025em]" href={phone.href} key={phone.tel}>
+                  {phone.display} <ArrowUpRight />
+                </a>
+              ))}
+            </div>
+          </div>
+          <a className="min-h-[160px] py-8 px-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-[#356fa7]/20 group" href={`mailto:${CONTACT_EMAIL}`}>
             <span className="flex items-center gap-3 text-[#356fa7] text-[9px] font-extrabold tracking-[0.1em] uppercase"><Mail /> Email</span>
-            <strong className="flex items-center justify-between gap-4 text-[clamp(15px,1.5vw,20px)] font-bold tracking-[-0.025em] break-all">info@supremetrading.in <ArrowUpRight /></strong>
+            <strong className="flex items-center justify-between gap-4 text-[clamp(15px,1.5vw,20px)] font-bold tracking-[-0.025em] break-all">{CONTACT_EMAIL} <ArrowUpRight /></strong>
           </a>
           <a className="min-h-[160px] py-8 pl-[clamp(20px,3vw,44px)] flex flex-col justify-between group" href={WA_HREF} target="_blank" rel="noopener noreferrer">
             <span className="flex items-center gap-3 text-[#356fa7] text-[9px] font-extrabold tracking-[0.1em] uppercase"><WhatsApp className="text-[#27935b]" /> WhatsApp</span>
-            <strong className="flex items-center justify-between gap-4 text-[clamp(17px,2vw,24px)] font-bold tracking-[-0.025em]">+91 99207 55226 <ArrowUpRight /></strong>
+            <strong className="flex items-center justify-between gap-4 text-[clamp(17px,2vw,24px)] font-bold tracking-[-0.025em]">{PRIMARY_PHONE.display} <ArrowUpRight /></strong>
           </a>
         </div>
       </section>
@@ -102,8 +114,8 @@ export default function ContactPage() {
       </LocationProvider>
 
       <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden min-[900px]:grid border-y border-l border-[#173a57]/20 bg-white shadow-[0_12px_35px_rgba(15,45,73,0.13)]" aria-label="Quick contact">
-        <a className="w-12 h-12 grid place-items-center border-b border-[#173a57]/15 text-[#245b8a] hover:bg-[#245b8a] hover:text-white transition-colors" href="tel:+912223455226" aria-label="Call Supreme Trading Corp" title="Call"><Phone /></a>
-        <a className="w-12 h-12 grid place-items-center border-b border-[#173a57]/15 text-[#245b8a] hover:bg-[#245b8a] hover:text-white transition-colors" href="mailto:info@supremetrading.in" aria-label="Email Supreme Trading Corp" title="Email"><Mail /></a>
+        <a className="w-12 h-12 grid place-items-center border-b border-[#173a57]/15 text-[#245b8a] hover:bg-[#245b8a] hover:text-white transition-colors" href={PRIMARY_PHONE.href} aria-label={`Call Supreme Trading Corp at ${PRIMARY_PHONE.display}`} title="Call"><Phone /></a>
+        <a className="w-12 h-12 grid place-items-center border-b border-[#173a57]/15 text-[#245b8a] hover:bg-[#245b8a] hover:text-white transition-colors" href={`mailto:${CONTACT_EMAIL}`} aria-label="Email Supreme Trading Corp" title="Email"><Mail /></a>
         <a className="w-12 h-12 grid place-items-center text-[#25a05a] hover:bg-[#25a05a] hover:text-white transition-colors" href={WA_HREF} target="_blank" rel="noopener noreferrer" aria-label="Message Supreme Trading Corp on WhatsApp" title="WhatsApp"><WhatsApp /></a>
       </div>
 

@@ -4,41 +4,9 @@ import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
 import { ArrowRight } from "../icons";
 import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../seo";
+import { categoryImages, categoryOfferings, categoryTones, dedicatedPages } from "./category-config";
 import { getCatalog } from "./catalog-data";
 import ProductGridPlayground from "./product-grid-playground";
-
-// Categories with their own tailored landing page.
-const dedicatedPages: Record<string, string> = {
-  honey: "/products/honey",
-  petals: "/products/petals",
-  "herbs-spices": "/products/herbs",
-  "food-herbs": "/products/food-ingredients",
-  industrial: "/products/chemicals",
-};
-
-const categoryImages: Record<string, string> = {
-  "herbs-spices": "/supreme/generated/medicinal-herbs-flatlay.jpg",
-  petals: "/supreme/generated/petals-flatlay-full-hero.png",
-  honey: "/supreme/generated/honey-flatlay-full-hero.png",
-  "food-herbs": "/supreme/generated/food-herbs-flatlay-full-hero.png",
-  industrial: "/supreme/generated/industrial-flatlay-full-hero.png",
-};
-
-const categoryTones: Record<string, string> = {
-  "herbs-spices": "bg-[#e7eee8]",
-  petals: "bg-[#edf2f7]",
-  honey: "bg-[#f3e8cf]",
-  "food-herbs": "bg-[#efe5da]",
-  industrial: "bg-[#dceaf3]",
-};
-
-const categoryOfferings: Record<string, string[]> = {
-  "herbs-spices": ["Whole herbs", "Roots & barks", "Seeds & flowers", "Trade spices"],
-  petals: ["Rose petals", "Hibiscus petals", "Chamomile petals", "Traditional petals"],
-  honey: ["Multiflora honey", "Forest honey", "Monofloral honey", "Bulk packing"],
-  "food-herbs": ["Dehydrated vegetables", "Ayurvedic powders", "Ground spices", "Spray-dried powders"],
-  industrial: ["Resins", "Performance additives", "Pigments", "Cellulose & process chemicals"],
-};
 
 const description = "Explore Supreme Trading Corp's industrial chemicals, food herbs, petals, botanicals and honey categories for bulk and export supply.";
 

@@ -1,103 +1,239 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { PRIMARY_PHONE } from "./contact-details";
+import { productCategoryCards } from "./products/category-config";
 
 type SiteHeaderProps = {
   theme?: "light" | "solid";
 };
 
-const productLinks = [
-  { href: "/products/herbs", label: "Medicinal herbs & spices" },
-  { href: "/products/honey", label: "Honey" },
-  { href: "/products/petals", label: "Petals" },
-  { href: "/products/food-ingredients", label: "Food herbs" },
-  { href: "/products/chemicals", label: "Industrial chemicals" },
+const productLinks = productCategoryCards.map((category) => ({
+  href: category.href,
+  label: category.name,
+}));
+
+const primaryLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/products", label: "Products" },
+  { href: "/contact", label: "Contact" },
 ];
 
-const navLinkClass =
-  "relative py-3 text-[16px] font-semibold tracking-[-0.012em] text-[#24384b]/82 hover:text-[#0d2a45] transition-colors " +
-  "after:absolute after:left-0 after:bottom-1 after:h-[2px] after:w-full after:origin-right after:scale-x-0 " +
-  "after:bg-[#2d68a0] after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100";
+function ArrowUpRight() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M4 14 14 4M7 4h7v7" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
 
 export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
+
   return (
     <header
-      className={`site-header fixed inset-x-0 top-0 z-50 grid grid-cols-[1fr_auto_1fr] max-[1060px]:grid-cols-[1fr_auto] items-center gap-[28px] h-[82px] max-[720px]:h-[70px] px-[clamp(22px,4.5vw,78px)] max-[720px]:px-5 border-b border-[#16344f]/15 backdrop-blur-xl backdrop-saturate-150 ${
-        theme === "solid" ? "bg-[#faf9f5]/98" : "bg-[#faf9f5]/94"
+      className={`site-header block fixed inset-x-0 top-0 z-50 h-[82px] max-[720px]:h-[74px] p-0 shadow-none backdrop-blur-xl backdrop-saturate-150 ${
+        theme === "solid" ? "bg-[#fbfbf8]/98" : "bg-[#fbfbf8]/96"
       }`}
     >
-      <Link className="justify-self-start inline-flex" href="/" aria-label="Supreme Trading Corp home">
-        <Image
-          src="/supreme/supreme_logo@3x.png"
-          alt="Supreme Trading Corp"
-          width={1071}
-          height={270}
-          className="w-[clamp(230px,18vw,280px)] max-[720px]:w-[180px] max-[390px]:w-[164px] h-auto"
-          priority
-          unoptimized
-        />
-      </Link>
+      <div className="h-full grid grid-cols-[1fr_auto_1fr] max-[1120px]:grid-cols-[1fr_auto]">
+        <Link
+          className="group/logo h-full px-[clamp(24px,5vw,82px)] max-[720px]:px-5 inline-flex items-center justify-start"
+          href="/"
+          aria-label="Supreme Trading Corp home"
+        >
+          <Image
+            src="/supreme/supreme_logo@3x.png"
+            alt="Supreme Trading Corp"
+            width={1071}
+            height={270}
+            className="w-[clamp(230px,18vw,280px)] max-[720px]:w-[180px] max-[390px]:w-[164px] h-auto transition-opacity duration-300 group-hover/logo:opacity-80"
+            preload
+            unoptimized
+          />
+        </Link>
 
-      <nav className="hidden min-[1060px]:flex items-center gap-[clamp(26px,3vw,48px)]" aria-label="Primary navigation">
-        <Link className={navLinkClass} href="/">Home</Link>
-        <Link className={navLinkClass} href="/about">About</Link>
-        <div className="group/products relative">
-          <Link className={`${navLinkClass} inline-flex items-center gap-2`} href="/products">
-            Products
-            <svg className="w-3 h-3 transition-transform duration-300 group-hover/products:rotate-180 group-focus-within/products:rotate-180" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="m2.5 4.5 3.5 3 3.5-3" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
-          </Link>
-          <div className="invisible opacity-0 translate-y-2 group-hover/products:visible group-hover/products:opacity-100 group-hover/products:translate-y-0 group-focus-within/products:visible group-focus-within/products:opacity-100 group-focus-within/products:translate-y-0 absolute top-[calc(100%-2px)] left-1/2 -translate-x-1/2 w-[270px] pt-5 transition-[opacity,transform,visibility] duration-200">
-            <div className="border border-[#173a57]/16 bg-[#f8fbfd] p-2">
-              <Link className="flex items-center justify-between px-4 py-3.5 border-b border-[#173a57]/12 text-[13px] font-bold text-[#123451] hover:bg-[#e7f0f8]" href="/products">
-                All categories
-                <span aria-hidden="true">→</span>
-              </Link>
-              {productLinks.map((link) => (
-                <Link key={link.href} className="block px-4 py-3 text-[13px] font-semibold text-[#40556a] hover:bg-[#e7f0f8] hover:text-[#174f84] transition-colors" href={link.href}>
+        <div className="hidden min-[1120px]:contents">
+            <nav className="h-full justify-self-center flex items-stretch gap-[clamp(26px,2.8vw,46px)]" aria-label="Primary navigation">
+              {primaryLinks.map((link) =>
+                link.href === "/products" ? (
+                  <div className="group/products relative h-full flex items-stretch" key={link.href}>
+                    <Link
+                      className={`group/nav-link relative h-full inline-flex items-center gap-2 text-[15px] font-semibold tracking-[-0.01em] transition-colors ${
+                        isActive(link.href) ? "text-[#286fa9]" : "text-[#2c4358] hover:text-[#286fa9]"
+                      }`}
+                      href={link.href}
+                    >
+                      {link.label}
+                      <svg
+                        className="h-3 w-3 transition-transform duration-300 group-hover/products:rotate-180 group-focus-within/products:rotate-180"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path d="m2.5 4.5 3.5 3 3.5-3" stroke="currentColor" strokeWidth="1.5" />
+                      </svg>
+                      <span
+                        className={`absolute inset-x-0 bottom-0 h-[2px] origin-left bg-[#3f7fb7] transition-transform duration-300 ${
+                          isActive(link.href)
+                            ? "scale-x-100"
+                            : "scale-x-0 group-hover/nav-link:scale-x-100"
+                        }`}
+                        aria-hidden="true"
+                      />
+                    </Link>
+
+                    <div className="invisible absolute left-1/2 top-full w-[290px] -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-[opacity,transform,visibility] duration-200 group-hover/products:visible group-hover/products:translate-y-0 group-hover/products:opacity-100 group-focus-within/products:visible group-focus-within/products:translate-y-0 group-focus-within/products:opacity-100">
+                      <div className="bg-[#fbfcfd] p-2">
+                        <Link
+                          className="flex min-h-[48px] items-center justify-between px-4 bg-[#edf5fb] text-[12px] font-bold text-[#286fa9]"
+                          href="/products"
+                        >
+                          All product categories
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                        {productLinks.map((product) => (
+                          <Link
+                            key={product.href}
+                            className={`flex min-h-[45px] items-center px-4 text-[13px] font-semibold transition-colors ${
+                              pathname === product.href
+                                ? "bg-[#e5f0f8] text-[#22679f]"
+                                : "text-[#40576b] hover:bg-[#edf5fb] hover:text-[#22679f]"
+                            }`}
+                            href={product.href}
+                          >
+                            {product.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    className={`group/nav-link relative h-full inline-flex items-center text-[15px] font-semibold tracking-[-0.01em] transition-colors ${
+                      isActive(link.href) ? "text-[#286fa9]" : "text-[#2c4358] hover:text-[#286fa9]"
+                    }`}
+                    href={link.href}
+                    key={link.href}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute inset-x-0 bottom-0 h-[2px] origin-left bg-[#3f7fb7] transition-transform duration-300 ${
+                        isActive(link.href)
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover/nav-link:scale-x-100"
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </Link>
+                ),
+              )}
+            </nav>
+
+            <Link
+              className="group/enquire h-full justify-self-end min-w-[174px] px-5 bg-[#3c79ae] text-white inline-flex items-center justify-between gap-5 transition-colors duration-300 hover:bg-[#326b9d]"
+              href="/contact#enquiry"
+            >
+              <span className="text-[13px] font-bold">Send an enquiry</span>
+              <span className="w-4 transition-transform duration-300 group-hover/enquire:translate-x-0.5 group-hover/enquire:-translate-y-0.5">
+                <ArrowUpRight />
+              </span>
+            </Link>
+        </div>
+
+        <details className="group hidden max-[1120px]:block relative self-center justify-self-end mr-5">
+          <summary
+            className="list-none cursor-pointer w-11 h-11 border border-[#2f6fa9]/38 grid place-items-center text-[#174f84] [&::-webkit-details-marker]:hidden"
+            aria-label="Open navigation menu"
+          >
+            <span className="w-[18px] h-[14px] flex flex-col justify-between" aria-hidden="true">
+              <i className="block w-full h-[1.5px] bg-current transition-transform duration-300 group-open:translate-y-[6.25px] group-open:rotate-45" />
+              <i className="block w-full h-[1.5px] bg-current transition-opacity duration-200 group-open:opacity-0" />
+              <i className="block w-full h-[1.5px] bg-current transition-transform duration-300 group-open:-translate-y-[6.25px] group-open:-rotate-45" />
+            </span>
+          </summary>
+
+          <nav
+            className="absolute right-0 top-[52px] grid w-[min(350px,calc(100vw-40px))] border border-[#2f6fa9]/20 bg-[#fbfcfd]"
+            aria-label="Mobile navigation"
+          >
+            <div className="px-5 pt-2">
+              {primaryLinks.slice(0, 2).map((link) => (
+                <Link
+                  className={`flex min-h-[52px] items-center justify-between border-b border-[#2f6fa9]/12 text-[15px] font-semibold ${
+                    isActive(link.href) ? "text-[#17609a]" : "text-[#314a60]"
+                  }`}
+                  href={link.href}
+                  key={link.href}
+                >
                   {link.label}
+                  {isActive(link.href) && <span className="h-1.5 w-1.5 bg-[#3f7fb7]" aria-hidden="true" />}
                 </Link>
               ))}
-            </div>
-          </div>
-        </div>
-        <Link className={navLinkClass} href="/contact">Contact</Link>
-      </nav>
 
-      <Link
-        className="justify-self-end max-[1060px]:hidden inline-flex items-center justify-center min-h-[46px] px-[24px] border border-[#356fa7] bg-[#356fa7] text-white text-[14px] font-bold tracking-[-0.005em] transition-colors hover:bg-[#2d6193] hover:border-[#2d6193]"
-        href="/contact#enquiry"
-      >
-        Enquire now
-      </Link>
+              <details className="group/mobile-products border-b border-[#2f6fa9]/12">
+                <summary className="list-none cursor-pointer min-h-[52px] flex items-center justify-between text-[15px] font-semibold text-[#314a60] [&::-webkit-details-marker]:hidden">
+                  Products
+                  <svg
+                    className="h-3 w-3 transition-transform group-open/mobile-products:rotate-180"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path d="m2.5 4.5 3.5 3 3.5-3" stroke="currentColor" strokeWidth="1.5" />
+                  </svg>
+                </summary>
+                <div className="grid pb-3">
+                  <Link className="py-2.5 text-[12px] font-bold text-[#17609a]" href="/products">
+                    View all categories
+                  </Link>
+                  {productLinks.map((product) => (
+                    <Link
+                      key={product.href}
+                      className={`flex items-center justify-between py-2.5 text-[13px] font-medium ${
+                        pathname === product.href ? "text-[#17609a]" : "text-[#526b81]"
+                      }`}
+                      href={product.href}
+                    >
+                      {product.label}
+                      <span className="w-3.5 opacity-45"><ArrowUpRight /></span>
+                    </Link>
+                  ))}
+                </div>
+              </details>
 
-      <details className="group hidden max-[1060px]:block relative justify-self-end">
-        <summary className="list-none cursor-pointer w-11 h-11 border border-[#123451] grid place-items-center text-[#123451] [&::-webkit-details-marker]:hidden" aria-label="Open navigation menu">
-          <span className="w-[18px] h-[14px] flex flex-col justify-between" aria-hidden="true">
-            <i className="block w-full h-[1.5px] bg-current transition-transform duration-300 group-open:translate-y-[6.25px] group-open:rotate-45" />
-            <i className="block w-full h-[1.5px] bg-current transition-opacity duration-200 group-open:opacity-0" />
-            <i className="block w-full h-[1.5px] bg-current transition-transform duration-300 group-open:-translate-y-[6.25px] group-open:-rotate-45" />
-          </span>
-        </summary>
-        <nav className="w-[250px] p-5 grid border border-[#16344f]/15 bg-[#faf9f5] absolute top-[48px] right-0 shadow-[0_22px_50px_rgba(17,42,64,0.14)]" aria-label="Mobile navigation">
-          <Link className="py-3.5 border-b border-[#16344f]/12 text-[14px] font-semibold tracking-[-0.01em]" href="/">Home</Link>
-          <Link className="py-3.5 border-b border-[#16344f]/12 text-[14px] font-semibold tracking-[-0.01em]" href="/about">About</Link>
-          <details className="group/mobile-products border-b border-[#16344f]/12">
-            <summary className="list-none cursor-pointer py-3.5 flex items-center justify-between text-[14px] font-semibold tracking-[-0.01em] [&::-webkit-details-marker]:hidden">
-              Products
-              <span className="text-lg font-normal transition-transform group-open/mobile-products:rotate-45" aria-hidden="true">+</span>
-            </summary>
-            <div className="pb-3 grid">
-              <Link className="py-2 text-[12px] font-bold text-[#174f84]" href="/products">All categories</Link>
-              {productLinks.map((link) => (
-                <Link key={link.href} className="py-2 text-[12px] font-medium text-[#52677b]" href={link.href}>{link.label}</Link>
-              ))}
+              <Link
+                className={`flex min-h-[52px] items-center justify-between border-b border-[#2f6fa9]/12 text-[15px] font-semibold ${
+                  isActive("/contact") ? "text-[#17609a]" : "text-[#314a60]"
+                }`}
+                href="/contact"
+              >
+                Contact
+                {isActive("/contact") && <span className="h-1.5 w-1.5 bg-[#3f7fb7]" aria-hidden="true" />}
+              </Link>
             </div>
-          </details>
-          <Link className="py-3.5 border-b border-[#16344f]/12 text-[14px] font-semibold tracking-[-0.01em]" href="/contact">Contact</Link>
-          <Link className="mt-5 min-h-11 px-4 grid place-items-center bg-[#356fa7] text-white text-[12px] font-bold tracking-[0.025em]" href="/contact#enquiry">Enquire now</Link>
-        </nav>
-      </details>
+
+            <div className="m-3 mt-5 grid grid-cols-2 border border-[#2f6fa9]/14">
+              <a className="min-h-[46px] px-4 flex items-center text-[12px] font-semibold text-[#31516d]" href={PRIMARY_PHONE.href}>
+                Call the desk
+              </a>
+              <Link
+                className="min-h-[46px] px-4 bg-[#3c79ae] text-white flex items-center justify-between gap-3 text-[12px] font-bold"
+                href="/contact#enquiry"
+              >
+                Enquire
+                <span className="w-3.5"><ArrowUpRight /></span>
+              </Link>
+            </div>
+          </nav>
+        </details>
+      </div>
     </header>
   );
 }

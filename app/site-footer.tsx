@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  CONTACT_EMAIL,
+  MUMBAI_OFFICE,
+  PRIMARY_PHONE,
+  SECONDARY_PHONE,
+} from "./contact-details";
 
 export default function SiteFooter() {
   return (
@@ -42,12 +48,16 @@ export default function SiteFooter() {
             <div className="footer-column footer-office">
               <p className="footer-column-heading">Mumbai head office</p>
               <address>
-                51/A, Essaji Street, Vadgadi,
+                {MUMBAI_OFFICE.lineOne}
                 <br />
-                Masjid Bunder (W), Mumbai 400003
+                {MUMBAI_OFFICE.lineTwo}
               </address>
-              <a href="tel:+912223455226">+91 22 2345 5226</a>
-              <a href="mailto:info@supremetrading.in">info@supremetrading.in</a>
+              <div className="footer-phone-links">
+                <a href={PRIMARY_PHONE.href}>{PRIMARY_PHONE.compactDisplay}</a>
+                <span aria-hidden="true">/</span>
+                <a href={SECONDARY_PHONE.href}>{SECONDARY_PHONE.compactDisplay}</a>
+              </div>
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             </div>
           </div>
 
