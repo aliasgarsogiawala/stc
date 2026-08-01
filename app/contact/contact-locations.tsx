@@ -57,9 +57,9 @@ export function LocationCards() {
 
   return (
     <section className="py-[clamp(76px,8vw,112px)] px-[clamp(22px,5vw,76px)] bg-white gs-reveal">
-      <div className="max-w-[1360px] mx-auto">
+      <div className="max-w-[1640px] mx-auto">
         <div className="max-w-[720px] mx-auto mb-14 text-center">
-          <p className="mb-4 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Office network</p>
+          <p className="mb-4 text-[#2d68a0] text-[clamp(11px,0.78vw,13px)] font-extrabold tracking-[0.1em] uppercase">Office network</p>
           <h2 className="m-0 font-heading text-[clamp(42px,5vw,64px)] font-semibold leading-none tracking-[-0.03em]">Locations</h2>
         </div>
 
@@ -85,12 +85,12 @@ export function LocationCards() {
                       ? "border-[#356fa7] bg-[#356fa7] text-white"
                       : "border-[#2d68a0]/28 bg-white text-[#2d68a0]"
                   }`}><MapPin /></span>
-                  <span className={`text-[10px] font-bold tracking-[0.1em] ${active ? "text-[#356fa7]" : "text-[#7b8a98]"}`}>{String(index + 1).padStart(2, "0")}</span>
+                  <span className={`text-[clamp(11px,0.78vw,13px)] font-bold tracking-[0.1em] ${active ? "text-[#356fa7]" : "text-[#7b8a98]"}`}>{String(index + 1).padStart(2, "0")}</span>
                 </div>
                 <div className="mt-auto pt-14">
-                  <p className={`mb-3 text-[10px] font-extrabold tracking-[0.09em] uppercase ${active ? "text-[#356fa7]" : "text-[#7b8a98]"}`}>{office.type}</p>
+                  <p className={`mb-3 text-[clamp(11px,0.78vw,13px)] font-extrabold tracking-[0.09em] uppercase ${active ? "text-[#356fa7]" : "text-[#7b8a98]"}`}>{office.type}</p>
                   <h3 className={`mb-5 font-heading text-[clamp(32px,3vw,42px)] leading-none font-semibold tracking-[-0.03em] ${active ? "text-[#174f84]" : ""}`}>{office.city}</h3>
-                  <address className="max-w-[410px] m-0 text-[#617181] text-[13px] font-medium not-italic leading-[1.75]">{office.address}</address>
+                  <address className="max-w-[410px] m-0 text-[#617181] text-[clamp(14px,1vw,18px)] font-medium not-italic leading-[1.75]">{office.address}</address>
                 </div>
               </button>
             );

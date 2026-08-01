@@ -30,16 +30,16 @@ export default function ContactForm() {
     window.location.href = `mailto:info@supremetrading.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
-  const labelCls = "group grid gap-2 text-[#627384] text-[10px] font-bold tracking-[0.045em]";
+  const labelCls = "group grid gap-2 text-[#627384] text-[clamp(11px,0.78vw,13px)] font-bold tracking-[0.045em]";
   const inputCls = "w-full h-[48px] px-0 border-0 border-b border-[#173a57]/22 rounded-none outline-0 bg-transparent text-[#102b45] text-[15px] font-medium normal-case placeholder:text-[#9aa6af] placeholder:font-normal transition-[border-color,background-color] focus:border-[#174ea6]";
 
   return (
     <form className="bg-white border border-[#173a57]/18 border-t-[4px] border-t-[#174ea6]" onSubmit={handleSubmit}>
       <div className="px-[clamp(24px,3.5vw,44px)] py-[clamp(25px,3vw,36px)] border-b border-[#173a57]/12 grid grid-cols-[auto_1fr] max-[620px]:grid-cols-1 gap-x-8 gap-y-3 items-start">
-        <span className="pt-1 text-[#174ea6] text-[11px] font-bold tracking-[0.045em]">STC / Enquiry</span>
+        <span className="pt-1 text-[#174ea6] text-[clamp(12px,0.85vw,15px)] font-bold tracking-[0.045em]">STC / Enquiry</span>
         <div>
           <h2 className="m-0 font-heading text-[clamp(32px,3.4vw,44px)] font-semibold leading-none tracking-[-0.03em] text-[#102b45]">Buying requirement</h2>
-          <p className="mt-3 mb-0 max-w-[580px] text-[#667580] text-xs leading-[1.7]">Enter the commercial details available to you. Submitting opens a prepared email for review before sending.</p>
+          <p className="mt-3 mb-0 max-w-[580px] text-[#667580] text-[clamp(13px,0.92vw,16px)] leading-[1.7]">Enter the commercial details available to you. Submitting opens a prepared email for review before sending.</p>
         </div>
       </div>
 
@@ -75,8 +75,8 @@ export default function ContactForm() {
       </div>
 
       <div className="px-[clamp(24px,3.5vw,44px)] py-6 border-t border-[#173a57]/12 flex max-[620px]:items-stretch max-[620px]:flex-col items-center justify-between gap-5 bg-[#f7f9fb]">
-        <p className="m-0 text-[#71808c] text-[11px] leading-[1.6]">Fields 01–06 are required.</p>
-        <button className="min-h-[50px] px-7 border border-[#123451] bg-[#123451] text-white text-[12px] font-bold tracking-[0.025em] transition-colors hover:bg-[#174ea6] hover:border-[#174ea6]" type="submit">Create enquiry email <span aria-hidden="true">↗</span></button>
+        <p className="m-0 text-[#71808c] text-[clamp(12px,0.85vw,15px)] leading-[1.6]">Fields 01–06 are required.</p>
+        <button className="min-h-[50px] px-7 border border-[#123451] bg-[#123451] text-white text-[clamp(13px,0.95vw,17px)] font-bold tracking-[0.025em] transition-colors hover:bg-[#174ea6] hover:border-[#174ea6]" type="submit">Create enquiry email <span aria-hidden="true">↗</span></button>
       </div>
     </form>
   );

@@ -21,11 +21,11 @@ type PetalProductGridProps = {
 export default function PetalProductGrid({ products }: PetalProductGridProps) {
   return (
     <section
-      className="scroll-mt-24 bg-[#fbfaf5] px-[clamp(22px,6vw,92px)] py-[112px] max-[760px]:px-5 max-[760px]:py-20 gs-reveal"
+      className="scroll-mt-24 bg-[#fbfaf5] px-[clamp(22px,4.5vw,76px)] py-[112px] max-[760px]:px-5 max-[760px]:py-20 gs-reveal"
       id="category-products"
     >
       <div className="mx-auto mb-14 max-w-[820px] text-center">
-        <p className="m-0 text-[10px] font-black uppercase tracking-[0.09em] text-[#356fa7]">
+        <p className="m-0 text-[clamp(11px,0.78vw,13px)] font-black uppercase tracking-[0.09em] text-[#356fa7]">
           Petal range
         </p>
         <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,70px)] font-semibold leading-[0.96] text-[#123451]">
@@ -37,7 +37,7 @@ export default function PetalProductGrid({ products }: PetalProductGridProps) {
         </p>
       </div>
 
-      <div className="mx-auto grid max-w-[1380px] grid-cols-3 gap-x-6 gap-y-9 max-[960px]:grid-cols-2 max-[600px]:grid-cols-1 gs-stagger">
+      <div className="mx-auto grid max-w-[1660px] grid-cols-3 gap-x-6 gap-y-9 max-[960px]:grid-cols-2 max-[600px]:grid-cols-1 gs-stagger">
         {products.map((product, index) => (
           <article
             className="tilt-card group border border-[#173a57]/15 bg-white p-3 transition-[border-color,box-shadow] duration-300 hover:border-[#356fa7]/55 hover:shadow-[0_24px_55px_rgba(26,73,116,0.12)]"
@@ -51,7 +51,7 @@ export default function PetalProductGrid({ products }: PetalProductGridProps) {
                 fill
                 sizes="(max-width: 600px) calc(100vw - 64px), (max-width: 960px) 44vw, 29vw"
               />
-              <span className="absolute left-4 top-4 grid h-10 w-10 place-items-center border border-[#173a57]/15 bg-white/88 text-[9px] font-black tracking-[0.06em] text-[#356fa7] backdrop-blur-sm">
+              <span className="absolute left-4 top-4 grid h-10 w-10 place-items-center border border-[#173a57]/15 bg-white/88 text-[clamp(10px,0.72vw,12px)] font-black tracking-[0.06em] text-[#356fa7] backdrop-blur-sm">
                 {String(index + 1).padStart(2, "0")}
               </span>
             </div>
@@ -63,7 +63,7 @@ export default function PetalProductGrid({ products }: PetalProductGridProps) {
                     {product.name}
                   </h3>
                   {product.detail && (
-                    <p className="mt-2 mb-0 text-[12px] leading-[1.55] text-[#718191]">
+                    <p className="mt-2 mb-0 text-[clamp(13px,0.95vw,17px)] leading-[1.55] text-[#718191]">
                       {product.detail}
                     </p>
                   )}
@@ -72,7 +72,7 @@ export default function PetalProductGrid({ products }: PetalProductGridProps) {
               </div>
 
               <a
-                className="mt-auto w-fit border-b border-[#356fa7] pb-1 text-[11px] font-bold text-[#2d68a0]"
+                className="mt-auto w-fit border-b border-[#356fa7] pb-1 text-[clamp(12px,0.85vw,15px)] font-bold text-[#2d68a0]"
                 href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}
               >
                 Enquire

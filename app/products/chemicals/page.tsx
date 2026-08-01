@@ -64,18 +64,18 @@ export default async function ChemicalsPage() {
         </div>
       </section>
 
-      <section className="py-[112px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 bg-[#e8efed] gs-reveal">
+      <section className="py-[112px] max-[760px]:py-20 px-[clamp(22px,4.5vw,76px)] max-[760px]:px-5 bg-[#e8efed] gs-reveal">
         <div className="max-w-[820px]">
-          <span className="text-[#4d8792] text-[10px] font-black tracking-[0.08em] uppercase">Applications</span>
+          <span className="text-[#4d8792] text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.08em] uppercase">Applications</span>
           <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,72px)] leading-[0.96] font-semibold text-[#102f37]">Built around industrial use</h2>
         </div>
         <div className="mt-14 border border-[#173e47]/18 grid grid-cols-3 max-[900px]:grid-cols-2 max-[580px]:grid-cols-1 gap-px bg-[#173e47]/18 gs-stagger">
           {applications.map((application) => (
             <article className="tilt-card min-h-[230px] p-7 flex flex-col bg-[#f7faf9] transition-colors hover:bg-white" key={application.number}>
-              <span className="text-[#4d8792] text-[10px] font-black">{application.number}</span>
+              <span className="text-[#4d8792] text-[clamp(11px,0.78vw,13px)] font-black">{application.number}</span>
               <div className="mt-auto">
                 <h3 className="mb-2 font-heading text-[28px] leading-none text-[#102f37]">{application.name}</h3>
-                <p className="m-0 text-[#5b6d6d] text-xs leading-[1.65]">{application.detail}</p>
+                <p className="m-0 text-[#5b6d6d] text-[clamp(13px,0.92vw,16px)] leading-[1.65]">{application.detail}</p>
               </div>
             </article>
           ))}
@@ -84,17 +84,17 @@ export default async function ChemicalsPage() {
 
       <CategoryProductBrowser categoryName="industrial chemicals" products={products} theme="chemicals" />
 
-      <section className="py-[108px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[0.75fr_1.25fr] max-[850px]:grid-cols-1 gap-[clamp(48px,8vw,130px)] bg-[#d8e5e2] gs-reveal">
+      <section className="py-[108px] max-[760px]:py-20 px-[clamp(22px,4.5vw,76px)] max-[760px]:px-5 grid grid-cols-[0.75fr_1.25fr] max-[850px]:grid-cols-1 gap-[clamp(48px,8vw,130px)] bg-[#d8e5e2] gs-reveal">
         <div>
-          <span className="text-[#4d8792] text-[10px] font-black tracking-[0.08em] uppercase">Before we quote</span>
+          <span className="text-[#4d8792] text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.08em] uppercase">Before we quote</span>
           <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,68px)] leading-[0.96] font-semibold text-[#102f37]">Send the technical requirement</h2>
         </div>
         <ol className="m-0 p-0 border-t border-[#173e47]/20 list-none gs-stagger">
           {handling.map(([title, detail], index) => (
             <li className="py-6 border-b border-[#173e47]/20 grid grid-cols-[42px_0.6fr_1fr] max-[580px]:grid-cols-[36px_1fr] gap-5 items-start" key={title}>
-              <span className="text-[#4d8792] text-[9px] font-black">{String(index + 1).padStart(2, "0")}</span>
+              <span className="text-[#4d8792] text-[clamp(10px,0.72vw,12px)] font-black">{String(index + 1).padStart(2, "0")}</span>
               <strong className="font-heading text-[22px] leading-none text-[#102f37]">{title}</strong>
-              <p className="m-0 text-[#5b6d6d] text-xs leading-[1.65] max-[580px]:col-start-2">{detail}</p>
+              <p className="m-0 text-[#5b6d6d] text-[clamp(13px,0.92vw,16px)] leading-[1.65] max-[580px]:col-start-2">{detail}</p>
             </li>
           ))}
         </ol>

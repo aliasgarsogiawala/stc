@@ -65,7 +65,7 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
                 link.href === "/products" ? (
                   <div className="group/products relative h-full flex items-stretch" key={link.href}>
                     <Link
-                      className={`group/nav-link relative h-full inline-flex items-center gap-2 text-[15px] font-semibold tracking-[-0.01em] transition-colors ${
+                      className={`group/nav-link relative h-full inline-flex items-center gap-2 text-[clamp(15px,1.1vw,17px)] font-semibold tracking-[-0.01em] transition-colors ${
                         isActive(link.href) ? "text-[#286fa9]" : "text-[#2c4358] hover:text-[#286fa9]"
                       }`}
                       href={link.href}
@@ -92,7 +92,7 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
                     <div className="invisible absolute left-1/2 top-full w-[290px] -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-[opacity,transform,visibility] duration-200 group-hover/products:visible group-hover/products:translate-y-0 group-hover/products:opacity-100 group-focus-within/products:visible group-focus-within/products:translate-y-0 group-focus-within/products:opacity-100">
                       <div className="bg-[#fbfcfd] p-2">
                         <Link
-                          className="flex min-h-[48px] items-center justify-between px-4 bg-[#edf5fb] text-[12px] font-bold text-[#286fa9]"
+                          className="flex min-h-[48px] items-center justify-between px-4 bg-[#edf5fb] text-[clamp(13px,0.95vw,17px)] font-bold text-[#286fa9]"
                           href="/products"
                         >
                           All product categories
@@ -101,7 +101,7 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
                         {productLinks.map((product) => (
                           <Link
                             key={product.href}
-                            className={`flex min-h-[45px] items-center px-4 text-[13px] font-semibold transition-colors ${
+                            className={`flex min-h-[45px] items-center px-4 text-[clamp(14px,1vw,18px)] font-semibold transition-colors ${
                               pathname === product.href
                                 ? "bg-[#e5f0f8] text-[#22679f]"
                                 : "text-[#40576b] hover:bg-[#edf5fb] hover:text-[#22679f]"
@@ -116,7 +116,7 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
                   </div>
                 ) : (
                   <Link
-                    className={`group/nav-link relative h-full inline-flex items-center text-[15px] font-semibold tracking-[-0.01em] transition-colors ${
+                    className={`group/nav-link relative h-full inline-flex items-center text-[clamp(15px,1.1vw,17px)] font-semibold tracking-[-0.01em] transition-colors ${
                       isActive(link.href) ? "text-[#286fa9]" : "text-[#2c4358] hover:text-[#286fa9]"
                     }`}
                     href={link.href}
@@ -190,13 +190,13 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
                   </svg>
                 </summary>
                 <div className="grid pb-3">
-                  <Link className="py-2.5 text-[12px] font-bold text-[#17609a]" href="/products">
+                  <Link className="py-2.5 text-[clamp(13px,0.95vw,17px)] font-bold text-[#17609a]" href="/products">
                     View all categories
                   </Link>
                   {productLinks.map((product) => (
                     <Link
                       key={product.href}
-                      className={`flex items-center justify-between py-2.5 text-[13px] font-medium ${
+                      className={`flex items-center justify-between py-2.5 text-[clamp(14px,1vw,18px)] font-medium ${
                         pathname === product.href ? "text-[#17609a]" : "text-[#526b81]"
                       }`}
                       href={product.href}
@@ -220,11 +220,11 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
             </div>
 
             <div className="m-3 mt-5 grid grid-cols-2 border border-[#2f6fa9]/14">
-              <a className="min-h-[46px] px-4 flex items-center text-[12px] font-semibold text-[#31516d]" href={PRIMARY_PHONE.href}>
+              <a className="min-h-[46px] px-4 flex items-center text-[clamp(13px,0.95vw,17px)] font-semibold text-[#31516d]" href={PRIMARY_PHONE.href}>
                 Call the desk
               </a>
               <Link
-                className="min-h-[46px] px-4 bg-[#3c79ae] text-white flex items-center justify-between gap-3 text-[12px] font-bold"
+                className="min-h-[46px] px-4 bg-[#3c79ae] text-white flex items-center justify-between gap-3 text-[clamp(13px,0.95vw,17px)] font-bold"
                 href="/contact#enquiry"
               >
                 Enquire

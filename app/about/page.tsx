@@ -50,9 +50,9 @@ const qualitySteps = [
 ];
 
 const label =
-  "font-sans text-[#356fa7] text-[10px] font-extrabold tracking-[0.075em] uppercase";
+  "font-sans text-[#356fa7] text-[clamp(11px,0.78vw,14px)] font-extrabold tracking-[0.075em] uppercase";
 const h2 =
-  "font-heading text-[clamp(40px,4.4vw,64px)] leading-[1.02] font-bold tracking-[-0.045em] m-0";
+  "font-heading text-[clamp(40px,4.4vw,68px)] leading-[1.02] font-bold tracking-[-0.045em] m-0";
 
 export default function AboutPage() {
   return (

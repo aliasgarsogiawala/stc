@@ -42,20 +42,20 @@ export default function ContactPage() {
         />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,27,47,0.96)_0%,rgba(11,43,70,0.82)_38%,rgba(11,43,70,0.25)_76%,rgba(11,43,70,0.12)_100%)]" />
 
-        <div className="max-w-[1480px] min-h-[458px] max-[720px]:min-h-[430px] mx-auto px-[clamp(22px,5vw,76px)] py-[58px] flex flex-col justify-between" data-hero-copy>
-          <div className="flex items-center gap-2.5 text-white/65 text-[10px] font-bold tracking-[0.08em] uppercase">
+        <div className="max-w-[1760px] min-h-[458px] max-[720px]:min-h-[430px] mx-auto px-[clamp(22px,5vw,76px)] py-[58px] flex flex-col justify-between" data-hero-copy>
+          <div className="flex items-center gap-2.5 text-white/65 text-[clamp(11px,0.78vw,13px)] font-bold tracking-[0.08em] uppercase">
             <Link className="hover:text-white" href="/">Home</Link>
             <span>/</span>
             <span>Contact</span>
           </div>
 
           <div>
-            <p className="mb-4 text-[#f0bf59] text-[10px] font-extrabold tracking-[0.12em] uppercase">Supreme Trading Corp</p>
+            <p className="mb-4 text-[#f0bf59] text-[clamp(11px,0.78vw,13px)] font-extrabold tracking-[0.12em] uppercase">Supreme Trading Corp</p>
             <h1 className="max-w-[760px] m-0 font-heading text-[clamp(58px,7vw,92px)] font-semibold leading-[0.94] tracking-[-0.035em]">Contact us</h1>
             <p className="max-w-[610px] mt-6 mb-0 text-white/74 text-[15px] leading-[1.8]">
               Product availability, grade specifications, bulk quantities and delivery enquiries are handled by our Mumbai sourcing desk.
             </p>
-            <a className="w-fit mt-8 pb-2 border-b border-[#f0bf59] inline-flex items-center gap-3 text-[11px] font-extrabold tracking-[0.06em] uppercase" href="#enquiry">
+            <a className="w-fit mt-8 pb-2 border-b border-[#f0bf59] inline-flex items-center gap-3 text-[clamp(12px,0.85vw,15px)] font-extrabold tracking-[0.06em] uppercase" href="#enquiry">
               Send a requirement <ArrowRight />
             </a>
           </div>
@@ -66,9 +66,9 @@ export default function ContactPage() {
         <LocationCards />
 
       <section className="bg-[#dceaf6] text-[#122c44]">
-        <div className="max-w-[1480px] mx-auto px-[clamp(22px,5vw,76px)] grid grid-cols-3 max-[880px]:grid-cols-1">
+        <div className="max-w-[1760px] mx-auto px-[clamp(22px,5vw,76px)] grid grid-cols-3 max-[880px]:grid-cols-1">
           <div className="min-h-[160px] py-8 pr-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-[#356fa7]/20">
-            <span className="flex items-center gap-3 text-[#356fa7] text-[9px] font-extrabold tracking-[0.1em] uppercase"><Phone /> Call the desk</span>
+            <span className="flex items-center gap-3 text-[#356fa7] text-[clamp(10px,0.72vw,12px)] font-extrabold tracking-[0.1em] uppercase"><Phone /> Call the desk</span>
             <div className="grid gap-2">
               {[PRIMARY_PHONE, SECONDARY_PHONE].map((phone) => (
                 <a className="group flex items-center justify-between gap-4 text-[clamp(16px,1.65vw,21px)] font-bold tracking-[-0.025em]" href={phone.href} key={phone.tel}>
@@ -78,28 +78,28 @@ export default function ContactPage() {
             </div>
           </div>
           <a className="min-h-[160px] py-8 px-[clamp(20px,3vw,44px)] flex flex-col justify-between border-r max-[880px]:border-r-0 max-[880px]:border-b border-[#356fa7]/20 group" href={`mailto:${CONTACT_EMAIL}`}>
-            <span className="flex items-center gap-3 text-[#356fa7] text-[9px] font-extrabold tracking-[0.1em] uppercase"><Mail /> Email</span>
+            <span className="flex items-center gap-3 text-[#356fa7] text-[clamp(10px,0.72vw,12px)] font-extrabold tracking-[0.1em] uppercase"><Mail /> Email</span>
             <strong className="flex items-center justify-between gap-4 text-[clamp(15px,1.5vw,20px)] font-bold tracking-[-0.025em] break-all">{CONTACT_EMAIL} <ArrowUpRight /></strong>
           </a>
           <a className="min-h-[160px] py-8 pl-[clamp(20px,3vw,44px)] flex flex-col justify-between group" href={WA_HREF} target="_blank" rel="noopener noreferrer">
-            <span className="flex items-center gap-3 text-[#356fa7] text-[9px] font-extrabold tracking-[0.1em] uppercase"><WhatsApp className="text-[#27935b]" /> WhatsApp</span>
+            <span className="flex items-center gap-3 text-[#356fa7] text-[clamp(10px,0.72vw,12px)] font-extrabold tracking-[0.1em] uppercase"><WhatsApp className="text-[#27935b]" /> WhatsApp</span>
             <strong className="flex items-center justify-between gap-4 text-[clamp(17px,2vw,24px)] font-bold tracking-[-0.025em]">{PRIMARY_PHONE.display} <ArrowUpRight /></strong>
           </a>
         </div>
       </section>
 
       <section className="py-[clamp(76px,8vw,112px)] px-[clamp(22px,5vw,76px)] bg-[#f2f4f6] border-y border-[#173a57]/10 gs-reveal" id="enquiry">
-        <div className="max-w-[1360px] mx-auto grid grid-cols-[0.72fr_1.28fr] max-[960px]:grid-cols-1 gap-[clamp(44px,7vw,96px)] items-start">
+        <div className="max-w-[1640px] mx-auto grid grid-cols-[0.72fr_1.28fr] max-[960px]:grid-cols-1 gap-[clamp(44px,7vw,96px)] items-start">
           <aside className="sticky top-[118px] max-[960px]:static">
             <div className="pl-6 border-l-[3px] border-[#174ea6]">
-              <p className="mb-4 text-[#2d68a0] text-[10px] font-extrabold tracking-[0.1em] uppercase">Information required</p>
+              <p className="mb-4 text-[#2d68a0] text-[clamp(11px,0.78vw,13px)] font-extrabold tracking-[0.1em] uppercase">Information required</p>
               <h2 className="m-0 font-heading text-[clamp(36px,4.1vw,52px)] font-semibold leading-[1.02] tracking-[-0.035em]">For an accurate quotation.</h2>
-              <p className="max-w-[420px] mt-6 mb-0 text-[#687681] text-sm leading-[1.8]">The sourcing desk reviews each enquiry against specification, quantity, packing and destination.</p>
+              <p className="max-w-[420px] mt-6 mb-0 text-[#687681] text-[clamp(15px,1.05vw,18px)] leading-[1.8]">The sourcing desk reviews each enquiry against specification, quantity, packing and destination.</p>
             </div>
             <ul className="mt-10 p-0 border-t border-[#173a57]/20 list-none">
               {["Product or material name", "Grade or specification", "Quantity and packing", "Delivery city or country"].map((item, index) => (
-                <li className="group py-[17px] border-b border-[#173a57]/14 grid grid-cols-[36px_1fr_auto] gap-3 items-center text-[12px] font-bold transition-colors hover:text-[#174ea6]" key={item}>
-                  <span className="text-[#2d68a0] text-[9px]">{String(index + 1).padStart(2, "0")}</span>
+                <li className="group py-[17px] border-b border-[#173a57]/14 grid grid-cols-[36px_1fr_auto] gap-3 items-center text-[clamp(13px,0.95vw,17px)] font-bold transition-colors hover:text-[#174ea6]" key={item}>
+                  <span className="text-[#2d68a0] text-[clamp(10px,0.72vw,12px)]">{String(index + 1).padStart(2, "0")}</span>
                   <span>{item}</span>
                   <span className="text-[#9aa5ae] font-normal transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                 </li>

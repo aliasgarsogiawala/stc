@@ -44,7 +44,7 @@ export default async function ProductsPage() {
         </div>
       </section>
 
-      <section id="catalog" className="py-[104px] max-[760px]:py-20 px-[clamp(22px,6vw,92px)] max-[760px]:px-5 gs-reveal" aria-label="Product categories">
+      <section id="catalog" className="py-[104px] max-[760px]:py-20 px-[clamp(22px,4.5vw,76px)] max-[760px]:px-5 gs-reveal" aria-label="Product categories">
         <div className="max-w-[760px] mb-14">
           <h2 className="max-w-[850px] m-0 font-heading text-[clamp(42px,5vw,64px)] font-semibold leading-none tracking-[-0.03em]">Explore the range</h2>
           <p className="max-w-[680px] mt-5 mb-0 text-muted text-[15px] leading-[1.75]">Choose a material family to review the relevant range, sourcing approach and enquiry information.</p>
@@ -65,13 +65,13 @@ export default async function ProductsPage() {
                     className="object-cover object-center transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045]"
                   />
                   <span className="absolute inset-0 bg-[linear-gradient(180deg,transparent_54%,rgba(10,39,65,0.18))]" aria-hidden="true" />
-                  <span className="absolute left-7 top-7 w-11 h-11 border border-[#173a57]/18 bg-white/70 grid place-items-center text-[#174ea6] text-[10px] font-black tracking-[0.08em]">
+                  <span className="absolute left-7 top-7 w-11 h-11 border border-[#173a57]/18 bg-white/70 grid place-items-center text-[#174ea6] text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.08em]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
                 <div className={`product-category-copy p-[clamp(32px,5vw,76px)] flex flex-col justify-center bg-white ${imageFirst ? "order-2" : "order-1"} max-[820px]:order-2`}>
-                  <div className="flex items-center justify-between gap-5 text-[10px] font-extrabold tracking-[0.08em] uppercase">
+                  <div className="flex items-center justify-between gap-5 text-[clamp(11px,0.78vw,13px)] font-extrabold tracking-[0.08em] uppercase">
                     <span className="text-[#2d68a0]">Material family</span>
                     <span className="text-[#7d8994]">{category.products.length} listed</span>
                   </div>
@@ -79,10 +79,10 @@ export default async function ProductsPage() {
                   <p className="max-w-[590px] m-0 text-muted text-[15px] leading-[1.75]">{category.description}</p>
 
                   <div className="mt-9 pt-6 border-t border-[#173a57]/16">
-                    <p className="mb-4 text-[#7b8792] text-[9px] font-extrabold tracking-[0.1em] uppercase">What we offer</p>
+                    <p className="mb-4 text-[#7b8792] text-[clamp(10px,0.72vw,12px)] font-extrabold tracking-[0.1em] uppercase">What we offer</p>
                     <ul className="m-0 p-0 grid grid-cols-2 max-[520px]:grid-cols-1 gap-x-7 list-none">
                       {offers.map((offer) => (
-                        <li className="py-3 border-b border-[#173a57]/11 flex items-center gap-3 text-[#24384b] text-[12px] font-semibold leading-[1.45]" key={offer}>
+                        <li className="py-3 border-b border-[#173a57]/11 flex items-center gap-3 text-[#24384b] text-[clamp(13px,0.95vw,17px)] font-semibold leading-[1.45]" key={offer}>
                           <span className="w-1.5 h-1.5 bg-[#2d68a0]" aria-hidden="true" />
                           {offer}
                         </li>
@@ -90,7 +90,7 @@ export default async function ProductsPage() {
                     </ul>
                   </div>
 
-                  <Link className="w-fit mt-8 inline-flex items-center gap-3 text-[#174ea6] text-[11px] font-extrabold tracking-[0.03em] uppercase group/link" href={href}>
+                  <Link className="w-fit mt-8 inline-flex items-center gap-3 text-[#174ea6] text-[clamp(12px,0.85vw,15px)] font-extrabold tracking-[0.03em] uppercase group/link" href={href}>
                     Explore category <ArrowRight />
                   </Link>
                 </div>
@@ -100,13 +100,13 @@ export default async function ProductsPage() {
         </div>
       </section>
 
-      <section className="min-h-[510px] py-[92px] max-[760px]:py-[78px] px-[clamp(22px,6vw,92px)] max-[760px]:px-5 grid grid-cols-[1.35fr_0.65fr] max-[1100px]:grid-cols-1 gap-20 max-[1100px]:gap-8 items-center bg-[#dceaf6] text-[#122c44] gs-reveal">
+      <section className="min-h-[510px] py-[92px] max-[760px]:py-[78px] px-[clamp(22px,4.5vw,76px)] max-[760px]:px-5 grid grid-cols-[1.35fr_0.65fr] max-[1100px]:grid-cols-1 gap-20 max-[1100px]:gap-8 items-center bg-[#dceaf6] text-[#122c44] gs-reveal">
         <div>
           <p className="eyebrow text-[#356fa7]"><span className="!bg-[#356fa7]" /> Custom requirement</p>
           <h2 className="max-w-[780px] m-0 text-[#122c44] font-heading text-[clamp(42px,5vw,64px)] leading-[0.98] font-semibold">Product sourcing enquiry</h2>
         </div>
         <div>
-          <p className="text-[#526b80] text-sm leading-[1.75]">Include the material name, grade, required quantity, packing preference and destination for a faster response.</p>
+          <p className="text-[#526b80] text-[clamp(15px,1.05vw,18px)] leading-[1.75]">Include the material name, grade, required quantity, packing preference and destination for a faster response.</p>
           <Link className="button mt-4 bg-[#356fa7] border-[#356fa7] text-white hover:bg-[#2d6193]" href="/contact#enquiry">Send requirement</Link>
         </div>
       </section>
