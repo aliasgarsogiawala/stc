@@ -140,7 +140,7 @@ export default function SiteHeader({ theme = "light" }: SiteHeaderProps) {
               className="header-enquiry-button group/enquire self-center justify-self-end"
               href="/contact#enquiry"
             >
-              <span className="header-enquiry-label">Send an enquiry</span>
+              <span className="header-enquiry-label">Send enquiry</span>
               <span className="header-enquiry-icon">
                 <ArrowUpRight />
               </span>
