@@ -125,14 +125,23 @@ export default function Home() {
 
       <section className="min-h-[720px] py-[104px] max-[720px]:py-[84px] px-[clamp(22px,4.5vw,76px)] max-[720px]:px-5 grid grid-cols-[minmax(320px,0.9fr)_minmax(0,1fr)] max-[1060px]:grid-cols-1 gap-[clamp(44px,8vw,120px)] items-center bg-deep text-white relative overflow-hidden gs-reveal before:content-[''] before:absolute before:left-0 before:top-0 before:w-[36%] before:h-full before:bg-clay before:opacity-[0.18]">
         <div className="image-drift w-[min(570px,100%)] p-[clamp(10px,1.5vw,18px)] border border-white/20 rounded-lg justify-self-center bg-[rgba(251,250,245,0.96)] shadow-[0_30px_80px_rgba(0,0,0,0.24)] relative z-[2] -rotate-1">
-          <Image
-            src="/supreme/source/nb.png"
-            alt="Ingredient and liquid material prepared for supply"
-            width={570}
-            height={400}
-            sizes="(max-width: 720px) 92vw, 44vw"
-            className="w-full h-auto rounded block"
-          />
+          <div className="home-product-collage" aria-label="Supreme Trading Corp product categories">
+            <div className="home-product-collage-item">
+              <Image src="/supreme/generated/industrial-flatlay-full-hero.png" alt="Industrial chemicals" fill sizes="(max-width: 720px) 44vw, 20vw" />
+            </div>
+            <div className="home-product-collage-item">
+              <Image src="/supreme/generated/herbs-spices-flatlay-full-hero-v2.png" alt="Medicinal herbs and spices" fill sizes="(max-width: 720px) 38vw, 16vw" />
+            </div>
+            <div className="home-product-collage-item">
+              <Image src="/supreme/generated/honey/honey-editorial-v2.png" alt="Natural honey" fill sizes="(max-width: 720px) 30vw, 12vw" />
+            </div>
+            <div className="home-product-collage-item">
+              <Image src="/supreme/generated/petals-flatlay-full-hero.png" alt="Dried petals" fill sizes="(max-width: 720px) 30vw, 12vw" />
+            </div>
+            <div className="home-product-collage-item">
+              <Image src="/supreme/generated/food-herbs-flatlay-full-hero.png" alt="Food herbs" fill sizes="(max-width: 720px) 38vw, 16vw" />
+            </div>
+          </div>
           <div className="absolute left-[-20px] bottom-[-24px] z-[3] w-[clamp(116px,13vw,140px)] aspect-square rounded-full grid place-content-center gap-[3px] text-center [background:var(--amber-grad)] text-[#241606] shadow-[0_22px_46px_rgba(150,96,10,0.34)]" aria-label="23 years of experience">
             <strong className="font-heading text-[clamp(40px,5vw,48px)] leading-none font-bold">23</strong>
             <span className="text-[clamp(11px,0.78vw,13px)] font-extrabold leading-[1.3] tracking-[0.04em] uppercase">Years of<br />experience</span>

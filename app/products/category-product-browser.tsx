@@ -72,11 +72,8 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
     >
       <div className="grid grid-cols-[minmax(0,1fr)_minmax(280px,0.55fr)] max-[820px]:grid-cols-1 gap-12 items-end">
         <div>
-          <span className={`inline-flex px-3 py-2 border text-[clamp(11px,0.78vw,13px)] font-bold tracking-[0.045em] ${styles.badge}`}>
-            Product index
-          </span>
           <h2 className="max-w-[760px] mt-5 mb-0 font-heading text-[clamp(44px,5vw,70px)] leading-[0.96] font-semibold text-ink">
-            Available materials
+            Product Index
           </h2>
         </div>
 

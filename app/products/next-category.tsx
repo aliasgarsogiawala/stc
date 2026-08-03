@@ -16,11 +16,14 @@ export default function NextCategory({ currentId }: NextCategoryProps) {
         <Image src={image} alt={`${name} prepared for bulk supply`} fill sizes="100vw" />
         <span className="next-category-overlay" aria-hidden="true" />
         <div className="next-category-copy">
-          <h2>{name}</h2>
-          <span className="next-category-button">
-            Explore category
-            <ArrowRight />
-          </span>
+          <div className="next-category-heading">
+            <span className="next-category-direction">
+              Next category
+              <ArrowRight />
+            </span>
+            <h2>{name}</h2>
+          </div>
+          <span className="next-category-button">Explore</span>
         </div>
       </Link>
     </section>

@@ -21,10 +21,8 @@ export default function HoneyHero() {
           <span>Honey</span>
         </div>
         <h1 data-hero-item>Raw Honey</h1>
-        <p className="honey-hero-lead" data-hero-item>Natural honey selected by variant, grade, quantity and packing requirement for food and wellness buyers.</p>
         <div className="honey-hero-actions" data-hero-item>
-          <a className="button button-honey" href="#variants">View variants</a>
-          <Link className="text-link" href="/contact#enquiry">Send requirement</Link>
+          <a className="button button-honey" href="#category-products">View variants</a>
         </div>
       </div>
     </section>

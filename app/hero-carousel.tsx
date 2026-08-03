@@ -156,7 +156,6 @@ export default function HeroCarousel() {
 
       <div className="hc-body">
         <div className="hc-content" key={current.key} ref={contentRef}>
-          <p className="eyebrow hc-eyebrow"><span /> {current.eyebrow}</p>
           <h1>{current.title}</h1>
         </div>
 

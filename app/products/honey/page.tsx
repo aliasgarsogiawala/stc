@@ -2,6 +2,7 @@ import Image from "next/image";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import HoneyHero from "./honey-hero";
+import HoneyCatalog from "./honey-catalog";
 import { collectionPageJsonLd, createPageMetadata, JsonLd } from "../../seo";
 import NextCategory from "../next-category";
 
@@ -67,7 +68,7 @@ const qualities = [
 
 export default function HoneyPage() {
   return (
-    <main className="product-detail-page honey-page">
+    <main className="product-detail-page honey-page prod-page">
       <JsonLd data={collectionPageJsonLd({
         name: "Raw and natural honey",
         description,
@@ -78,99 +79,32 @@ export default function HoneyPage() {
 
       <HoneyHero />
 
-      <section className="honey-intro gs-reveal">
-        <div className="honey-intro-copy">
-          <p className="section-kicker">Honey supply</p>
-          <h2 data-reveal>Selected by variant and requirement</h2>
-          <p>
-            Each variant has a different flavour, colour and end use. We source against the
-            buyer&apos;s required variant, grade, quantity and packing format.
-          </p>
+      <section className="prod-intro gs-reveal">
+        <div className="prod-intro-copy">
+          <h2 data-reveal>Each variant has a different flavour, colour & end use. Sourced against
+            buyer&apos;s required variant & grade</h2>
+          <p />
         </div>
-        <div className="honey-intro-stats">
-          <figure className="honey-intro-photo">
-            <Image
-              src="/supreme/generated/honey/honey-editorial-v2.png"
-              alt="Premium natural honey, honeycomb and wooden dipper"
-              width={1693}
-              height={929}
-            />
-          </figure>
-          <article className="bento-tile bento-honey tilt-card">
-            <span className="bento-tag">Variants</span>
-            <strong data-count="30" data-suffix="+">0</strong>
-            <span>Honey types sourced to spec</span>
-          </article>
-          <article className="bento-tile bento-stat tilt-card">
-            <span className="bento-tag">Packing</span>
-            <strong>Bulk</strong>
-            <span>Drums, pails &amp; retail bottles</span>
-          </article>
+        <div className="prod-intro-media prod-intro-photo">
+          <Image src="/supreme/generated/honey/honey-editorial-v2.png" alt="Premium natural honey, honeycomb and wooden dipper" width={1693} height={929} />
         </div>
       </section>
 
-      <section className="honey-variants" id="variants">
-        <div className="honey-variants-head">
-          <h2 data-reveal>Honey range</h2>
-          <p>Natural and infused varieties available against your required grade and quantity.</p>
+      <section className="prod-quality gs-reveal">
+        <div className="prod-quality-head">
+          <p className="eyebrow prod-eyebrow"><span /> How we handle it</p>
+          <h2 data-reveal>From Hive to Shelf</h2>
         </div>
-
-        <div className="honey-catalog-group">
-          <div className="honey-catalog-heading">
-            <div>
-              <span>01</span>
-              <h3>Natural Honey</h3>
-            </div>
-            <p>{naturalHoney.length} varieties</p>
-          </div>
-          <div className="honey-variant-grid honey-catalog-grid gs-stagger">
-            {naturalHoney.map((variant, index) => (
-              <article className="honey-variant-card honey-catalog-card tilt-card" key={variant.name}>
-                <span className="honey-variant-index">{String(index + 1).padStart(2, "0")}</span>
-                <h3>{variant.name}</h3>
-                {variant.detail && <p>{variant.detail}</p>}
-                <a
-                  className="honey-catalog-enquire"
-                  href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Honey enquiry: ${variant.name}`)}`}
-                >
-                  Enquire
-                </a>
-              </article>
-            ))}
-          </div>
+        <div className="product-process-visual">
+          <Image
+            src="/supreme/generated/honey-hive-to-shelf.png"
+            alt="Honey progressing from apiary through extraction and filtration to shelf-ready jars and bulk pails"
+            fill
+            sizes="100vw"
+          />
+          <span aria-hidden="true" />
         </div>
-
-        <div className="honey-catalog-group honey-catalog-group-infused">
-          <div className="honey-catalog-heading">
-            <div>
-              <span>02</span>
-              <h3>Infused Natural Honey</h3>
-            </div>
-            <p>{infusedHoney.length} varieties</p>
-          </div>
-          <div className="honey-variant-grid honey-catalog-grid gs-stagger">
-            {infusedHoney.map((variant, index) => (
-              <article className="honey-variant-card honey-catalog-card tilt-card" key={variant.name}>
-                <span className="honey-variant-index">{String(index + 1).padStart(2, "0")}</span>
-                <h3>{variant.name}</h3>
-                <a
-                  className="honey-catalog-enquire"
-                  href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Honey enquiry: ${variant.name}`)}`}
-                >
-                  Enquire
-                </a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="honey-quality gs-reveal">
-        <div className="honey-quality-head">
-          <p className="eyebrow honey-eyebrow"><span /> How we handle it</p>
-          <h2 data-reveal>From hive to consignment</h2>
-        </div>
-        <div className="honey-quality-grid gs-stagger">
+        <div className="prod-quality-grid gs-stagger">
           {qualities.map((q) => (
             <article className="tilt-card" key={q.k}>
               <span>{q.k}</span>
@@ -180,6 +114,8 @@ export default function HoneyPage() {
           ))}
         </div>
       </section>
+
+      <HoneyCatalog naturalHoney={naturalHoney} infusedHoney={infusedHoney} />
 
       <NextCategory
         currentId="honey"

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useMemo, useState } from "react";
 import { ArrowUpRight } from "../../icons";
 import type { CatalogProduct } from "../catalog-data";
 
@@ -19,26 +22,75 @@ type PetalProductGridProps = {
 };
 
 export default function PetalProductGrid({ products }: PetalProductGridProps) {
+  const [query, setQuery] = useState("");
+
+  const filtered = useMemo(() => {
+    const normalized = query.trim().toLocaleLowerCase();
+    if (!normalized) return products;
+
+    return products.filter((product) =>
+      [product.name, product.detail, product.subgroup]
+        .filter(Boolean)
+        .some((value) => value!.toLocaleLowerCase().includes(normalized)),
+    );
+  }, [products, query]);
+
   return (
     <section
       className="scroll-mt-24 bg-[#fbfaf5] px-[clamp(22px,4.5vw,76px)] py-[112px] max-[760px]:px-5 max-[760px]:py-20 gs-reveal"
       id="category-products"
     >
-      <div className="mx-auto mb-14 max-w-[820px] text-center">
-        <p className="m-0 text-[clamp(11px,0.78vw,13px)] font-black uppercase tracking-[0.09em] text-[#356fa7]">
-          Petal range
-        </p>
-        <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,70px)] font-semibold leading-[0.96] text-[#123451]">
-          Available products
-        </h2>
-        <p className="mx-auto mt-5 mb-0 max-w-[620px] text-[15px] leading-[1.75] text-[#607384]">
-          Nine dried botanical ingredients, supplied against your required form,
-          grade, quantity and packing specification.
-        </p>
+      <div className="mx-auto max-w-[1660px] grid grid-cols-[minmax(0,1fr)_minmax(280px,0.55fr)] max-[820px]:grid-cols-1 gap-12 items-end">
+        <div className="max-w-[820px]">
+          <h2 className="mt-5 mb-0 font-heading text-[clamp(44px,5vw,70px)] font-semibold leading-[0.96] text-[#123451]">
+            Product Index
+          </h2>
+          <p className="mt-5 mb-0 max-w-[620px] text-[15px] leading-[1.75] text-[#607384]">
+            Nine dried botanical ingredients, supplied against your required form,
+            grade, quantity and packing specification.
+          </p>
+        </div>
+
+        <label className="grid gap-2.5">
+          <span className="text-[clamp(12px,0.85vw,15px)] font-bold tracking-[0.025em] text-[#607384]">Search petals</span>
+          <input
+            className="h-14 px-4 border border-[#173a57]/20 rounded-md outline-none bg-white text-[#123451] text-[clamp(15px,1.05vw,18px)] transition-[border,box-shadow] focus:ring-4 focus:border-[#4d78a5] focus:ring-[#4d78a5]/15"
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Enter product name"
+          />
+        </label>
       </div>
 
+      <div
+        className="mx-auto mt-12 mb-9 max-w-[1660px] pb-4 border-b-2 border-[#123451] flex items-center justify-between gap-5 text-[clamp(13px,0.92vw,16px)] text-[#607384]"
+        aria-live="polite"
+      >
+        <p className="m-0">
+          {filtered.length
+            ? <>Showing <strong className="text-[#123451]">{filtered.length}</strong> of {products.length}</>
+            : "No matching products"}
+        </p>
+        {query && (
+          <button
+            className="pb-1 border-b border-current cursor-pointer bg-transparent text-[#123451] text-[clamp(13px,0.92vw,16px)] font-black"
+            type="button"
+            onClick={() => setQuery("")}
+          >
+            Clear search
+          </button>
+        )}
+      </div>
+
+      {filtered.length === 0 && (
+        <div className="min-h-[280px] grid place-content-center text-[#607384]">
+          No products match “{query}”.
+        </div>
+      )}
+
       <div className="mx-auto grid max-w-[1660px] grid-cols-3 gap-x-6 gap-y-9 max-[960px]:grid-cols-2 max-[600px]:grid-cols-1 gs-stagger">
-        {products.map((product, index) => (
+        {filtered.map((product, index) => (
           <article
             className="tilt-card group border border-[#173a57]/15 bg-white p-3 transition-[border-color,box-shadow] duration-300 hover:border-[#356fa7]/55 hover:shadow-[0_24px_55px_rgba(26,73,116,0.12)]"
             key={product.id}
