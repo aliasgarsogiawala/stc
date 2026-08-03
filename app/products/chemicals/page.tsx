@@ -73,6 +73,15 @@ export default async function ChemicalsPage() {
           <p className="eyebrow prod-eyebrow"><span /> How we handle it</p>
           <h2 data-reveal>From specification to dispatch</h2>
         </div>
+        <div className="product-process-visual">
+          <Image
+            src="/supreme/generated/chemicals-spec-to-dispatch.png"
+            alt="Industrial chemicals moving from specification checks through controlled bag filling to palletised bulk dispatch"
+            fill
+            sizes="100vw"
+          />
+          <span aria-hidden="true" />
+        </div>
         <div className="prod-quality-grid gs-stagger">
           {handling.map(([title, detail], index) => (
             <article className="tilt-card" key={title}>

@@ -6101,7 +6101,7 @@ main {
   }
 
   .catalog-detail-page .product-detail-hero .catalog-breadcrumb {
-    margin-bottom: 42px;
+    margin-bottom: 26px;
   }
 
   .product-detail-hero-media {
@@ -6605,7 +6605,7 @@ main {
 }
 
 .catalog-full-hero-copy .catalog-breadcrumb {
-  margin-bottom: auto;
+  margin-bottom: 26px;
 }
 
 .catalog-full-hero-copy h1 {
