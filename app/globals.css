@@ -4481,9 +4481,12 @@ html {
   background: linear-gradient(145deg, #edf5fa 0%, #dceaf6 100%);
   color: #123451;
 }
-.prod-quality-head { max-width: 720px; margin-bottom: 54px; }
+.prod-quality-head { max-width: min(100%, 1180px); margin-bottom: 54px; }
 .prod-quality-head .prod-eyebrow { color: #356fa7; }
 .prod-quality-head h2 { margin: 14px 0 0; color: #123451; font-family: var(--font-display), sans-serif; font-size: clamp(40px, 4.6vw, 64px); line-height: 1; font-weight: 600; }
+@media (min-width: 921px) {
+  .prod-quality-head h2 { white-space: nowrap; }
+}
 .product-process-visual {
   height: clamp(320px, 42vw, 560px);
   position: relative;
