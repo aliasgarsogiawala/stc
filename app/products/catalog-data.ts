@@ -93,7 +93,7 @@ const sources = [
       ["Wetting & Dispersing", "Additives"], ["Hydroxyethyl Cellulose (HEC)", "Cellulose"],
       ["Organic Pigments", "Water & Solvent Based Pigments"], ["Acetic Acid", "Industrial Chemicals"],
       ["Citric Acid", "Industrial Chemicals"], ["Glycerine", "Industrial Chemicals"],
-      ["Titanium Dioxide", "Industrial Chemicals"],
+      ["Titanium Dioxide (Indian Rutile Grade / Imported)", "Industrial Chemicals"],
     ],
   },
 ] as const;
@@ -146,6 +146,22 @@ function fallbackProducts(source: (typeof sources)[number]): CatalogProduct[] {
   }));
 }
 
+const nameOverrides: Partial<Record<(typeof sources)[number]["id"], { pattern: RegExp; name: string }[]>> = {
+  industrial: [
+    { pattern: /titanium\s*dioxide/i, name: "Titanium Dioxide (Indian Rutile Grade / Imported)" },
+  ],
+};
+
+function applyNameOverrides(products: CatalogProduct[], categoryId: string): CatalogProduct[] {
+  const overrides = nameOverrides[categoryId as keyof typeof nameOverrides];
+  if (!overrides) return products;
+
+  return products.map((product) => {
+    const override = overrides.find((entry) => entry.pattern.test(product.name));
+    return override ? { ...product, name: override.name } : product;
+  });
+}
+
 const bestsellerPatterns: Partial<Record<(typeof sources)[number]["id"], RegExp>> = {
   industrial: /titanium\s*dioxide/i,
 };
@@ -181,7 +197,10 @@ export async function getCatalog(): Promise<CatalogCategory[]> {
       shortName: source.shortName,
       sourceUrl,
       description: source.description,
-      products: promoteBestseller(products.length ? products : fallbackProducts(source), source.id),
+      products: promoteBestseller(
+        applyNameOverrides(products.length ? products : fallbackProducts(source), source.id),
+        source.id,
+      ),
     };
   }));
 }

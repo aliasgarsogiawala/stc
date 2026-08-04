@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:3002 -o /tmp/p3002.html -w \"%{http_code}\\\\n\")",
+      "Bash(node -e ' *)"
+    ]
+  }
+}
