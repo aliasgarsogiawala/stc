@@ -92,7 +92,7 @@ export default function PetalProductGrid({ products }: PetalProductGridProps) {
       <div className="mx-auto grid max-w-[1660px] grid-cols-3 gap-x-6 gap-y-9 max-[960px]:grid-cols-2 max-[600px]:grid-cols-1 gs-stagger">
         {filtered.map((product, index) => (
           <article
-            className="tilt-card group border border-[#173a57]/15 bg-white p-3 transition-[border-color,box-shadow] duration-300 hover:border-[#356fa7]/55 hover:shadow-[0_24px_55px_rgba(26,73,116,0.12)]"
+            className="tilt-card group rounded-2xl border border-[#173a57]/15 bg-white p-3 overflow-hidden transition-[border-color,box-shadow] duration-300 hover:border-[#356fa7]/55 hover:shadow-[0_24px_55px_rgba(26,73,116,0.12)]"
             key={product.id}
           >
             <div className="relative aspect-square overflow-hidden rounded-[8px] bg-[#f2ede4]">

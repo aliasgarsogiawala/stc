@@ -106,7 +106,7 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
         <div className="mt-5 grid grid-cols-4 max-[1180px]:grid-cols-3 max-[840px]:grid-cols-2 max-[580px]:grid-cols-1 gap-3 gs-stagger">
           {visible.map((product, index) => (
             <article
-              className={`tilt-card min-h-[260px] max-[580px]:min-h-[220px] p-5 border border-line flex flex-col bg-white transition-[transform,border-color,box-shadow] duration-300 ${styles.cardHover}`}
+              className={`tilt-card min-h-[260px] max-[580px]:min-h-[220px] p-5 rounded-2xl border border-line flex flex-col bg-white overflow-hidden transition-[transform,border-color,box-shadow] duration-300 ${styles.cardHover}`}
               key={product.id}
             >
               <div className="flex items-start justify-between gap-3">

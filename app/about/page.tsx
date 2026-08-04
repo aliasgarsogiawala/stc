@@ -16,14 +16,11 @@ export const metadata = createPageMetadata({
 });
 
 const industries = [
-  "Paint & polish",
-  "Perfumery & essence",
+  "Paint Manufacturers",
+  "Perfumery & Essence",
   "Agarbatti",
-  "Ayurvedic pharmacy",
-  "Unani pharmacy",
-  "Food manufacturing",
-  "Industrial formulation",
-  "Wholesale trade",
+  "Ayurvedic & Unani Pharmacies",
+  "Industrial Formulation",
 ];
 
 const qualitySteps = [
@@ -62,7 +59,6 @@ export default function AboutPage() {
       <section className="about-hero">
         <div className="about-hero-backdrop" aria-hidden="true">
           <span>STC</span>
-          <small>Mumbai / Trade / 2002</small>
         </div>
         <div className="about-hero-shell">
           <div className="about-hero-copy" data-hero-copy>
@@ -76,8 +72,9 @@ export default function AboutPage() {
             </p>
             <h1>About Us</h1>
             <p>
-              Import, export and wholesale trading of industrial and natural
-              raw materials for manufacturers and traders.
+              Supreme Trading Corp is a trusted trading & sourcing company specializing
+              in Raw Herbs , Food Herbs , Floral Petals , Raw Honey & Industrial Chemicals
+              operating from Mumbai , India
             </p>
           </div>
 
@@ -100,21 +97,31 @@ export default function AboutPage() {
       </section>
 
       <section className="refined-about-intro gs-reveal">
-        <div className={label}>Company profile</div>
         <div>
-          <h2 className={h2}>Import, export and wholesale trading since 2002.</h2>
+          <h2 className={h2}>A reliable link between trusted sources and growing industries.</h2>
           <div className="refined-about-copy">
             <p>
-              Supreme Trading Corp was established in Mumbai, Maharashtra, with
-              the objective of providing reliable supply and consistent product
-              quality. The company operates across imports, exports and
-              wholesale trading.
+              We are a trusted trading and sourcing company specializing in
+              {" "}<strong>raw herbs, floral petals, food herbs, and industrial chemicals</strong>,
+              catering to diverse industries with a strong focus on quality,
+              consistency, and reliable supply. With a commitment to building
+              long-term partnerships, we carefully source products from dependable
+              suppliers and deliver solutions that meet the evolving needs of our
+              customers.
             </p>
             <p>
-              Its range includes herbal raw materials used in Ayurvedic and
-              Unani medicines, perfumery, essence, paint and related
-              applications, together with gums, food herbs, spices and other
-              commercial raw materials.
+              Our portfolio brings together the <strong>purity of nature and the
+              precision of industry</strong>—from carefully selected herbs and petals
+              to quality food ingredients and industrial chemicals. We believe in
+              transparent business practices, competitive value, timely delivery,
+              and personalized service, making us a dependable sourcing partner for
+              businesses across various sectors.
+            </p>
+            <p>
+              Driven by integrity, quality, and continuous growth, we aim to create
+              lasting value for our customers and suppliers while establishing
+              ourselves as a <strong>reliable link between trusted sources and growing
+              industries</strong>.
             </p>
           </div>
         </div>
@@ -151,10 +158,11 @@ export default function AboutPage() {
         </div>
         <div className="refined-about-image-secondary image-drift">
           <Image
-            src="/supreme/source/nb.png"
-            alt="Natural raw material samples"
-            width={570}
-            height={400}
+            src="/supreme/generated/about-paint-coatings.png"
+            alt="Industrial paint tins, pigment powders and coating preparation equipment"
+            width={1536}
+            height={1024}
+            sizes="(max-width: 720px) 100vw, 32vw"
           />
         </div>
         <div className="refined-about-industries-copy">

@@ -30,15 +30,15 @@ export default function ContactPage() {
     <main className="bg-[#f8f7f3] text-[#122c44]">
       <SiteHeader theme="solid" />
 
-      <section className="contact-hero min-h-[540px] max-[720px]:min-h-[500px] pt-[82px] max-[720px]:pt-[70px] relative isolate overflow-hidden text-white">
+      <section className="contact-hero min-h-[540px] max-[720px]:min-h-[500px] pt-[82px] max-[720px]:pt-[70px] relative isolate overflow-hidden bg-[#183f62] text-white">
         <Image
           data-hero-media
-          src="/supreme/neutral-materials-hero.png"
-          alt="Industrial liquids, powders and specialty raw material samples"
+          src="/supreme/generated/contact-us-materials-hero.png"
+          alt="Contact Us arranged from herbs, petals, spices, honey, resin and industrial powder"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[68%_center] -z-20"
+          className="object-contain object-right scale-[1.18] origin-right -z-20 max-[720px]:object-cover max-[720px]:object-[72%_center] max-[720px]:scale-100"
         />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,27,47,0.96)_0%,rgba(11,43,70,0.82)_38%,rgba(11,43,70,0.25)_76%,rgba(11,43,70,0.12)_100%)]" />
 

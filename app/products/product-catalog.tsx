@@ -134,7 +134,7 @@ export default function ProductCatalog({ categories }: ProductCatalogProps) {
             {visibleProducts.map((product, index) => {
               const image = imageForProduct(product.name);
               return (
-                <article className="tilt-card group min-w-0 min-h-[320px] p-[18px] border border-line rounded-[7px] flex flex-col bg-white overflow-hidden transition-[transform,box-shadow,border-color] duration-200 hover:border-black/[0.34] hover:shadow-[0_18px_42px_rgba(19,32,27,0.09)]" key={product.id}>
+                <article className="tilt-card group min-w-0 min-h-[320px] p-[18px] border border-line rounded-2xl flex flex-col bg-white overflow-hidden transition-[transform,box-shadow,border-color] duration-200 hover:border-black/[0.34] hover:shadow-[0_18px_42px_rgba(19,32,27,0.09)]" key={product.id}>
                   <div className="flex justify-between gap-2.5 text-clay text-[clamp(10px,0.72vw,12px)] font-black uppercase">
                     <span>{String(pageStart + index + 1).padStart(3, "0")}</span>
                     <span className="max-w-[72%] text-muted overflow-hidden text-right text-ellipsis whitespace-nowrap">{product.categoryName}</span>

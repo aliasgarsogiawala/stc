@@ -4049,6 +4049,7 @@ html {
   min-height: 220px;
   padding: 26px;
   border: 1px solid var(--line);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   background: var(--white);
@@ -7103,9 +7104,15 @@ main {
 
 .refined-about-intro {
   padding: 104px clamp(22px, 4.5vw, 76px);
-  display: grid;
-  grid-template-columns: minmax(160px, 0.24fr) minmax(0, 1.76fr);
-  gap: clamp(42px, 4vw, 72px);
+  display: block;
+}
+
+.refined-about-intro > div {
+  width: 100%;
+}
+
+.refined-about-intro h2 {
+  max-width: 1480px;
 }
 
 .refined-about-copy {
@@ -7113,8 +7120,8 @@ main {
   padding-top: 28px;
   border-top: 1px solid var(--line);
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(30px, 5vw, 72px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 3.5vw, 64px);
 }
 
 .refined-about-copy p {
@@ -7180,8 +7187,8 @@ main {
   padding: 112px clamp(22px, 4.5vw, 76px);
   display: grid;
   grid-template-columns:
-    minmax(260px, 0.78fr)
-    minmax(220px, 0.54fr)
+    minmax(260px, 0.72fr)
+    minmax(280px, 0.68fr)
     minmax(340px, 0.92fr);
   gap: clamp(22px, 2.6vw, 44px);
   align-items: center;
@@ -7203,7 +7210,7 @@ main {
 }
 
 .refined-about-image-secondary {
-  margin-top: 94px;
+  margin-top: 68px;
 }
 
 .refined-about-industries-copy {
@@ -7362,6 +7369,11 @@ main {
   .refined-about-intro,
   .refined-about-quality-inner {
     grid-template-columns: 1fr;
+  }
+
+  .refined-about-copy {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .refined-about-facts {

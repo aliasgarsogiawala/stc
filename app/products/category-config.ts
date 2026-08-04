@@ -33,7 +33,7 @@ export const categoryOfferings: Record<string, string[]> = {
 export const productCategoryCards = [
   {
     id: "herbs-spices",
-    name: "Medicinal herbs & spices",
+    name: "Medicinal Herbs & Spices",
     note: "Whole botanicals, roots, barks, seeds, flowers and trade spices.",
     image: categoryImages["herbs-spices"],
     href: dedicatedPages["herbs-spices"],
@@ -54,7 +54,7 @@ export const productCategoryCards = [
   },
   {
     id: "food-herbs",
-    name: "Food herbs",
+    name: "Food Herbs",
     note: "Dehydrated vegetables, Ayurvedic powders, spices and spray-dried produce powders.",
     image: categoryImages["food-herbs"],
     href: dedicatedPages["food-herbs"],

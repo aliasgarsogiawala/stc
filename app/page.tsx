@@ -63,7 +63,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 gap-[18px] gs-stagger">
           {whyChoose.map((item) => (
-            <article className="tilt-card p-[34px_28px] border border-line rounded-[18px] bg-white transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-black/25 hover:shadow-[0_18px_42px_rgba(19,32,27,0.08)]" key={item.title}>
+            <article className="tilt-card p-[34px_28px] border border-line rounded-2xl bg-white transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-black/25 hover:shadow-[0_18px_42px_rgba(19,32,27,0.08)]" key={item.title}>
               <span className="grid place-items-center w-[68px] h-[68px] mb-6 rounded-full [background:var(--herb-grad)] shadow-[0_14px_30px_rgba(24,74,116,0.24)]">
                 <Image src={item.icon} alt="" width={40} height={40} className="w-[34px] h-[34px] object-contain" />
               </span>
@@ -88,7 +88,7 @@ export default function Home() {
               <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold text-white m-0">Grade-led sourcing across four material families</h3>
               <p className="mt-2.5 text-white/70 text-[clamp(15px,1.08vw,19px)] leading-[1.62] max-w-[clamp(420px,30vw,540px)]">From industrial chemicals and coating resins to food herbs and speciality raw materials — matched to your grade, quantity and destination.</p>
             </div>
-            <Link className="relative z-[1] w-fit text-honey-soft border-b border-current pb-[3px] text-[clamp(13px,0.95vw,16px)] font-black" href="/products">Browse the catalogue</Link>
+            <Link className="relative z-[1] w-fit text-honey-soft border-b border-current pb-[3px] text-[clamp(13px,0.95vw,16px)] font-black" href="/products">Browse catalogue</Link>
           </article>
 
           <article className="tilt-card p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
@@ -98,18 +98,17 @@ export default function Home() {
           </article>
 
           <article className="tilt-card p-[30px] rounded-2xl flex flex-col justify-center gap-1.5 relative overflow-hidden [background:var(--amber-grad)] text-[#241606] transition-transform duration-300">
-            <span className="text-[rgba(28,19,10,0.62)] text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.06em] uppercase">Materials</span>
+            <span className="text-[rgba(28,19,10,0.62)] text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.06em] uppercase">Products</span>
             <strong data-count="800" data-suffix="+" className="font-heading text-[clamp(46px,5vw,68px)] leading-none font-semibold text-[#1c130a]">800+</strong>
-            <span className="text-[rgba(28,19,10,0.72)] text-[clamp(13px,0.92vw,16px)] leading-[1.5]">Grades sourced to spec</span>
           </article>
 
-          <article className="tilt-card col-span-2 max-[980px]:col-span-2 max-[620px]:col-span-1 group min-h-[280px] border border-line bg-white grid grid-cols-[minmax(0,1fr)_minmax(180px,0.42fr)] max-[620px]:grid-cols-1 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
+          <article className="tilt-card col-span-2 max-[980px]:col-span-2 max-[620px]:col-span-1 group min-h-[380px] rounded-2xl border border-line bg-white grid grid-cols-[minmax(0,1fr)_minmax(180px,0.42fr)] max-[620px]:grid-cols-1 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
             <div className="p-[clamp(24px,3vw,38px)] flex flex-col justify-end gap-3 relative z-[2]">
               <span className="text-clay text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.06em] uppercase">Food &amp; natural</span>
               <h3 className="max-w-[620px] font-heading text-[clamp(25px,2.35vw,36px)] leading-[1.04] font-bold m-0">Food herbs &amp; natural products</h3>
               <p className="max-w-[clamp(620px,46vw,780px)] m-0 text-muted text-[clamp(14px,1vw,18px)] leading-[1.65]">Powders, dehydrated ingredients, honey and natural sweeteners for food brands and formulators.</p>
             </div>
-            <div className="min-h-[240px] max-[620px]:min-h-[190px] relative overflow-hidden bg-[#eef1f4]">
+            <div className="min-h-[340px] max-[620px]:min-h-[240px] relative overflow-hidden bg-[#eef1f4]">
               <Image className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]" src="/supreme/premium/honey-jar.jpg" alt="Natural honey prepared for food production" fill sizes="(max-width: 620px) 100vw, 32vw" />
               <div className="absolute inset-y-0 left-0 w-10 max-[620px]:hidden bg-gradient-to-r from-white to-transparent" />
             </div>
@@ -117,8 +116,7 @@ export default function Home() {
 
           <article className="tilt-card p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
             <span className="text-clay text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.06em] uppercase">Reach</span>
-            <strong className="font-heading text-[clamp(34px,3.4vw,46px)] leading-none font-semibold text-ink">India + Export</strong>
-            <span className="text-muted text-[clamp(13px,0.92vw,16px)] leading-[1.5]">Bulk supply, cleanly handled</span>
+            <strong className="font-heading text-[clamp(34px,3.4vw,46px)] leading-none font-semibold text-ink">India + Global</strong>
           </article>
         </div>
       </section>
@@ -161,7 +159,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 gap-5 gs-stagger">
           {facts.map((fact) => (
-            <article className="tilt-card p-[36px_24px] border [border-color:rgba(53,111,167,0.18)] rounded-[18px] bg-white flex flex-col items-center gap-3 text-center transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:[border-color:rgba(53,111,167,0.42)] hover:shadow-[0_22px_46px_rgba(53,111,167,0.14)]" key={fact.label}>
+            <article className="tilt-card p-[36px_24px] border [border-color:rgba(53,111,167,0.18)] rounded-2xl bg-white flex flex-col items-center gap-3 text-center transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:[border-color:rgba(53,111,167,0.42)] hover:shadow-[0_22px_46px_rgba(53,111,167,0.14)]" key={fact.label}>
               <span className="grid place-items-center w-[72px] h-[72px] mb-2 rounded-full [background:linear-gradient(150deg,#5f91c0,#356fa7)] shadow-[0_14px_30px_rgba(53,111,167,0.24)]">
                 <Image src={fact.icon} alt="" width={38} height={38} className="w-9 h-9 object-contain" />
               </span>
@@ -181,7 +179,7 @@ export default function Home() {
 
         <div className="grid grid-cols-6 max-[1060px]:grid-cols-2 max-[720px]:grid-cols-1 auto-rows-fr gap-5 gs-stagger">
           {productCategoryCards.map((group, index) => (
-            <article className={`tilt-card group col-span-2 max-[1060px]:col-span-1 max-[1060px]:col-start-auto min-h-[420px] h-full border border-[#173a57]/14 flex flex-col bg-white overflow-hidden transition-colors duration-300 hover:border-[#2d68a0]/45 ${index === 3 ? "col-start-2" : ""} ${index === 4 ? "col-start-4" : ""}`} key={group.name}>
+            <article className={`tilt-card group col-span-2 max-[1060px]:col-span-1 max-[1060px]:col-start-auto min-h-[420px] h-full rounded-2xl border border-[#173a57]/14 flex flex-col bg-white overflow-hidden transition-colors duration-300 hover:border-[#2d68a0]/45 ${index === 3 ? "col-start-2" : ""} ${index === 4 ? "col-start-4" : ""}`} key={group.name}>
               <div className="h-[228px] bg-[#eaf0f5] relative overflow-hidden">
                 <Image
                   src={group.image}

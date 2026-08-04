@@ -24,12 +24,6 @@ const offices: Office[] = [
     address: "Loha Mandi, Siyaganj, Indore, Madhya Pradesh",
     mapSrc: "https://www.google.com/maps?q=Loha+Mandi,+Siyaganj,+Indore,+Madhya+Pradesh&output=embed",
   },
-  {
-    type: "Branch office",
-    city: "Haridwar",
-    address: "Jamalpur Kalan, District Haridwar, Uttarakhand",
-    mapSrc: "https://www.google.com/maps?q=Jamalpur+Kalan,+District+Haridwar,+Uttarakhand&output=embed",
-  },
 ];
 
 type LocationContextValue = {
@@ -63,13 +57,13 @@ export function LocationCards() {
           <h2 className="m-0 font-heading text-[clamp(42px,5vw,64px)] font-semibold leading-none tracking-[-0.03em]">Locations</h2>
         </div>
 
-        <div className="contact-office-grid grid grid-cols-[1.16fr_1fr_1fr] max-[900px]:grid-cols-1 gap-5 gs-stagger">
+        <div className="contact-office-grid grid grid-cols-[1.08fr_1fr] max-w-[1200px] mx-auto max-[900px]:grid-cols-1 gap-5 gs-stagger">
           {offices.map((office, index) => {
             const active = office.city === activeOffice.city;
             return (
               <button
                 type="button"
-                className={`contact-office-button tilt-card min-h-[324px] p-[clamp(26px,3vw,40px)] border relative overflow-hidden flex flex-col text-left cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#356fa7] focus-visible:ring-offset-2 transition-[background-color,border-color] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[4px] after:transition-[width] after:duration-500 ${
+                className={`contact-office-button tilt-card min-h-[324px] p-[clamp(26px,3vw,40px)] rounded-2xl border relative overflow-hidden flex flex-col text-left cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#356fa7] focus-visible:ring-offset-2 transition-[background-color,border-color] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[4px] after:transition-[width] after:duration-500 ${
                   active
                     ? "border-[#356fa7] bg-[#dceaf6] text-[#122c44] after:w-full after:bg-[#356fa7]"
                     : "border-[#173a57]/16 bg-[#f5f8fa] text-[#122c44] after:w-0 after:bg-[#7fa9ce] hover:bg-white hover:after:w-full"
