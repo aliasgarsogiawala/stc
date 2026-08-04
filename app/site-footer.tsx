@@ -38,15 +38,15 @@ export default function SiteFooter() {
 
             <nav className="footer-column" aria-label="Product range">
               <p className="footer-column-heading">Product range</p>
-              <Link href="/products/chemicals">Industrial chemicals</Link>
+              <Link href="/products/chemicals">Industrial Chemicals</Link>
               <Link href="/products/honey">Honey</Link>
               <Link href="/products/petals">Petals</Link>
-              <Link href="/products/herbs">Medicinal herbs &amp; spices</Link>
-              <Link href="/products/food-ingredients">Food herbs</Link>
+              <Link href="/products/herbs">Medicinal Herbs &amp; Spices</Link>
+              <Link href="/products/food-ingredients">Food Herbs</Link>
             </nav>
 
             <div className="footer-column footer-office">
-              <p className="footer-column-heading">Mumbai head office</p>
+              <p className="footer-column-heading">Mumbai Head Office</p>
               <address>
                 {MUMBAI_OFFICE.lineOne}
                 <br />
