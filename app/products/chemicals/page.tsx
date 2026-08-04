@@ -46,8 +46,7 @@ export default async function ChemicalsPage() {
         <div className="catalog-full-hero-overlay" />
         <div data-hero-copy data-product-copy className="catalog-full-hero-copy">
           <div className="catalog-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>Chemicals</span></div>
-          <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Industrial chemicals</h1>
-          <p className="max-w-[650px] mb-0 text-white/70 text-[15px] leading-[1.8]">Resins, additives, pigments, cellulose products, acids and process chemicals sourced against grade, application and packing requirements.</p>
+          <h1 className="max-w-[780px] mb-7 font-heading text-[clamp(58px,7vw,104px)] leading-[0.88] font-semibold text-white">Industrial Chemicals</h1>
           <div className="mt-8 flex items-center gap-6 flex-wrap">
             <a className="button bg-[#d9edf0] border-[#d9edf0] text-[#102f37] hover:bg-white" href="#category-products">View chemical range</a>
           </div>

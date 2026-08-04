@@ -57,7 +57,7 @@ export default async function HerbsPage() {
             <Link href="/products">Products</Link><span>/</span>
             <span>Medicinal Herbs &amp; Spices</span>
           </div>
-          <h1>Medicinal herbs &amp; spices</h1>
+          <h1>Medicinal Herbs &amp; Spices</h1>
 
           <div className="prod-hero-actions">
             <a className="button button-accent" href="#category-products">Catalogue</a>
