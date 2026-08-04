@@ -29,7 +29,7 @@ export default function SiteFooter() {
             </div>
 
             <nav className="footer-column" aria-label="Company">
-              <p className="footer-column-heading">Company</p>
+              <p className="footer-column-heading">Pages</p>
               <Link href="/">Home</Link>
               <Link href="/about">About</Link>
               <Link href="/products">Products</Link>
