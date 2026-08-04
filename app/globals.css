@@ -6299,14 +6299,6 @@ main {
     min-height: 210px;
   }
 
-  .contact-hero {
-    min-height: 570px;
-  }
-
-  .contact-hero > img {
-    object-position: 68% center;
-  }
-
   .contact-office-grid article {
     min-height: 270px;
   }

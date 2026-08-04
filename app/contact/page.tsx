@@ -1,10 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
 import ContactForm from "./contact-form";
 import { LocationCards, LocationMap, LocationProvider } from "./contact-locations";
-import { ArrowRight, ArrowUpRight, Mail, Phone, WhatsApp } from "../icons";
+import { ArrowUpRight, Mail, Phone, WhatsApp } from "../icons";
 import { createPageMetadata } from "../seo";
 import {
   CONTACT_EMAIL,
@@ -30,36 +29,17 @@ export default function ContactPage() {
     <main className="bg-[#f8f7f3] text-[#122c44]">
       <SiteHeader theme="solid" />
 
-      <section className="contact-hero min-h-[540px] max-[720px]:min-h-[500px] pt-[82px] max-[720px]:pt-[70px] relative isolate overflow-hidden bg-[#183f62] text-white">
+      <section className="contact-hero min-h-[clamp(500px,31vw,620px)] max-[720px]:min-h-[320px] pt-[82px] max-[720px]:pt-[70px] relative isolate overflow-hidden bg-[#0d3454] text-white">
+        <h1 className="sr-only">Contact us</h1>
         <Image
           data-hero-media
-          src="/supreme/generated/contact-us-materials-hero.png"
+          src="/supreme/generated/contact-us-centered-hero.png"
           alt="Contact Us arranged from herbs, petals, spices, honey, resin and industrial powder"
           fill
           priority
           sizes="100vw"
-          className="object-contain object-right scale-[1.18] origin-right -z-20 max-[720px]:object-cover max-[720px]:object-[72%_center] max-[720px]:scale-100"
+          className="object-cover object-center -z-10 max-[720px]:object-contain"
         />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,27,47,0.96)_0%,rgba(11,43,70,0.82)_38%,rgba(11,43,70,0.25)_76%,rgba(11,43,70,0.12)_100%)]" />
-
-        <div className="max-w-[1760px] min-h-[458px] max-[720px]:min-h-[430px] mx-auto px-[clamp(22px,5vw,76px)] py-[58px] flex flex-col justify-between" data-hero-copy>
-          <div className="flex items-center gap-2.5 text-white/65 text-[clamp(11px,0.78vw,13px)] font-bold tracking-[0.08em] uppercase">
-            <Link className="hover:text-white" href="/">Home</Link>
-            <span>/</span>
-            <span>Contact</span>
-          </div>
-
-          <div>
-            <p className="mb-4 text-[#f0bf59] text-[clamp(11px,0.78vw,13px)] font-extrabold tracking-[0.12em] uppercase">Supreme Trading Corp</p>
-            <h1 className="max-w-[760px] m-0 font-heading text-[clamp(58px,7vw,92px)] font-semibold leading-[0.94] tracking-[-0.035em]">Contact us</h1>
-            <p className="max-w-[610px] mt-6 mb-0 text-white/74 text-[15px] leading-[1.8]">
-              Product , grade specifications, bulk quantities and delivery enquiries are handled by our Mumbai sourcing desk.
-            </p>
-            <a className="w-fit mt-8 pb-2 border-b border-[#f0bf59] inline-flex items-center gap-3 text-[clamp(12px,0.85vw,15px)] font-extrabold tracking-[0.06em] uppercase" href="#enquiry">
-              Send a requirement <ArrowRight />
-            </a>
-          </div>
-        </div>
       </section>
 
       <LocationProvider>

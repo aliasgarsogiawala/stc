@@ -48,6 +48,8 @@ const qualitySteps = [
 
 const label =
   "font-sans text-[#356fa7] text-[clamp(11px,0.78vw,14px)] font-extrabold tracking-[0.075em] uppercase";
+const labelOnDark =
+  "font-sans text-honey-soft text-[clamp(11px,0.78vw,14px)] font-extrabold tracking-[0.075em] uppercase";
 const h2 =
   "font-heading text-[clamp(40px,4.4vw,68px)] leading-[1.02] font-bold tracking-[-0.045em] m-0";
 
@@ -166,7 +168,7 @@ export default function AboutPage() {
           />
         </div>
         <div className="refined-about-industries-copy">
-          <span className={label}>Applications</span>
+          <span className={labelOnDark}>Applications</span>
           <h2 className={`${h2} mt-4 text-white`}>Industries supplied</h2>
           <p>
             The company’s range serves traditional medicine, food, fragrance
@@ -227,7 +229,7 @@ export default function AboutPage() {
 
       <section className="refined-about-cta gs-reveal">
         <div>
-          <span className={label}>Enquiries</span>
+          <span className={labelOnDark}>Enquiries</span>
           <h2 className={`${h2} mt-4 text-white`}>
             Discuss a material requirement.
           </h2>
