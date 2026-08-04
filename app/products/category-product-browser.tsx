@@ -118,7 +118,12 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
             >
               <div className="flex items-start justify-between gap-3">
                 <span className={`text-[clamp(11px,0.78vw,13px)] font-black ${styles.index}`}>{String(start + index + 1).padStart(3, "0")}</span>
-                {product.subgroup && <span className="max-w-[64%] px-2.5 py-1 bg-[#f1f1eb] text-muted text-[clamp(10px,0.72vw,12px)] font-bold tracking-[0.02em] text-right">{product.subgroup}</span>}
+                <div className="flex items-center gap-1.5">
+                  {product.bestseller && (
+                    <span className="px-2.5 py-1 bg-honey-soft text-[#241606] text-[clamp(10px,0.72vw,12px)] font-black tracking-[0.04em] uppercase">Bestseller</span>
+                  )}
+                  {product.subgroup && <span className="max-w-[140px] px-2.5 py-1 bg-[#f1f1eb] text-muted text-[clamp(10px,0.72vw,12px)] font-bold tracking-[0.02em] text-right truncate">{product.subgroup}</span>}
+                </div>
               </div>
               <div className={`mt-5 w-11 h-11 border grid place-items-center ${styles.glyph}`} aria-hidden="true">
                 {theme === "chemicals" ? <TestTubeGlyph /> : <IngredientBowlGlyph />}

@@ -4,6 +4,7 @@ export type CatalogProduct = {
   category: string;
   detail?: string;
   subgroup?: string;
+  bestseller?: boolean;
 };
 
 export type CatalogCategory = {
@@ -145,6 +146,21 @@ function fallbackProducts(source: (typeof sources)[number]): CatalogProduct[] {
   }));
 }
 
+const bestsellerPatterns: Partial<Record<(typeof sources)[number]["id"], RegExp>> = {
+  industrial: /titanium\s*dioxide/i,
+};
+
+function promoteBestseller(products: CatalogProduct[], categoryId: string): CatalogProduct[] {
+  const pattern = bestsellerPatterns[categoryId as keyof typeof bestsellerPatterns];
+  if (!pattern) return products;
+
+  const index = products.findIndex((product) => pattern.test(product.name));
+  if (index === -1) return products;
+
+  const bestseller: CatalogProduct = { ...products[index], bestseller: true };
+  return [bestseller, ...products.slice(0, index), ...products.slice(index + 1)];
+}
+
 export async function getCatalog(): Promise<CatalogCategory[]> {
   return Promise.all(sources.map(async (source) => {
     const sourceUrl = `https://supremetrading.in/${source.path}`;
@@ -165,7 +181,7 @@ export async function getCatalog(): Promise<CatalogCategory[]> {
       shortName: source.shortName,
       sourceUrl,
       description: source.description,
-      products: products.length ? products : fallbackProducts(source),
+      products: promoteBestseller(products.length ? products : fallbackProducts(source), source.id),
     };
   }));
 }

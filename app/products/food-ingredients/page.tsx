@@ -55,9 +55,9 @@ export default async function FoodHerbsPage() {
 
       <section className="prod-intro gs-reveal">
         <div className="prod-intro-copy">
-          <h2 data-reveal>Food herbs prepared for production</h2>
+          <h2 data-reveal>Food Herbs</h2>
           <p>
-            Dehydrated vegetables, culinary herbs and powders each need the right form,
+            Food Herbs need the right form,
             moisture and particle size. We source and prepare them around the buyer&apos;s
             processing, packing and volume requirements.
           </p>
