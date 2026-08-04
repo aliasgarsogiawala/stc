@@ -1,8 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { CatalogProduct } from "./catalog-data";
-import { ArrowLeft, ArrowRight, ArrowUpRight, IngredientBowlGlyph, TestTubeGlyph } from "../icons";
+import { ArrowLeft, ArrowRight, IngredientBowlGlyph, TestTubeGlyph } from "../icons";
+import { WHATSAPP_NUMBER } from "../contact-details";
+
+function waHref(product: string) {
+  const text = `Hi Supreme Trading, I'd like to enquire about ${product}. Please share grade, packing and availability.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
 
 type ProductBrowserProps = {
   categoryName: string;
@@ -121,11 +128,14 @@ export default function CategoryProductBrowser({ categoryName, products, theme }
                 {product.detail && <p className="mt-2 mb-0 text-muted text-[clamp(13px,0.95vw,17px)] leading-[1.6]">{product.detail}</p>}
               </div>
               <a
-                className="w-fit mt-6 pb-1 border-b border-current text-ink text-[clamp(12px,0.85vw,15px)] font-bold"
-                href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}
-                aria-label={`Enquire about ${product.name}`}
+                className="w-10 h-10 mt-6 grid place-items-center border border-line transition-colors hover:border-black/25"
+                href={waHref(product.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Enquire about ${product.name} on WhatsApp`}
+                title={`WhatsApp enquiry for ${product.name}`}
               >
-                Enquire <ArrowUpRight />
+                <Image src="/whats.avif" alt="" width={740} height={740} className="w-5 h-5 object-contain" />
               </a>
             </article>
           ))}

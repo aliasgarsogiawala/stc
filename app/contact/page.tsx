@@ -53,7 +53,7 @@ export default function ContactPage() {
             <p className="mb-4 text-[#f0bf59] text-[clamp(11px,0.78vw,13px)] font-extrabold tracking-[0.12em] uppercase">Supreme Trading Corp</p>
             <h1 className="max-w-[760px] m-0 font-heading text-[clamp(58px,7vw,92px)] font-semibold leading-[0.94] tracking-[-0.035em]">Contact us</h1>
             <p className="max-w-[610px] mt-6 mb-0 text-white/74 text-[15px] leading-[1.8]">
-              Product availability, grade specifications, bulk quantities and delivery enquiries are handled by our Mumbai sourcing desk.
+              Product , grade specifications, bulk quantities and delivery enquiries are handled by our Mumbai sourcing desk.
             </p>
             <a className="w-fit mt-8 pb-2 border-b border-[#f0bf59] inline-flex items-center gap-3 text-[clamp(12px,0.85vw,15px)] font-extrabold tracking-[0.06em] uppercase" href="#enquiry">
               Send a requirement <ArrowRight />

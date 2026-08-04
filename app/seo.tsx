@@ -6,7 +6,7 @@ import {
   SECONDARY_PHONE,
 } from "./contact-details";
 
-export const SITE_URL = "https://supremetrading.in";
+export const SITE_URL = "https://supremetradingcorp.com";
 export const SITE_NAME = "Supreme Trading Corp";
 
 type PageMetadata = {

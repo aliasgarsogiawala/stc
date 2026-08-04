@@ -104,7 +104,7 @@ export default function HoneyPage() {
           />
           <span aria-hidden="true" />
         </div>
-        <div className="prod-quality-grid gs-stagger">
+        <div className="prod-quality-grid">
           {qualities.map((q) => (
             <article className="tilt-card" key={q.k}>
               <span>{q.k}</span>

@@ -3,7 +3,13 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { ArrowUpRight } from "../../icons";
+import { WHATSAPP_NUMBER } from "../../contact-details";
 import type { CatalogProduct } from "../catalog-data";
+
+function waHref(product: string) {
+  const text = `Hi Supreme Trading, I'd like to enquire about ${product}. Please share grade, packing and availability.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
 
 const productImages: Record<string, string> = {
   "Rose Petals": "/supreme/generated/petals/rose-petals.png",
@@ -124,10 +130,14 @@ export default function PetalProductGrid({ products }: PetalProductGridProps) {
               </div>
 
               <a
-                className="mt-auto w-fit border-b border-[#356fa7] pb-1 text-[clamp(12px,0.85vw,15px)] font-bold text-[#2d68a0]"
-                href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}
+                className="mt-auto w-10 h-10 grid place-items-center border border-line transition-colors hover:border-black/25"
+                href={waHref(product.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Enquire about ${product.name} on WhatsApp`}
+                title={`WhatsApp enquiry for ${product.name}`}
               >
-                Enquire
+                <Image src="/whats.avif" alt="" width={740} height={740} className="w-5 h-5 object-contain" />
               </a>
             </div>
           </article>

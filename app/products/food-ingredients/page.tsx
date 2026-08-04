@@ -81,7 +81,7 @@ export default async function FoodHerbsPage() {
           />
           <span aria-hidden="true" />
         </div>
-        <div className="prod-quality-grid gs-stagger">
+        <div className="prod-quality-grid">
           {requirementSteps.map(([title, detail], index) => (
             <article className="tilt-card" key={title}>
               <span>{String(index + 1).padStart(2, "0")}</span>

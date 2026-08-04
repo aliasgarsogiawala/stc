@@ -81,8 +81,8 @@ export default function Home() {
           <p className="max-w-[clamp(540px,44vw,720px)] mx-auto mt-5 text-muted text-[clamp(16px,1.15vw,21px)] leading-[1.75]">Two decades of material knowledge, a wide supplier network and a team that reads a specification the way a buyer does.</p>
         </div>
 
-        <div className="home-bento-grid relative z-[2] grid grid-cols-6 grid-flow-dense max-[980px]:grid-cols-2 max-[620px]:grid-cols-1 auto-rows-[minmax(190px,auto)] gap-4">
-          <article className="tilt-card col-span-3 row-span-2 max-[980px]:col-span-2 max-[980px]:row-span-1 max-[620px]:col-span-1 p-[30px] rounded-2xl flex flex-col justify-between gap-2.5 relative overflow-hidden [background:var(--herb-grad)] text-white transition-transform duration-300 before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:[background:radial-gradient(circle_at_78%_12%,rgba(232,182,77,0.32),transparent_46%)]">
+        <div className="home-bento-grid relative z-[2] grid grid-cols-4 grid-flow-dense max-[980px]:grid-cols-2 max-[620px]:grid-cols-1 auto-rows-[minmax(190px,auto)] gap-4">
+          <article className="tilt-card col-span-2 row-span-2 max-[980px]:row-span-1 max-[620px]:col-span-1 p-[30px] rounded-2xl flex flex-col justify-between gap-2.5 relative overflow-hidden [background:var(--herb-grad)] text-white transition-transform duration-300 before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:[background:radial-gradient(circle_at_78%_12%,rgba(232,182,77,0.32),transparent_46%)]">
             <span className="relative z-[1] text-honey-soft text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.06em] uppercase">Flagship capability</span>
             <div className="relative z-[1]">
               <h3 className="font-heading text-[clamp(26px,2.6vw,38px)] leading-[1.02] font-bold text-white m-0">Grade-led sourcing across four material families</h3>
@@ -102,19 +102,7 @@ export default function Home() {
             <strong data-count="800" data-suffix="+" className="font-heading text-[clamp(46px,5vw,68px)] leading-none font-semibold text-[#1c130a]">800+</strong>
           </article>
 
-          <article className="tilt-card col-span-2 max-[980px]:col-span-2 max-[620px]:col-span-1 group min-h-[380px] rounded-2xl border border-line bg-white grid grid-cols-[minmax(0,1fr)_minmax(180px,0.42fr)] max-[620px]:grid-cols-1 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
-            <div className="p-[clamp(24px,3vw,38px)] flex flex-col justify-end gap-3 relative z-[2]">
-              <span className="text-clay text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.06em] uppercase">Food &amp; natural</span>
-              <h3 className="max-w-[620px] font-heading text-[clamp(25px,2.35vw,36px)] leading-[1.04] font-bold m-0">Food herbs &amp; natural products</h3>
-              <p className="max-w-[clamp(620px,46vw,780px)] m-0 text-muted text-[clamp(14px,1vw,18px)] leading-[1.65]">Powders, dehydrated ingredients, honey and natural sweeteners for food brands and formulators.</p>
-            </div>
-            <div className="min-h-[340px] max-[620px]:min-h-[240px] relative overflow-hidden bg-[#eef1f4]">
-              <Image className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]" src="/supreme/premium/honey-jar.jpg" alt="Natural honey prepared for food production" fill sizes="(max-width: 620px) 100vw, 32vw" />
-              <div className="absolute inset-y-0 left-0 w-10 max-[620px]:hidden bg-gradient-to-r from-white to-transparent" />
-            </div>
-          </article>
-
-          <article className="tilt-card p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
+          <article className="tilt-card col-span-2 max-[620px]:col-span-1 p-[30px] rounded-2xl border border-line bg-white flex flex-col justify-center gap-1.5 relative overflow-hidden transition-[transform,box-shadow,border-color] duration-300 hover:border-black/25 hover:shadow-[0_26px_60px_rgba(19,32,27,0.12)]">
             <span className="text-clay text-[clamp(11px,0.78vw,13px)] font-black tracking-[0.06em] uppercase">Reach</span>
             <strong className="font-heading text-[clamp(34px,3.4vw,46px)] leading-none font-semibold text-ink">India + Global</strong>
           </article>

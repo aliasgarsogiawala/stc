@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Libre_Franklin, Source_Sans_3 } from "next/font/google";
 import SiteMotion from "./site-motion";
-import { JsonLd, organizationJsonLd, websiteJsonLd } from "./seo";
+import { JsonLd, organizationJsonLd, websiteJsonLd, SITE_URL } from "./seo";
 import "./globals.css";
 
 const display = Libre_Franklin({
@@ -17,7 +17,7 @@ const sans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://supremetrading.in"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Supreme Trading Corp | Industrial & Specialty Raw Materials",
     template: "%s | Supreme Trading Corp",
