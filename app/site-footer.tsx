@@ -23,8 +23,8 @@ export default function SiteFooter() {
                 unoptimized
               />
               <p>
-                Import, export and bulk trading of industrial chemicals, food herbs,
-                honey and speciality raw materials—from Mumbai since 2002.
+                Import, export and bulk trading of Medicinal Herbs , Industrial Chemicals, Food Herbs,
+                Honey and speciality raw materials—from Mumbai since 2002.
               </p>
             </div>
 
