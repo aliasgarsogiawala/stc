@@ -1,4 +1,4 @@
-export const CONTACT_EMAIL = "info@supremetrading.in";
+export const CONTACT_EMAIL = "info@supremetradingcorp.com";
 
 export const PRIMARY_PHONE = {
   display: "+91 99207 55226",

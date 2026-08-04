@@ -27,7 +27,7 @@ export default function ContactForm() {
       message,
     ].join("\n");
 
-    window.location.href = `mailto:info@supremetrading.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:info@supremetradingcorp.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const labelCls = "group grid gap-2 text-[#627384] text-[clamp(11px,0.78vw,13px)] font-bold tracking-[0.045em]";

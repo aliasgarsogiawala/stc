@@ -98,7 +98,7 @@ export default function HoneyCatalog({ naturalHoney, infusedHoney }: HoneyCatalo
                 {variant.detail && <p>{variant.detail}</p>}
                 <a
                   className="honey-catalog-enquire"
-                  href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Honey enquiry: ${variant.name}`)}`}
+                  href={`mailto:info@supremetradingcorp.com?subject=${encodeURIComponent(`Honey enquiry: ${variant.name}`)}`}
                 >
                   Enquire
                 </a>
@@ -124,7 +124,7 @@ export default function HoneyCatalog({ naturalHoney, infusedHoney }: HoneyCatalo
                 <h3>{variant.name}</h3>
                 <a
                   className="honey-catalog-enquire"
-                  href={`mailto:info@supremetrading.in?subject=${encodeURIComponent(`Honey enquiry: ${variant.name}`)}`}
+                  href={`mailto:info@supremetradingcorp.com?subject=${encodeURIComponent(`Honey enquiry: ${variant.name}`)}`}
                 >
                   Enquire
                 </a>
